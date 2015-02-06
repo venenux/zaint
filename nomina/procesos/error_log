@@ -1,0 +1,49 @@
+[06-Dec-2010 16:11:27] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:26:56] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:27:07] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:27:07] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (42000/1049): Unknown database 'selectra' in /home/selectra/public_html/pymes/nomina/lib/common.php on line 14
+[10-Feb-2011 17:27:07] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 34
+[10-Feb-2011 17:27:07] PHP Warning:  bd::query() [<a href='bd.query'>bd.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 37
+[10-Feb-2011 17:27:07] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 39
+[10-Feb-2011 17:27:07] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/selectra/public_html/pymes/nomina/procesos/txt_BOD.php on line 46
+[10-Feb-2011 17:27:10] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:27:47] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:27:54] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:27:54] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (42000/1049): Unknown database 'selectra' in /home/selectra/public_html/pymes/nomina/lib/common.php on line 14
+[10-Feb-2011 17:27:54] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 34
+[10-Feb-2011 17:27:54] PHP Warning:  bd::query() [<a href='bd.query'>bd.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 37
+[10-Feb-2011 17:27:54] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 39
+[10-Feb-2011 17:27:54] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/selectra/public_html/pymes/nomina/procesos/txt_BOD.php on line 46
+[10-Feb-2011 17:27:57] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:31:35] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:31:41] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:31:41] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (42000/1049): Unknown database 'selectra' in /home/selectra/public_html/pymes/nomina/lib/common.php on line 14
+[10-Feb-2011 17:31:41] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 34
+[10-Feb-2011 17:31:41] PHP Warning:  bd::query() [<a href='bd.query'>bd.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 37
+[10-Feb-2011 17:31:41] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 39
+[10-Feb-2011 17:31:41] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/selectra/public_html/pymes/nomina/procesos/txt_BICENTENARIO.php on line 46
+[10-Feb-2011 17:39:49] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:39:54] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:40:07] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[10-Feb-2011 17:41:15] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[13-Apr-2011 10:40:03] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:16] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:21] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:22] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (42000/1049): Unknown database 'selectra' in /home/selectra/public_html/pymes/nomina/lib/common.php on line 14
+[29-Apr-2011 11:20:22] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 34
+[29-Apr-2011 11:20:22] PHP Warning:  bd::query() [<a href='bd.query'>bd.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 37
+[29-Apr-2011 11:20:22] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 39
+[29-Apr-2011 11:20:22] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/selectra/public_html/pymes/nomina/procesos/txt_federal.php on line 45
+[29-Apr-2011 11:20:31] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:36] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:40] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:41] PHP Warning:  mysqli::mysqli() [<a href='mysqli.mysqli'>mysqli.mysqli</a>]: (42000/1049): Unknown database 'selectra' in /home/selectra/public_html/pymes/nomina/lib/common.php on line 14
+[29-Apr-2011 11:20:41] PHP Warning:  mysqli::query() [<a href='mysqli.query'>mysqli.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 34
+[29-Apr-2011 11:20:41] PHP Warning:  bd::query() [<a href='bd.query'>bd.query</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 37
+[29-Apr-2011 11:20:41] PHP Warning:  mysqli::close() [<a href='mysqli.close'>mysqli.close</a>]: Couldn't fetch mysqli in /home/selectra/public_html/pymes/nomina/lib/common.php on line 39
+[29-Apr-2011 11:20:41] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/selectra/public_html/pymes/nomina/procesos/txt_venezuela.php on line 72
+[29-Apr-2011 11:20:42] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:47] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:51] PHP Warning:  Module 'zip' already loaded in Unknown on line 0
+[29-Apr-2011 11:20:51] PHP Warning:  mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists in /home/selectra/public_html/pymes/nomina/procesos/rpt_recibo_pago_correo.php on line 35
+[29-Apr-2011 11:20:59] PHP Warning:  Module 'zip' already loaded in Unknown on line 0

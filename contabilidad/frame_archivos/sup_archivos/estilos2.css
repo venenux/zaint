@@ -1,0 +1,143 @@
+@import url( Asys_Maker.css );
+BODY {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TH {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menu:link {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; COLOR: #333333; PADDING-TOP: 2px
+}
+A.menu:visited {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; COLOR: #333333; PADDING-TOP: 2px
+}
+A.menu:active {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; COLOR: #333333; PADDING-TOP: 2px
+}
+A.menu:hover {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; COLOR: #333333; PADDING-TOP: 2px
+}
+.menu-bg {
+	BACKGROUND-IMAGE: url(img_sis/bg_menu.jpg); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #b2d2e7
+}
+.menu-bg-hover {
+	BACKGROUND-IMAGE: url(img_sis/bg_menu_over.jpg); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #dfe8ee
+}
+.menu-br {
+	BACKGROUND-COLOR: #98a1b0
+}
+.btn-t {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; COLOR: #000000; TEXT-DECORATION: none
+}
+A.btn-t:link {
+	COLOR: #000000
+}
+A.btn-t:active {
+	COLOR: #000000
+}
+A.btn-t:hover {
+	COLOR: #000000
+}
+A.btn-t:visited {
+	COLOR: #000000
+}
+.btn_bg {
+	FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(img_sis/bt_middle.gif); BACKGROUND-REPEAT: repeat-x
+}
+.box {
+	FLOAT: left; MARGIN: 5px
+}
+.boton {
+	FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(img_sis/boton_off.png); BACKGROUND-REPEAT: repeat-x
+}
+.boton-over {
+	FONT-WEIGHT: normal; BACKGROUND-IMAGE: url(img_sis/boton_on.png); BACKGROUND-REPEAT: repeat-x
+}
+.boton-text {
+	FONT-SIZE: 11px
+}
+TABLE {
+	BORDER-COLLAPSE: collapse
+}
+.tb-tit {
+	PADDING-LEFT: 5px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(tb_tit.png); COLOR: #000066; HEIGHT: 26px
+}
+.tb-head {
+	BACKGROUND-COLOR: #ccd7e1
+}
+.tb-head-hover {
+	BACKGROUND-COLOR: #e9ebef
+}
+.tb-body {
+	BACKGROUND-IMAGE: url(img_sis/tb_body.jpg); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #eef2f5
+}
+.tb-sep {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(img_sis/tb_sep.jpg); BACKGROUND-REPEAT: repeat-x; TEXT-ALIGN: center
+}
+.creditos{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.row-even {
+	BACKGROUND-COLOR: #ffffff
+}
+.row-odd {
+	BACKGROUND-COLOR: #eef2f5
+}
+.row-hover {
+	BACKGROUND-COLOR: #ddeeff
+}
+.row-select {
+	BACKGROUND-COLOR: #ddeeff
+}
+.row-br {
+	BORDER-RIGHT: #a7bbcf 1px solid; BORDER-TOP: #a7bbcf 1px solid; BORDER-LEFT: #a7bbcf 1px solid; BORDER-BOTTOM: #a7bbcf 1px solid
+}
+.alert {
+	BACKGROUND-COLOR: #ffffcc
+}
+.icon {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px; MARGIN-RIGHT: 5px; BORDER-BOTTOM: 0px
+}
+INPUT {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: Arial, sans-serif
+}
+SELECT {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: Arial, sans-serif
+}
+TEXTAREA {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: Arial, sans-serif
+}
+INPUT.error {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; FONT-SIZE: 11px; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid; FONT-FAMILY: Arial, sans-serif; BACKGROUND-COLOR: #fffce2
+}
+SELECT.error {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; FONT-SIZE: 11px; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid; FONT-FAMILY: Arial, sans-serif; BACKGROUND-COLOR: #fffce2
+}
+TEXTAREA.error {
+	BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; FONT-SIZE: 11px; BORDER-LEFT: red 1px solid; BORDER-BOTTOM: red 1px solid; FONT-FAMILY: Arial, sans-serif; BACKGROUND-COLOR: #fffce2
+}
+.form-btn {
+	BORDER-RIGHT: #c1c8d2 1px solid; BORDER-TOP: #c1c8d2 1px solid; BACKGROUND-IMAGE: url(img_sis/bt_middle.gif); BORDER-LEFT: #c1c8d2 1px solid; BORDER-BOTTOM: #c1c8d2 1px solid
+}
+.no-br {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}

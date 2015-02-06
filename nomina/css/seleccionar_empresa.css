@@ -1,0 +1,109 @@
+/* 
+    Document   : seleccionar_empresa
+    Created on : 11/11/2011, 08:33:30 PM
+    Author     : pc
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+input
+{
+    width:200px;
+}
+input.inc{  
+    background: #FDA08F ;
+    border-color: #E91D18; 
+}  
+input.corr{  
+    background:#C6FFC6;
+    border-color: #33CC00;   
+}
+.procesando
+{
+    width:401px;
+    height: 400px;
+    background:white;
+    position:absolute;
+    border:0.1px;
+    border-style:solid;
+    border-color:green;
+    -moz-border-radius:10px;
+    margin: auto 0 auto 0;
+}
+span.error           {
+    font-weight:normal;
+    text-align:left;
+    color: #C00;
+    width:140px;
+    padding-left:25px;
+    background-attachment: scroll;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.columna1
+{
+    background:white;
+    opacity:0.7;
+    -moz-border-radius:10px;
+    margin-left:20px;
+    padding-left:10px;
+}
+.titulo1
+{
+    font-size:10px;
+    font-family:arial;
+    font-weight:bold;
+    text-align:center;
+}
+#nuevaEmpresa td
+{
+    color:black;
+    font-size:10px;
+    font-family:arial;
+    text-transform:uppercase;
+}
+#nuevaEmpresa
+{
+    background-color:#ecEdeF;
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:320px;
+    height:120px;
+    padding:10px;
+    font-size:10px;
+    font-family:arial;
+    border:0.1px;
+    border-style:solid;
+    border-color:green;
+    -moz-border-radius:10px;
+}
+hr
+{
+    color:white;
+}
+.contenedor
+{
+    border:0.1px;
+    width:401;
+    border-style:solid;
+    border-color:blue;
+    -moz-border-radius:10px;
+    height:390px
+}
+.seleccionEmpresa
+{
+    border:0.1px;
+    background:white
+        margin-left:7px;
+    width:387px;
+    height:120px;
+    border-style:solid;
+    border-color:blue;
+    -moz-border-radius:10px;
+}

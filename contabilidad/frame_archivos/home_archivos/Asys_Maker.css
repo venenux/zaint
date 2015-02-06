@@ -1,0 +1,102 @@
+.phpmaker {
+	FONT-SIZE: xx-small; FONT-FAMILY: Verdana
+}
+.ewTable {
+	BORDER-RIGHT: 0px outset; BORDER-TOP: 0px outset; FONT-SIZE: xx-small; BORDER-LEFT: 0px outset; BORDER-BOTTOM: 0px outset; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse
+}
+.ewTable TD {
+	BORDER-RIGHT: #a4b8ca 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #a4b8ca 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #a4b8ca 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #a4b8ca 1px solid
+}
+.ewBasicSearch {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: xx-small; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse
+}
+.ewBasicSearch TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 1px; BORDER-TOP: 0px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: 0px; PADDING-TOP: 1px; BORDER-BOTTOM: 0px
+}
+.ewSearchOpr {
+	FONT-SIZE: xx-small; COLOR: maroon; FONT-FAMILY: Verdana
+}
+.ewListAdd {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: xx-small; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse
+}
+.ewListAdd TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 2px; BORDER-TOP: 0px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: 0px; PADDING-TOP: 2px; BORDER-BOTTOM: 0px
+}
+.phpmakerlist TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: xx-small; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana
+}
+.ewAddOption TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 2px; BORDER-TOP: 0px; PADDING-LEFT: 2px; FONT-SIZE: xx-small; PADDING-BOTTOM: 2px; BORDER-LEFT: 0px; PADDING-TOP: 2px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana
+}
+.ewTableHeader {
+	VERTICAL-ALIGN: top; COLOR: #000066; BACKGROUND-COLOR: #ccd7e1
+}
+.ewTableHeader A:link {
+	COLOR: #000066
+}
+.ewTableHeader A:visited {
+	COLOR: #000066
+}
+.ewTableRow {
+	BACKGROUND-COLOR: #ffffff
+}
+.ewTableAltRow {
+	BACKGROUND-COLOR: #eef2f5
+}
+.ewTableEditRow {
+	BACKGROUND-COLOR: #ddeeff
+}
+.ewTableHighlightRow {
+	BACKGROUND-COLOR: #ddeeff
+}
+.ewTableSelectRow {
+	BACKGROUND-COLOR: #ddeeff
+}
+.ewTableFooter {
+	BACKGROUND-COLOR: #ccd7e1
+}
+.ewReportTable {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; BORDER-COLLAPSE: collapse
+}
+.ewReportTable TD {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+.ewGroupField {
+	FONT-WEIGHT: bold
+}
+.ewGroupName {
+	FONT-WEIGHT: bold
+}
+.ewGroupHeader {
+	BORDER-TOP: gray 3px double; BORDER-BOTTOM: gray 3px double
+}
+.ewGroupSummary {
+	BORDER-TOP: gray 1px solid
+}
+.ewGroupAggregate {
+	FONT-WEIGHT: bold
+}
+.ewGrandSummary {
+	BORDER-TOP: gray 1px solid
+}
+.ewmsg {
+	FONT-SIZE: xx-small; COLOR: red; FONT-FAMILY: Verdana
+}
+.ewAstList {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: black 1px solid; PADDING-LEFT: 0px; BACKGROUND: #ffffff; PADDING-BOTTOM: 0px; BORDER-LEFT: black 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: black 1px solid; WHITE-SPACE: nowrap; POSITION: absolute
+}
+.ewAstListBase {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; POSITION: absolute
+}
+.ewAstListItem {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #ffffff; PADDING-BOTTOM: 1px; CURSOR: pointer; COLOR: black; PADDING-TOP: 1px; WHITE-SPACE: nowrap
+}
+.ewAstSelListItem {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: highlight; PADDING-BOTTOM: 1px; CURSOR: pointer; COLOR: white; PADDING-TOP: 1px; WHITE-SPACE: nowrap
+}
+.ewMultiPagePager {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: xx-small; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana
+}
+.ewMultiPagePager TD {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}

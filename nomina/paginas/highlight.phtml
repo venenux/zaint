@@ -1,0 +1,40 @@
+<HTML>
+<BODY>
+<?
+function source($source)
+{
+    if (!file_exists($source)) {
+        return 1;
+    }
+    echo "<B>$source<HR><FONT size=3>";
+    show_source($source);
+    echo "</font></B><P>";
+    echo "<A href=\"$source\">Ejecutar</a><HR>";
+    return 0;
+}
+
+if(isset($source)) {
+    source(basename($source));
+}
+?>
+<H2>Introduzca el nombre del fichero a visualizar</H2>
+<FORM METHOD="GET" ACTION="highlight.phtml">
+Fichero: <INPUT TYPE="TEXT" NAME="source" SIZE="30" VALUE="<? echo $source; ?>" >
+<INPUT TYPE="SUBMIT" VALUE="Mostrar">
+</FORM>
+<h2>Seleccione un fichero</h2>
+<?
+$d = dir(".");
+// Crea una lista de los ficheros
+// del directorio
+while($entry=$d->read()) {
+    if(eregi("^[a-zA-Z].*\..{1,4}", $entry) &&
+        !ereg("~$", $entry)) {
+        echo "<A HREF=\"$PHP_SELF?source=$entry\">$entry<br>";
+    }
+}
+$d->close();
+?>
+</HTML>
+</BODY>
+

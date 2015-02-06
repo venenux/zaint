@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://selectra.asys.com.ve/selectra/usuariosadd.php -->
+<HTML><HEAD><TITLE></TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="usuariosadd_archivos/Asys_Maker.css" type=text/css rel=stylesheet><LINK 
+href="usuariosadd_archivos/estilos.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2900.2873" name=GENERATOR></HEAD>
+<BODY>
+<SCRIPT type=text/javascript>
+<!--
+EW_LookupFn = "ewlookup.php"; // ewlookup file name
+EW_AddOptFn = "ewaddopt.php"; // ewaddopt.php file name
+
+//-->
+</SCRIPT>
+
+<SCRIPT src="usuariosadd_archivos/ewp.js" type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+EW_dateSep = "/"; // set date separator
+EW_UploadAllowedFileExt = "gif,jpg,jpeg,bmp,png,doc,xls,pdf,zip"; // allowed upload file extension
+
+//-->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+function EW_checkMyForm(EW_this) {
+if (EW_this.x_ACC_SEG && !EW_checkinteger(EW_this.x_ACC_SEG.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_SEG, "TEXT", "Entero Incorrecto - ACC SEG"))
+		return false; 
+}
+if (EW_this.x_ACC_AUD && !EW_checkinteger(EW_this.x_ACC_AUD.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_AUD, "TEXT", "Entero Incorrecto - ACC AUD"))
+		return false; 
+}
+if (EW_this.x_ACC_ODP && !EW_checkinteger(EW_this.x_ACC_ODP.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_ODP, "TEXT", "Entero Incorrecto - ACC ODP"))
+		return false; 
+}
+if (EW_this.x_ACC_FOR && !EW_checkinteger(EW_this.x_ACC_FOR.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_FOR, "TEXT", "Entero Incorrecto - ACC FOR"))
+		return false; 
+}
+if (EW_this.x_ACC_CHQ && !EW_checkinteger(EW_this.x_ACC_CHQ.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_CHQ, "TEXT", "Entero Incorrecto - ACC CHQ"))
+		return false; 
+}
+if (EW_this.x_ACC_CAJ && !EW_checkinteger(EW_this.x_ACC_CAJ.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_CAJ, "TEXT", "Entero Incorrecto - ACC CAJ"))
+		return false; 
+}
+if (EW_this.x_ACC_BIE && !EW_checkinteger(EW_this.x_ACC_BIE.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_BIE, "TEXT", "Entero Incorrecto - ACC BIE"))
+		return false; 
+}
+if (EW_this.x_ACC_PRE && !EW_checkinteger(EW_this.x_ACC_PRE.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_PRE, "TEXT", "Entero Incorrecto - ACC PRE"))
+		return false; 
+}
+if (EW_this.x_ACC_ODC && !EW_checkinteger(EW_this.x_ACC_ODC.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_ODC, "TEXT", "Entero Incorrecto - ACC ODC"))
+		return false; 
+}
+if (EW_this.x_ACC_REQ && !EW_checkinteger(EW_this.x_ACC_REQ.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_REQ, "TEXT", "Entero Incorrecto - ACC REQ"))
+		return false; 
+}
+if (EW_this.x_ACC_SER && !EW_checkinteger(EW_this.x_ACC_SER.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ACC_SER, "TEXT", "Entero Incorrecto - ACC SER"))
+		return false; 
+}
+if (EW_this.x_CODIGOUNIDAD && !EW_checkinteger(EW_this.x_CODIGOUNIDAD.value)) {
+	if (!EW_onError(EW_this, EW_this.x_CODIGOUNIDAD, "TEXT", "Entero Incorrecto - CODIGOUNIDAD"))
+		return false; 
+}
+if (EW_this.x_PRESUPUESTO && !EW_checkinteger(EW_this.x_PRESUPUESTO.value)) {
+	if (!EW_onError(EW_this, EW_this.x_PRESUPUESTO, "TEXT", "Entero Incorrecto - PRESUPUESTO"))
+		return false; 
+}
+if (EW_this.x_COMPROMETER && !EW_checkinteger(EW_this.x_COMPROMETER.value)) {
+	if (!EW_onError(EW_this, EW_this.x_COMPROMETER, "TEXT", "Entero Incorrecto - COMPROMETER"))
+		return false; 
+}
+if (EW_this.x_DCOMPROMETER && !EW_checkinteger(EW_this.x_DCOMPROMETER.value)) {
+	if (!EW_onError(EW_this, EW_this.x_DCOMPROMETER, "TEXT", "Entero Incorrecto - DCOMPROMETER"))
+		return false; 
+}
+if (EW_this.x_CAUSAR && !EW_checkinteger(EW_this.x_CAUSAR.value)) {
+	if (!EW_onError(EW_this, EW_this.x_CAUSAR, "TEXT", "Entero Incorrecto - CAUSAR"))
+		return false; 
+}
+if (EW_this.x_DCAUSAR && !EW_checkinteger(EW_this.x_DCAUSAR.value)) {
+	if (!EW_onError(EW_this, EW_this.x_DCAUSAR, "TEXT", "Entero Incorrecto - DCAUSAR"))
+		return false; 
+}
+if (EW_this.x_DECRETOS && !EW_checkinteger(EW_this.x_DECRETOS.value)) {
+	if (!EW_onError(EW_this, EW_this.x_DECRETOS, "TEXT", "Entero Incorrecto - DECRETOS"))
+		return false; 
+}
+if (EW_this.x_CHEQUEODP && !EW_checkinteger(EW_this.x_CHEQUEODP.value)) {
+	if (!EW_onError(EW_this, EW_this.x_CHEQUEODP, "TEXT", "Entero Incorrecto - CHEQUEODP"))
+		return false; 
+}
+if (EW_this.x_CHEQUETER && !EW_checkinteger(EW_this.x_CHEQUETER.value)) {
+	if (!EW_onError(EW_this, EW_this.x_CHEQUETER, "TEXT", "Entero Incorrecto - CHEQUETER"))
+		return false; 
+}
+if (EW_this.x_MOVBAN && !EW_checkinteger(EW_this.x_MOVBAN.value)) {
+	if (!EW_onError(EW_this, EW_this.x_MOVBAN, "TEXT", "Entero Incorrecto - MOVBAN"))
+		return false; 
+}
+if (EW_this.x_ODP && !EW_checkinteger(EW_this.x_ODP.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ODP, "TEXT", "Entero Incorrecto - ODP"))
+		return false; 
+}
+if (EW_this.x_AODP && !EW_checkinteger(EW_this.x_AODP.value)) {
+	if (!EW_onError(EW_this, EW_this.x_AODP, "TEXT", "Entero Incorrecto - AODP"))
+		return false; 
+}
+if (EW_this.x_PROVEEDORES && !EW_checkinteger(EW_this.x_PROVEEDORES.value)) {
+	if (!EW_onError(EW_this, EW_this.x_PROVEEDORES, "TEXT", "Entero Incorrecto - PROVEEDORES"))
+		return false; 
+}
+if (EW_this.x_ORDENES && !EW_checkinteger(EW_this.x_ORDENES.value)) {
+	if (!EW_onError(EW_this, EW_this.x_ORDENES, "TEXT", "Entero Incorrecto - ORDENES"))
+		return false; 
+}
+return true;
+}
+
+//-->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+	var EW_DHTMLEditors = [];
+
+//-->
+</SCRIPT>
+
+<TABLE class=tb-tit cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=row-br>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG class=icon height=22 src="usuariosadd_archivos/21.png" 
+            width=22> Usuarios</TD>
+          <TD align=right>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<FORM id=fusuariosadd name=fusuariosadd onsubmit="return EW_checkMyForm(this);" 
+action=usuariosadd.php method=post><INPUT type=hidden value=A name=a_add> 
+<TABLE class=ewTable width="100%">
+  <TBODY>
+  <TR>
+    <TD class=ewTableHeader><SPAN>Usuario<SPAN 
+      class=ewmsg>&nbsp;*</SPAN></SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_LOG_USR><INPUT id=x_LOG_USR 
+      maxLength=12 size=30 name=x_LOG_USR> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>Nombre</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_NOM_USU><INPUT id=x_NOM_USU 
+      maxLength=35 size=30 name=x_NOM_USU> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>Contrase񡼯span&gt;</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_PAS_USR><INPUT id=x_PAS_USR 
+      maxLength=12 size=30 name=x_PAS_USR> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC SEG</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_SEG><INPUT id=x_ACC_SEG size=30 
+      name=x_ACC_SEG> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC AUD</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_AUD><INPUT id=x_ACC_AUD size=30 
+      name=x_ACC_AUD> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC ODP</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_ODP><INPUT id=x_ACC_ODP size=30 
+      name=x_ACC_ODP> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC FOR</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_FOR><INPUT id=x_ACC_FOR size=30 
+      name=x_ACC_FOR> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC CHQ</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_CHQ><INPUT id=x_ACC_CHQ size=30 
+      name=x_ACC_CHQ> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC CAJ</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_CAJ><INPUT id=x_ACC_CAJ size=30 
+      name=x_ACC_CAJ> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC BIE</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_BIE><INPUT id=x_ACC_BIE size=30 
+      name=x_ACC_BIE> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC PRE</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_PRE><INPUT id=x_ACC_PRE size=30 
+      name=x_ACC_PRE> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC ODC</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_ODC><INPUT id=x_ACC_ODC size=30 
+      name=x_ACC_ODC> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC REQ</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_REQ><INPUT id=x_ACC_REQ size=30 
+      name=x_ACC_REQ> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ACC SER</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ACC_SER><INPUT id=x_ACC_SER size=30 
+      name=x_ACC_SER> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>CODIGOUNIDAD</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_CODIGOUNIDAD><INPUT 
+      id=x_CODIGOUNIDAD size=30 name=x_CODIGOUNIDAD> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>PRESUPUESTO</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_PRESUPUESTO><INPUT id=x_PRESUPUESTO 
+      size=30 name=x_PRESUPUESTO> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>COMPROMETER</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_COMPROMETER><INPUT id=x_COMPROMETER 
+      size=30 name=x_COMPROMETER> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>DCOMPROMETER</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_DCOMPROMETER><INPUT 
+      id=x_DCOMPROMETER size=30 name=x_DCOMPROMETER> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>CAUSAR</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_CAUSAR><INPUT id=x_CAUSAR size=30 
+      name=x_CAUSAR> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>DCAUSAR</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_DCAUSAR><INPUT id=x_DCAUSAR size=30 
+      name=x_DCAUSAR> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>DECRETOS</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_DECRETOS><INPUT id=x_DECRETOS 
+      size=30 name=x_DECRETOS> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>CHEQUEODP</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_CHEQUEODP><INPUT id=x_CHEQUEODP 
+      size=30 name=x_CHEQUEODP> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>CHEQUETER</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_CHEQUETER><INPUT id=x_CHEQUETER 
+      size=30 name=x_CHEQUETER> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>MOVBAN</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_MOVBAN><INPUT id=x_MOVBAN size=30 
+      name=x_MOVBAN> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ODP</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ODP><INPUT id=x_ODP size=30 
+      name=x_ODP> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>AODP</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_AODP><INPUT id=x_AODP size=30 
+      name=x_AODP> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>PROVEEDORES</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_PROVEEDORES><INPUT id=x_PROVEEDORES 
+      size=30 name=x_PROVEEDORES> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>ORDENES</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_ORDENES><INPUT id=x_ORDENES size=30 
+      name=x_ORDENES> </SPAN></TD></TR>
+  <TR>
+    <TD class=ewTableHeader><SPAN>CODCCOS</SPAN></TD>
+    <TD class=ewTableAltRow><SPAN id=cb_x_CODCCOS><INPUT id=x_CODCCOS 
+      maxLength=20 size=30 name=x_CODCCOS> </SPAN></TD></TR></TBODY></TABLE>
+<TABLE class=tb-head cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=2 align=right border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE class=btn_bg style="CURSOR: pointer" 
+            onclick="javascript:if (EW_checkMyForm(document.fusuariosadd)) window.document.fusuariosadd.submit();" 
+            cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD 
+                style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+                align=right><IMG 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  height=21 alt="" src="usuariosadd_archivos/bt_left.gif" 
+                  width=4></TD>
+                <TD class=btn_bg><IMG height=16 
+                  src="usuariosadd_archivos/ok.gif" width=16></TD>
+                <TD class=btn_bg 
+                style="PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+                noWrap>Aceptar</TD>
+                <TD 
+                style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+                align=left><IMG 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  height=21 alt="" src="usuariosadd_archivos/bt_right.gif" 
+                  width=4></TD></TR></TBODY></TABLE></TD>
+          <TD>
+            <TABLE class=btn_bg style="CURSOR: pointer" 
+            onclick="javascript:window.location='usuarioslist.php'" 
+            cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD 
+                style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+                align=right><IMG 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  height=21 alt="" src="usuariosadd_archivos/bt_left.gif" 
+                  width=4></TD>
+                <TD class=btn_bg><IMG height=16 
+                  src="usuariosadd_archivos/cancel.gif" width=16></TD>
+                <TD class=btn_bg 
+                style="PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+                noWrap>Cancelar</TD>
+                <TD 
+                style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px" 
+                align=left><IMG 
+                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                  height=21 alt="" src="usuariosadd_archivos/bt_right.gif" 
+                  width=4></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM></BODY></HTML>
