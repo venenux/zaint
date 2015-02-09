@@ -8,6 +8,9 @@ try reorganize some code and made public for anyone..
 
 .. of course we offer more support and more cheat support rather than any.
 
+For more info please use the wiki for install instructions http://github.com/venenux/zaint/wiki/zaint_instalacion
+For use first unmodified commits, use the wiki http://github.com/venenux/zaint/wiki/Inicializado_de_fuentes_sucias
+
 ## what about hacked, license, limitations  and security
 
 Original selectra uses root conections and are weak again sql inyection attacks, 
