@@ -5,4 +5,3 @@ CREATE TABLE IF NOT EXISTS `nomempresa` (
   PRIMARY KEY  (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.2deb1ubuntu0.1
+-- version 3.2.2.1deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 28-01-2010 a las 14:36:39
--- Versión del servidor: 5.0.75
--- Versión de PHP: 5.2.6-3ubuntu4.5
+-- Host: localhost
+-- Generation Time: May 11, 2010 at 03:27 PM
+-- Server version: 5.0.83
+-- PHP Version: 5.2.10-2ubuntu6.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -16,19 +16,19 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `nominax`
+-- Database: `nomina`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cwconcue`
+-- Table structure for table `cwconcue`
 --
 
 CREATE TABLE IF NOT EXISTS `cwconcue` (
   `Cuenta` varchar(50) collate utf8_spanish_ci NOT NULL,
   `Nivel` int(11) NOT NULL default '0',
-  `Tipo` char(2) collate utf8_spanish_ci NOT NULL,
+  `Tipo` char(10) collate utf8_spanish_ci NOT NULL,
   `Descrip` varchar(250) collate utf8_spanish_ci NOT NULL,
   `Bancos` int(11) NOT NULL default '0',
   `MonPre` float NOT NULL default '0',
@@ -51,14 +51,14 @@ CREATE TABLE IF NOT EXISTS `cwconcue` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Maestro en Cuentas Contables';
 
 --
--- Volcar la base de datos para la tabla `cwconcue`
+-- Dumping data for table `cwconcue`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cwprecue`
+-- Table structure for table `cwprecue`
 --
 
 CREATE TABLE IF NOT EXISTS `cwprecue` (
@@ -70,14 +70,1740 @@ CREATE TABLE IF NOT EXISTS `cwprecue` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `cwprecue`
+-- Dumping data for table `cwprecue`
 --
 
+INSERT INTO `cwprecue` (`CodCue`, `Denominacion`, `Tipocta`, `Tipopuc`) VALUES
+('4.01.', 'Gastos de personal', 1, ''),
+('4.01.01.', 'Sueldos, salarios y otras retribuciones', 2, ''),
+('4.01.01.01.', 'Sueldos básicos personal fijo a tiempo completo', 3, ''),
+('4.01.01.01.00', 'SUELDOS BÃSICOS PERSONAL FIJO A TIEMPO COMPLETO', 4, 'NO'),
+('4.01.01.02.', 'Sueldos básicos personal fijo a tiempo parcial', 3, ''),
+('4.01.01.02.00', 'Sueldos bï¿½sicos personal fijo a tiempo parcial', 4, 'NO'),
+('4.01.01.03.', 'Suplencias a empleados', 3, ''),
+('4.01.01.03.00', 'Suplencias a empleados', 4, 'NO'),
+('4.01.01.08.', 'Sueldo al personal en trámite de nombramiento', 3, ''),
+('4.01.01.08.00', 'Sueldo al personal en trámite de nombramiento', 4, ''),
+('4.01.01.09.', 'Remuneraciones al personal en período de disponibilidad', 3, ''),
+('4.01.01.09.00', 'Remuneraciones al personal en perï¿½odo de disponibilidad', 4, 'NO'),
+('4.01.01.10.', 'Salarios a obreros en puestos permanentes a tiempo completo', 3, ''),
+('4.01.01.10.00', 'Salarios a obreros en puestos permanentes a tiempo completo', 4, 'NO'),
+('4.01.01.11.', 'Salarios a obreros en puestos permanentes a tiempo parcial', 3, ''),
+('4.01.01.11.00', 'Salarios a obreros en puestos permanentes a tiempo parcial', 4, ''),
+('4.01.01.12.', 'Salarios a obreros en puestos no permanentes', 3, ''),
+('4.01.01.12.00', 'Salarios a obreros en puestos no permanentes', 4, ''),
+('4.01.01.13.', 'Suplencias a obreros', 3, ''),
+('4.01.01.13.00', 'Suplencias a obreros', 4, 'NO'),
+('4.01.01.18.', 'Remuneraciones al personal contratado', 3, ''),
+('4.01.01.18.00', 'Remuneraciones al personal contratado', 4, 'NO'),
+('4.01.01.19.', 'Retribuciones por becas - salarios, bolsas de trabajo, pasantías y similares', 3, ''),
+('4.01.01.19.00', 'Retribuciones por becas - salarios, bolsas de trabajo, pasantï¿½as y similares', 4, 'NO'),
+('4.01.01.20.', 'Sueldo del personal militar profesional', 3, ''),
+('4.01.01.20.00', 'Sueldo del personal militar profesional', 4, ''),
+('4.01.01.21.', 'Sueldo o ración del personal militar no profesional', 3, ''),
+('4.01.01.21.00', 'Sueldo o ración del personal militar no profesional', 4, ''),
+('4.01.01.22.', 'Sueldo del personal militar de reserva', 3, ''),
+('4.01.01.22.00', 'Sueldo del personal militar de reserva', 4, ''),
+('4.01.01.27.', 'Remuneraciones a parlamentarios', 3, ''),
+('4.01.01.27.00', 'Remuneraciones a parlamentarios', 4, ''),
+('4.01.01.28.', 'Suplencias a parlamentarios', 3, ''),
+('4.01.01.28.00', 'Suplencias a parlamentarios', 4, ''),
+('4.01.01.29.', 'Dietas', 3, ''),
+('4.01.01.29.00', 'Dietas', 4, 'NO'),
+('4.01.01.30.', 'Retribución al personal de reserva', 3, ''),
+('4.01.01.30.00', 'Retribución al personal de reserva', 4, ''),
+('4.01.01.99.', 'Otras retribuciones ', 3, ''),
+('4.01.01.99.00', 'Otras retribuciones ', 4, 'NO'),
+('4.01.02.', 'Compensaciones previstas en las escalas de sueldos y salarios', 2, ''),
+('4.01.02.01.', 'Compensaciones previstas en las escalas de sueldos al personal empleado fijo a tiempo completo', 3, ''),
+('4.01.02.01.00', 'Compensaciones previstas en las escalas de sueldos al personal empleado fijo a tiempo completo', 4, ''),
+('4.01.02.02.', 'Compensaciones previstas en las escalas de sueldos al personal empleado fijo a tiempo parcial', 3, ''),
+('4.01.02.02.00', 'Compensaciones previstas en las escalas de sueldos al personal empleado fijo a tiempo parcial', 4, ''),
+('4.01.02.03.', 'Compensaciones previstas en las escalas de salarios al personal obrero fijo  a tiempo completo', 3, ''),
+('4.01.02.03.00', 'Compensaciones previstas en las escalas de salarios al personal obrero fijo  a tiempo completo', 4, ''),
+('4.01.02.04.', 'Compensaciones previstas en las escalas de salarios al personal obrero fijo a tiempo parcial', 3, ''),
+('4.01.02.04.00', 'Compensaciones previstas en las escalas de salarios al personal obrero fijo a tiempo parcial', 4, ''),
+('4.01.02.05.', 'Compensaciones previstas en las escalas de sueldos al personal militar', 3, ''),
+('4.01.02.05.00', 'Compensaciones previstas en las escalas de sueldos al personal militar', 4, ''),
+('4.01.03.', 'Primas a empleados, obreros, personal militar y parlamentarios', 2, ''),
+('4.01.03.01.', 'Primas por mérito a empleados', 3, ''),
+('4.01.03.01.00', 'Primas por mï¿½rito a empleados', 4, 'NO'),
+('4.01.03.02.', 'Primas de transporte a empleados', 3, ''),
+('4.01.03.02.00', 'Primas de transporte a empleados', 4, 'NO'),
+('4.01.03.03.', 'Primas por hogar a empleados', 3, ''),
+('4.01.03.03.00', 'Primas por hogar a empleados', 4, 'NO'),
+('4.01.03.04.', 'Primas por hijos a empleados', 3, ''),
+('4.01.03.04.00', 'Primas por hijos a empleados', 4, 'NO'),
+('4.01.03.05.', 'Primas por alquileres a empleados', 3, ''),
+('4.01.03.05.00', 'Primas por alquileres a empleados', 4, 'NO'),
+('4.01.03.06.', 'Primas por residencia a empleados', 3, ''),
+('4.01.03.06.00', 'Primas por residencia a empleados', 4, 'NO'),
+('4.01.03.07.', 'Primas por categoría de escuelas a empleados', 3, ''),
+('4.01.03.07.00', 'Primas por categoría de escuelas a empleados', 4, ''),
+('4.01.03.08.', 'Primas de profesionalización a empleados', 3, ''),
+('4.01.03.08.00', 'Primas de profesionalizaciï¿½n a empleados', 4, 'NO'),
+('4.01.03.09.', 'Primas por antigüedad a empleados', 3, ''),
+('4.01.03.09.00', 'Primas por antigï¿½edad a empleados', 4, 'NO'),
+('4.01.03.10.', 'Primas por jerarquía o responsabilidad en el cargo', 3, ''),
+('4.01.03.10.00', 'Primas por jerarquï¿½a o responsabilidad en el cargo', 4, 'NO'),
+('4.01.03.11.', 'Primas al personal en servicio en el exterior', 3, ''),
+('4.01.03.11.00', 'Primas al personal en servicio en el exterior', 4, 'NO'),
+('4.01.03.16.', 'Primas por mérito a obreros', 3, ''),
+('4.01.03.16.00', 'Primas por mérito a obreros', 4, ''),
+('4.01.03.17.', 'Primas de transporte a obreros', 3, ''),
+('4.01.03.17.00', 'Primas de transporte a obreros', 4, ''),
+('4.01.03.18.', 'Primas por hogar a obreros', 3, ''),
+('4.01.03.18.00', 'Primas por hogar a obreros', 4, ''),
+('4.01.03.19.', 'Primas por hijos de obreros', 3, ''),
+('4.01.03.19.00', 'Primas por hijos de obreros', 4, ''),
+('4.01.03.20.', 'Primas por residencia a obreros', 3, ''),
+('4.01.03.20.00', 'Primas por residencia a obreros', 4, ''),
+('4.01.03.21.', 'Primas por antigüedad a obreros', 3, ''),
+('4.01.03.21.00', 'Primas por antigï¿½edad a obreros', 4, 'NO'),
+('4.01.03.22.', 'Primas de profesionalización a obreros', 3, ''),
+('4.01.03.22.00', 'Primas de profesionalización a obreros', 4, ''),
+('4.01.03.26.', 'Primas por hijos al personal militar', 3, ''),
+('4.01.03.26.00', 'Primas por hijos al personal militar', 4, ''),
+('4.01.03.27.', 'Primas de profesionalización al personal militar', 3, ''),
+('4.01.03.27.00', 'Primas de profesionalización al personal militar', 4, ''),
+('4.01.03.28.', 'Primas por antigüedad al personal militar', 3, ''),
+('4.01.03.28.00', 'Primas por antigüedad al personal militar', 4, ''),
+('4.01.03.29.', 'Primas por potencial de ascenso al personal militar', 3, ''),
+('4.01.03.29.00', 'Primas por potencial de ascenso al personal militar', 4, ''),
+('4.01.03.30.', 'Primas por frontera y sitios inhóspitos al personal militar y de seguridad', 3, ''),
+('4.01.03.30.00', 'Primas por frontera y sitios inhóspitos al personal militar y de seguridad', 4, ''),
+('4.01.03.31.', 'Primas por riesgo al personal militar y de seguridad', 3, ''),
+('4.01.03.31.00', 'Primas por riesgo al personal militar y de seguridad', 4, ''),
+('4.01.03.36.', 'Primas a parlamentarios', 3, ''),
+('4.01.03.36.00', 'Primas a parlamentarios', 4, ''),
+('4.01.03.97.', 'Otras primas a empleados', 3, ''),
+('4.01.03.97.00', 'Otras primas a empleados', 4, 'NO'),
+('4.01.03.98.', 'Otras primas a obreros', 3, ''),
+('4.01.03.98.00', 'Otras primas a obreros', 4, ''),
+('4.01.03.99.', 'Otras primas al personal militar', 3, ''),
+('4.01.03.99.00', 'Otras primas al personal militar', 4, ''),
+('4.01.04.', 'Complementos de sueldos y salarios', 2, ''),
+('4.01.04.01.', 'Complemento a empleados por horas extraordinarias o por sobre tiempo ', 3, ''),
+('4.01.04.01.00', 'Complemento a empleados por horas extraordinarias o por sobre tiempo ', 4, ''),
+('4.01.04.02.', 'Complemento a empleados por trabajo nocturno ', 3, ''),
+('4.01.04.02.00', 'Complemento a empleados por trabajo nocturno ', 4, ''),
+('4.01.04.03.', 'Complemento a empleados por gastos de alimentación ', 3, ''),
+('4.01.04.03.00', 'Complemento a empleados por gastos de alimentación ', 4, ''),
+('4.01.04.04.', 'Complemento a empleados por gastos de transporte ', 3, ''),
+('4.01.04.04.00', 'Complemento a empleados por gastos de transporte ', 4, ''),
+('4.01.04.05.', 'Complemento a empleados por gastos de representación ', 3, ''),
+('4.01.04.05.00', 'Complemento a empleados por gastos de representaciï¿½n ', 4, 'NO'),
+('4.01.04.06.', 'Complemento a empleados por comisión de servicios ', 3, ''),
+('4.01.04.06.00', 'Complemento a empleados por comisiï¿½n de servicios ', 4, 'NO'),
+('4.01.04.07.', 'Bonificación a empleados', 3, ''),
+('4.01.04.07.00', 'Bonificaciï¿½n a empleados', 4, 'NO'),
+('4.01.04.08.', 'Bono compensatorio de alimentación a empleados', 3, ''),
+('4.01.04.08.00', 'Bono compensatorio de alimentación a empleados', 4, ''),
+('4.01.04.09.', 'Bono compensatorio de transporte a empleados', 3, ''),
+('4.01.04.09.00', 'Bono compensatorio de transporte a empleados', 4, ''),
+('4.01.04.14.', 'Complemento a obreros por horas extraordinarias o por sobre tiempo ', 3, ''),
+('4.01.04.14.00', 'Complemento a obreros por horas extraordinarias o por sobre tiempo ', 4, ''),
+('4.01.04.15.', 'Complemento a obreros por trabajo o jornada nocturna ', 3, ''),
+('4.01.04.15.00', 'Complemento a obreros por trabajo o jornada nocturna ', 4, ''),
+('4.01.04.16.', 'Complemento a obreros por gastos de alimentación ', 3, ''),
+('4.01.04.16.00', 'Complemento a obreros por gastos de alimentación ', 4, ''),
+('4.01.04.17.', 'Complemento a obreros por gastos de transporte ', 3, ''),
+('4.01.04.17.00', 'Complemento a obreros por gastos de transporte ', 4, ''),
+('4.01.04.18.', 'Bono compensatorio de alimentación a obreros', 3, ''),
+('4.01.04.18.00', 'Bono compensatorio de alimentación a obreros', 4, ''),
+('4.01.04.19.', 'Bono compensatorio de transporte a obreros', 3, ''),
+('4.01.04.19.00', 'Bono compensatorio de transporte a obreros', 4, ''),
+('4.01.04.24.', 'Complemento al personal contratado por horas extraordinarias o por sobre tiempo ', 3, ''),
+('4.01.04.24.00', 'Complemento al personal contratado por horas extraordinarias o por sobre tiempo ', 4, ''),
+('4.01.04.25.', 'Complemento al personal contratado por gastos de alimentación ', 3, ''),
+('4.01.04.25.00', 'Complemento al personal contratado por gastos de alimentación ', 4, ''),
+('4.01.04.26.', 'Bono compensatorio de alimentación al personal contratado', 3, ''),
+('4.01.04.26.00', 'Bono compensatorio de alimentación al personal contratado', 4, ''),
+('4.01.04.27.', 'Bono compensatorio de transporte al personal contratado', 3, ''),
+('4.01.04.27.00', 'Bono compensatorio de transporte al personal contratado', 4, ''),
+('4.01.04.32.', 'Complemento al personal militar por gastos de alimentación ', 3, ''),
+('4.01.04.32.00', 'Complemento al personal militar por gastos de alimentación ', 4, ''),
+('4.01.04.33.', 'Complemento al personal militar por gastos de transporte ', 3, ''),
+('4.01.04.33.00', 'Complemento al personal militar por gastos de transporte ', 4, ''),
+('4.01.04.34.', 'Complemento al personal militar en el exterior ', 3, ''),
+('4.01.04.34.00', 'Complemento al personal militar en el exterior ', 4, ''),
+('4.01.04.35.', 'Bono compensatorio de alimentación al personal militar', 3, ''),
+('4.01.04.35.00', 'Bono compensatorio de alimentación al personal militar', 4, ''),
+('4.01.04.40.', 'Complemento a parlamentarios por gastos de alimentación ', 3, ''),
+('4.01.04.40.00', 'Complemento a parlamentarios por gastos de alimentación ', 4, ''),
+('4.01.04.41.', 'Complemento a parlamentarios por gastos de transporte ', 3, ''),
+('4.01.04.41.00', 'Complemento a parlamentarios por gastos de transporte ', 4, ''),
+('4.01.04.42.', 'Complemento a parlamentarios por gastos de representación ', 3, ''),
+('4.01.04.42.00', 'Complemento a parlamentarios por gastos de representación ', 4, ''),
+('4.01.04.96.', 'Otros complementos a empleados', 3, ''),
+('4.01.04.96.00', 'Otros complementos a empleados', 4, 'NO'),
+('4.01.04.97.', 'Otros complementos a obreros', 3, ''),
+('4.01.04.97.00', 'Otros complementos a obreros', 4, ''),
+('4.01.04.98.', 'Otros complementos al personal contratado', 3, ''),
+('4.01.04.98.00', 'Otros complementos al personal contratado', 4, ''),
+('4.01.04.99.', 'Otros complementos al personal militar', 3, ''),
+('4.01.04.99.00', 'Otros complementos al personal militar', 4, ''),
+('4.01.05.', 'Aguinaldos, utilidades o bonificación legal, y bono vacacional a empleados, obreros, contratados, personal militar y parlamentarios', 2, ''),
+('4.01.05.01.', 'Aguinaldos a empleados', 3, ''),
+('4.01.05.01.00', 'Aguinaldos a empleados', 4, 'NO'),
+('4.01.05.02.', 'Utilidades legales y convencionales a empleados', 3, ''),
+('4.01.05.02.00', 'Utilidades legales y convencionales a empleados', 4, ''),
+('4.01.05.03.', 'Bono vacacional a empleados', 3, ''),
+('4.01.05.03.00', 'Bono vacacional a empleados', 4, 'NO'),
+('4.01.05.04.', 'Aguinaldos a obreros', 3, ''),
+('4.01.05.04.00', 'Aguinaldos a obreros', 4, 'NO'),
+('4.01.05.05.', 'Utilidades legales y convencionales a obreros', 3, ''),
+('4.01.05.05.00', 'Utilidades legales y convencionales a obreros', 4, ''),
+('4.01.05.06.', 'Bono vacacional a obreros', 3, ''),
+('4.01.05.06.00', 'Bono vacacional a obreros', 4, 'NO'),
+('4.01.05.07.', 'Aguinaldos al personal contratado', 3, ''),
+('4.01.05.07.00', 'Aguinaldos al personal contratado', 4, 'NO'),
+('4.01.05.08.', 'Bono vacacional al personal contratado', 3, ''),
+('4.01.05.08.00', 'Bono vacacional al personal contratado', 4, 'NO'),
+('4.01.05.09.', 'Aguinaldos al personal militar', 3, ''),
+('4.01.05.09.00', 'Aguinaldos al personal militar', 4, ''),
+('4.01.05.10.', 'Bono vacacional al personal militar', 3, ''),
+('4.01.05.10.00', 'Bono vacacional al personal militar', 4, ''),
+('4.01.05.11.', 'Aguinaldos a parlamentarios', 3, ''),
+('4.01.05.11.00', 'Aguinaldos a parlamentarios', 4, ''),
+('4.01.05.12.', 'Bono vacacional a parlamentarios', 3, ''),
+('4.01.05.12.00', 'Bono vacacional a parlamentarios', 4, ''),
+('4.01.06.', 'Aportes patronales y legales por empleados, obreros, personal militar y parlamentarios', 2, ''),
+('4.01.06.01.', 'Aporte patronal al Instituto Venezolano de los Seguros Sociales  (IVSS) por empleados', 3, ''),
+('4.01.06.01.00', 'Aporte patronal al Instituto Venezolano de los Seguros Sociales  (IVSS) por empleados', 4, 'NO'),
+('4.01.06.02.', 'Aporte patronal al Instituto de Previsión y Asistencia Social para el personal del Ministerio de Educación (IPASME) por empleados', 3, ''),
+('4.01.06.02.00', 'Aporte patronal al Instituto de Previsión y Asistencia Social para el personal del Ministerio de Educación (IPASME) por empleados', 4, ''),
+('4.01.06.03.', 'Aporte patronal al Fondo de Jubilaciones por empleados', 3, ''),
+('4.01.06.03.00', 'Aporte patronal al Fondo de Jubilaciones por empleados', 4, 'NO'),
+('4.01.06.04.', 'Aporte patronal al Fondo de Seguro de Paro Forzoso por empleados', 3, ''),
+('4.01.06.04.00', 'Aporte patronal al Fondo de Seguro de Paro Forzoso por empleados', 4, 'NO'),
+('4.01.06.05.', 'Aporte patronal al Fondo de Ahorro Habitacional por empleados', 3, ''),
+('4.01.06.05.00', 'Aporte patronal al Fondo de Ahorro Habitacional por empleados', 4, 'NO'),
+('4.01.06.10.', 'Aporte patronal al Instituto Venezolano de los Seguros   Sociales  (IVSS) por obreros', 3, ''),
+('4.01.06.10.00', 'Aporte patronal al Instituto Venezolano de los Seguros   Sociales  (IVSS) por obreros', 4, 'NO'),
+('4.01.06.11.', 'Aporte patronal al Fondo de Jubilaciones por obreros', 3, ''),
+('4.01.06.11.00', 'Aporte patronal al Fondo de Jubilaciones por obreros', 4, 'NO'),
+('4.01.06.12.', 'Aporte patronal al Fondo de Seguro de Paro Forzoso por obreros', 3, ''),
+('4.01.06.12.00', 'Aporte patronal al Fondo de Seguro de Paro Forzoso por obreros', 4, 'NO'),
+('4.01.06.13.', 'Aporte patronal al Fondo de Ahorro Habitacional por obreros', 3, ''),
+('4.01.06.13.00', 'Aporte patronal al Fondo de Ahorro Habitacional por obreros', 4, 'NO'),
+('4.01.06.18.', 'Aporte patronal a los organismos de seguridad social por los trabajadores locales empleados en las representaciones de Venezuela en el exterior', 3, ''),
+('4.01.06.18.00', 'Aporte patronal a los organismos de seguridad social por los trabajadores locales empleados en las representaciones de Venezuela en el exterior', 4, ''),
+('4.01.06.19.', 'Aporte patronal al Fondo de Ahorro Habitacional por personal militar', 3, ''),
+('4.01.06.19.00', 'Aporte patronal al Fondo de Ahorro Habitacional por personal militar', 4, ''),
+('4.01.06.24.', 'Aporte legal al Fondo de Ahorro Habitacional a parlamentarios', 3, ''),
+('4.01.06.24.00', 'Aporte legal al Fondo de Ahorro Habitacional a parlamentarios', 4, ''),
+('4.01.06.96.', 'Otros aportes legales por empleados', 3, ''),
+('4.01.06.96.00', 'Otros aportes legales por empleados', 4, ''),
+('4.01.06.97.', 'Otros aportes legales por obreros', 3, ''),
+('4.01.06.97.00', 'Otros aportes legales por obreros', 4, ''),
+('4.01.06.98.', 'Otros aportes legales por personal militar', 3, ''),
+('4.01.06.98.00', 'Otros aportes legales por personal militar', 4, ''),
+('4.01.06.99.', 'Otros aportes legales por parlamentarios', 3, ''),
+('4.01.06.99.00', 'Otros aportes legales por parlamentarios', 4, ''),
+('4.01.07.', 'Asistencia socio-económica a empleados, obreros, contratados, personal militar y parlamentarios', 2, ''),
+('4.01.07.01.', 'Capacitación y adiestramiento a empleados', 3, ''),
+('4.01.07.01.00', 'Capacitaciï¿½n y adiestramiento a empleados', 4, 'NO'),
+('4.01.07.02.', 'Becas a empleados', 3, ''),
+('4.01.07.02.00', 'Becas a empleados', 4, ''),
+('4.01.07.03.', 'Ayudas por matrimonio a empleados', 3, ''),
+('4.01.07.03.00', 'Ayudas por matrimonio a empleados', 4, ''),
+('4.01.07.04.', 'Ayudas por nacimiento de hijos a empleados', 3, ''),
+('4.01.07.04.00', 'Ayudas por nacimiento de hijos a empleados', 4, ''),
+('4.01.07.05.', 'Ayudas por defunción a empleados', 3, ''),
+('4.01.07.05.00', 'Ayudas por defunción a empleados', 4, ''),
+('4.01.07.06.', 'Ayudas para medicinas, gastos médicos,  odontológicos y de hospitalización a empleados', 3, ''),
+('4.01.07.06.00', 'Ayudas para medicinas, gastos mï¿½dicos,  odontolï¿½gicos y de hospitalizaciï¿½n a empleados', 4, 'NO'),
+('4.01.07.07.', 'Aporte patronal a cajas de ahorro por empleados', 3, ''),
+('4.01.07.07.00', 'Aporte patronal a cajas de ahorro por empleados', 4, 'NO'),
+('4.01.07.08.', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios por empleados', 3, ''),
+('4.01.07.08.00', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios por empleados', 4, ''),
+('4.01.07.09.', 'Ayudas a empleados para adquisición de uniformes y útiles escolares de sus hijos ', 3, ''),
+('4.01.07.09.00', 'Ayudas a empleados para adquisiciï¿½n de uniformes y ï¿½tiles escolares de sus hijos ', 4, 'NO'),
+('4.01.07.10.', 'Dotación de uniformes a empleados', 3, ''),
+('4.01.07.10.00', 'Dotaciï¿½n de uniformes a empleados', 4, 'NO'),
+('4.01.07.11.', 'Aporte patronal para gastos de guarderías y preescolar para hijos de empleados ', 3, ''),
+('4.01.07.11.00', 'Aporte patronal para gastos de guarderías y preescolar para hijos de empleados ', 4, ''),
+('4.01.07.12.', 'Aportes para la adquisición de juguetes para los hijos del personal empleado', 3, ''),
+('4.01.07.12.00', 'Aportes para la adquisición de juguetes para los hijos del personal empleado', 4, ''),
+('4.01.07.17.', 'Capacitación y adiestramiento a obreros', 3, ''),
+('4.01.07.17.00', 'Capacitación y adiestramiento a obreros', 4, ''),
+('4.01.07.18.', 'Becas a obreros', 3, ''),
+('4.01.07.18.00', 'Becas a obreros', 4, ''),
+('4.01.07.19.', 'Ayudas por matrimonio de obreros', 3, ''),
+('4.01.07.19.00', 'Ayudas por matrimonio de obreros', 4, ''),
+('4.01.07.20.', 'Ayudas por nacimiento de hijos de obreros', 3, ''),
+('4.01.07.20.00', 'Ayudas por nacimiento de hijos de obreros', 4, ''),
+('4.01.07.21.', 'Ayudas por defunción a obreros', 3, ''),
+('4.01.07.21.00', 'Ayudas por defunción a obreros', 4, ''),
+('4.01.07.22.', 'Ayudas para medicinas, gastos médicos,  odontológicos y de hospitalización a obreros', 3, ''),
+('4.01.07.22.00', 'Ayudas para medicinas, gastos médicos,  odontológicos y de hospitalización a obreros', 4, ''),
+('4.01.07.23.', 'Aporte patronal a cajas de ahorro por obreros', 3, ''),
+('4.01.07.23.00', 'Aporte patronal a cajas de ahorro por obreros', 4, 'NO'),
+('4.01.07.24.', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios por obreros', 3, ''),
+('4.01.07.24.00', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios por obreros', 4, ''),
+('4.01.07.25.', 'Ayudas a obreros para adquisición de uniformes y útiles escolares de sus hijos ', 3, ''),
+('4.01.07.25.00', 'Ayudas a obreros para adquisición de uniformes y útiles escolares de sus hijos ', 4, ''),
+('4.01.07.26.', 'Dotación de uniformes a obreros', 3, ''),
+('4.01.07.26.00', 'Dotaciï¿½n de uniformes a obreros', 4, 'NO'),
+('4.01.07.27.', 'Aporte patronal para gastos de guarderías y preescolar para hijos de obreros ', 3, ''),
+('4.01.07.27.00', 'Aporte patronal para gastos de guarderías y preescolar para hijos de obreros ', 4, ''),
+('4.01.07.28.', 'Aportes para la adquisición de juguetes para los hijos del personal obrero', 3, ''),
+('4.01.07.28.00', 'Aportes para la adquisición de juguetes para los hijos del personal obrero', 4, ''),
+('4.01.07.33.', 'Asistencia socio-económica al personal contratado ', 3, ''),
+('4.01.07.33.00', 'Asistencia socio-econï¿½mica al personal contratado ', 4, 'NO'),
+('4.01.07.34.', 'Capacitación y adiestramiento al personal militar ', 3, ''),
+('4.01.07.34.00', 'Capacitación y adiestramiento al personal militar ', 4, ''),
+('4.01.07.35.', 'Becas al personal militar ', 3, ''),
+('4.01.07.35.00', 'Becas al personal militar ', 4, ''),
+('4.01.07.36.', 'Ayudas por matrimonio al personal militar ', 3, ''),
+('4.01.07.36.00', 'Ayudas por matrimonio al personal militar ', 4, ''),
+('4.01.07.37.', 'Ayudas por nacimiento de hijos al personal militar ', 3, ''),
+('4.01.07.37.00', 'Ayudas por nacimiento de hijos al personal militar ', 4, ''),
+('4.01.07.38.', 'Ayudas por defunción al personal militar ', 3, ''),
+('4.01.07.38.00', 'Ayudas por defunción al personal militar ', 4, ''),
+('4.01.07.39.', 'Ayudas para medicinas, gastos médicos, odontológicos y de hospitalización al personal militar ', 3, ''),
+('4.01.07.39.00', 'Ayudas para medicinas, gastos médicos, odontológicos y de hospitalización al personal militar ', 4, ''),
+('4.01.07.40.', 'Aporte patronal a caja de ahorro por personal militar ', 3, ''),
+('4.01.07.40.00', 'Aporte patronal a caja de ahorro por personal militar ', 4, ''),
+('4.01.07.41.', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios personal militar ', 3, ''),
+('4.01.07.41.00', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios personal militar ', 4, ''),
+('4.01.07.42.', 'Ayudas al personal militar para adquisición de uniformes y útiles escolares de sus hijos ', 3, ''),
+('4.01.07.42.00', 'Ayudas al personal militar para adquisición de uniformes y útiles escolares de sus hijos ', 4, ''),
+('4.01.07.43.', 'Aportes para la adquisición de juguetes para los hijos del personal militar', 3, ''),
+('4.01.07.43.00', 'Aportes para la adquisición de juguetes para los hijos del personal militar', 4, ''),
+('4.01.07.48.', 'Ayudas para medicinas, gastos médicos, odontológicos y de hospitalización de parlamentarios', 3, ''),
+('4.01.07.48.00', 'Ayudas para medicinas, gastos médicos, odontológicos y de hospitalización de parlamentarios', 4, ''),
+('4.01.07.49.', 'Aporte a cajas de ahorro por parlamentarios', 3, ''),
+('4.01.07.49.00', 'Aporte a cajas de ahorro por parlamentarios', 4, ''),
+('4.01.07.50.', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios por parlamentarios', 3, ''),
+('4.01.07.50.00', 'Aporte patronal al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios por parlamentarios', 4, ''),
+('4.01.07.51.', 'Capacitación y Adiestramiento a Parlamentarios', 3, ''),
+('4.01.07.51.00', 'Capacitación y Adiestramiento a Parlamentarios', 4, ''),
+('4.01.07.96.', 'Otras subvenciones a empleados', 3, ''),
+('4.01.07.96.00', 'Otras subvenciones a empleados', 4, 'NO'),
+('4.01.07.97.', 'Otras subvenciones a obreros', 3, ''),
+('4.01.07.97.00', 'Otras subvenciones a obreros', 4, 'NO'),
+('4.01.07.98.', 'Otras subvenciones al personal militar', 3, ''),
+('4.01.07.98.00', 'Otras subvenciones al personal militar', 4, ''),
+('4.01.07.99.', 'Otras subvenciones a parlamentarios', 3, ''),
+('4.01.07.99.00', 'Otras subvenciones a parlamentarios', 4, ''),
+('4.01.08.', 'Prestaciones sociales e indemnizaciones a empleados, obreros, contratados, personal militar y parlamentarios ', 2, ''),
+('4.01.08.01.', 'Prestaciones sociales e indemnizaciones a empleados', 3, ''),
+('4.01.08.01.00', 'Prestaciones sociales e indemnizaciones a empleados', 4, 'NO'),
+('4.01.08.02.', 'Prestaciones sociales e indemnizaciones a obreros', 3, ''),
+('4.01.08.02.00', 'Prestaciones sociales e indemnizaciones a obreros', 4, 'NO'),
+('4.01.08.03.', 'Prestaciones sociales e indemnizaciones al personal contratado', 3, ''),
+('4.01.08.03.00', 'Prestaciones sociales e indemnizaciones al personal contratado', 4, 'NO'),
+('4.01.08.04.', 'Prestaciones sociales e indemnizaciones al personal militar', 3, ''),
+('4.01.08.04.00', 'Prestaciones sociales e indemnizaciones al personal militar', 4, ''),
+('4.01.08.05.', 'Prestaciones sociales e indemnizaciones a parlamentarios', 3, ''),
+('4.01.08.05.00', 'Prestaciones sociales e indemnizaciones a parlamentarios', 4, ''),
+('4.01.09.', 'Capacitación y adiestramiento realizado por personal del organismo', 2, ''),
+('4.01.09.01.', 'Capacitación y adiestramiento realizado por personal del organismo', 3, ''),
+('4.01.09.01.00', 'Capacitación y adiestramiento realizado por personal del organismo', 4, ''),
+('4.01.96.', 'Otros gastos del personal empleado', 2, ''),
+('4.01.96.01.', 'Otros gastos del personal empleado', 3, ''),
+('4.01.96.01.00', 'Otros gastos del personal empleado', 4, 'NO'),
+('4.01.97.', 'Otros gastos del personal obrero', 2, ''),
+('4.01.97.01.', 'Otros gastos del personal obrero', 3, ''),
+('4.01.97.01.00', 'Otros gastos del personal obrero', 4, 'NO'),
+('4.01.98.', 'Otros gastos del personal militar', 2, ''),
+('4.01.98.01.', 'Otros gastos del personal militar', 3, ''),
+('4.01.98.01.00', 'Otros gastos del personal militar', 4, ''),
+('4.01.99.', 'Otros gastos de los parlamentarios', 2, ''),
+('4.01.99.01.', 'Otros gastos de los parlamentarios', 3, ''),
+('4.01.99.01.00', 'Otros gastos de los parlamentarios', 4, 'NO'),
+('4.02.', 'Materiales, suministros y mercancías', 1, ''),
+('4.02.01.', 'Productos alimenticios y agropecuarios', 2, ''),
+('4.02.01.01.', 'Alimentos y bebidas para personas', 3, ''),
+('4.02.01.01.00', 'Alimentos y bebidas para personas', 4, 'NO'),
+('4.02.01.02.', 'Alimentos para animales', 3, ''),
+('4.02.01.02.00', 'Alimentos para animales', 4, ''),
+('4.02.01.03.', 'Productos agrícolas y pecuarios', 3, ''),
+('4.02.01.03.00', 'Productos agrï¿½colas y pecuarios', 4, 'NO'),
+('4.02.01.04.', 'Productos de la caza y pesca', 3, ''),
+('4.02.01.04.00', 'Productos de la caza y pesca', 4, ''),
+('4.02.01.99.', 'Otros productos alimenticios y agropecuarios', 3, ''),
+('4.02.01.99.00', 'Otros productos alimenticios y agropecuarios', 4, ''),
+('4.02.02.', 'Productos de minas, canteras y yacimientos', 2, ''),
+('4.02.02.01.', 'Carbón mineral', 3, ''),
+('4.02.02.01.00', 'Carbón mineral', 4, ''),
+('4.02.02.02.', 'Petróleo crudo y gas natural', 3, ''),
+('4.02.02.02.00', 'Petrï¿½leo crudo y gas natural', 4, 'NO'),
+('4.02.02.03.', 'Mineral de hierro', 3, ''),
+('4.02.02.03.00', 'Mineral de hierro', 4, ''),
+('4.02.02.04.', 'Mineral no ferroso', 3, ''),
+('4.02.02.04.00', 'Mineral no ferroso', 4, ''),
+('4.02.02.05.', 'Piedra, arcilla, arena y tierra', 3, ''),
+('4.02.02.05.00', 'Piedra, arcilla, arena y tierra', 4, ''),
+('4.02.02.06.', 'Mineral para la fabricación de productos químicos', 3, ''),
+('4.02.02.06.00', 'Mineral para la fabricación de productos químicos', 4, ''),
+('4.02.02.07.', 'Sal para uso industrial', 3, ''),
+('4.02.02.07.00', 'Sal para uso industrial', 4, ''),
+('4.02.02.99.', 'Otros productos de minas, canteras y yacimientos', 3, ''),
+('4.02.02.99.00', 'Otros productos de minas, canteras y yacimientos', 4, ''),
+('4.02.03.', 'Textiles y vestuarios', 2, ''),
+('4.02.03.01.', 'Textiles', 3, ''),
+('4.02.03.01.00', 'Textiles', 4, 'NO'),
+('4.02.03.02.', 'Prendas de vestir', 3, ''),
+('4.02.03.02.00', 'Prendas de vestir', 4, 'NO'),
+('4.02.03.03.', 'Calzados', 3, ''),
+('4.02.03.03.00', 'Calzados', 4, 'NO'),
+('4.02.03.99.', 'Otros productos textiles y vestuarios', 3, ''),
+('4.02.03.99.00', 'Otros productos textiles y vestuarios', 4, ''),
+('4.02.04.', 'Productos de cuero y caucho', 2, ''),
+('4.02.04.01.', 'Cueros y pieles', 3, ''),
+('4.02.04.01.00', 'Cueros y pieles', 4, ''),
+('4.02.04.02.', 'Productos de cuero y sucedáneos del cuero', 3, ''),
+('4.02.04.02.00', 'Productos de cuero y sucedï¿½neos del cuero', 4, 'NO'),
+('4.02.04.03.', 'Cauchos y tripas para vehículos', 3, ''),
+('4.02.04.03.00', 'Cauchos y tripas para vehï¿½culos', 4, 'NO'),
+('4.02.04.99.', 'Otros productos de cuero y caucho', 3, ''),
+('4.02.04.99.00', 'Otros productos de cuero y caucho', 4, 'NO'),
+('4.02.05.', 'Productos de papel, cartón e impresos', 2, ''),
+('4.02.05.01.', 'Pulpa de madera, papel y cartón', 3, ''),
+('4.02.05.01.00', 'Pulpa de madera, papel y cartï¿½n', 4, 'NO'),
+('4.02.05.02.', 'Envases y cajas de papel y cartón', 3, ''),
+('4.02.05.02.00', 'Envases y cajas de papel y cartï¿½n', 4, 'NO'),
+('4.02.05.03.', 'Productos de papel y cartón para oficina', 3, ''),
+('4.02.05.03.00', 'Productos de papel y cartï¿½n para oficina', 4, 'NO'),
+('4.02.05.04.', 'Libros, revistas y periódicos', 3, ''),
+('4.02.05.04.00', 'Libros, revistas y periï¿½dicos', 4, 'NO'),
+('4.02.05.05.', 'Material de enseñanza', 3, ''),
+('4.02.05.05.00', 'Material de enseï¿½anza', 4, 'NO'),
+('4.02.05.06.', 'Productos de papel y cartón para computación', 3, ''),
+('4.02.05.06.00', 'Productos de papel y cartï¿½n para computaciï¿½n', 4, 'NO'),
+('4.02.05.07.', 'Productos de papel y cartón para la imprenta y reproducción', 3, ''),
+('4.02.05.07.00', 'Productos de papel y cartï¿½n para la imprenta y reproducciï¿½n', 4, 'NO'),
+('4.02.05.99.', 'Otros productos de pulpa, papel y cartón', 3, ''),
+('4.02.05.99.00', 'Otros productos de pulpa, papel y cartï¿½n', 4, 'NO'),
+('4.02.06.', 'Productos químicos y derivados', 2, ''),
+('4.02.06.01.', 'Sustancias químicas y de uso industrial', 3, ''),
+('4.02.06.01.00', 'Sustancias quï¿½micas y de uso industrial', 4, 'NO'),
+('4.02.06.02.', 'Abonos, plaguicidas y otros', 3, ''),
+('4.02.06.02.00', 'Abonos, plaguicidas y otros', 4, 'NO'),
+('4.02.06.03.', 'Tintas, pinturas y colorantes', 3, ''),
+('4.02.06.03.00', 'Tintas, pinturas y colorantes', 4, 'NO'),
+('4.02.06.04.', 'Productos farmacéuticos y medicamentos', 3, ''),
+('4.02.06.04.00', 'Productos farmacï¿½uticos y medicamentos', 4, 'NO'),
+('4.02.06.05.', 'Productos de tocador', 3, ''),
+('4.02.06.05.00', 'Productos de tocador', 4, 'NO'),
+('4.02.06.06.', 'Combustibles y lubricantes', 3, ''),
+('4.02.06.06.00', 'Combustibles y lubricantes', 4, 'NO'),
+('4.02.06.07.', 'Productos diversos derivados del petróleo y del carbón', 3, ''),
+('4.02.06.07.00', 'Productos diversos derivados del petrï¿½leo y del carbï¿½n', 4, 'NO'),
+('4.02.06.08.', 'Productos plásticos', 3, ''),
+('4.02.06.08.00', 'Productos plï¿½sticos', 4, 'NO'),
+('4.02.06.09.', 'Mezclas explosivas', 3, ''),
+('4.02.06.09.00', 'Mezclas explosivas', 4, ''),
+('4.02.06.99.', 'Otros productos de la industria química y conexos', 3, ''),
+('4.02.06.99.00', 'Otros productos de la industria quï¿½mica y conexos', 4, 'NO'),
+('4.02.07.', 'Productos minerales no metálicos', 2, ''),
+('4.02.07.01.', 'Productos de barro, loza y porcelana', 3, ''),
+('4.02.07.01.00', 'Productos de barro, loza y porcelana', 4, 'NO'),
+('4.02.07.02.', 'Vidrios y productos de vidrio', 3, ''),
+('4.02.07.02.00', 'Vidrios y productos de vidrio', 4, 'NO'),
+('4.02.07.03.', 'Productos de arcilla para construcción', 3, ''),
+('4.02.07.03.00', 'Productos de arcilla para construcciï¿½n', 4, 'NO'),
+('4.02.07.04.', 'Cemento, cal  y yeso', 3, ''),
+('4.02.07.04.00', 'Cemento, cal  y yeso', 4, 'NO'),
+('4.02.07.99.', 'Otros productos minerales no metálicos', 3, ''),
+('4.02.07.99.00', 'Otros productos minerales no metï¿½licos', 4, 'NO'),
+('4.02.08.', 'Productos metálicos', 2, ''),
+('4.02.08.01.', 'Productos primarios de hierro y acero', 3, ''),
+('4.02.08.01.00', 'Productos primarios de hierro y acero', 4, 'NO'),
+('4.02.08.02.', 'Productos de metales no ferrosos', 3, ''),
+('4.02.08.02.00', 'Productos de metales no ferrosos', 4, 'NO'),
+('4.02.08.03.', 'Herramientas menores, cuchillería y artículos generales de ferretería', 3, ''),
+('4.02.08.03.00', 'Herramientas menores, cuchillerï¿½a y artï¿½culos generales de ferreterï¿½a', 4, 'NO'),
+('4.02.08.04.', 'Productos metálicos estructurales', 3, ''),
+('4.02.08.04.00', 'Productos metï¿½licos estructurales', 4, 'NO'),
+('4.02.08.05.', 'Materiales de orden público, seguridad y defensa nacional', 3, ''),
+('4.02.08.05.00', 'Materiales de orden pï¿½blico, seguridad y defensa nacional', 4, 'NO'),
+('4.02.08.06.', 'Material de seguridad pública', 3, ''),
+('4.02.08.06.00', 'Material de seguridad pï¿½blica', 4, 'NO'),
+('4.02.08.07.', 'Material de señalamiento', 3, ''),
+('4.02.08.07.00', 'Material de seï¿½alamiento', 4, 'NO'),
+('4.02.08.08.', 'Material de educación', 3, ''),
+('4.02.08.08.00', 'Material de educaciï¿½n', 4, 'NO'),
+('4.02.08.09.', 'Repuestos y accesorios para equipos de transporte', 3, ''),
+('4.02.08.09.00', 'Repuestos y accesorios para equipos de transporte', 4, 'NO'),
+('4.02.08.10.', 'Repuestos y accesorios para otros equipos', 3, ''),
+('4.02.08.10.00', 'Repuestos y accesorios para otros equipos', 4, 'NO'),
+('4.02.08.99.', 'Otros productos metálicos', 3, ''),
+('4.02.08.99.00', 'Otros productos metï¿½licos', 4, 'NO'),
+('4.02.09.', 'Productos de madera', 2, ''),
+('4.02.09.01.', 'Productos primarios de madera', 3, ''),
+('4.02.09.01.00', 'Productos primarios de madera', 4, 'NO'),
+('4.02.09.02.', 'Muebles y accesorios de madera para edificaciones', 3, ''),
+('4.02.09.02.00', 'Muebles y accesorios de madera para edificaciones', 4, 'NO'),
+('4.02.09.99.', 'Otros productos de madera', 3, ''),
+('4.02.09.99.00', 'Otros productos de madera', 4, 'NO'),
+('4.02.10.', 'Productos varios y útiles diversos', 2, ''),
+('4.02.10.01.', 'Artículos de deporte, recreación y juguetes', 3, ''),
+('4.02.10.01.00', 'Artï¿½culos de deporte, recreaciï¿½n y juguetes', 4, 'NO'),
+('4.02.10.02.', 'Materiales y útiles de limpieza y aseo', 3, ''),
+('4.02.10.02.00', 'Materiales y ï¿½tiles de limpieza y aseo', 4, 'NO'),
+('4.02.10.03.', 'Utensilios de cocina y comedor', 3, ''),
+('4.02.10.03.00', 'Utensilios de cocina y comedor', 4, 'NO'),
+('4.02.10.04.', 'Útiles menores médico - quirúrgicos de laboratorio, dentales y de veterinaria', 3, ''),
+('4.02.10.04.00', 'ï¿½tiles menores mï¿½dico - quirï¿½rgicos de laboratorio, dentales y de veterinaria', 4, 'NO'),
+('4.02.10.05.', 'Útiles de escritorio, oficina y materiales de instrucción', 3, ''),
+('4.02.10.05.00', 'ï¿½tiles de escritorio, oficina y materiales de instrucciï¿½n', 4, 'NO'),
+('4.02.10.06.', 'Condecoraciones, ofrendas y similares', 3, ''),
+('4.02.10.06.00', 'Condecoraciones, ofrendas y similares', 4, 'NO'),
+('4.02.10.07.', 'Productos de seguridad en el trabajo', 3, ''),
+('4.02.10.07.00', 'Productos de seguridad en el trabajo', 4, 'NO'),
+('4.02.10.08.', 'Materiales para equipos de computación', 3, ''),
+('4.02.10.08.00', 'Materiales para equipos de computaciï¿½n', 4, 'NO'),
+('4.02.10.09.', 'Especies timbradas y valores', 3, ''),
+('4.02.10.09.00', 'Especies timbradas y valores', 4, 'NO'),
+('4.02.10.10.', 'Útiles religiosos', 3, ''),
+('4.02.10.10.00', 'ï¿½tiles religiosos', 4, 'NO'),
+('4.02.10.11.', 'Materiales eléctricos', 3, ''),
+('4.02.10.11.00', 'Materiales elï¿½ctricos', 4, 'NO'),
+('4.02.10.12.', 'Materiales para instalaciones sanitarias', 3, ''),
+('4.02.10.12.00', 'Materiales para instalaciones sanitarias', 4, 'NO'),
+('4.02.10.13.', 'Materiales fotográficos', 3, ''),
+('4.02.10.13.00', 'Materiales fotogrï¿½ficos', 4, 'NO'),
+('4.02.10.99.', 'Otros productos y útiles diversos', 3, ''),
+('4.02.10.99.00', 'Otros productos y ï¿½tiles diversos', 4, 'NO'),
+('4.02.11.', 'Bienes para la venta', 2, ''),
+('4.02.11.01.', 'Productos y artículos para la venta', 3, ''),
+('4.02.11.01.00', 'Productos y artículos para la venta', 4, ''),
+('4.02.11.02.', 'Maquinarias y equipos para la venta', 3, ''),
+('4.02.11.02.00', 'Maquinarias y equipos para la venta', 4, ''),
+('4.02.11.99.', 'Otros bienes para la venta', 3, ''),
+('4.02.11.99.00', 'Otros bienes para la venta', 4, ''),
+('4.02.99.', 'Otros materiales y suministros', 2, ''),
+('4.02.99.01.', 'Otros materiales y suministros', 3, ''),
+('4.02.99.01.00', 'Otros materiales y suministros', 4, 'NO'),
+('4.03.', 'Servicios no personales', 1, ''),
+('4.03.01.', 'Alquileres de inmuebles', 2, ''),
+('4.03.01.01.', 'Alquileres de edificios y locales', 3, ''),
+('4.03.01.01.00', 'Alquileres de edificios y locales', 4, 'NO'),
+('4.03.01.02.', 'Alquileres de instalaciones culturales y recreativas', 3, ''),
+('4.03.01.02.00', 'Alquileres de instalaciones culturales y recreativas', 4, 'NO'),
+('4.03.01.03.', 'Alquileres de tierras y terrenos', 3, ''),
+('4.03.01.03.00', 'Alquileres de tierras y terrenos', 4, 'NO'),
+('4.03.02.', 'Alquileres de maquinaria y equipos', 2, ''),
+('4.03.02.01.', 'Alquileres de maquinaria y demás equipos de construcción, campo, industria y taller', 3, ''),
+('4.03.02.01.00', 'Alquileres de maquinaria y demás equipos de construcción, campo, industria y taller', 4, ''),
+('4.03.02.02.', 'Alquileres de equipos de transporte, tracción y elevación', 3, ''),
+('4.03.02.02.00', 'Alquileres de equipos de transporte, tracciï¿½n y elevaciï¿½n', 4, 'NO'),
+('4.03.02.03.', 'Alquileres de equipos de comunicaciones y de señalamiento', 3, ''),
+('4.03.02.03.00', 'Alquileres de equipos de comunicaciones y de seï¿½alamiento', 4, 'NO'),
+('4.03.02.04.', 'Alquileres de equipos médico - quirúrgicos, dentales y de veterinaria', 3, ''),
+('4.03.02.04.00', 'Alquileres de equipos médico - quirúrgicos, dentales y de veterinaria', 4, ''),
+('4.03.02.05.', 'Alquileres de equipos científicos, religiosos, de enseñanza y recreación', 3, ''),
+('4.03.02.05.00', 'Alquileres de equipos cientï¿½ficos, religiosos, de enseï¿½anza y recreaciï¿½n', 4, 'NO'),
+('4.03.02.06.', 'Alquileres de máquinas, muebles y demás equipos de oficina y alojamiento', 3, ''),
+('4.03.02.06.00', 'Alquileres de mï¿½quinas, muebles y demï¿½s equipos de oficina y alojamiento', 4, 'NO'),
+('4.03.02.99.', 'Alquileres de otras maquinaria y equipos', 3, ''),
+('4.03.02.99.00', 'Alquileres de otras maquinaria y equipos', 4, 'NO'),
+('4.03.03.', 'Derechos sobre bienes intangibles', 2, ''),
+('4.03.03.01.', 'Marcas de fábrica y patentes de invención', 3, ''),
+('4.03.03.01.00', 'Marcas de fábrica y patentes de invención', 4, ''),
+('4.03.03.02.', 'Derechos de autor', 3, ''),
+('4.03.03.02.00', 'Derechos de autor', 4, ''),
+('4.03.03.03.', 'Paquetes y programas de computación', 3, ''),
+('4.03.03.03.00', 'Paquetes y programas de computación', 4, ''),
+('4.03.03.04.', 'Concesión de bienes y servicios', 3, ''),
+('4.03.03.04.00', 'Concesión de bienes y servicios', 4, ''),
+('4.03.04.', 'Servicios básicos', 2, ''),
+('4.03.04.01.', 'Electricidad', 3, ''),
+('4.03.04.01.00', 'Electricidad', 4, 'NO'),
+('4.03.04.02.', 'Gas', 3, ''),
+('4.03.04.02.00', 'Gas', 4, 'NO'),
+('4.03.04.03.', 'Agua', 3, ''),
+('4.03.04.03.00', 'Agua', 4, 'NO'),
+('4.03.04.04.', 'Teléfonos', 3, ''),
+('4.03.04.04.00', 'Telï¿½fonos', 4, 'NO'),
+('4.03.04.05.', 'Servicio de comunicaciones', 3, ''),
+('4.03.04.05.00', 'Servicio de comunicaciones', 4, 'NO'),
+('4.03.04.06.', 'Servicio de aseo urbano y domiciliario', 3, ''),
+('4.03.04.06.00', 'Servicio de aseo urbano y domiciliario', 4, 'NO'),
+('4.03.04.07.', 'Servicio de condominio', 3, ''),
+('4.03.04.07.00', 'Servicio de condominio', 4, 'NO'),
+('4.03.05.', 'Servicio de administración, vigilancia y mantenimiento de los servicios básicos', 2, ''),
+('4.03.05.01.', 'Servicio de administración, vigilancia y mantenimiento del servicio de electricidad', 3, ''),
+('4.03.05.01.00', 'Servicio de administraciï¿½n, vigilancia y mantenimiento del servicio de electricidad', 4, 'NO'),
+('4.03.05.02.', 'Servicio de administración, vigilancia y mantenimiento del servicio de gas', 3, ''),
+('4.03.05.02.00', 'Servicio de administraciï¿½n, vigilancia y mantenimiento del servicio de gas', 4, 'NO'),
+('4.03.05.03.', 'Servicio de administración, vigilancia y mantenimiento del servicio de agua', 3, ''),
+('4.03.05.03.00', 'Servicio de administraciï¿½n, vigilancia y mantenimiento del servicio de agua', 4, 'NO'),
+('4.03.05.04.', 'Servicio de administración, vigilancia y mantenimiento del servicio de teléfonos', 3, ''),
+('4.03.05.04.00', 'Servicio de administraciï¿½n, vigilancia y mantenimiento del servicio de telï¿½fonos', 4, 'NO'),
+('4.03.05.05.', 'Servicio de administración, vigilancia y mantenimiento del servicio de comunicaciones', 3, ''),
+('4.03.05.05.00', 'Servicio de administración, vigilancia y mantenimiento del servicio de comunicaciones', 4, ''),
+('4.03.05.06.', 'Servicio de administración, vigilancia y mantenimiento del servicio de aseo urbano y domiciliario', 3, ''),
+('4.03.05.06.00', 'Servicio de administración, vigilancia y mantenimiento del servicio de aseo urbano y domiciliario', 4, ''),
+('4.03.06.', 'Servicios de transporte y almacenaje', 2, ''),
+('4.03.06.01.', 'Fletes y embalajes', 3, ''),
+('4.03.06.01.00', 'Fletes y embalajes', 4, 'NO'),
+('4.03.06.02.', 'Almacenaje', 3, ''),
+('4.03.06.02.00', 'Almacenaje', 4, 'NO'),
+('4.03.06.03.', 'Estacionamiento', 3, ''),
+('4.03.06.03.00', 'Estacionamiento', 4, 'NO'),
+('4.03.06.04.', 'Peaje', 3, ''),
+('4.03.06.04.00', 'Peaje', 4, ''),
+('4.03.06.05.', 'Servicios de protección en traslado de fondos y de mensajería', 3, ''),
+('4.03.06.05.00', 'Servicios de protección en traslado de fondos y de mensajería', 4, ''),
+('4.03.07.', 'Servicios de información, impresión y relaciones públicas', 2, ''),
+('4.03.07.01.', 'Publicidad y propaganda', 3, ''),
+('4.03.07.01.00', 'Publicidad y propaganda', 4, 'NO'),
+('4.03.07.02.', 'Imprenta y reproducción', 3, ''),
+('4.03.07.02.00', 'Imprenta y reproducciï¿½n', 4, 'NO'),
+('4.03.07.03.', 'Relaciones sociales', 3, ''),
+('4.03.07.03.00', 'Relaciones sociales', 4, 'NO'),
+('4.03.07.04.', 'Avisos', 3, ''),
+('4.03.07.04.00', 'Avisos', 4, 'NO'),
+('4.03.08.', 'Primas y otros gastos de seguros y comisiones bancarias', 2, ''),
+('4.03.08.01.', 'Primas y gastos de seguros', 3, ''),
+('4.03.08.01.00', 'Primas y gastos de seguros', 4, 'NO'),
+('4.03.08.02.', 'Comisiones y gastos bancarios', 3, ''),
+('4.03.08.02.00', 'Comisiones y gastos bancarios', 4, 'NO'),
+('4.03.08.03.', 'Comisiones y gastos de adquisición de seguros', 3, ''),
+('4.03.08.03.00', 'Comisiones y gastos de adquisiciï¿½n de seguros', 4, 'NO'),
+('4.03.09.', 'Viáticos y pasajes', 2, ''),
+('4.03.09.01.', 'Viáticos y pasajes dentro del país', 3, ''),
+('4.03.09.01.00', 'Viï¿½ticos y pasajes dentro del paï¿½s', 4, 'NO'),
+('4.03.09.02.', 'Viáticos y pasajes fuera del país', 3, ''),
+('4.03.09.02.00', 'Viï¿½ticos y pasajes fuera del paï¿½s', 4, 'NO'),
+('4.03.09.03.', 'Asignación por kilómetros recorridos', 3, ''),
+('4.03.09.03.00', 'Asignaciï¿½n por kilï¿½metros recorridos', 4, 'NO'),
+('4.03.10.', 'Servicios profesionales y técnicos', 2, ''),
+('4.03.10.01.', 'Servicios jurídicos', 3, ''),
+('4.03.10.01.00', 'Servicios jurï¿½dicos', 4, 'NO'),
+('4.03.10.02.', 'Servicios de contabilidad y auditoría', 3, ''),
+('4.03.10.02.00', 'Servicios de contabilidad y auditorï¿½a', 4, 'NO'),
+('4.03.10.03.', 'Servicios de procesamiento de datos', 3, ''),
+('4.03.10.03.00', 'Servicios de procesamiento de datos', 4, 'NO'),
+('4.03.10.04.', 'Servicios de ingeniería y arquitectónicos', 3, ''),
+('4.03.10.04.00', 'Servicios de ingeniería y arquitectónicos', 4, ''),
+('4.03.10.05.', 'Servicios médicos, odontológicos y otros servicios de sanidad', 3, ''),
+('4.03.10.05.00', 'Servicios médicos, odontológicos y otros servicios de sanidad', 4, ''),
+('4.03.10.06.', 'Servicios de veterinaria', 3, ''),
+('4.03.10.06.00', 'Servicios de veterinaria', 4, ''),
+('4.03.10.07.', 'Servicios de capacitación y adiestramiento', 3, ''),
+('4.03.10.07.00', 'Servicios de capacitaciï¿½n y adiestramiento', 4, 'NO'),
+('4.03.10.08.', 'Servicios presupuestarios', 3, ''),
+('4.03.10.08.00', 'Servicios presupuestarios', 4, ''),
+('4.03.10.09.', 'Servicios de lavandería y tintorería', 3, ''),
+('4.03.10.09.00', 'Servicios de lavandería y tintorería', 4, ''),
+('4.03.10.10.', 'Servicios de vigilancia', 3, ''),
+('4.03.10.10.00', 'Servicios de vigilancia', 4, ''),
+('4.03.10.11.', 'Servicios para la elaboración y suministro de comida ', 3, ''),
+('4.03.10.11.00', 'Servicios para la elaboración y suministro de comida ', 4, ''),
+('4.03.10.99.', 'Otros servicios profesionales y técnicos', 3, ''),
+('4.03.10.99.00', 'Otros servicios profesionales y tï¿½cnicos', 4, 'NO'),
+('4.03.11.', 'Conservación y reparaciones menores de maquinaria y equipos', 2, ''),
+('4.03.11.01.', 'Conservación y reparaciones menores de maquinaria y demás equipos de construcción, campo, industria y taller', 3, ''),
+('4.03.11.01.00', 'Conservaciï¿½n y reparaciones menores de maquinaria y demï¿½s equipos de construcciï¿½n, campo, industria y taller', 4, 'NO'),
+('4.03.11.02.', 'Conservación y reparaciones menores de equipos de transporte, tracción y elevación', 3, ''),
+('4.03.11.02.00', 'Conservaciï¿½n y reparaciones menores de equipos de transporte, tracciï¿½n y elevaciï¿½n', 4, 'NO'),
+('4.03.11.03.', 'Conservación y reparaciones menores de equipos de comunicaciones y de señalamiento', 3, ''),
+('4.03.11.03.00', 'Conservaciï¿½n y reparaciones menores de equipos de comunicaciones y de seï¿½alamiento', 4, 'NO'),
+('4.03.11.04.', 'Conservación y reparaciones menores de equipos médico-quirúrgicos, dentales y de veterinaria', 3, ''),
+('4.03.11.04.00', 'Conservaciï¿½n y reparaciones menores de equipos mï¿½dico-quirï¿½rgicos, dentales y de veterinaria', 4, 'NO'),
+('4.03.11.05.', 'Conservación y reparaciones menores de equipos científicos, religiosos, de enseñanza y recreación', 3, ''),
+('4.03.11.05.00', 'Conservación y reparaciones menores de equipos científicos, religiosos, de enseñanza y recreación', 4, ''),
+('4.03.11.06.', 'Conservación y reparaciones menores de equipos y armamentos de orden público, seguridad y defensa nacional', 3, ''),
+('4.03.11.06.00', 'Conservación y reparaciones menores de equipos y armamentos de orden público, seguridad y defensa nacional', 4, ''),
+('4.03.11.07.', 'Conservación y reparaciones menores de máquinas, muebles y demás equipos de oficina y alojamiento', 3, ''),
+('4.03.11.07.00', 'Conservaciï¿½n y reparaciones menores de mï¿½quinas, muebles y demï¿½s equipos de oficina y alojamiento', 4, 'NO'),
+('4.03.11.99.', 'Conservación y reparaciones menores de otras maquinaria y equipos', 3, ''),
+('4.03.11.99.00', 'Conservaciï¿½n y reparaciones menores de otras maquinaria y equipos', 4, 'NO'),
+('4.03.12.', 'Conservación y reparaciones menores de obras', 2, ''),
+('4.03.12.01.', 'Conservación y reparaciones menores de obras en bienes del dominio privado', 3, ''),
+('4.03.12.01.00', 'Conservaciï¿½n y reparaciones menores de obras en bienes del dominio privado', 4, 'NO'),
+('4.03.12.02.', 'Conservación y reparaciones menores de obras en bienes del dominio público', 3, ''),
+('4.03.12.02.00', 'Conservaciï¿½n y reparaciones menores de obras en bienes del dominio pï¿½blico', 4, 'NO'),
+('4.03.13.', 'Servicios de construcciones temporales', 2, ''),
+('4.03.13.01.', 'Servicios de construcciones temporales', 3, ''),
+('4.03.13.01.00', 'Servicios de construcciones temporales', 4, ''),
+('4.03.14.', 'Servicios de  construcción de edificios para la venta', 2, ''),
+('4.03.14.01.', 'Servicios de construcción de edificios para la venta', 3, ''),
+('4.03.14.01.00', 'Servicios de construcción de edificios para la venta', 4, ''),
+('4.03.15.', 'Servicios fiscales', 2, ''),
+('4.03.15.01.', 'Derechos de importación y servicios aduaneros', 3, ''),
+('4.03.15.01.00', 'Derechos de importación y servicios aduaneros', 4, ''),
+('4.03.15.02.', 'Tasas y otros derechos obligatorios', 3, ''),
+('4.03.15.02.00', 'Tasas y otros derechos obligatorios', 4, 'NO'),
+('4.03.15.03.', 'Asignación a  agentes de especies fiscales', 3, ''),
+('4.03.15.03.00', 'Asignación a  agentes de especies fiscales', 4, ''),
+('4.03.15.99.', 'Otros servicios fiscales ', 3, ''),
+('4.03.15.99.00', 'Otros servicios fiscales ', 4, ''),
+('4.03.16.', 'Servicios de diversión, esparcimiento y culturales', 2, ''),
+('4.03.16.01.', 'Servicios de diversión, esparcimiento y culturales', 3, ''),
+('4.03.16.01.00', 'Servicios de diversiï¿½n, esparcimiento y culturales', 4, 'NO'),
+('4.03.17.', 'Servicios de gestión administrativa prestados por organismos de asistencia técnica', 2, ''),
+('4.03.17.01.', 'Servicios de gestión administrativa prestados por organismos de asistencia técnica', 3, ''),
+('4.03.17.01.00', 'Servicios de gestiï¿½n administrativa prestados por organismos de asistencia tï¿½cnica', 4, 'NO'),
+('4.03.18.', 'Impuestos indirectos', 2, ''),
+('4.03.18.01.', 'Impuesto al valor agregado', 3, ''),
+('4.03.18.01.00', 'Impuesto al valor agregado', 4, 'NO'),
+('4.03.18.99.', 'Otros impuestos indirectos', 3, ''),
+('4.03.18.99.00', 'Otros impuestos indirectos', 4, ''),
+('4.03.19.', 'COMISIONES POR SERVICIOS PARA CUMPLIR CON LOS BENEFICIOS SOCIALES', 2, 'NO'),
+('4.03.19.01.', 'COMISIONES POR SERVICIOS PARA CUMPLIR CON LOS BENEFICIOS SOCIALES', 3, 'NO'),
+('4.03.19.01.00', 'COMISIONES POR SERVICIOS PARA CUMPLIR CON LOS BENEFICIOS SOCIALES', 4, 'NO'),
+('4.03.99.', 'Otros servicios no personales', 2, ''),
+('4.03.99.01.', 'Otros servicios no personales', 3, ''),
+('4.03.99.01.00', 'Otros servicios no personales', 4, 'NO'),
+('4.04.', 'Activos  reales', 1, ''),
+('4.04.01.', 'Repuestos  y  reparaciones  mayores', 2, '');
+INSERT INTO `cwprecue` (`CodCue`, `Denominacion`, `Tipocta`, `Tipopuc`) VALUES
+('4.04.01.01.', 'Repuestos mayores', 3, ''),
+('4.04.01.01.01', 'Repuestos mayores para maquinaria y demï¿½s equipos de construcciï¿½n, campo, industria y taller', 4, 'NO'),
+('4.04.01.01.02', 'Repuestos mayores para equipos de transporte, tracciï¿½n y elevaciï¿½n', 4, 'NO'),
+('4.04.01.01.03', 'Repuestos mayores para equipos de comunicaciones y de seï¿½alamiento', 4, 'NO'),
+('4.04.01.01.04', 'Repuestos mayores para equipos médico-quirúrgicos, dentales y de veterinaria', 4, ''),
+('4.04.01.01.05', 'Repuestos mayores para equipos científicos, religiosos, de enseñanza y recreación', 4, ''),
+('4.04.01.01.06', 'Repuestos mayores para equipos de seguridad pública', 4, ''),
+('4.04.01.01.07', 'Repuestos mayores para máquinas, muebles y demás equipos de oficina y alojamiento', 4, ''),
+('4.04.01.01.99', 'Repuestos mayores para otras maquinaria y equipos', 4, ''),
+('4.04.01.02.', 'Reparaciones mayores de maquinaria y equipos', 3, ''),
+('4.04.01.02.01', 'Reparaciones mayores de maquinaria y demï¿½s equipos de construcciï¿½n, campo, industria y taller', 4, 'NO'),
+('4.04.01.02.02', 'Reparaciones mayores de equipos de transporte, tracción y elevación', 4, ''),
+('4.04.01.02.03', 'Reparaciones mayores de equipos de comunicaciones y de señalamiento', 4, ''),
+('4.04.01.02.04', 'Reparaciones mayores de equipos médico - quirúrgicos, dentales y de veterinaria', 4, ''),
+('4.04.01.02.05', 'Reparaciones mayores de equipos científicos, religiosos, de enseñanza y recreación', 4, ''),
+('4.04.01.02.06', 'Reparaciones mayores de equipos y armamentos de orden público, seguridad y defensa nacional', 4, ''),
+('4.04.01.02.07', 'Reparaciones mayores de máquinas, muebles y demás equipos de oficina y alojamiento', 4, ''),
+('4.04.01.02.99', 'Reparaciones mayores de otras maquinaria y equipos', 4, ''),
+('4.04.02.', 'Conservación, ampliaciones y mejoras mayores de obras', 2, ''),
+('4.04.02.01.', 'Conservación, ampliaciones y mejoras mayores de obras en bienes del dominio privado', 3, ''),
+('4.04.02.01.00', 'Conservaciï¿½n, ampliaciones y mejoras mayores de obras en bienes del dominio privado', 4, 'NO'),
+('4.04.02.02.', 'Conservación, ampliaciones y mejoras mayores de obras en bienes del dominio público', 3, ''),
+('4.04.02.02.00', 'Conservaciï¿½n, ampliaciones y mejoras mayores de obras en bienes del dominio pï¿½blico', 4, 'NO'),
+('4.04.03.', 'Maquinaria y demás equipos de construcción, campo, industria y taller', 2, ''),
+('4.04.03.01.', 'Maquinaria y demás equipos de construcción y mantenimiento', 3, ''),
+('4.04.03.01.00', 'Maquinaria y demï¿½s equipos de construcciï¿½n y mantenimiento', 4, 'NO'),
+('4.04.03.02.', 'Maquinaria y equipos para mantenimiento de automotores', 3, ''),
+('4.04.03.02.00', 'Maquinaria y equipos para mantenimiento de automotores', 4, 'NO'),
+('4.04.03.03.', 'Maquinaria y equipos agrícolas y pecuarios', 3, ''),
+('4.04.03.03.00', 'Maquinaria y equipos agrï¿½colas y pecuarios', 4, 'NO'),
+('4.04.03.04.', 'Maquinaria y equipos de artes gráficas y reproducción', 3, ''),
+('4.04.03.04.00', 'Maquinaria y equipos de artes grï¿½ficas y reproducciï¿½n', 4, 'NO'),
+('4.04.03.05.', 'Maquinaria y equipos industriales y de taller', 3, ''),
+('4.04.03.05.00', 'Maquinaria y equipos industriales y de taller', 4, ''),
+('4.04.03.06.', 'Maquinaria y equipos de energía', 3, ''),
+('4.04.03.06.00', 'Maquinaria y equipos de energï¿½a', 4, 'NO'),
+('4.04.03.07.', 'Maquinaria y equipos de riego y acueductos', 3, ''),
+('4.04.03.07.00', 'Maquinaria y equipos de riego y acueductos', 4, 'NO'),
+('4.04.03.08.', 'Equipos de almacén', 3, ''),
+('4.04.03.08.00', 'Equipos de almacén', 4, ''),
+('4.04.03.99.', 'Otra maquinaria y demás equipos de construcción, campo, industria y taller ', 3, ''),
+('4.04.03.99.00', 'Otra maquinaria y demás equipos de construcción, campo, industria y taller ', 4, ''),
+('4.04.04.', 'Equipos de transporte, tracción y elevación', 2, ''),
+('4.04.04.01.', 'Vehículos automotores terrestres', 3, ''),
+('4.04.04.01.00', 'Vehï¿½culos automotores terrestres', 4, 'NO'),
+('4.04.04.02.', 'Equipos ferroviarios y de cables aéreos', 3, ''),
+('4.04.04.02.00', 'Equipos ferroviarios y de cables aéreos', 4, ''),
+('4.04.04.03.', 'Equipos marítimos de transporte', 3, ''),
+('4.04.04.03.00', 'Equipos marítimos de transporte', 4, ''),
+('4.04.04.04.', 'Equipos aéreos de transporte', 3, ''),
+('4.04.04.04.00', 'Equipos aéreos de transporte', 4, ''),
+('4.04.04.05.', 'Vehículos de tracción no motorizados', 3, ''),
+('4.04.04.05.00', 'Vehículos de tracción no motorizados', 4, ''),
+('4.04.04.06.', 'Equipos auxiliares de transporte', 3, ''),
+('4.04.04.06.00', 'Equipos auxiliares de transporte', 4, ''),
+('4.04.04.99.', 'Otros equipos de transporte, tracción y elevación ', 3, ''),
+('4.04.04.99.00', 'Otros equipos de transporte, tracciï¿½n y elevaciï¿½n ', 4, 'NO'),
+('4.04.05.', 'Equipos de comunicaciones y de señalamiento', 2, ''),
+('4.04.05.01.', 'Equipos de telecomunicaciones', 3, ''),
+('4.04.05.01.00', 'Equipos de telecomunicaciones', 4, 'NO'),
+('4.04.05.02.', 'Equipos de señalamiento', 3, ''),
+('4.04.05.02.00', 'Equipos de seï¿½alamiento', 4, 'NO'),
+('4.04.05.03.', 'Equipos de control de tráfico aéreo', 3, ''),
+('4.04.05.03.00', 'Equipos de control de tráfico aéreo', 4, ''),
+('4.04.05.04.', 'Equipos de correo', 3, ''),
+('4.04.05.04.00', 'Equipos de correo', 4, ''),
+('4.04.05.99.', 'Otros equipos de comunicaciones y de señalamiento  ', 3, ''),
+('4.04.05.99.00', 'Otros equipos de comunicaciones y de señalamiento  ', 4, ''),
+('4.04.06.', 'Equipos médico - quirúrgicos, dentales y de veterinaria', 2, ''),
+('4.04.06.01.', 'Equipos médico - quirúrgicos, dentales y de veterinaria', 3, ''),
+('4.04.06.01.00', 'Equipos mï¿½dico - quirï¿½rgicos, dentales y de veterinaria', 4, 'NO'),
+('4.04.06.99.', 'Otros equipos médico - quirúrgicos, dentales y de veterinaria', 3, ''),
+('4.04.06.99.00', 'Otros equipos médico - quirúrgicos, dentales y de veterinaria', 4, ''),
+('4.04.07.', 'Equipos científicos, religiosos, de enseñanza y recreación', 2, ''),
+('4.04.07.01.', 'Equipos científicos y de laboratorio', 3, ''),
+('4.04.07.01.00', 'Equipos cientï¿½ficos y de laboratorio', 4, 'NO'),
+('4.04.07.02.', 'Equipos de enseñanza, deporte y recreación', 3, ''),
+('4.04.07.02.00', 'Equipos de enseï¿½anza, deporte y recreaciï¿½n', 4, 'NO'),
+('4.04.07.03.', 'Obras de arte', 3, ''),
+('4.04.07.03.00', 'Obras de arte', 4, 'NO'),
+('4.04.07.04.', 'Libros, revistas y otros instrumentos de enseñanzas', 3, ''),
+('4.04.07.04.00', 'Libros, revistas y otros instrumentos de enseï¿½anzas', 4, 'NO'),
+('4.04.07.05.', 'Equipos religiosos', 3, ''),
+('4.04.07.05.00', 'Equipos religiosos', 4, ''),
+('4.04.07.06.', 'Instrumentos musicales', 3, ''),
+('4.04.07.06.00', 'Instrumentos musicales', 4, 'NO'),
+('4.04.07.99.', 'Otros equipos científicos, religiosos, de enseñanza y recreación ', 3, ''),
+('4.04.07.99.00', 'Otros equipos cientï¿½ficos, religiosos, de enseï¿½anza y recreaciï¿½n ', 4, 'NO'),
+('4.04.08.', 'Equipos y armamentos de orden público, seguridad y defensa nacional', 2, ''),
+('4.04.08.01.', 'Equipos y armamentos de orden público, seguridad y defensa nacional', 3, ''),
+('4.04.08.01.00', 'Equipos y armamentos de orden pï¿½blico, seguridad y defensa nacional', 4, 'NO'),
+('4.04.08.99.', 'Otros equipos y armamentos de orden público, seguridad y defensa nacional', 3, ''),
+('4.04.08.99.00', 'Otros equipos y armamentos de orden público, seguridad y defensa nacional', 4, ''),
+('4.04.09.', 'Máquinas, muebles y demás equipos de oficina y alojamiento', 2, ''),
+('4.04.09.01.', 'Mobiliario y equipos de oficina', 3, ''),
+('4.04.09.01.00', 'Mobiliario y equipos de oficina', 4, 'NO'),
+('4.04.09.02.', 'Equipos de computación', 3, ''),
+('4.04.09.02.00', 'Equipos de computaciï¿½n', 4, 'NO'),
+('4.04.09.03.', 'Mobiliario y equipos de alojamiento', 3, ''),
+('4.04.09.03.00', 'Mobiliario y equipos de alojamiento', 4, 'NO'),
+('4.04.09.99.', 'Otras máquinas, muebles y demás equipos de oficina y alojamiento', 3, ''),
+('4.04.09.99.00', 'Otras mï¿½quinas, muebles y demï¿½s equipos de oficina y alojamiento', 4, 'NO'),
+('4.04.10.', 'Semovientes', 2, ''),
+('4.04.10.01.', 'Semovientes', 3, ''),
+('4.04.10.01.00', 'Semovientes', 4, ''),
+('4.04.11.', 'Inmuebles, maquinaria y equipos usados', 2, ''),
+('4.04.11.01.', 'Adquisición de tierras y terrenos', 3, ''),
+('4.04.11.01.00', 'Adquisición de tierras y terrenos', 4, ''),
+('4.04.11.02.', 'Adquisición de edificios e instalaciones', 3, ''),
+('4.04.11.02.00', 'Adquisiciï¿½n de edificios e instalaciones', 4, 'NO'),
+('4.04.11.03.', 'Expropiación de tierras y terrenos', 3, ''),
+('4.04.11.03.00', 'Expropiación de tierras y terrenos', 4, ''),
+('4.04.11.04.', 'Expropiación de edificios e instalaciones', 3, ''),
+('4.04.11.04.00', 'Expropiación de edificios e instalaciones', 4, ''),
+('4.04.11.05.', 'Adquisición de maquinaria y equipos usados', 3, ''),
+('4.04.11.05.01', 'Maquinaria y demás equipos de construcción, campo, industria y taller', 4, ''),
+('4.04.11.05.02', 'Equipos de transporte, tracción y elevación', 4, ''),
+('4.04.11.05.03', 'Equipos de comunicaciones y de señalamiento', 4, ''),
+('4.04.11.05.04', 'Equipos médico - quirúrgicos, dentales y  de veterinaria', 4, ''),
+('4.04.11.05.05', 'Equipos científicos, religiosos, de enseñanza y recreación', 4, ''),
+('4.04.11.05.06', 'Equipos para seguridad pública', 4, ''),
+('4.04.11.05.07', 'Máquinas, muebles y demás equipos de oficina y alojamiento', 4, ''),
+('4.04.11.99.', ' Otros  inmuebles, maquinaria y equipos usados', 3, ''),
+('4.04.11.99.00', ' Otros  inmuebles, maquinaria y equipos usados', 4, ''),
+('4.04.12.', 'Activos intangibles', 2, ''),
+('4.04.12.01.', 'Marcas de fábrica y patentes de invención', 3, ''),
+('4.04.12.01.00', 'Marcas de fábrica y patentes de invención', 4, ''),
+('4.04.12.02.', 'Derechos de autor', 3, ''),
+('4.04.12.02.00', 'Derechos de autor', 4, 'NO'),
+('4.04.12.03.', 'Gastos de organización', 3, ''),
+('4.04.12.03.00', 'Gastos de organización', 4, ''),
+('4.04.12.04.', 'Paquetes y programas de computación', 3, ''),
+('4.04.12.04.00', 'Paquetes y programas de computaciï¿½n', 4, 'NO'),
+('4.04.12.05.', 'Estudios y proyectos', 3, ''),
+('4.04.12.05.00', 'Estudios y proyectos', 4, ''),
+('4.04.12.99.', 'Otros activos intangibles ', 3, ''),
+('4.04.12.99.00', 'Otros activos intangibles ', 4, ''),
+('4.04.13.', 'Estudios y proyectos para inversión en activos fijos', 2, ''),
+('4.04.13.01.', 'Estudios y proyectos aplicables a bienes del dominio privado', 3, ''),
+('4.04.13.01.00', 'Estudios y proyectos aplicables a bienes del dominio privado', 4, 'NO'),
+('4.04.13.02.', 'Estudios y proyectos aplicables a bienes del dominio público', 3, ''),
+('4.04.13.02.00', 'Estudios y proyectos aplicables a bienes del dominio pï¿½blico', 4, 'NO'),
+('4.04.14.', 'Contratación de inspección de obras', 2, ''),
+('4.04.14.01.', 'Contratación de inspección de obras de bienes del dominio privado', 3, ''),
+('4.04.14.01.00', 'Contrataciï¿½n de inspecciï¿½n de obras de bienes del dominio privado', 4, 'NO'),
+('4.04.14.02.', 'Contratación de inspección de obras de bienes del dominio público', 3, ''),
+('4.04.14.02.00', 'Contratación de inspección de obras de bienes del dominio público', 4, ''),
+('4.04.15.', 'Construcciones del dominio privado', 2, ''),
+('4.04.15.01.', 'Construcciones de edificios médico-asistenciales', 3, ''),
+('4.04.15.01.00', 'Construcciones de edificios mï¿½dico-asistenciales', 4, 'NO'),
+('4.04.15.02.', 'Construcciones de edificios militares y de seguridad', 3, ''),
+('4.04.15.02.00', 'Construcciones de edificios militares y de seguridad', 4, 'NO'),
+('4.04.15.03.', 'Construcciones de edificios educativos', 3, ''),
+('4.04.15.03.00', 'Construcciones de edificios educativos', 4, 'NO'),
+('4.04.15.04.', 'Construcciones de edificios culturales', 3, ''),
+('4.04.15.04.00', 'Construcciones de edificios culturales', 4, ''),
+('4.04.15.05.', 'Construcciones de edificios para oficina', 3, ''),
+('4.04.15.05.00', 'Construcciones de edificios para oficina', 4, ''),
+('4.04.15.06.', 'Construcciones de edificios industriales', 3, ''),
+('4.04.15.06.00', 'Construcciones de edificios industriales', 4, ''),
+('4.04.16.', 'Construcciones del dominio público', 2, ''),
+('4.04.16.01.', 'Construcción de vialidad', 3, ''),
+('4.04.16.01.00', 'Construcciï¿½n de vialidad', 4, 'NO'),
+('4.04.16.02.', 'Construcción de plazas, parques y similares', 3, ''),
+('4.04.16.02.00', 'Construcciï¿½n de plazas, parques y similares', 4, 'NO'),
+('4.04.16.03.', 'Construcciones de instalaciones hidráulicas', 3, ''),
+('4.04.16.03.00', 'Construcciones de instalaciones hidrï¿½ulicas', 4, 'NO'),
+('4.04.16.04.', 'Construcciones de puertos y aeropuertos', 3, ''),
+('4.04.16.04.00', 'Construcciones de puertos y aeropuertos', 4, ''),
+('4.04.99.', 'Otros activos reales', 2, ''),
+('4.04.99.01.', 'Otros activos reales', 3, ''),
+('4.04.99.01.00', 'Otros activos reales', 4, 'NO'),
+('4.05.', 'Activos  financieros', 1, ''),
+('4.05.01.', 'Aportes en acciones y participaciones de capital', 2, ''),
+('4.05.01.01.', 'Aportes en acciones y participaciones de capital al sector privado', 3, ''),
+('4.05.01.01.00', 'Aportes en acciones y participaciones de capital al sector privado', 4, ''),
+('4.05.01.02.', 'Aportes en acciones y participaciones de capital al sector público', 3, ''),
+('4.05.01.02.01', 'Aportes en acciones y participaciones de capital a entes descentralizados sin fines empresariales', 4, ''),
+('4.05.01.02.02', 'Aportes en acciones y participaciones de capital a instituciones de protección social', 4, ''),
+('4.05.01.02.03', 'Aportes en acciones y participaciones de capital a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.05.01.02.04', 'Aportes en acciones y participaciones de capital a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.05.01.02.05', 'Aportes en acciones y participaciones de capital a entes descentralizados financieros bancarios', 4, ''),
+('4.05.01.02.06', 'Aportes en acciones y participaciones de capital a entes descentralizados financieros no bancarios', 4, ''),
+('4.05.01.02.07', 'Aportes en acciones y participaciones de capital  a organismos del sector público para el pago de su deuda', 4, ''),
+('4.05.01.03.', 'Aportes en acciones y participaciones de capital al sector externo', 3, ''),
+('4.05.01.03.01', 'Aportes en acciones y participaciones de capital a organismos internacionales', 4, ''),
+('4.05.01.03.99', 'Otros aportes en acciones y participaciones de capital  al sector  externo', 4, ''),
+('4.05.02.', 'Adquisición de títulos y valores que no otorgan propiedad', 2, ''),
+('4.05.02.01.', 'Adquisición de títulos y valores a corto plazo', 3, ''),
+('4.05.02.01.01', 'Adquisición de títulos y valores privados', 4, ''),
+('4.05.02.01.02', 'Adquisición de títulos y valores públicos', 4, ''),
+('4.05.02.01.03', 'Adquisición de títulos y valores externos', 4, ''),
+('4.05.02.02.', 'Adquisición de títulos y valores a largo plazo', 3, ''),
+('4.05.02.02.01', 'Adquisición de títulos y valores privados', 4, ''),
+('4.05.02.02.02', 'Adquisición de títulos y valores públicos', 4, ''),
+('4.05.02.02.03', 'Adquisición de títulos y valores externos', 4, ''),
+('4.05.03.', 'Concesión de préstamos a corto plazo', 2, ''),
+('4.05.03.01.', 'Concesión de préstamos al sector privado a corto plazo', 3, ''),
+('4.05.03.01.00', 'Concesión de préstamos al sector privado a corto plazo', 4, ''),
+('4.05.03.02.', 'Concesión de préstamos al sector público a corto plazo', 3, ''),
+('4.05.03.02.01', 'Concesión de préstamos a la República', 4, ''),
+('4.05.03.02.02', 'Concesión de préstamos a entes descentralizados sin fines empresariales', 4, ''),
+('4.05.03.02.03', 'Concesión de préstamos a instituciones de protección social', 4, ''),
+('4.05.03.02.04', 'Concesión de préstamos a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.05.03.02.05', 'Concesión de préstamos a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.05.03.02.06', 'Concesión de préstamos a entes descentralizados financieros bancarios', 4, ''),
+('4.05.03.02.07', 'Concesión de préstamos a entes descentralizados financieras no bancarios', 4, ''),
+('4.05.03.02.08', 'Concesión de préstamos al Poder Estadal', 4, ''),
+('4.05.03.02.09', 'Concesión de préstamos al Poder Municipal', 4, ''),
+('4.05.03.03.', 'Concesión de préstamos al sector externo a corto plazo ', 3, ''),
+('4.05.03.03.01', 'Concesión de préstamos a instituciones sin fines de lucro ', 4, ''),
+('4.05.03.03.02', 'Concesión de préstamos a gobiernos extranjeros ', 4, ''),
+('4.05.03.03.03', 'Concesión de préstamos a organismos internacionales ', 4, ''),
+('4.05.04.', 'Concesión de préstamos a largo plazo', 2, ''),
+('4.05.04.01.', 'Concesión de préstamos al sector privado a largo plazo', 3, ''),
+('4.05.04.01.00', 'Concesión de préstamos al sector privado a largo plazo', 4, ''),
+('4.05.04.02.', 'Concesión de préstamos al sector público a largo plazo', 3, ''),
+('4.05.04.02.01', 'Concesión de préstamos a la República', 4, ''),
+('4.05.04.02.02', 'Concesión de préstamos a entes descentralizados sin fines empresariales', 4, ''),
+('4.05.04.02.03', 'Concesión de préstamos a instituciones de protección social', 4, ''),
+('4.05.04.02.04', 'Concesión de préstamos a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.05.04.02.05', 'Concesión de préstamos a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.05.04.02.06', 'Concesión de préstamos a entes descentralizados financieros bancarios', 4, ''),
+('4.05.04.02.07', 'Concesión de préstamos a entes descentralizados financieros no bancarios', 4, ''),
+('4.05.04.02.08', 'Concesión de préstamos al Poder Estadal', 4, ''),
+('4.05.04.02.09', 'Concesión de préstamos al Poder Municipal', 4, ''),
+('4.05.04.03.', 'Concesión de préstamos al sector externo a largo plazo ', 3, ''),
+('4.05.04.03.01', 'Concesión de préstamos a instituciones sin fines de lucro ', 4, ''),
+('4.05.04.03.02', 'Concesión de préstamos a gobiernos extranjeros ', 4, ''),
+('4.05.04.03.03', 'Concesión de préstamos a organismos internacionales ', 4, ''),
+('4.05.05.', 'Incremento de disponibilidades', 2, ''),
+('4.05.05.01.', 'Incremento en caja', 3, ''),
+('4.05.05.01.00', 'Incremento en caja', 4, ''),
+('4.05.05.02.', 'Incremento en bancos', 3, ''),
+('4.05.05.02.01', 'Incremento en bancos públicos', 4, ''),
+('4.05.05.02.02', 'Incremento en bancos privados', 4, ''),
+('4.05.05.02.03', 'Incremento en bancos del exterior', 4, ''),
+('4.05.05.03.', 'Incremento de inversiones temporales', 3, ''),
+('4.05.05.03.00', 'Incremento de inversiones temporales', 4, ''),
+('4.05.06.', 'Incremento de cuentas por cobrar a corto plazo', 2, ''),
+('4.05.06.01.', 'Incremento de cuentas comerciales por cobrar a corto plazo', 3, ''),
+('4.05.06.01.00', 'Incremento de cuentas comerciales por cobrar a corto plazo', 4, ''),
+('4.05.06.02.', 'Incremento de rentas por recaudar a corto plazo', 3, ''),
+('4.05.06.02.00', 'Incremento de rentas por recaudar a corto plazo', 4, ''),
+('4.05.06.03.', 'Incremento de deudas por rendir ', 3, ''),
+('4.05.06.03.01', 'Incremento de deudas por rendir de fondos en avance', 4, ''),
+('4.05.06.03.02', 'Incremento de deudas por rendir de fondos en anticipo', 4, ''),
+('4.05.06.99.', 'Incremento de otras cuentas por cobrar a corto plazo', 3, ''),
+('4.05.06.99.00', 'Incremento de otras cuentas por cobrar a corto plazo', 4, ''),
+('4.05.07.', 'Incremento de efectos por cobrar a corto plazo', 2, ''),
+('4.05.07.01.', 'Incremento de efectos comerciales por cobrar a corto plazo', 3, ''),
+('4.05.07.01.00', 'Incremento de efectos comerciales por cobrar a corto plazo', 4, ''),
+('4.05.07.99.', 'Incremento de otros efectos por cobrar a corto plazo', 3, ''),
+('4.05.07.99.00', 'Incremento de otros efectos por cobrar a corto plazo', 4, ''),
+('4.05.08.', 'Incremento de cuentas por cobrar a mediano y largo plazo', 2, ''),
+('4.05.08.01.', 'Incremento de cuentas comerciales por cobrar a mediano y largo plazo', 3, ''),
+('4.05.08.01.00', 'Incremento de cuentas comerciales por cobrar a mediano y largo plazo', 4, ''),
+('4.05.08.02.', 'Incremento de rentas por recaudar a mediano y largo plazo', 3, ''),
+('4.05.08.02.00', 'Incremento de rentas por recaudar a mediano y largo plazo', 4, ''),
+('4.05.08.99.', 'Incremento de otras cuentas por cobrar a mediano y largo plazo', 3, ''),
+('4.05.08.99.00', 'Incremento de otras cuentas por cobrar a mediano y largo plazo', 4, ''),
+('4.05.09.', 'Incremento de efectos por cobrar a mediano y largo plazo', 2, ''),
+('4.05.09.01.', 'Incremento de efectos comerciales por cobrar a mediano y largo plazo', 3, ''),
+('4.05.09.01.00', 'Incremento de efectos comerciales por cobrar a mediano y largo plazo', 4, ''),
+('4.05.09.99.', 'Incremento de otros efectos por cobrar a mediano y largo plazo', 3, ''),
+('4.05.09.99.00', 'Incremento de otros efectos por cobrar a mediano y largo plazo', 4, ''),
+('4.05.10.', 'Incremento de fondos en avance, en anticipos y en fideicomiso', 2, ''),
+('4.05.10.01.', 'Incremento de fondos en avance', 3, ''),
+('4.05.10.01.00', 'Incremento de fondos en avance', 4, ''),
+('4.05.10.02.', 'Incremento de fondos en anticipos ', 3, ''),
+('4.05.10.02.00', 'Incremento de fondos en anticipos ', 4, ''),
+('4.05.10.03.', 'Incremento de fondos en fideicomiso', 3, ''),
+('4.05.10.03.00', 'Incremento de fondos en fideicomiso', 4, ''),
+('4.05.10.04.', 'Incremento de anticipos a proveedores  ', 3, ''),
+('4.05.10.04.00', 'Incremento de anticipos a proveedores  ', 4, ''),
+('4.05.10.05.', 'Incremento de anticipos a contratistas por contratos de corto plazo  ', 3, ''),
+('4.05.10.05.00', 'Incremento de anticipos a contratistas por contratos de corto plazo  ', 4, ''),
+('4.05.10.06.', 'Incremento de anticipos a contratistas por contratos de mediano y largo plazo  ', 3, ''),
+('4.05.10.06.00', 'Incremento de anticipos a contratistas por contratos de mediano y largo plazo  ', 4, ''),
+('4.05.11.', 'Incremento de activos diferidos a corto plazo', 2, ''),
+('4.05.11.01.', 'Incremento de gastos a corto plazo pagados por anticipado', 3, ''),
+('4.05.11.01.01', 'Incremento de intereses de la deuda pública interna a corto plazo pagados por anticipado ', 4, ''),
+('4.05.11.01.02', 'Incremento de intereses de la deuda pública externa a corto plazo pagados por anticipado', 4, ''),
+('4.05.11.01.03', 'Incremento de otros intereses a corto plazo pagados por anticipado', 4, ''),
+('4.05.11.01.04', 'Incremento de débitos por apertura de carta de crédito a corto plazo', 4, ''),
+('4.05.11.01.99', 'Incremento de otros gastos a corto plazo pagados por anticipado', 4, ''),
+('4.05.11.02.', 'Incremento de depósitos otorgados en garantía a corto plazo', 3, ''),
+('4.05.11.02.00', 'Incremento de depósitos otorgados en garantía a corto plazo', 4, ''),
+('4.05.11.99.', 'Incremento de otros activos diferidos a corto plazo', 3, ''),
+('4.05.11.99.00', 'Incremento de otros activos diferidos a corto plazo', 4, ''),
+('4.05.12.', 'Incremento de activos diferidos a mediano y largo plazo', 2, ''),
+('4.05.12.01.', 'Incremento de gastos a mediano y largo plazo pagados por anticipado', 3, ''),
+('4.05.12.01.01', 'Incremento de intereses de la deuda pública interna a largo plazo pagados por anticipado ', 4, ''),
+('4.05.12.01.02', 'Incremento de intereses de la deuda pública externa a largo plazo pagados por anticipado', 4, ''),
+('4.05.12.01.08', 'Incremento de otros intereses a mediano y largo plazo pagados por anticipado', 4, ''),
+('4.05.12.01.99', 'Incremento de otros gastos a mediano y largo plazo pagados por anticipado', 4, ''),
+('4.05.12.02.', 'Incremento de depósitos otorgados en garantía a mediano y largo plazo', 3, ''),
+('4.05.12.02.00', 'Incremento de depósitos otorgados en garantía a mediano y largo plazo', 4, ''),
+('4.05.12.99.', 'Incremento de otros activos diferidos a mediano y largo plazo', 3, ''),
+('4.05.12.99.00', 'Incremento de otros activos diferidos a mediano y largo plazo', 4, ''),
+('4.05.13.', 'Incremento del Fondo de Estabilización Macroeconómica (FEM)', 2, ''),
+('4.05.13.01.', 'Incremento del Fondo de Estabilización Macroeconómica (FEM) de la República', 3, ''),
+('4.05.13.01.00', 'Incremento del Fondo de Estabilización Macroeconómica (FEM) de la República', 4, ''),
+('4.05.13.02.', 'Incremento del Fondo de Estabilización Macroeconómica (FEM) del Poder Estadal', 3, ''),
+('4.05.13.02.00', 'Incremento del Fondo de Estabilización Macroeconómica (FEM) del Poder Estadal', 4, ''),
+('4.05.13.03.', 'Incremento del Fondo de Estabilización Macroeconómica (FEM) del Poder Municipal', 3, ''),
+('4.05.13.03.00', 'Incremento del Fondo de Estabilización Macroeconómica (FEM) del Poder Municipal', 4, ''),
+('4.05.14.', 'Incremento  del Fondo de Ahorro Intergeneracional', 2, ''),
+('4.05.14.01.', 'Incremento  del Fondo de Ahorro Intergeneracional', 3, ''),
+('4.05.14.01.00', 'Incremento  del Fondo de Ahorro Intergeneracional', 4, ''),
+('4.05.15.', 'Incremento del Fondo de Desarrollo Nacional', 2, ''),
+('4.05.15.01.', 'Incremento del Fondo de Desarrollo Nacional', 3, ''),
+('4.05.15.01.00', 'Incremento del Fondo de Desarrollo Nacional', 4, ''),
+('4.05.16.', 'Incremento del Fondo de Aportes del Sector Público ', 2, ''),
+('4.05.16.01.', 'Incremento del Fondo de Aportes del Sector Público ', 3, ''),
+('4.05.16.01.00', 'Incremento del Fondo de Aportes del Sector Público ', 4, ''),
+('4.05.20.', 'Incremento de otros activos financieros circulantes', 2, ''),
+('4.05.20.01.', 'Incremento de otros activos financieros circulantes', 3, ''),
+('4.05.20.01.00', 'Incremento de otros activos financieros circulantes', 4, ''),
+('4.05.21.', 'Incremento de otros activos financieros no circulantes', 2, ''),
+('4.05.21.01.', 'Incremento de activos en gestión judicial a mediano y largo plazo', 3, ''),
+('4.05.21.01.00', 'Incremento de activos en gestión judicial a mediano y largo plazo', 4, ''),
+('4.05.21.02.', 'Incremento de títulos y otros valores de la deuda pública en litigio a largo plazo', 3, ''),
+('4.05.21.02.00', 'Incremento de títulos y otros valores de la deuda pública en litigio a largo plazo', 4, ''),
+('4.05.21.99.', 'Incremento de otros activos financieros no circulantes', 3, ''),
+('4.05.21.99.00', 'Incremento de otros activos financieros no circulantes', 4, ''),
+('4.05.99.', 'Otros activos financieros', 2, ''),
+('4.05.99.01.', 'Otros activos financieros', 3, ''),
+('4.05.99.01.00', 'Otros activos financieros', 4, ''),
+('4.06.', 'Gastos de defensa y seguridad del estado', 1, ''),
+('4.06.01.', 'Gastos de defensa y seguridad del Estado', 2, ''),
+('4.06.01.01.', 'Gastos de defensa y seguridad del Estado', 3, ''),
+('4.06.01.01.00', 'Gastos de defensa y seguridad del Estado', 4, ''),
+('4.07.', 'Transferencias y donaciones', 1, ''),
+('4.07.01.', 'Transferencias y donaciones corrientes internas', 2, ''),
+('4.07.01.01.', 'Transferencias corrientes internas al sector privado', 3, ''),
+('4.07.01.01.01', 'Pensiones', 4, ''),
+('4.07.01.01.02', 'Jubilaciones', 4, ''),
+('4.07.01.01.03', 'Becas escolares', 4, ''),
+('4.07.01.01.04', 'Becas universitarias en el país', 4, ''),
+('4.07.01.01.05', 'Becas de perfeccionamiento profesional en el país', 4, ''),
+('4.07.01.01.06', 'Becas para estudios en el extranjero', 4, ''),
+('4.07.01.01.07', 'Otras becas', 4, ''),
+('4.07.01.01.08', 'Previsión por accidentes de trabajo', 4, ''),
+('4.07.01.01.09', 'Aguinaldos al personal pensionado', 4, ''),
+('4.07.01.01.10', 'Aportes a caja de ahorro del personal pensionado', 4, ''),
+('4.07.01.01.11', 'Aportes al seguro de hospitalización, cirugía y maternidad del personal pensionado', 4, ''),
+('4.07.01.01.12', 'Otras subvenciones socio - económicas del personal pensionado', 4, ''),
+('4.07.01.01.13', 'Aguinaldos al personal jubilado', 4, ''),
+('4.07.01.01.14', 'Aportes a caja de ahorro del personal jubilado', 4, ''),
+('4.07.01.01.15', 'Aportes al seguro de hospitalización, cirugía y maternidad del  personal jubilado', 4, ''),
+('4.07.01.01.16', 'Otras subvenciones socio - económicas del personal jubilado', 4, ''),
+('4.07.01.01.30', 'Incapacidad temporal sin hospitalización ', 4, ''),
+('4.07.01.01.31', 'Incapacidad temporal con hospitalización ', 4, ''),
+('4.07.01.01.32', 'Reposo por maternidad ', 4, ''),
+('4.07.01.01.33', 'Indemnización por paro forzoso ', 4, ''),
+('4.07.01.01.34', 'Otros tipos de incapacidad temporal', 4, ''),
+('4.07.01.01.35', 'Indemnización por comisión por pensiones ', 4, ''),
+('4.07.01.01.36', 'Indemnización por comisión por cesantía ', 4, ''),
+('4.07.01.01.37', 'Incapacidad parcial ', 4, ''),
+('4.07.01.01.38', 'Invalidez', 4, ''),
+('4.07.01.01.39', 'Pensiones por vejez, viudez y orfandad ', 4, ''),
+('4.07.01.01.40', 'Indemnización por cesantía ', 4, ''),
+('4.07.01.01.41', 'Otras pensiones y demás prestaciones en dinero', 4, ''),
+('4.07.01.01.42', 'Incapacidad parcial por accidente común', 4, ''),
+('4.07.01.01.43', 'Incapacidad parcial por enfermedades profesionales ', 4, ''),
+('4.07.01.01.44', 'Incapacidad parcial por accidente de trabajo ', 4, ''),
+('4.07.01.01.45', 'Indemnización única por invalidez ', 4, ''),
+('4.07.01.01.46', 'Indemnización única por vejez ', 4, ''),
+('4.07.01.01.47', 'Sobrevivientes por enfermedad común ', 4, ''),
+('4.07.01.01.48', 'Sobrevivientes por accidente común ', 4, ''),
+('4.07.01.01.49', 'Sobrevivientes por enfermedades profesionales', 4, ''),
+('4.07.01.01.50', 'Sobrevivientes por accidentes de trabajo ', 4, ''),
+('4.07.01.01.51', 'Indemnizaciones por conmutación de renta ', 4, ''),
+('4.07.01.01.52', 'Indemnizaciones por conmutación de pensiones', 4, ''),
+('4.07.01.01.53', 'Indemnizaciones por comisión de renta', 4, ''),
+('4.07.01.01.54', 'Asignación por nupcias ', 4, ''),
+('4.07.01.01.55', 'Asignación por funeraria ', 4, ''),
+('4.07.01.01.56', 'Otras asignaciones ', 4, ''),
+('4.07.01.01.70', 'Subsidios educacionales al sector privado', 4, ''),
+('4.07.01.01.71', 'Subsidios a universidades privadas', 4, ''),
+('4.07.01.01.72', 'Subsidios culturales al sector privado', 4, ''),
+('4.07.01.01.73', 'Subsidios a instituciones benéficas privadas', 4, ''),
+('4.07.01.01.74', 'Subsidios a centros de empleados', 4, ''),
+('4.07.01.01.75', 'Subsidios a organismos laborales y gremiales', 4, ''),
+('4.07.01.01.76', 'Subsidios a entidades religiosas', 4, ''),
+('4.07.01.01.77', 'Subsidios a entidades deportivas y recreativas de carácter privado', 4, ''),
+('4.07.01.01.78', 'Subsidios científicos al sector privado', 4, ''),
+('4.07.01.01.79', 'Subsidios a cooperativas', 4, ''),
+('4.07.01.01.80', 'Subsidios a empresas privadas', 4, ''),
+('4.07.01.01.99', 'Otras transferencias corrientes internas al sector privado', 4, ''),
+('4.07.01.02.', 'Donaciones corrientes internas al sector privado', 3, ''),
+('4.07.01.02.01', 'Donaciones corrientes a personas', 4, ''),
+('4.07.01.02.02', 'Donaciones corrientes a instituciones sin fines de lucro', 4, ''),
+('4.07.01.03.', 'Transferencias corrientes internas al sector público', 3, ''),
+('4.07.01.03.01', 'Transferencias corrientes a la República', 4, ''),
+('4.07.01.03.02', 'Transferencias corrientes a entes descentralizados sin fines empresariales ', 4, ''),
+('4.07.01.03.03', 'Transferencias corrientes a entes descentralizados sin fines empresariales para atender beneficios de la seguridad social', 4, ''),
+('4.07.01.03.04', 'Transferencias corrientes a instituciones de protección social ', 4, ''),
+('4.07.01.03.05', 'Transferencias corrientes a instituciones de protección social para atender beneficios de la seguridad social', 4, ''),
+('4.07.01.03.06', 'Transferencias corrientes a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.07.01.03.07', 'Transferencias corrientes a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.07.01.03.08', 'Transferencias corrientes a entes descentralizados financieros bancarios', 4, ''),
+('4.07.01.03.09', 'Transferencias corrientes a entes descentralizados financieros no bancarios', 4, ''),
+('4.07.01.03.10', 'Transferencias corrientes al Poder Estadal', 4, ''),
+('4.07.01.03.11', 'Transferencias corrientes  al Poder Municipal', 4, ''),
+('4.07.01.03.13', 'Subsidios otorgados por normas externas', 4, ''),
+('4.07.01.03.14', 'Incentivos otorgados por normas externas', 4, ''),
+('4.07.01.03.15', 'Subsidios otorgados por precios políticos', 4, ''),
+('4.07.01.03.16', 'Subsidios de costos sociales por normas externas', 4, ''),
+('4.07.01.04.', 'Donaciones corrientes internas al sector público', 3, ''),
+('4.07.01.04.01', 'Donaciones corrientes a la República', 4, ''),
+('4.07.01.04.02', 'Donaciones corrientes a entes descentralizados sin fines empresariales', 4, ''),
+('4.07.01.04.03', 'Donaciones corrientes a instituciones de protección social', 4, ''),
+('4.07.01.04.04', 'Donaciones corrientes a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.07.01.04.05', 'Donaciones corrientes a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.07.01.04.06', 'Donaciones corrientes a entes descentralizados financieros bancarios', 4, ''),
+('4.07.01.04.07', 'Donaciones corrientes a entes descentralizados financieros no bancarios', 4, ''),
+('4.07.01.04.08', 'Donaciones corrientes al Poder Estadal', 4, ''),
+('4.07.01.04.09', 'Donaciones corrientes  al Poder Municipal', 4, ''),
+('4.07.02.', 'Transferencias y donaciones corrientes al exterior', 2, ''),
+('4.07.02.01.', 'Transferencias corrientes al exterior', 3, ''),
+('4.07.02.01.01', 'Becas de capacitación e investigación en el exterior', 4, ''),
+('4.07.02.01.02', 'Transferencias corrientes a instituciones sin fines de lucro', 4, ''),
+('4.07.02.01.03', 'Transferencias corrientes a gobiernos extranjeros', 4, ''),
+('4.07.02.01.04', 'Transferencias corrientes a organismos internacionales', 4, ''),
+('4.07.02.02.', 'Donaciones corrientes al exterior', 3, ''),
+('4.07.02.02.01', 'Donaciones corrientes a personas', 4, ''),
+('4.07.02.02.02', 'Donaciones corrientes a instituciones sin fines de lucro', 4, ''),
+('4.07.02.02.03', 'Donaciones corrientes a gobiernos extranjeros', 4, ''),
+('4.07.02.02.04', 'Donaciones corrientes a organismos internacionales', 4, ''),
+('4.07.03.', 'Transferencias y donaciones de capital internas', 2, ''),
+('4.07.03.01.', 'Transferencias de capital internas al sector privado', 3, ''),
+('4.07.03.01.01', 'Transferencias de capital a personas', 4, ''),
+('4.07.03.01.02', 'Transferencias de capital a instituciones sin fines de lucro', 4, ''),
+('4.07.03.01.03', 'Transferencias de capital a empresas privadas', 4, ''),
+('4.07.03.02.', 'Donaciones de capital internas al sector privado', 3, ''),
+('4.07.03.02.01', 'Donaciones de capital a personas', 4, ''),
+('4.07.03.02.02', 'Donaciones de capital a instituciones sin fines de lucro', 4, ''),
+('4.07.03.03.', 'Transferencias de capital internas al sector público', 3, ''),
+('4.07.03.03.01', 'Transferencias de capital a la República', 4, ''),
+('4.07.03.03.02', 'Transferencias de capital a entes descentralizados sin fines empresariales', 4, ''),
+('4.07.03.03.03', 'Transferencias de capital a instituciones de protección social', 4, ''),
+('4.07.03.03.04', 'Transferencias de capital a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.07.03.03.05', 'Transferencias de capital a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.07.03.03.06', 'Transferencias de capital a entes descentralizados financieros bancarios', 4, ''),
+('4.07.03.03.07', 'Transferencias de capital a entes descentralizados financieros no bancarios', 4, ''),
+('4.07.03.03.08', 'Transferencias de capital al Poder Estadal', 4, ''),
+('4.07.03.03.09', 'Transferencias de capital al Poder Municipal', 4, ''),
+('4.07.03.04.', 'Donaciones de capital internas al sector público ', 3, ''),
+('4.07.03.04.01', 'Donaciones de capital a la República', 4, ''),
+('4.07.03.04.02', 'Donaciones de capital a entes descentralizados sin fines empresariales', 4, ''),
+('4.07.03.04.03', 'Donaciones de capital a instituciones de protección social', 4, ''),
+('4.07.03.04.04', 'Donaciones de capital a entes descentralizados con fines empresariales petroleros', 4, ''),
+('4.07.03.04.05', 'Donaciones de capital a entes descentralizados con fines empresariales no petroleros', 4, ''),
+('4.07.03.04.06', 'Donaciones de capital a entes descentralizados financieros bancarios', 4, ''),
+('4.07.03.04.07', 'Donaciones de capital a entes descentralizados financieros no bancarios', 4, ''),
+('4.07.03.04.08', 'Donaciones de capital al Poder Estadal', 4, ''),
+('4.07.03.04.09', 'Donaciones de capital al Poder Municipal', 4, ''),
+('4.07.04.', 'Transferencias y donaciones de capital al exterior', 2, ''),
+('4.07.04.01.', 'Transferencias de capital al exterior', 3, ''),
+('4.07.04.01.01', 'Transferencias de capital a personas', 4, ''),
+('4.07.04.01.02', 'Transferencias de capital a instituciones sin fines de lucro', 4, ''),
+('4.07.04.01.03', 'Transferencias de capital a gobiernos extranjeros', 4, ''),
+('4.07.04.01.04', 'Transferencias de capital a organismos internacionales', 4, ''),
+('4.07.04.02.', 'Donaciones de capital al exterior', 3, ''),
+('4.07.04.02.01', 'Donaciones de capital a personas', 4, ''),
+('4.07.04.02.02', 'Donaciones de capital a instituciones sin fines de lucro', 4, ''),
+('4.07.04.02.03', 'Donaciones de capital a gobiernos extranjeros', 4, ''),
+('4.07.04.02.04', 'Donaciones de capital a organismos internacionales', 4, ''),
+('4.07.05.', 'Situado', 2, ''),
+('4.07.05.01.', 'Situado Constitucional', 3, ''),
+('4.07.05.01.01', 'Situado Estadal', 4, ''),
+('4.07.05.01.02', 'Situado Municipal', 4, ''),
+('4.07.05.01.03', 'Subsidio de régimen especial', 4, ''),
+('4.07.05.02.', 'Situado Estadal a Municipal', 3, ''),
+('4.07.05.02.00', 'Situado Estadal a Municipal', 4, ''),
+('4.07.06.', 'Subsidio de Régimen Especial', 2, ''),
+('4.07.06.01.', 'Subsidio de Régimen Especial', 3, ''),
+('4.07.06.01.00', 'Subsidio de Régimen Especial', 4, ''),
+('4.07.07.', 'Subsidio de capitalidad ', 2, ''),
+('4.07.07.01.', 'Subsidio de capitalidad ', 3, ''),
+('4.07.07.01.00', 'Subsidio de capitalidad ', 4, ''),
+('4.07.08.', 'Asignaciones Económicas Especiales (LAEE)', 2, ''),
+('4.07.08.01.', 'Asignaciones Económicas Especiales (LAEE) Estadal', 3, ''),
+('4.07.08.01.00', 'Asignaciones Económicas Especiales (LAEE) Estadal', 4, ''),
+('4.07.08.02.', 'Asignaciones Económicas Especiales (LAEE) Estadal a Municipal', 3, ''),
+('4.07.08.02.00', 'Asignaciones Económicas Especiales (LAEE) Estadal a Municipal', 4, ''),
+('4.07.08.03.', 'Asignaciones Económicas Especiales (LAEE) Municipal', 3, ''),
+('4.07.08.03.00', 'Asignaciones Económicas Especiales (LAEE) Municipal', 4, ''),
+('4.07.08.04.', 'Asignaciones Económicas Especiales - Fondo Nacional de Consejos Comunales', 3, ''),
+('4.07.08.04.00', 'Asignaciones Económicas Especiales - Fondo Nacional de Consejos Comunales', 4, ''),
+('4.07.09.', 'Aportes a los Estados y Municipios por transferencia de servicios', 2, ''),
+('4.07.09.01.', 'Aportes a los Estados por transferencia de servicios', 3, ''),
+('4.07.09.01.00', 'Aportes a los Estados por transferencia de servicios', 4, ''),
+('4.07.09.02.', 'Aportes a los Municipios por transferencia de servicios', 3, ''),
+('4.07.09.02.00', 'Aportes a los Municipios por transferencia de servicios', 4, ''),
+('4.07.10.', 'Fondo Intergubernamental para la Descentralización (FIDES)', 2, ''),
+('4.07.10.01.', 'Fondo Intergubernamental para la Descentralización (FIDES)', 3, ''),
+('4.07.10.01.00', 'Fondo Intergubernamental para la Descentralización (FIDES)', 4, ''),
+('4.07.11.', 'Fondo de Compensación Interterritorial', 2, ''),
+('4.07.11.01.', 'Fondo de Compensación Interterritorial', 3, ''),
+('4.07.11.01.00', 'Fondo de Compensación Interterritorial', 4, ''),
+('4.07.12.', 'Transferencias y Donaciones a Consejos Comunales', 2, ''),
+('4.07.12.01.', 'Transferencias y Donaciones Corrientes a Consejos Comunales', 3, ''),
+('4.07.12.01.01', 'Transferencias Corrientes a Consejos Comunales', 4, ''),
+('4.07.12.01.02', 'Donaciones Corrientes a Consejos Comunales', 4, ''),
+('4.07.12.02.', 'Transferencias y Donaciones de Capital a Consejos Comunales', 3, ''),
+('4.07.12.02.01', 'Transferencias de Capital a Consejos Comunales', 4, ''),
+('4.07.12.02.02', 'Donaciones de Capital a Consejos Comunales', 4, ''),
+('4.08.', 'Otros gastos', 1, ''),
+('4.08.01.', 'Depreciación y amortización ', 2, ''),
+('4.08.01.01.', 'Depreciación  ', 3, ''),
+('4.08.01.01.01', 'Depreciación de edificios e instalaciones', 4, ''),
+('4.08.01.01.02', 'Depreciación de maquinaria y demás equipos de construcción, campo, industria y taller ', 4, ''),
+('4.08.01.01.03', 'Depreciación de equipos de transporte, tracción y elevación ', 4, ''),
+('4.08.01.01.04', 'Depreciación de equipos de comunicaciones y de señalamiento', 4, ''),
+('4.08.01.01.05', 'Depreciación de equipos médico - quirúrgicos, dentales y de veterinaria', 4, ''),
+('4.08.01.01.06', 'Depreciación de equipos científicos, religiosos, de enseñanza y recreación', 4, ''),
+('4.08.01.01.07', 'Depreciación de equipos para la seguridad pública', 4, ''),
+('4.08.01.01.08', 'Depreciación de máquinas, muebles y demás equipos de oficina y alojamiento', 4, ''),
+('4.08.01.01.09', 'Depreciación  de semovientes', 4, ''),
+('4.08.01.01.99', 'Depreciación  de otros bienes de uso', 4, ''),
+('4.08.01.02.', 'Amortización ', 3, ''),
+('4.08.01.02.01', 'Amortización de marcas de fábrica y patentes de invención', 4, ''),
+('4.08.01.02.02', 'Amortización de derechos de autor', 4, ''),
+('4.08.01.02.03', 'Amortización de gastos de organización', 4, ''),
+('4.08.01.02.04', 'Amortización de paquetes y programas de computación', 4, ''),
+('4.08.01.02.05', 'Amortización de estudios y proyectos', 4, ''),
+('4.08.01.02.99', 'Amortización de otros activos intangibles ', 4, ''),
+('4.08.02.', 'Intereses por operaciones  financieras ', 2, ''),
+('4.08.02.01.', 'Intereses por depósitos internos', 3, ''),
+('4.08.02.01.00', 'Intereses por depósitos internos', 4, ''),
+('4.08.02.02.', 'Intereses por títulos y valores', 3, ''),
+('4.08.02.02.00', 'Intereses por títulos y valores', 4, ''),
+('4.08.02.03.', 'Intereses por otros financiamientos', 3, ''),
+('4.08.02.03.00', 'Intereses por otros financiamientos', 4, ''),
+('4.08.03.', 'Gastos por operaciones de seguro ', 2, ''),
+('4.08.03.01.', 'Gastos de siniestros ', 3, ''),
+('4.08.03.01.00', 'Gastos de siniestros ', 4, ''),
+('4.08.03.02.', 'Gastos de operaciones de reaseguros ', 3, ''),
+('4.08.03.02.00', 'Gastos de operaciones de reaseguros ', 4, ''),
+('4.08.03.99.', 'Otros gastos de operaciones de seguro ', 3, ''),
+('4.08.03.99.00', 'Otros gastos de operaciones de seguro ', 4, ''),
+('4.08.04.', 'Pérdida en operaciones de los servicios básicos ', 2, ''),
+('4.08.04.01.', 'Pérdidas en el proceso de distribución de los servicios ', 3, ''),
+('4.08.04.01.00', 'Pérdidas en el proceso de distribución de los servicios ', 4, ''),
+('4.08.04.99.', 'Otras pérdidas en operación ', 3, ''),
+('4.08.04.99.00', 'Otras pérdidas en operación ', 4, ''),
+('4.08.05.', 'Obligaciones en el ejercicio vigente ', 2, ''),
+('4.08.05.01.', 'Devoluciones de cobros indebidos', 3, ''),
+('4.08.05.01.00', 'Devoluciones de cobros indebidos', 4, ''),
+('4.08.05.02.', 'Devoluciones y reintegros diversos', 3, ''),
+('4.08.05.02.00', 'Devoluciones y reintegros diversos', 4, ''),
+('4.08.05.03.', 'Indemnizaciones diversas', 3, ''),
+('4.08.05.03.00', 'Indemnizaciones diversas', 4, ''),
+('4.08.06.', 'Pérdidas ajenas a la operación', 2, ''),
+('4.08.06.01.', 'Pérdidas en inventarios', 3, ''),
+('4.08.06.01.00', 'Pérdidas en inventarios', 4, ''),
+('4.08.06.02.', 'Pérdidas en operaciones cambiarias', 3, ''),
+('4.08.06.02.00', 'Pérdidas en operaciones cambiarias', 4, ''),
+('4.08.06.03.', 'Pérdidas en ventas de activos', 3, ''),
+('4.08.06.03.00', 'Pérdidas en ventas de activos', 4, ''),
+('4.08.06.04.', 'Pérdidas por cuentas incobrables', 3, ''),
+('4.08.06.04.00', 'Pérdidas por cuentas incobrables', 4, ''),
+('4.08.06.05.', 'Participación en pérdidas de otras empresas', 3, ''),
+('4.08.06.05.00', 'Participación en pérdidas de otras empresas', 4, ''),
+('4.08.06.06.', 'Pérdidas por auto-seguro', 3, ''),
+('4.08.06.06.00', 'Pérdidas por auto-seguro', 4, ''),
+('4.08.06.07.', 'Impuestos directos', 3, ''),
+('4.08.06.07.00', 'Impuestos directos', 4, ''),
+('4.08.06.08.', 'Intereses de mora ', 3, ''),
+('4.08.06.08.00', 'Intereses de mora ', 4, ''),
+('4.08.06.09.', 'Reservas técnicas ', 3, ''),
+('4.08.06.09.00', 'Reservas técnicas ', 4, ''),
+('4.08.07.', 'Descuentos, bonificaciones y devoluciones', 2, ''),
+('4.08.07.01.', 'Descuentos sobre ventas', 3, ''),
+('4.08.07.01.00', 'Descuentos sobre ventas', 4, ''),
+('4.08.07.02.', 'Bonificaciones por ventas', 3, ''),
+('4.08.07.02.00', 'Bonificaciones por ventas', 4, ''),
+('4.08.07.03.', 'Devoluciones por ventas', 3, ''),
+('4.08.07.03.00', 'Devoluciones por ventas', 4, ''),
+('4.08.07.04.', 'Devoluciones por primas de seguro', 3, ''),
+('4.08.07.04.00', 'Devoluciones por primas de seguro', 4, ''),
+('4.08.08.', 'Indemnizaciones y sanciones pecuniarias', 2, ''),
+('4.08.08.01.', 'Indemnizaciones por daños y perjuicios', 3, ''),
+('4.08.08.01.01', 'Indemnizaciones por daños y perjuicios ocasionados por organismos de la República, del Poder Estadal y del Poder Municipal', 4, ''),
+('4.08.08.01.02', 'Indemnizaciones por daños y perjuicios ocasionados por entes descentralizados sin fines empresariales', 4, ''),
+('4.08.08.01.03', 'Indemnizaciones por daños y perjuicios ocasionados por entes descentralizados con fines empresariales', 4, ''),
+('4.08.08.02.', 'Sanciones pecuniarias', 3, ''),
+('4.08.08.02.01', 'Sanciones pecuniarias impuestas a los organismos de la República, del Poder Estadal y del Poder Municipal', 4, ''),
+('4.08.08.02.02', 'Sanciones pecuniarias impuestas a los entes descentralizados sin fines empresariales', 4, ''),
+('4.08.08.02.03', 'Sanciones pecuniarias ocasionadas por entes descentralizados con fines empresariales', 4, ''),
+('4.08.99.', 'Otros gastos', 2, ''),
+('4.08.99.01.', 'Otros gastos', 3, ''),
+('4.08.99.01.00', 'Otros gastos', 4, ''),
+('4.09.', 'Asignaciones no distribuidas', 1, ''),
+('4.09.01.', 'Asignaciones  no distribuidas de la Asamblea Nacional ', 2, ''),
+('4.09.01.01.', 'Asignaciones  no distribuidas de la Asamblea Nacional ', 3, ''),
+('4.09.01.01.00', 'Asignaciones  no distribuidas de la Asamblea Nacional ', 4, ''),
+('4.09.02.', 'Asignaciones no distribuidas de la Contraloría General de la República', 2, ''),
+('4.09.02.01.', 'Asignaciones no distribuidas de la Contraloría General de la República', 3, ''),
+('4.09.02.01.00', 'Asignaciones no distribuidas de la Contraloría General de la República', 4, ''),
+('4.09.03.', 'Asignaciones no distribuidas del Consejo Nacional Electoral', 2, ''),
+('4.09.03.01.', 'Asignaciones no distribuidas del Consejo Nacional Electoral', 3, ''),
+('4.09.03.01.00', 'Asignaciones no distribuidas del Consejo Nacional Electoral', 4, ''),
+('4.09.04.', 'Asignaciones no distribuidas del Tribunal Supremo de Justicia', 2, ''),
+('4.09.04.01.', 'Asignaciones no distribuidas del Tribunal Supremo de Justicia', 3, ''),
+('4.09.04.01.00', 'Asignaciones no distribuidas del Tribunal Supremo de Justicia', 4, ''),
+('4.09.05.', 'Asignaciones no distribuidas del Ministerio Público', 2, ''),
+('4.09.05.01.', 'Asignaciones no distribuidas del Ministerio Público', 3, ''),
+('4.09.05.01.00', 'Asignaciones no distribuidas del Ministerio Público', 4, ''),
+('4.09.06.', 'Asignaciones no distribuidas de la Defensoría del Pueblo', 2, ''),
+('4.09.06.01.', 'Asignaciones no distribuidas de la Defensoría del Pueblo', 3, ''),
+('4.09.06.01.00', 'Asignaciones no distribuidas de la Defensoría del Pueblo', 4, ''),
+('4.09.07.', 'Asignaciones no distribuidas del Consejo Moral Republicano ', 2, ''),
+('4.09.07.01.', 'Asignaciones no distribuidas del Consejo Moral Republicano', 3, ''),
+('4.09.07.01.00', 'Asignaciones no distribuidas del Consejo Moral Republicano', 4, ''),
+('4.09.08.', 'Reestructuración de organismos del sector público ', 2, ''),
+('4.09.08.01.', 'Reestructuración de organismos del sector público ', 3, ''),
+('4.09.08.01.00', 'Reestructuración de organismos del sector público ', 4, ''),
+('4.09.09.', 'Fondo de apoyo al trabajador y su grupo familiar', 2, ''),
+('4.09.09.01.', 'Fondo de apoyo al trabajador y su grupo familiar de la Administración Pública Nacional', 3, ''),
+('4.09.09.01.00', 'Fondo de apoyo al trabajador y su grupo familiar de la Administración Pública Nacional', 4, ''),
+('4.09.09.02.', 'Fondo de apoyo al trabajador y su grupo familiar de los Estados y Municipios', 3, ''),
+('4.09.09.02.00', 'Fondo de apoyo al trabajador y su grupo familiar de los Estados y Municipios', 4, ''),
+('4.09.10.', 'Reforma de la seguridad social', 2, ''),
+('4.09.10.01.', 'Reforma de la seguridad social', 3, ''),
+('4.09.10.01.00', 'Reforma de la seguridad social', 4, ''),
+('4.09.11.', 'Emergencias en el territorio nacional', 2, ''),
+('4.09.11.01.', 'Emergencias en el territorio nacional', 3, ''),
+('4.09.11.01.00', 'Emergencias en el territorio nacional', 4, ''),
+('4.09.12.', 'Fondo para la cancelación de pasivos laborales', 2, ''),
+('4.09.12.01.', 'Fondo para la cancelación de pasivos laborales', 3, ''),
+('4.09.12.01.00', 'Fondo para la cancelación de pasivos laborales', 4, ''),
+('4.09.13.', 'Fondo para la cancelación de deuda por servicios de electricidad, teléfono, aseo, agua y condominio', 2, ''),
+('4.09.13.01.', 'Fondo para la cancelación de deuda por servicios de electricidad, teléfono, aseo, agua y condominio, de los organismos de la Administración Central', 3, ''),
+('4.09.13.01.00', 'Fondo para la cancelación de deuda por servicios de electricidad, teléfono, aseo, agua y condominio, de los organismos de la Administración Central', 4, ''),
+('4.09.13.02.', 'Fondo para la cancelación de deuda por servicios de electricidad, teléfono, aseo, agua y condominio, de los organismos de la Administración Descentralizada Nacional', 3, ''),
+('4.09.13.02.00', 'Fondo para la cancelación de deuda por servicios de electricidad, teléfono, aseo, agua y condominio, de los organismos de la Administración Descentralizada Nacional', 4, ''),
+('4.09.14.', 'Fondo para remuneraciones, pensiones y jubilaciones y otras retribuciones', 2, ''),
+('4.09.14.01.', 'Fondo para remuneraciones, pensiones y jubilaciones y otras retribuciones', 3, ''),
+('4.09.14.01.00', 'Fondo para remuneraciones, pensiones y jubilaciones y otras retribuciones', 4, ''),
+('4.09.15.', 'Fondo para atender compromisos generados de la Ley Orgánica del Trabajo', 2, ''),
+('4.09.15.01.', 'Fondo para atender compromisos generados de la Ley Orgánica del Trabajo', 3, ''),
+('4.09.15.01.00', 'Fondo para atender compromisos generados de la Ley Orgánica del Trabajo', 4, ''),
+('4.09.16.', 'Asignaciones para cancelar compromisos pendientes de ejercicios anteriores', 2, ''),
+('4.09.16.01.', 'Asignaciones para cancelar compromisos pendientes de ejercicios anteriores', 3, '');
+INSERT INTO `cwprecue` (`CodCue`, `Denominacion`, `Tipocta`, `Tipopuc`) VALUES
+('4.09.16.01.00', 'Asignaciones para cancelar compromisos pendientes de ejercicios anteriores', 4, ''),
+('4.09.17.', 'Asignaciones para cancelar la deuda Fogade ¿ Ministerio de Finanzas ¿ Banco Central de Venezuela (BCV)', 2, ''),
+('4.09.17.01.', 'Asignaciones para cancelar la deuda Fogade ¿ Ministerio de Finanzas ¿ Banco Central de Venezuela (BCV)', 3, ''),
+('4.09.17.01.00', 'Asignaciones para cancelar la deuda Fogade ¿ Ministerio de Finanzas ¿ Banco Central de Venezuela (BCV)', 4, ''),
+('4.09.18.', 'Asignaciones para atender los gastos de la referenda y elecciones', 2, ''),
+('4.09.18.01.', 'Asignaciones para atender los gastos de la referenda y elecciones', 3, ''),
+('4.09.18.01.00', 'Asignaciones para atender los gastos de la referenda y elecciones', 4, ''),
+('4.09.19.', 'Asignaciones para atender los gastos por honorarios profesionales de bufetes internacionales, costas y costos judiciales', 2, ''),
+('4.09.19.01.', 'Asignaciones para atender los gastos por honorarios profesionales de bufetes internacionales, costas y costos judiciales', 3, ''),
+('4.09.19.01.00', 'Asignaciones para atender los gastos por honorarios profesionales de bufetes internacionales, costas y costos judiciales', 4, ''),
+('4.09.20.', 'Fondo para atender compromisos generados por la contratación colectiva', 2, ''),
+('4.09.20.01.', 'Fondo para atender compromisos generados por la contratación colectiva', 3, ''),
+('4.09.20.01.00', 'Fondo para atender compromisos generados por la contratación colectiva', 4, ''),
+('4.09.21.', 'Proyecto social especial', 2, ''),
+('4.09.21.01.', 'Proyecto social especial', 3, ''),
+('4.09.21.01.00', 'Proyecto social especial', 4, ''),
+('4.09.22.', 'Asignaciones para programas y proyectos financiados con recursos de organismos multilaterales y/o bilaterales', 2, ''),
+('4.09.22.01.', 'Asignaciones para programas y proyectos financiados con recursos de organismos multilaterales y/o bilaterales', 3, ''),
+('4.09.22.01.00', 'Asignaciones para programas y proyectos financiados con recursos de organismos multilaterales y/o bilaterales', 4, ''),
+('4.09.23.', 'Asignación para facilitar la preparación de proyectos', 2, ''),
+('4.09.23.01.', 'Asignación para facilitar la preparación de proyectos', 3, ''),
+('4.09.23.01.00', 'Asignación para facilitar la preparación de proyectos', 4, ''),
+('4.09.24.', 'Programas de inversión para las entidades estadales, municipalidades y otras instituciones', 2, ''),
+('4.09.24.01.', 'Programas de inversión para las entidades estadales, municipalidades y otras instituciones', 3, ''),
+('4.09.24.01.00', 'Programas de inversión para las entidades estadales, municipalidades y otras instituciones', 4, ''),
+('4.09.25.', 'Cancelación de compromisos', 2, ''),
+('4.09.25.01.', 'Cancelación de compromisos', 3, ''),
+('4.09.25.01.00', 'Cancelación de compromisos', 4, ''),
+('4.09.26.', 'Asignaciones para atender gastos de los organismos del sector público', 2, ''),
+('4.09.26.01.', 'Asignaciones para atender gastos de los organismos del sector público', 3, ''),
+('4.09.26.01.00', 'Asignaciones para atender gastos de los organismos del sector público', 4, ''),
+('4.09.27.', 'Convenio de Cooperación Especial', 2, ''),
+('4.09.27.01.', 'Convenio de Cooperación Especial', 3, ''),
+('4.09.27.01.00', 'Convenio de Cooperación Especial', 4, ''),
+('4.10.', 'Servicio de la deuda pública', 1, ''),
+('4.10.01.', 'Servicio de la deuda pública interna a corto plazo', 2, ''),
+('4.10.01.01.', 'Servicio de la deuda pública interna a corto plazo de títulos y valores', 3, ''),
+('4.10.01.01.01', 'Amortización de la deuda pública interna a corto plazo de títulos y valores', 4, ''),
+('4.10.01.01.02', 'Amortización de la deuda pública interna a corto plazo de letras del tesoro', 4, ''),
+('4.10.01.01.03', 'Intereses de la deuda pública interna a corto plazo de títulos y valores', 4, ''),
+('4.10.01.01.04', 'Intereses por mora y multas de la deuda pública interna a corto plazo de títulos y valores', 4, ''),
+('4.10.01.01.05', 'Comisiones y otros gastos de la deuda pública interna a corto plazo de títulos y valores', 4, ''),
+('4.10.01.01.06', 'Descuentos en colocación de títulos y valores de la deuda pública interna a  corto plazo', 4, ''),
+('4.10.01.01.07', 'Descuentos en colocación de letras del tesoro a corto plazo  ', 4, ''),
+('4.10.01.02.', 'Servicio de la deuda pública interna por préstamos a corto plazo', 3, ''),
+('4.10.01.02.01', 'Amortización de la deuda pública interna por préstamos recibidos del sector privado a corto plazo ', 4, ''),
+('4.10.01.02.02', 'Amortización de la deuda pública interna por préstamos recibidos de la República a corto plazo ', 4, ''),
+('4.10.01.02.03', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a corto plazo', 4, ''),
+('4.10.01.02.04', 'Amortización de la deuda pública interna por préstamos recibidos de instituciones de protección social a corto plazo', 4, ''),
+('4.10.01.02.05', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a corto plazo ', 4, ''),
+('4.10.01.02.06', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a corto plazo ', 4, ''),
+('4.10.01.02.07', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.08', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.09', 'Amortización de la deuda pública interna por préstamos recibidos del Poder Estadal a corto plazo ', 4, ''),
+('4.10.01.02.10', 'Amortización de la deuda pública interna por préstamos recibidos del Poder Municipal a corto plazo ', 4, ''),
+('4.10.01.02.11', 'Intereses de la deuda pública interna por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.02.12', 'Intereses de la deuda pública interna por préstamos recibidos de la República a corto plazo', 4, ''),
+('4.10.01.02.13', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a corto plazo', 4, ''),
+('4.10.01.02.14', 'Intereses de la deuda pública interna por préstamos recibidos de instituciones de protección social a corto plazo', 4, ''),
+('4.10.01.02.15', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a corto plazo ', 4, ''),
+('4.10.01.02.16', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a corto plazo ', 4, ''),
+('4.10.01.02.17', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.18', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.19', 'Intereses de la deuda pública interna por préstamos recibidos del Poder Estadal a corto plazo ', 4, ''),
+('4.10.01.02.20', 'Intereses de la deuda pública interna por préstamos recibidos del Poder Municipal a corto plazo ', 4, ''),
+('4.10.01.02.21', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.02.22', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de la República a corto plazo', 4, ''),
+('4.10.01.02.23', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a corto plazo', 4, ''),
+('4.10.01.02.24', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de instituciones de protección social a corto plazo', 4, ''),
+('4.10.01.02.25', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a corto plazo ', 4, ''),
+('4.10.01.02.26', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a corto plazo ', 4, ''),
+('4.10.01.02.27', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.28', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.29', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos del Poder Estadal a corto plazo ', 4, ''),
+('4.10.01.02.30', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos del Poder Municipal a corto plazo ', 4, ''),
+('4.10.01.02.31', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.02.32', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de la República a corto plazo', 4, ''),
+('4.10.01.02.33', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a corto plazo', 4, ''),
+('4.10.01.02.34', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de instituciones de protección social a corto  plazo', 4, ''),
+('4.10.01.02.35', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a corto plazo ', 4, ''),
+('4.10.01.02.36', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a corto plazo ', 4, ''),
+('4.10.01.02.37', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a corto plazo  ', 4, ''),
+('4.10.01.02.38', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a corto  plazo  ', 4, ''),
+('4.10.01.02.39', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos del Poder Estadal a corto plazo ', 4, ''),
+('4.10.01.02.40', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos del Poder Municipal a corto  plazo ', 4, ''),
+('4.10.01.03.', 'Servicio de la deuda pública interna indirecta por préstamos a corto plazo', 3, ''),
+('4.10.01.03.01', 'Amortización de la deuda pública interna indirecta por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.03.02', 'Amortización de la deuda pública interna indirecta por préstamos recibidos del sector público a corto plazo', 4, ''),
+('4.10.01.03.03', 'Intereses de la deuda pública interna indirecta por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.03.04', 'Intereses de la deuda pública interna indirecta por préstamos recibidos del sector público a corto plazo', 4, ''),
+('4.10.01.03.05', 'Intereses por mora y multas de la deuda pública interna indirecta por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.03.06', 'Intereses por mora y multas de la deuda pública interna indirecta por préstamos recibidos del sector público a corto plazo', 4, ''),
+('4.10.01.03.07', 'Comisiones y otros gastos de la deuda pública interna indirecta por préstamos recibidos del sector privado a corto plazo', 4, ''),
+('4.10.01.03.08', 'Comisiones y otros gastos de la deuda pública interna indirecta por préstamos recibidos del sector público a corto plazo', 4, ''),
+('4.10.02.', 'Servicio de la deuda pública interna a largo plazo', 2, ''),
+('4.10.02.01.', 'Servicio de la deuda pública interna a largo plazo de títulos y valores', 3, ''),
+('4.10.02.01.01', 'Amortización de la deuda pública interna a largo plazo de títulos y valores', 4, ''),
+('4.10.02.01.02', 'Amortización de la deuda pública interna a largo plazo de letras del tesoro', 4, ''),
+('4.10.02.01.03', 'Intereses de la deuda pública interna a largo plazo de títulos y valores', 4, ''),
+('4.10.02.01.04', 'Intereses por mora y multas de la deuda pública interna a largo plazo de títulos y valores', 4, ''),
+('4.10.02.01.05', 'Comisiones y otros gastos de la deuda pública interna a largo plazo de títulos y valores', 4, ''),
+('4.10.02.01.06', 'Descuentos en colocación de títulos y valores de la deuda pública interna a largo plazo', 4, ''),
+('4.10.02.01.07', 'Descuentos en colocación de letras del tesoro a largo plazo  ', 4, ''),
+('4.10.02.02.', 'Servicio de la deuda pública interna por préstamos a largo plazo', 3, ''),
+('4.10.02.02.01', 'Amortización de la deuda pública interna por préstamos recibidos del sector privado a largo plazo ', 4, ''),
+('4.10.02.02.02', 'Amortización de la deuda pública interna por préstamos recibidos de la República a largo plazo ', 4, ''),
+('4.10.02.02.03', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a largo plazo', 4, ''),
+('4.10.02.02.04', 'Amortización de la deuda pública interna por préstamos recibidos de instituciones de protección social a largo plazo', 4, ''),
+('4.10.02.02.05', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a largo plazo ', 4, ''),
+('4.10.02.02.06', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a largo plazo ', 4, ''),
+('4.10.02.02.07', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.08', 'Amortización de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.09', 'Amortización de la deuda pública interna por préstamos recibidos del Poder Estadal a largo plazo ', 4, ''),
+('4.10.02.02.10', 'Amortización de la deuda pública interna por préstamos recibidos del Poder Municipal a largo plazo ', 4, ''),
+('4.10.02.02.11', 'Intereses de la deuda pública interna por préstamos recibidos del sector privado a largo plazo', 4, ''),
+('4.10.02.02.12', 'Intereses de la deuda pública interna por préstamos recibidos de la República a largo plazo', 4, ''),
+('4.10.02.02.13', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a largo plazo', 4, ''),
+('4.10.02.02.14', 'Intereses de la deuda pública interna por préstamos recibidos de instituciones de protección social a largo plazo', 4, ''),
+('4.10.02.02.15', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a largo plazo ', 4, ''),
+('4.10.02.02.16', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a largo plazo ', 4, ''),
+('4.10.02.02.17', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.18', 'Intereses de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.19', 'Intereses de la deuda pública interna por préstamos recibidos del Poder Estadal a largo plazo ', 4, ''),
+('4.10.02.02.20', 'Intereses de la deuda pública interna por préstamos recibidos del Poder Municipal a largo plazo ', 4, ''),
+('4.10.02.02.21', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos del sector privado a largo plazo', 4, ''),
+('4.10.02.02.22', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de la República a largo plazo', 4, ''),
+('4.10.02.02.23', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a largo plazo', 4, ''),
+('4.10.02.02.24', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de instituciones de protección social a largo plazo', 4, ''),
+('4.10.02.02.25', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a largo plazo ', 4, ''),
+('4.10.02.02.26', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a largo plazo ', 4, ''),
+('4.10.02.02.27', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.28', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.29', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos del Poder Estadal a largo plazo ', 4, ''),
+('4.10.02.02.30', 'Intereses por mora y multas de la deuda pública interna por préstamos recibidos del Poder Municipal a largo plazo ', 4, ''),
+('4.10.02.02.31', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos del sector privado a largo plazo', 4, ''),
+('4.10.02.02.32', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de la República a largo plazo', 4, ''),
+('4.10.02.02.33', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados sin fines empresariales a largo plazo', 4, ''),
+('4.10.02.02.34', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de instituciones de protección social a largo plazo', 4, ''),
+('4.10.02.02.35', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales petroleros a largo plazo ', 4, ''),
+('4.10.02.02.36', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados con fines empresariales no petroleros a largo plazo ', 4, ''),
+('4.10.02.02.37', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados financieros bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.38', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos de entes descentralizados financieros no bancarios a largo plazo  ', 4, ''),
+('4.10.02.02.39', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos del Poder Estadal a largo plazo ', 4, ''),
+('4.10.02.02.40', 'Comisiones y otros gastos de la deuda pública interna por préstamos recibidos del Poder Municipal a largo plazo ', 4, ''),
+('4.10.02.03.', 'Servicio de la deuda pública interna indirecta a largo plazo de títulos y valores', 3, ''),
+('4.10.02.03.01', 'Amortización de la deuda pública interna indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.02.03.02', 'Intereses de la deuda pública interna indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.02.03.03', 'Intereses por mora y multas de la deuda pública interna indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.02.03.04', 'Comisiones y otros gastos de la deuda pública interna indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.02.03.05', 'Descuentos en colocación de títulos y valores de la deuda pública interna indirecta de largo plazo', 4, ''),
+('4.10.02.04.', 'Servicio de la deuda pública interna indirecta por préstamos a largo plazo', 3, ''),
+('4.10.02.04.01', 'Amortización de la deuda pública interna indirecta por préstamos recibidos del sector privado a largo plazo  ', 4, ''),
+('4.10.02.04.02', 'Amortización de la deuda pública interna indirecta por préstamos recibidos del sector público a largo plazo  ', 4, ''),
+('4.10.02.04.03', 'Intereses de la deuda pública interna indirecta por préstamos recibidos del sector privado a largo plazo', 4, ''),
+('4.10.02.04.04', 'Intereses de la deuda pública interna indirecta por préstamos recibidos del sector público a largo plazo', 4, ''),
+('4.10.02.04.05', 'Intereses por mora y multas de la deuda pública interna indirecta por préstamos recibidos del sector privado a largo plazo', 4, ''),
+('4.10.02.04.06', 'Intereses por mora y multas de la deuda pública interna indirecta por préstamos recibidos del sector público a largo plazo', 4, ''),
+('4.10.02.04.07', 'Comisiones y otros gastos de la deuda pública interna indirecta por préstamos recibidos del sector privado a largo plazo', 4, ''),
+('4.10.02.04.08', 'Comisiones y otros gastos de la deuda pública interna indirecta por préstamos recibidos del sector público a largo plazo', 4, ''),
+('4.10.03.', 'Servicio de la deuda pública externa a corto plazo', 2, ''),
+('4.10.03.01.', 'Servicio de la deuda pública externa a corto plazo de títulos y valores', 3, ''),
+('4.10.03.01.01', 'Amortización de la deuda pública externa a corto plazo de títulos y valores', 4, ''),
+('4.10.03.01.02', 'Intereses de la deuda pública externa a corto plazo de títulos y valores', 4, ''),
+('4.10.03.01.03', 'Intereses por mora y multas de la deuda pública externa a corto plazo de títulos y valores', 4, ''),
+('4.10.03.01.04', 'Comisiones y otros gastos de la deuda pública externa a corto plazo de títulos y valores', 4, ''),
+('4.10.03.01.05', 'Descuentos en colocación de títulos y valores de la deuda pública externa a corto plazo', 4, ''),
+('4.10.03.02.', 'Servicio de la deuda pública externa por préstamos a corto plazo', 3, ''),
+('4.10.03.02.01', 'Amortización de la deuda pública externa por préstamos recibidos de gobiernos extranjeros a corto plazo ', 4, ''),
+('4.10.03.02.02', 'Amortización de la deuda pública externa por préstamos recibidos de organismos internacionales a corto plazo', 4, ''),
+('4.10.03.02.03', 'Amortización de la deuda pública externa por préstamos recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.02.04', 'Amortización de la deuda pública externa por préstamos recibidos de proveedores de bienes y servicios externos a corto plazo', 4, ''),
+('4.10.03.02.05', 'Intereses de la deuda pública externa por préstamos  recibidos de gobiernos extranjeros a corto plazo', 4, ''),
+('4.10.03.02.06', 'Intereses de la deuda pública externa por préstamos  recibidos de organismos internacionales a corto plazo', 4, ''),
+('4.10.03.02.07', 'Intereses de la deuda pública externa por préstamos  recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.02.08', 'Intereses de la deuda pública externa por préstamos  recibidos de proveedores de bienes y servicios externos a corto plazo', 4, ''),
+('4.10.03.02.09', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos de gobiernos extranjeros a corto plazo  ', 4, ''),
+('4.10.03.02.10', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos  de organismos internacionales a corto plazo', 4, ''),
+('4.10.03.02.11', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.02.12', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos de proveedores de bienes y servicios externos a corto plazo ', 4, ''),
+('4.10.03.02.13', 'Comisiones y otros gastos de la deuda pública externa por préstamos  recibidos de gobiernos extranjeros a corto plazo  ', 4, ''),
+('4.10.03.02.14', 'Comisiones y otros gastos de la deuda pública externa por préstamos  recibidos  de organismos internacionales a corto plazo', 4, ''),
+('4.10.03.02.15', 'Comisiones y otros gastos de la deuda pública externa por préstamos  recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.02.16', 'Comisiones y otros gastos de la deuda pública externa por préstamos recibidos de proveedores de bienes y servicios externos a corto plazo ', 4, ''),
+('4.10.03.03.', 'Servicio de la deuda pública externa indirecta por préstamos a corto plazo', 3, ''),
+('4.10.03.03.01', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de gobiernos extranjeros a corto plazo ', 4, ''),
+('4.10.03.03.02', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a corto plazo', 4, ''),
+('4.10.03.03.03', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.03.04', 'Amortización de la deuda pública externa indirecta por préstamos  recibidos de proveedores de bienes y servicios externos a corto plazo', 4, ''),
+('4.10.03.03.05', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de gobiernos extranjeros a corto plazo', 4, ''),
+('4.10.03.03.06', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a corto plazo', 4, ''),
+('4.10.03.03.07', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.03.08', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de proveedores de bienes y servicios externos a corto plazo', 4, ''),
+('4.10.03.03.09', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos  recibidos de gobiernos extranjeros a corto plazo', 4, ''),
+('4.10.03.03.10', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a corto plazo ', 4, ''),
+('4.10.03.03.11', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos recibidos de instituciones financieras externas a corto plazo ', 4, ''),
+('4.10.03.03.12', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos  recibidos de proveedores de bienes y servicios externos a corto plazo ', 4, ''),
+('4.10.03.03.13', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos  recibidos de gobiernos extranjeros a corto plazo', 4, ''),
+('4.10.03.03.14', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a corto plazo ', 4, ''),
+('4.10.03.03.15', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos  recibidos de instituciones financieras externas a corto plazo', 4, ''),
+('4.10.03.03.16', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos recibidos de proveedores de bienes y servicios externos a corto plazo  ', 4, ''),
+('4.10.04.', 'Servicio de la deuda pública externa a largo plazo', 2, ''),
+('4.10.04.01.', 'Servicio de la deuda pública externa a largo plazo de títulos y valores', 3, ''),
+('4.10.04.01.01', 'Amortización de la deuda pública externa a largo plazo de títulos y valores', 4, ''),
+('4.10.04.01.02', 'Intereses de la deuda pública externa a largo plazo de títulos y valores', 4, ''),
+('4.10.04.01.03', 'Intereses por mora y multas de la deuda pública externa a largo plazo de títulos y valores', 4, ''),
+('4.10.04.01.04', 'Comisiones y otros gastos de la deuda pública externa a largo plazo de títulos y valores', 4, ''),
+('4.10.04.01.05', 'Descuentos en colocación de títulos y valores de la deuda pública externa a largo plazo', 4, ''),
+('4.10.04.02.', 'Servicio de la deuda pública externa por préstamos a largo plazo', 3, ''),
+('4.10.04.02.01', 'Amortización de la deuda pública externa por préstamos recibidos de gobiernos extranjeros a  largo plazo ', 4, ''),
+('4.10.04.02.02', 'Amortización de la deuda pública externa por préstamos  recibidos de organismos internacionales a largo plazo', 4, ''),
+('4.10.04.02.03', 'Amortización de la deuda pública externa por préstamos recibidos de instituciones financieras externas  a largo plazo', 4, ''),
+('4.10.04.02.04', 'Amortización de la deuda pública externa por préstamos recibidos de proveedores de bienes y servicios externos  a largo plazo', 4, ''),
+('4.10.04.02.05', 'Intereses de la deuda pública externa por préstamos recibidos de gobiernos extranjeros  a largo plazo ', 4, ''),
+('4.10.04.02.06', 'Intereses de la deuda pública externa por préstamos recibidos de organismos internacionales a largo plazo', 4, ''),
+('4.10.04.02.07', 'Intereses de la deuda pública externa por préstamos recibidos de instituciones financieras externas  a largo plazo', 4, ''),
+('4.10.04.02.08', 'Intereses de la deuda pública externa por préstamos recibidos de proveedores de bienes y servicios externos  a largo plazo', 4, ''),
+('4.10.04.02.09', 'Intereses por mora y multas de la deuda pública externa por préstamos  recibidos de gobiernos extranjeros  a largo plazo', 4, ''),
+('4.10.04.02.10', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos de organismos internacionales a largo plazo', 4, ''),
+('4.10.04.02.11', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos de instituciones financieras externas  a largo plazo ', 4, ''),
+('4.10.04.02.12', 'Intereses por mora y multas de la deuda pública externa por préstamos recibidos de proveedores de bienes y servicios externos  a largo plazo ', 4, ''),
+('4.10.04.02.13', 'Comisiones y otros gastos de la deuda pública externa por préstamos recibidos de gobiernos extranjeros  a largo plazo ', 4, ''),
+('4.10.04.02.14', 'Comisiones y otros gastos de la deuda pública externa por préstamos recibidos de organismos internacionales a largo plazo', 4, ''),
+('4.10.04.02.15', 'Comisiones y otros gastos de la deuda pública externa por préstamos recibidos de instituciones financieras externas  a largo plazo ', 4, ''),
+('4.10.04.02.16', 'Comisiones y otros gastos de la deuda pública externa por préstamos  recibidos de proveedores de bienes y servicios externos  a largo plazo', 4, ''),
+('4.10.04.03.', 'Servicio de la deuda pública externa indirecta a largo plazo de títulos y valores', 3, ''),
+('4.10.04.03.01', 'Amortización de la deuda pública externa indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.04.03.02', 'Intereses de la deuda pública externa indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.04.03.03', 'Intereses por mora y multas de la deuda pública externa indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.04.03.04', 'Comisiones y otros gastos de la deuda pública externa indirecta a largo plazo de títulos y valores', 4, ''),
+('4.10.04.03.05', 'Descuentos en colocación de títulos y valores de la deuda pública externa indirecta a largo plazo', 4, ''),
+('4.10.04.04.', 'Servicio de la deuda pública externa indirecta por préstamos a largo plazo', 3, ''),
+('4.10.04.04.01', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de gobiernos extranjeros a largo plazo', 4, ''),
+('4.10.04.04.02', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a largo plazo', 4, ''),
+('4.10.04.04.03', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de instituciones financieras externas a largo plazo', 4, ''),
+('4.10.04.04.04', 'Amortización de la deuda pública externa indirecta por préstamos recibidos de proveedores de bienes y servicios externos  a largo plazo', 4, ''),
+('4.10.04.04.05', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de gobiernos extranjeros a largo plazo', 4, ''),
+('4.10.04.04.06', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a largo plazo', 4, ''),
+('4.10.04.04.07', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de instituciones financieras externas a largo plazo', 4, ''),
+('4.10.04.04.08', 'Intereses de la deuda pública externa indirecta por préstamos recibidos de proveedores de bienes y servicios externos  a largo plazo', 4, ''),
+('4.10.04.04.09', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos recibidos de gobiernos extranjeros a largo plazo ', 4, ''),
+('4.10.04.04.10', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a largo plazo ', 4, ''),
+('4.10.04.04.11', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos recibidos de instituciones financieras externas a largo plazo', 4, ''),
+('4.10.04.04.12', 'Intereses por mora y multas de la deuda pública externa indirecta por préstamos recibidos de proveedores de bienes y servicios externos a largo plazo', 4, ''),
+('4.10.04.04.13', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos recibidos de gobiernos extranjeros a largo plazo', 4, ''),
+('4.10.04.04.14', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos recibidos de organismos internacionales a largo plazo ', 4, ''),
+('4.10.04.04.15', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos  recibidos de instituciones financieras externas a largo plazo', 4, ''),
+('4.10.04.04.16', 'Comisiones y otros gastos de la deuda pública externa indirecta por préstamos  recibidos de proveedores de bienes y servicios externos  a largo plazo', 4, ''),
+('4.10.05.', 'Reestructuración y/o refinanciamiento de la deuda publica', 2, ''),
+('4.10.05.01.', 'Disminución por reestructuración y/o refinanciamiento de la deuda interna a largo plazo, en a  corto plazo-', 3, ''),
+('4.10.05.01.00', 'Disminución por reestructuración y/o refinanciamiento de la deuda interna a largo plazo, en a  corto plazo-', 4, ''),
+('4.10.05.02.', 'Disminución por reestructuración y/o refinanciamiento de la deuda interna a corto plazo, en a largo plazo', 3, ''),
+('4.10.05.02.00', 'Disminución por reestructuración y/o refinanciamiento de la deuda interna a corto plazo, en a largo plazo', 4, ''),
+('4.10.05.03.', 'Disminución por reestructuración y/o refinanciamiento de la deuda externa a largo plazo, en a corto plazo', 3, ''),
+('4.10.05.03.00', 'Disminución por reestructuración y/o refinanciamiento de la deuda externa a largo plazo, en a corto plazo', 4, ''),
+('4.10.05.04.', 'Disminución por reestructuración y/o refinanciamiento de la deuda externa a corto plazo, en a largo plazo', 3, ''),
+('4.10.05.04.00', 'Disminución por reestructuración y/o refinanciamiento de la deuda externa a corto plazo, en a largo plazo', 4, ''),
+('4.10.05.05.', 'Disminución  de la deuda pública por distribuir', 3, ''),
+('4.10.05.05.01', 'Disminución  de la deuda pública interna por distribuir   ', 4, ''),
+('4.10.05.05.02', 'Disminución de la deuda pública externa por distribuir    ', 4, ''),
+('4.10.06.', 'Servicio de la deuda pública por obligaciones de ejercicios anteriores', 2, ''),
+('4.10.06.01.', 'Amortización de la deuda pública de obligaciones pendientes de ejercicios anteriores', 3, ''),
+('4.10.06.01.00', 'Amortización de la deuda pública de obligaciones pendientes de ejercicios anteriores', 4, ''),
+('4.10.06.02.', 'Intereses de la deuda pública de obligaciones pendientes de ejercicios anteriores', 3, ''),
+('4.10.06.02.00', 'Intereses de la deuda pública de obligaciones pendientes de ejercicios anteriores', 4, ''),
+('4.10.06.03.', 'Intereses por mora y multas de la deuda pública de obligaciones pendientes de ejercicios anteriores', 3, ''),
+('4.10.06.03.00', 'Intereses por mora y multas de la deuda pública de obligaciones pendientes de ejercicios anteriores', 4, ''),
+('4.10.06.04.', 'Comisiones y otros gastos de la deuda pública de obligaciones pendientes de ejercicios anteriores', 3, ''),
+('4.10.06.04.00', 'Comisiones y otros gastos de la deuda pública de obligaciones pendientes de ejercicios anteriores', 4, ''),
+('4.11.', 'Disminución de pasivos ', 1, ''),
+('4.11.01.', 'Disminución de gastos de personal por pagar', 2, ''),
+('4.11.01.01.', 'Disminución de sueldos,  salarios y otras remuneraciones por pagar', 3, ''),
+('4.11.01.01.00', 'Disminución de sueldos,  salarios y otras remuneraciones por pagar', 4, ''),
+('4.11.02.', 'Disminución de aportes patronales y retenciones laborales por pagar', 2, ''),
+('4.11.02.01.', 'Disminución de aportes patronales y retenciones laborales por pagar al Instituto Venezolano de los Seguros Sociales (IVSS)', 3, ''),
+('4.11.02.01.00', 'Disminución de aportes patronales y retenciones laborales por pagar al Instituto Venezolano de los Seguros Sociales (IVSS)', 4, ''),
+('4.11.02.02.', 'Disminución de aportes patronales y retenciones laborales por pagar al Instituto de Previsión Social del Ministerio de Educación (IPASME)', 3, ''),
+('4.11.02.02.00', 'Disminución de aportes patronales y retenciones laborales por pagar al Instituto de Previsión Social del Ministerio de Educación (IPASME)', 4, ''),
+('4.11.02.03.', 'Disminución de aportes  patronales  y retenciones laborales por pagar al Fondo de Jubilaciones', 3, ''),
+('4.11.02.03.00', 'Disminución de aportes  patronales  y retenciones laborales por pagar al Fondo de Jubilaciones', 4, ''),
+('4.11.02.04.', 'Disminución  de aportes patronales y  retenciones laborales por  pagar al Fondo de Seguro de Paro Forzoso', 3, ''),
+('4.11.02.04.00', 'Disminución  de aportes patronales y  retenciones laborales por  pagar al Fondo de Seguro de Paro Forzoso', 4, ''),
+('4.11.02.05.', 'Disminución  de aportes  patronales  y  retenciones laborales por pagar al Fondo de Ahorro Habitacional', 3, ''),
+('4.11.02.05.00', 'Disminución  de aportes  patronales  y  retenciones laborales por pagar al Fondo de Ahorro Habitacional', 4, ''),
+('4.11.02.06.', 'Disminución  de  aportes patronales y retenciones laborales por pagar al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios', 3, ''),
+('4.11.02.06.00', 'Disminución  de  aportes patronales y retenciones laborales por pagar al seguro de vida, accidentes personales, hospitalización, cirugía, maternidad (HCM) y gastos funerarios', 4, ''),
+('4.11.02.07.', 'Disminución de aportes patronales y retenciones laborales por pagar a cajas de ahorro', 3, ''),
+('4.11.02.07.00', 'Disminución de aportes patronales y retenciones laborales por pagar a cajas de ahorro', 4, ''),
+('4.11.02.08.', 'Disminución  de aportes patronales por pagar a organismos de seguridad social', 3, ''),
+('4.11.02.08.00', 'Disminución  de aportes patronales por pagar a organismos de seguridad social', 4, ''),
+('4.11.02.09.', 'Disminución  de retenciones  laborales  por  pagar  al  Instituto Nacional de Cooperación Educativa (INCE)', 3, ''),
+('4.11.02.09.00', 'Disminución  de retenciones  laborales  por  pagar  al  Instituto Nacional de Cooperación Educativa (INCE)', 4, ''),
+('4.11.02.10.', 'Disminución de retenciones laborales por  pagar por pensión alimenticia', 3, ''),
+('4.11.02.10.00', 'Disminución de retenciones laborales por  pagar por pensión alimenticia', 4, ''),
+('4.11.02.98.', 'Disminución de otros aportes legales por pagar', 3, ''),
+('4.11.02.98.00', 'Disminución de otros aportes legales por pagar', 4, ''),
+('4.11.02.99.', 'Disminución de otras retenciones laborales por  pagar', 3, ''),
+('4.11.02.99.00', 'Disminución de otras retenciones laborales por  pagar', 4, ''),
+('4.11.03.', 'Disminución de cuentas y efectos por pagar a proveedores', 2, ''),
+('4.11.03.01.', 'Disminución de cuentas por pagar a proveedores a corto plazo', 3, ''),
+('4.11.03.01.00', 'Disminución de cuentas por pagar a proveedores a corto plazo', 4, ''),
+('4.11.03.02.', 'Disminución de efectos por pagar a  proveedores a corto plazo', 3, ''),
+('4.11.03.02.00', 'Disminución de efectos por pagar a  proveedores a corto plazo', 4, ''),
+('4.11.03.03.', 'Disminución de cuentas por pagar a proveedores a mediano y largo plazo', 3, ''),
+('4.11.03.03.00', 'Disminución de cuentas por pagar a proveedores a mediano y largo plazo', 4, ''),
+('4.11.03.04.', 'Disminución de efectos por pagar a proveedores a mediano y largo plazo', 3, ''),
+('4.11.03.04.00', 'Disminución de efectos por pagar a proveedores a mediano y largo plazo', 4, ''),
+('4.11.04.', 'Disminución de cuentas y efectos por pagar a contratistas', 2, ''),
+('4.11.04.01.', 'Disminución de cuentas por pagar a contratistas a corto plazo', 3, ''),
+('4.11.04.01.00', 'Disminución de cuentas por pagar a contratistas a corto plazo', 4, ''),
+('4.11.04.02.', 'Disminución de efectos por pagar a contratistas a corto plazo', 3, ''),
+('4.11.04.02.00', 'Disminución de efectos por pagar a contratistas a corto plazo', 4, ''),
+('4.11.04.03.', 'Disminución de cuentas por pagar a contratistas a mediano largo y plazo', 3, ''),
+('4.11.04.03.00', 'Disminución de cuentas por pagar a contratistas a mediano largo y plazo', 4, ''),
+('4.11.04.04.', 'Disminución de efectos por pagar a contratistas a mediano y plazo', 3, ''),
+('4.11.04.04.00', 'Disminución de efectos por pagar a contratistas a mediano y plazo', 4, ''),
+('4.11.05.', 'Disminución de intereses por pagar    ', 2, ''),
+('4.11.05.01.', 'Disminución de intereses internos por pagar', 3, ''),
+('4.11.05.01.00', 'Disminución de intereses internos por pagar', 4, ''),
+('4.11.05.02.', 'Disminución de intereses externos por pagar', 3, ''),
+('4.11.05.02.00', 'Disminución de intereses externos por pagar', 4, ''),
+('4.11.06.', 'Disminución de otras cuentas y efectos por pagar a corto plazo', 2, ''),
+('4.11.06.01.', 'Disminución de obligaciones de ejercicios anteriores', 3, ''),
+('4.11.06.01.00', 'Disminución de obligaciones de ejercicios anteriores', 4, ''),
+('4.11.06.02.', 'Disminución de otras cuentas por pagar a corto plazo', 3, ''),
+('4.11.06.02.00', 'Disminución de otras cuentas por pagar a corto plazo', 4, ''),
+('4.11.06.03.', 'Disminución de otros efectos por pagar a corto plazo', 3, ''),
+('4.11.06.03.00', 'Disminución de otros efectos por pagar a corto plazo', 4, ''),
+('4.11.07.', 'Disminución de pasivos diferidos', 2, ''),
+('4.11.07.01.', 'Disminución de pasivos diferidos a corto plazo', 3, ''),
+('4.11.07.01.01', 'Disminución de rentas diferidas por recaudar a corto plazo', 4, ''),
+('4.11.07.02.', 'Disminución de pasivos diferidos a mediano y largo plazo', 3, ''),
+('4.11.07.02.01', 'Disminución del rescate de certificados de reintegro tributario', 4, ''),
+('4.11.07.02.02', 'Disminución del rescate de bonos de exportación', 4, ''),
+('4.11.07.02.03', 'Disminución del rescate de bonos en dación de pagos', 4, ''),
+('4.11.08.', 'Disminución de provisiones y reservas técnicas', 2, ''),
+('4.11.08.01.', 'Disminución de provisiones', 3, ''),
+('4.11.08.01.01', 'Disminución de provisiones para cuentas incobrables', 4, ''),
+('4.11.08.01.02', 'Disminución de provisiones para despidos', 4, ''),
+('4.11.08.01.03', 'Disminución de provisiones para pérdidas en el inventario', 4, ''),
+('4.11.08.01.04', 'Disminución de provisiones  para beneficios sociales', 4, ''),
+('4.11.08.01.99', 'Disminución de otras  provisiones', 4, ''),
+('4.11.08.02.', 'Disminución de reservas técnicas', 3, ''),
+('4.11.08.02.00', 'Disminución de reservas técnicas', 4, ''),
+('4.11.09.', 'Disminución de fondos de terceros', 2, ''),
+('4.11.09.01.', 'Disminución de depósitos recibidos en garantía', 3, ''),
+('4.11.09.01.00', 'Disminución de depósitos recibidos en garantía', 4, ''),
+('4.11.09.99.', 'Disminución de otros fondos de terceros', 3, ''),
+('4.11.09.99.00', 'Disminución de otros fondos de terceros', 4, ''),
+('4.11.10.', 'Disminución  de  depósitos  de instituciones financieras', 2, ''),
+('4.11.10.01.', 'Disminución de depósitos a la vista', 3, ''),
+('4.11.10.01.01', 'Disminución  de  depósitos   de  terceros  a  la  vista  de  organismos  del   sector público', 4, ''),
+('4.11.10.01.02', 'Disminución  de depósitos de terceros a la vista de personas naturales y jurídicas del sector privado', 4, ''),
+('4.11.10.02.', 'Disminución de depósitos a plazo fijo', 3, ''),
+('4.11.10.02.01', 'Disminución de depósitos a plazo fijo de organismos del sector público', 4, ''),
+('4.11.10.02.02', 'Disminución de depósitos a plazo fijo de personas naturales y jurídicas del sector privado', 4, ''),
+('4.11.11.', 'Obligaciones de ejercicios anteriores', 2, ''),
+('4.11.11.01.', 'Devoluciones de cobros indebidos', 3, ''),
+('4.11.11.01.00', 'Devoluciones de cobros indebidos', 4, ''),
+('4.11.11.02.', 'Devoluciones y reintegros diversos', 3, ''),
+('4.11.11.02.00', 'Devoluciones y reintegros diversos', 4, ''),
+('4.11.11.03.', 'Indemnizaciones diversas', 3, ''),
+('4.11.11.03.00', 'Indemnizaciones diversas', 4, ''),
+('4.11.11.04.', 'Compromisos pendientes de ejercicios anteriores', 3, ''),
+('4.11.11.04.00', 'Compromisos pendientes de ejercicios anteriores', 4, ''),
+('4.11.11.05.', 'Prestaciones de antigüedad originadas por la aplicación de la Ley Orgánica del Trabajo', 3, ''),
+('4.11.11.05.00', 'Prestaciones de antigüedad originadas por la aplicación de la Ley Orgánica del Trabajo', 4, ''),
+('4.11.98.', 'Disminución de otros pasivos a corto plazo', 2, ''),
+('4.11.98.01.', 'Disminución de otros pasivos a corto plazo', 3, ''),
+('4.11.98.01.00', 'Disminución de otros pasivos a corto plazo', 4, ''),
+('4.11.99.', 'Disminución de otros pasivos a mediano y largo plazo', 2, ''),
+('4.11.99.01.', 'Disminución de otros pasivos a mediano y largo plazo', 3, ''),
+('4.11.99.01.00', 'Disminución de otros pasivos a mediano y largo plazo', 4, ''),
+('4.12.', 'Disminución del patrimonio', 1, ''),
+('4.12.01.', 'Disminución del capital  ', 2, ''),
+('4.12.01.01.', 'Disminución del capital fiscal e institucional', 3, ''),
+('4.12.01.01.00', 'Disminución del capital fiscal e institucional', 4, ''),
+('4.12.01.02.', 'Disminución de aportes por capitalizar', 3, ''),
+('4.12.01.02.00', 'Disminución de aportes por capitalizar', 4, ''),
+('4.12.01.03.', 'Disminución de dividendos a distribuir', 3, ''),
+('4.12.01.03.00', 'Disminución de dividendos a distribuir', 4, ''),
+('4.12.02.', 'Disminución de reservas', 2, ''),
+('4.12.02.01.', 'Disminución de reservas', 3, ''),
+('4.12.02.01.00', 'Disminución de reservas', 4, ''),
+('4.12.03.', 'Ajuste por inflación', 2, ''),
+('4.12.03.01.', 'Ajuste por inflación', 3, ''),
+('4.12.03.01.00', 'Ajuste por inflación', 4, ''),
+('4.12.04.', 'Disminución de resultados', 2, ''),
+('4.12.04.01.', 'Disminución de resultados acumulados', 3, ''),
+('4.12.04.01.00', 'Disminución de resultados acumulados', 4, ''),
+('4.12.04.02.', 'Disminución de resultados del ejercicio', 3, ''),
+('4.12.04.02.00', 'Disminución de resultados del ejercicio', 4, ''),
+('4.98.', 'Rectificaciones al presupuesto', 1, ''),
+('4.98.01.', 'Rectificaciones al presupuesto  ', 2, ''),
+('4.98.01.01.', 'Rectificaciones al presupuesto', 3, ''),
+('4.98.01.01.00', 'Rectificaciones al presupuesto', 4, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomacumulados`
+-- Table structure for table `nomacumulados`
 --
 
 CREATE TABLE IF NOT EXISTS `nomacumulados` (
@@ -89,7 +1815,7 @@ CREATE TABLE IF NOT EXISTS `nomacumulados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomacumulados`
+-- Dumping data for table `nomacumulados`
 --
 
 INSERT INTO `nomacumulados` (`cod_tac`, `des_tac`, `markar`, `ee`) VALUES
@@ -101,7 +1827,7 @@ INSERT INTO `nomacumulados` (`cod_tac`, `des_tac`, `markar`, `ee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomacumulados_det`
+-- Table structure for table `nomacumulados_det`
 --
 
 CREATE TABLE IF NOT EXISTS `nomacumulados_det` (
@@ -134,14 +1860,14 @@ CREATE TABLE IF NOT EXISTS `nomacumulados_det` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomacumulados_det`
+-- Dumping data for table `nomacumulados_det`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomaumentos`
+-- Table structure for table `nomaumentos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomaumentos` (
@@ -152,7 +1878,7 @@ CREATE TABLE IF NOT EXISTS `nomaumentos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomaumentos`
+-- Dumping data for table `nomaumentos`
 --
 
 INSERT INTO `nomaumentos` (`codlogro`, `descrip`, `ee`) VALUES
@@ -162,7 +1888,7 @@ INSERT INTO `nomaumentos` (`codlogro`, `descrip`, `ee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomaumentos_det`
+-- Table structure for table `nomaumentos_det`
 --
 
 CREATE TABLE IF NOT EXISTS `nomaumentos_det` (
@@ -178,22 +1904,20 @@ CREATE TABLE IF NOT EXISTS `nomaumentos_det` (
   `ficha` int(6) default NULL,
   `usuario` varchar(30) character set utf8 collate utf8_spanish_ci NOT NULL,
   `descripcion` text character set utf8 collate utf8_spanish_ci NOT NULL,
+  `sueldoigual` decimal(13,2) NOT NULL,
+  `sueldomenor` decimal(13,2) NOT NULL,
   PRIMARY KEY  (`cod_aumento`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='registros de los aumentos realizados o a realizar al persona' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='registros de los aumentos realizados o a realizar al persona' AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `nomaumentos_det`
+-- Dumping data for table `nomaumentos_det`
 --
 
-INSERT INTO `nomaumentos_det` (`cod_aumento`, `tipo`, `estatus`, `fecha`, `fecha_aplica`, `monto`, `cod_nomina`, `cod_categoria`, `cod_cargo`, `ficha`, `usuario`, `descripcion`) VALUES
-(1, 'Monto', 'Ejecutado', '2009-09-09', '2009-09-01', '18', '4', '2', '58', 0, 'NORA EULOGIA NATERA CALERO', 'INCREMENTO SALARIO MINIMO'),
-(2, 'Monto', 'Ejecutado', '2010-01-13', '2010-01-01', '180', '4', '', '59', 0, 'NORA EULOGIA NATERA CALERO', 'INCREMENTO DE SUELDO APROBADO EN PRESUPUESTO 2010'),
-(3, 'Monto', 'Ejecutado', '2010-01-13', '2010-01-01', '213', '4', '', '58', 0, 'NORA EULOGIA NATERA CALERO', 'INCREMENTO DE SUELDO APROBADO EN PRESUPUESTO 2010');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nombancos`
+-- Table structure for table `nombancos`
 --
 
 CREATE TABLE IF NOT EXISTS `nombancos` (
@@ -214,19 +1938,14 @@ CREATE TABLE IF NOT EXISTS `nombancos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nombancos`
+-- Dumping data for table `nombancos`
 --
 
-INSERT INTO `nombancos` (`cod_ban`, `des_ban`, `suc_ban`, `direccion`, `gerente`, `cuentacob`, `tipocuenta`, `textoinicial`, `textofinal`, `markar`, `cod_gban`, `ctacon`, `ee`) VALUES
-(1, 'BOD', '', '', '', '', '', '', '', 0, 1, '', 0),
-(2, 'BANESCO', '', '', '', '', '', '', '', 0, 1, '', 0),
-(3, 'VENEZUELA', '', '', '', '', 'C', '', '', 0, 1, '', 0),
-(4, 'FONDO COMUN', '', '', '', '', '', '', '', 0, 1, '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nombaremos`
+-- Table structure for table `nombaremos`
 --
 
 CREATE TABLE IF NOT EXISTS `nombaremos` (
@@ -237,14 +1956,14 @@ CREATE TABLE IF NOT EXISTS `nombaremos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `nombaremos`
+-- Dumping data for table `nombaremos`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcalendarios_empresa`
+-- Table structure for table `nomcalendarios_empresa`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcalendarios_empresa` (
@@ -255,14 +1974,14 @@ CREATE TABLE IF NOT EXISTS `nomcalendarios_empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcalendarios_empresa`
+-- Dumping data for table `nomcalendarios_empresa`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcalendarios_personal`
+-- Table structure for table `nomcalendarios_personal`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcalendarios_personal` (
@@ -275,14 +1994,14 @@ CREATE TABLE IF NOT EXISTS `nomcalendarios_personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcalendarios_personal`
+-- Dumping data for table `nomcalendarios_personal`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcalendarios_tiposnomina`
+-- Table structure for table `nomcalendarios_tiposnomina`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcalendarios_tiposnomina` (
@@ -295,14 +2014,30 @@ CREATE TABLE IF NOT EXISTS `nomcalendarios_tiposnomina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcalendarios_tiposnomina`
+-- Dumping data for table `nomcalendarios_tiposnomina`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcampos_adicionales`
+-- Table structure for table `nomcamposadic_tmp`
+--
+
+CREATE TABLE IF NOT EXISTS `nomcamposadic_tmp` (
+  `cedula` int(12) NOT NULL,
+  `caj` decimal(17,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nomcamposadic_tmp`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nomcampos_adicionales`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcampos_adicionales` (
@@ -321,36 +2056,14 @@ CREATE TABLE IF NOT EXISTS `nomcampos_adicionales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcampos_adicionales`
+-- Dumping data for table `nomcampos_adicionales`
 --
 
-INSERT INTO `nomcampos_adicionales` (`archivo`, `id`, `descrip`, `etiqueta`, `tipo`, `codorgh`, `valdefecto1`, `particular`, `ee`, `busca`, `tipocamposadic`) VALUES
-('nompersonal', 1, 'SEGURO SOCIAL OBLIGATORIO', 'SSO', 'A', NULL, 'SI', 0, 0, 0, 3),
-('nompersonal', 2, 'REGIMEN PRESTACIONAL DE EMPLEO', 'REGIMEN PRESTACIONAL DE EMPLEO', 'A', NULL, 'SI', 0, 0, 0, 3),
-('nompersonal', 3, 'REG. PREST. DE VIVIENDA Y HAB.', 'REG. PREST. DE VIVIENDA Y HAB.', 'A', NULL, 'SI', 0, 0, 0, 3),
-('nompersonal', 4, 'FONDO DE PENSION Y JUBILACION', 'F.P.J.', 'A', NULL, 'NO', 0, 0, 0, 3),
-('nompersonal', 5, 'PORCENTAJE I.S.R.L.', 'PORCENTAJE I.S.R.L.', 'N', NULL, '0', 0, 0, 0, 3),
-('nompersonal', 6, 'PRIMA POR ANTIGUEDAD', 'PRIMA POR ANTIGUEDAD', 'N', NULL, '0', 0, 0, 0, 3),
-('nompersonal', 7, 'COMPENSACION SALARIAL', 'COMPENSACION SALARIAL', 'N', NULL, '0', 0, 0, 0, 3),
-('nompersonal', 8, 'GRADO', 'GRADO', 'N', NULL, '0', 0, 0, 0, 3),
-('nompersonal', 9, 'PASO', 'PASO', 'N', NULL, '0', 0, 0, 0, 3),
-('nompersonal', 10, 'BONO POST VACACIONAL', 'BONO POST VACACIONAL', 'A', NULL, 'NO', 0, 0, 0, 3),
-('nompersonal', 11, 'TALLA CAMISA', 'TALLA CAMISA', 'A', NULL, '', 0, 0, 0, 3),
-('nompersonal', 12, 'TALLA PANTALON', 'TALLA PANTALON', 'A', NULL, '', 0, 0, 0, 3),
-('nompersonal', 13, 'TALLA ZAPATOS', 'TALLA ZAPATOS', 'A', NULL, '', 0, 0, 0, 3),
-('nompersonal', 14, 'CAJA DE AHORRO', 'CAJA DE AHORRO', 'A', NULL, 'NO', 0, 0, 0, 3),
-('nompersonal', 15, 'VACACIONES', 'VACACIONES', 'A', NULL, 'NO', 0, 0, 0, 3),
-('nompersonal', 16, 'PRESTAMO CAJA DE AHORRO', 'PRESTAMO CAJA DE AHORRO', 'N', NULL, '0.0', 0, 0, 1, 3),
-('nompersonal', 17, 'ANTIGUEDAD DIAS', 'ANTIGUEDAD DIAS', 'N', NULL, '0', 0, 0, 0, 3),
-('nompersonal', 18, 'TALLA BATA', 'TALLA BATA', 'A', NULL, '', 0, 0, 0, 3),
-('nompersonal', 19, 'TALLA MONO', 'TALLA MONO', 'A', NULL, '', 0, 0, 0, 3),
-('nompersonal', 20, 'PRIMA POR MERITO', 'PRIMA POR MERITO', 'N', NULL, '', 0, 0, 0, 3),
-('nompersonal', 21, 'COMISION DE SERV.', 'COMISION DE SERV.', 'N', NULL, '', 0, 0, 0, 3);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcampos_adic_personal`
+-- Table structure for table `nomcampos_adic_personal`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcampos_adic_personal` (
@@ -368,14 +2081,39 @@ CREATE TABLE IF NOT EXISTS `nomcampos_adic_personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcampos_adic_personal`
+-- Dumping data for table `nomcampos_adic_personal`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcargos`
+-- Table structure for table `nomcampos_adic_personal2`
+--
+
+CREATE TABLE IF NOT EXISTS `nomcampos_adic_personal2` (
+  `ficha` varchar(10) collate utf8_spanish_ci NOT NULL,
+  `id` int(11) NOT NULL,
+  `valor` varchar(80) collate utf8_spanish_ci default NULL,
+  `mascara` varchar(9) collate utf8_spanish_ci default NULL,
+  `tipo` varchar(1) collate utf8_spanish_ci default NULL,
+  `codorgd` varchar(10) collate utf8_spanish_ci default NULL,
+  `codorgh` varchar(10) collate utf8_spanish_ci default NULL,
+  `ee` tinyint(4) default NULL,
+  `tiponom` int(11) NOT NULL,
+  PRIMARY KEY  (`ficha`,`id`,`tiponom`),
+  KEY `fc_idx_133` (`codorgd`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `nomcampos_adic_personal2`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nomcargos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcargos` (
@@ -389,95 +2127,208 @@ CREATE TABLE IF NOT EXISTS `nomcargos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcargos`
+-- Dumping data for table `nomcargos`
 --
 
 INSERT INTO `nomcargos` (`cod_car`, `des_car`, `grado`, `perfil`, `markar`, `ee`) VALUES
-('01', 'PRESIDENTE EJECUTIVO', '1', NULL, NULL, NULL),
-('02', 'ASIST.ADM.III', '', NULL, NULL, NULL),
-('03', 'ASIST. ADMINISTRAT', '', NULL, NULL, NULL),
-('04', 'AUDITOR III', '', NULL, NULL, NULL),
-('05', 'ANALISTA AUDITORIA', '', NULL, NULL, NULL),
-('06', 'ASIST EJECUTIVO II', '', NULL, NULL, NULL),
-('07', 'ASIST. ADMINIST.IV', '', NULL, NULL, NULL),
-('08', 'ASIST.TRANSP. III', '', NULL, NULL, NULL),
-('09', 'JEFE COMUNITARIO', '', NULL, NULL, NULL),
-('10', 'ASIST.ADMINIST. V                       ', '', NULL, NULL, NULL),
-('11', 'ASIST.TRANSPORTE I', '', NULL, NULL, NULL),
-('12', 'DIR. GRAL.ADMINISTRACION', '', NULL, NULL, NULL),
-('13', 'ANALIST. PPTO III                       ', '', NULL, NULL, NULL),
-('14', 'CONTADOR I', '', NULL, NULL, NULL),
-('15', 'DIR.GRAL.PROG.PROY.PART COMUNIT.        ', '', NULL, NULL, NULL),
-('16', 'COORD.PROG. SOCIAL', '', NULL, NULL, NULL),
-('17', 'COORD.PROY.COMUNIT', '', NULL, NULL, NULL),
-('19', 'COORD.PART.COMUNIT', '', NULL, NULL, NULL),
-('20', 'ASIST.PROG.SOCIALES', '', NULL, NULL, NULL),
-('21', 'DIR.GRL.PTC.INT.CM                      ', '', NULL, NULL, NULL),
-('22', 'COORD.CONT.FINANCIERO                   ', '', NULL, NULL, NULL),
-('23', 'COORD.CASA JUSTIC.', '', NULL, NULL, NULL),
-('24', 'JEFE DE CTROL DE GESTION                ', '', NULL, NULL, NULL),
-('25', 'ANALISTA DE PERSONAL II                 ', '', NULL, NULL, NULL),
-('26', 'ASIST. ADMINISTRATIVO II                ', '', NULL, NULL, NULL),
-('27', 'AUXILIAR ADMINISTRATIVO', '', NULL, NULL, NULL),
-('28', 'RECEPCIONISTA                           ', '', NULL, NULL, NULL),
-('29', 'MENSAJERO                               ', '', NULL, NULL, NULL),
-('30', 'ESP. EN  AREA DE INFORMATICA', '', NULL, NULL, NULL),
-('31', 'ESP. EN  AREA DE PROG. SOCIAL', '', NULL, NULL, NULL),
-('32', 'ESP. EN  AREA DE PRESUPUESTO', '', NULL, NULL, NULL),
-('33', 'CHOFER', '', NULL, NULL, NULL),
-('34', 'DIRECTOR  GENERAL DE DESPACHO', '', NULL, NULL, NULL),
-('35', 'JEFE DE INFORMATICA', '', NULL, NULL, NULL),
-('36', 'DIR. CONTROL DE GESTION', '', NULL, NULL, NULL),
-('37', 'DIRECTOR DE CONSULTORIA JURIDICA', '', NULL, NULL, NULL),
-('38', 'ESP.  EN  AREA CONTABLE', '', NULL, NULL, NULL),
-('39', 'ESPECIALISTA EN RR.HH', '', NULL, NULL, NULL),
-('40', 'ESP.EN SOPORTE TECN. DE HARDWARE', '', NULL, NULL, NULL),
-('41', 'DIRECTOR DE AUDITORIA INTERNA', '', NULL, NULL, NULL),
-('42', 'DIRECTOR GRAL. DE PREFECTURAS', '', NULL, NULL, NULL),
-('44', 'COORD. DE TRANSPORTE', '', NULL, NULL, NULL),
-('45', 'DIR. GRAL.CASA DEL VECINO', '', NULL, NULL, NULL),
-('46', 'DIR. GENERAL DE APOYO                   ', '', NULL, NULL, NULL),
-('47', 'ASISTENTE AL DIRECTOR                   ', '', NULL, NULL, NULL),
-('48', 'DIRECTOR DE INFORMATICA                 ', '', NULL, NULL, NULL),
-('49', 'JEFE DE RR.HH.', '', NULL, NULL, NULL),
-('50', 'ANALISTA CTROL.FINANCIERO III', '', NULL, NULL, NULL),
-('51', 'COORD.DE PRESUPUESTO                    ', '', NULL, NULL, NULL),
-('52', 'CONTADOR V', '', NULL, NULL, NULL),
-('53', 'ESPECIALISTA  JURIDICO                  ', '', NULL, NULL, NULL),
-('54', 'JEFE DE AREA COMUNITARIA', '', NULL, NULL, NULL),
-('55', 'COORD.DE ORIENT.VECINAL', '', NULL, NULL, NULL),
-('56', 'JEFE DE PREFECTURA', '', NULL, NULL, NULL),
-('57', 'PREFECTO COMUNITARIO', '', NULL, NULL, NULL),
-('58', 'ORIENTADOR VECINAL', '', NULL, NULL, NULL),
-('59', 'INFORMADOR COMUNITARIO', '', NULL, NULL, NULL),
-('60', 'DIRECTOR DE ATENCION VECINAL', '', NULL, NULL, NULL),
-('61', 'ESPECIALISTA EN FINANZAS                ', '', NULL, NULL, NULL),
-('62', 'SUPERVISOR DE ALMACEN II                ', '', NULL, NULL, NULL),
-('63', 'COORDINADOR DE AREA', '', '', 0, 0),
-('65', 'DIRECTOR GENERAL DE DESARROLLO COMUNAL', '', '', 0, 0),
-('66', 'TECNICO DE REPARACION Y MANTENIMIENTO', '', '', 0, 0),
-('67', 'DIRECTOR GENERAL DE CONSULTORIA JURIDICA', '', '', 0, 0),
-('68', 'ESP. DE DESARROLLO COMUNAL', '', '', 0, 0),
-('69', 'TEC. DE REPARACION Y MANTENIMIENTO', '', '', 0, 0),
-('70', 'ESPECIALISTA EN PRESUPUESTO', '', '', 0, 0),
-('71', 'ESPECIALISTA EN CONTABILIDAD', '', '', 0, 0),
-('72', 'AUXILIAR CONTABLE', '', '', 0, 0),
-('73', 'JEFE DE DESPACHO', '26', '', 0, 0),
-('74', 'JEFE DE ADMINISTRACION DE PERSONAL', '26', '', 0, 0),
-('75', 'ABOGADO I', '26', '', 0, 0),
-('76', 'JEFE CONSULTORIA JURIDICA', '', '', 0, 0),
-('77', 'ANALISTA DE PROCESAMIENTO DE DATOS III', '26', '', 0, 0),
-('78', 'COORDINADOR DE INFORMATICA', '26', '', 0, 0),
-('79', 'TECNICO EN REPARACION Y MANTENIMIENTO I', '26', '', 0, 0),
-('80', 'INSPECTOR DE OBRAS DE ING. I', '26', '', 0, 0),
-('81', 'ASISTENTE EJECUTIVO I', '26', '', 0, 0),
-('82', 'COORDINADOR ADMINISTRATIVO', '', '', 0, 0),
-('85', 'DIRECTOR DE SERVICIOS GENERALES', '26', '', 0, 0);
+('', 'DOCENTE (NO GRADUADO)', '', '', 0, 0),
+('1', 'ABOGADO I', '17', '''''', 0, 0),
+('100', 'MANTENIMIENTO Y LIMPIEZA', '', '''''', 0, 0),
+('101', 'MANT Y LIMPIEZA (Gua-Noct) ', '0', '''''', 0, 0),
+('102', ' MEDICO ESPEC I (Cardio - 15H) ', '', '', 0, 0),
+('107', 'MED ESP I (Cirugia-15h)', '0', '''''', 0, 0),
+('108', 'MED ESP I (Gin-Obst-15h)', '0', '''''', 0, 0),
+('109', 'MED ESP I (Gin-Obst-30h)', '0', '''''', 0, 0),
+('11', 'ASESORA DE PROYECTOS', '0', '''''', 0, 0),
+('110', 'MED ESP I (Oftalm.-12h)', '0', '''''', 0, 0),
+('111', 'MED ESP I (Traumat-12h)', '0', '''''', 0, 0),
+('112', 'MED ESP II (Gin-Obst-15h)', '0', '''''', 0, 0),
+('113', 'MED ESP II (Int-Nef-20h)', '0', '''''', 0, 0),
+('114', 'MED ESP II (Ped.-30h)', '0', '''''', 0, 0),
+('115', 'MED ESP II (Ped-25h)', '0', '''''', 0, 0),
+('117', 'MEDICO  ESP. II (Geriatra 14h)', '0', '''''', 0, 0),
+('118', 'MEDICO  II 30hrs', '0', '''''', 0, 0),
+('119', 'MEDICO (Gua-Noct)', '0', '''''', 0, 0),
+('12', 'ASESORA LEGAL', '0', '''''', 0, 0),
+('120', 'MEDICO I 30 hrs', '0', '''''', 0, 0),
+('121', 'MEDICO II 30 hrs', '0', '''''', 0, 0),
+('122', 'MEDICO RURAL', '0', '''''', 0, 0),
+('123', 'MENSAJ. MOTORIZADO', '0', '''''', 0, 0),
+('124', 'MENSAJERO I', '1', '''''', 0, 0),
+('125', 'MIEMBRO JUNTA PARROQUIAL', '0', '''''', 0, 0),
+('126', 'ODONTOLOGO 15HRS', '0', '''''', 0, 0),
+('127', 'ODONTOLOGO 30HRS', '0', '''''', 0, 0),
+('129', 'PENSIONADO', '0', '''''', 0, 0),
+('13', 'ASIST. COORD. VECINAL', '0', '''''', 0, 0),
+('130', 'PLANIFICADOR I', '', '''''', 0, 0),
+('131', 'PROGRAMADOR II', '17', '''''', 0, 0),
+('132', 'PROM. DEPORTIVO (17.5 HRS)', '0', '''''', 0, 0),
+('133', 'PROM. DEPORTIVO 12hrs', '0', '''''', 0, 0),
+('134', 'PROM. DEPORTIVO 15hrs', '0', '''''', 0, 0),
+('135', 'PROM. DEPORTIVO 17.50hrs', '0', '''''', 0, 0),
+('136', 'PROMOTOR', '0', '''''', 0, 0),
+('137', 'PROMOTOR BIENEST.SOCIAL', '3', '''''', 0, 0),
+('138', 'BIENESTAR SOCIAL', '3', '''''', 0, 0),
+('139', 'DEPORTIVO', '0', '''''', 0, 0),
+('14', 'ASIST. PRE ESCOLAR (ENV)', '1', '''''', 0, 0),
+('141', 'PROMOTOR DEPORTIVO(17,5 HRS)', '0', '''''', 0, 0),
+('142', 'PROMOTOR VECINAL', '0', '''''', 0, 0),
+('144', 'PSICOLOGA 15HRS', '0', '''''', 0, 0),
+('145', 'PSICOLOGO II', '19', '''''', 0, 0),
+('146', 'RECEPCIONISTA', '1', '''''', 0, 0),
+('148', 'SECRET. EJECUTIVA I', '7', '''''', 0, 0),
+('149', 'SECRET. EJECUTIVA II', '9', '''''', 0, 0),
+('15', 'ASIST. PRE ESCOLAR (TAP)', '1', '''''', 0, 0),
+('150', 'SECRET. EJECUTIVA III', '11', '''''', 0, 0),
+('152', 'SECRETARIA I', '1', '''''', 0, 0),
+('153', 'SECRETARIA II', '3', '''''', 0, 0),
+('154', 'SECRETARIA III', '5', '''''', 0, 0),
+('155', 'SECRETARIA PARROQUIAL', '99', '''''', 0, 0),
+('156', 'ASESORA', '', '', 0, 0),
+('157', 'SOCIOLOGO III', '21', '''''', 0, 0),
+('158', 'SUPERV. SERV. GEN. I', '3', '''''', 0, 0),
+('159', 'SUPERV. SERV. GEN. II', '5', '''''', 0, 0),
+('16', 'ASIST. PROTC. CIVIL', '0', '''''', 0, 0),
+('160', 'TERAPISTA LENGUAJE  I', '15', '''''', 0, 0),
+('161', 'TRABAJADOR SOCIAL III', '21', '''''', 0, 0),
+('162', 'VIGILANTE', '', '''''', 0, 0),
+('163', 'PROMOTOR DEPORTIVO', '', '', 0, 0),
+('164', 'INGENIERO CIVIL I', '18', '', 0, 0),
+('165', 'ASISTENTE ADMINIST. IV', '17', '', 0, 0),
+('166', 'DIBUJANTE CARTO. JEFE', '10', '', 0, 0),
+('167', 'DOCENTE II PESC 33,33h', '', '', 0, 0),
+('168', 'DOCENTE III PESC 33,33h TAP', '', '', 0, 0),
+('169', 'DOCENTE III Comp. 33,33h ', '', '', 0, 0),
+('17', 'ASIST. SERV. PUB.', '1', '''''', 0, 0),
+('170', 'DOCENTE IV Club Abuelo 24h', '', '', 0, 0),
+('171', 'Docente V 1er 33.33 h', '', '', 0, 0),
+('172', 'DOCENTE V 33,33h', '', '', 0, 0),
+('173', 'Docente VI Coordinador 36 h', '', '', 0, 0),
+('174', 'Geografo I', '', '', 0, 0),
+('175', 'MED ESP II (cardio-15h)', '', '', 0, 0),
+('176', 'MED ESP II (GIN/OBST-30H)', '', '', 0, 0),
+('177', 'SINDICO', '', '', 0, 0),
+('178', 'ABOGADO JEFE', '25', '', 0, 0),
+('179', 'ASIST ASUNT LEGALES III', '5', '', 0, 0),
+('18', 'ASIST. TEC. REP.-MANT.', '2', '''''', 0, 0),
+('180', 'ASIST DE OFICINA II', '3', '', 0, 0),
+('181', 'ASIST CLUB ABUELO', '', '', 0, 0),
+('182', 'ABOGADO III', '21', '', 0, 0),
+('183', 'COORDINADOR III (ABOG)', '', '', 0, 0),
+('184', 'DIRECTOR GENERAL', '', '', 0, 0),
+('185', 'DISEÃ‘ADOR MEMORIA Y CUENTA', '', '', 0, 0),
+('186', 'INSPECTOR DE OBRAS PUBLICAS ', '', '', 0, 0),
+('2', 'ALCALDE', '99', '''''', 0, 0),
+('20', 'ASISTENTE ADMINIST. II', '3', '''''', 0, 0),
+('21', 'ASISTENTE ADMINIST. III', '15', '''''', 0, 0),
+('24', 'ASISTENTE BIBLIOTECA I', '1', '''''', 0, 0),
+('25', 'ASISTENTE BIBLIOTECA III', '15', '''''', 0, 0),
+('26', 'ASISTENTE DE OFICINA 28HRS', '0', '''''', 0, 0),
+('27', 'ASISTENTE DE OFICINA I', '1', '''''', 0, 0),
+('28', 'ASISTENTE PRIM. AUX I', '1', '''''', 0, 0),
+('29', 'ASISTENTE PRIM. AUX II', '15', '''''', 0, 0),
+('3', 'ALMACENISTA II', '3', '''''', 0, 0),
+('30', 'ASISTENTE PROT CIVIL', '0', '''''', 0, 0),
+('31', 'ATENCION AL PUBLICO', '0', '''''', 0, 0),
+('32', 'AUDITOR I', '17', '''''', 0, 0),
+('33', 'AUDITOR II', '19', '''''', 0, 0),
+('34', 'AUDITOR INTERNO (INTERINO)', '99', '''''', 0, 0),
+('35', 'AUDITOR INTERNO ADM.', '0', '''''', 0, 0),
+('36', 'AUXILIAR ADMINISTRATIVO', '0', '''''', 0, 0),
+('37', 'AUXILIAR DE BIBLIOTECA 20hrs', '0', '''''', 0, 0),
+('38', 'AUXILIAR DE BIBLIOTECAS', '0', '''''', 0, 0),
+('39', 'AUXILIAR DE PREESCOLAR', '0', '''''', 0, 0),
+('4', 'ANALISTA  DE PERSONAL V', '23', '''''', 0, 0),
+('40', 'AVALUADOR INMUEBLES I', '2', '''''', 0, 0),
+('41', 'AYUDANTE MANT-EDIF', '1', '''''', 0, 0),
+('42', 'CAMAROGRAFO', '0', '''''', 0, 0),
+('43', 'CHOFER', '1', '''''', 0, 0),
+('44', 'COCINERA', '0', '''''', 0, 0),
+('45', 'COMUNICADOR SOCIAL I', '17', '''''', 0, 0),
+('46', 'COMUNICADOR SOCIAL II', '19', '''''', 0, 0),
+('47', 'CONSEJERO PROTECCION', '', '''''', 0, 0),
+('48', 'PROTECCION', '0', '''''', 0, 0),
+('49', 'COORD. ASUNTOS ESP.', '99', '''''', 0, 0),
+('5', 'ANALISTA DE PERSONAL I', '17', '''''', 0, 0),
+('50', 'COORD. DE CUADRILLAS', '0', '''''', 0, 0),
+('51', 'COORDINADOR  I', '99', '''''', 0, 0),
+('52', 'COORDINADOR  II', '99', '''''', 0, 0),
+('53', 'COORDINADOR  III', '99', '''''', 0, 0),
+('54', 'COORDINADOR  IV', '99', '''''', 0, 0),
+('56', 'COORDINADOR JEFE', '99', '''''', 0, 0),
+('57', 'COORDINADOR JEFE (INGENIERO)', '99', '''''', 0, 0),
+('58', 'COORDINADOR V', '99', '''''', 0, 0),
+('59', 'DIBUJANTE I', '1', '''''', 0, 0),
+('6', 'ANALISTA DE PERSONAL III', '21', '''''', 0, 0),
+('60', 'DIRECTOR', '99', '''''', 0, 0),
+('61', 'DISENADOR GRAFICO', '', '''''', 0, 0),
+('62', 'DOCENTE MUSICA 33.33h', '0', '''''', 0, 0),
+('63', 'DOCENTE I  PESC 33,33h', '0', '''''', 0, 0),
+('64', 'DOCENTE I  PEsc 33,33h TAP', '0', '''''', 0, 0),
+('65', 'DOCENTE I Ed. Fisica 24h', '0', '''''', 0, 0),
+('66', 'DOCENTE II  5to 33.33h', '0', '''''', 0, 0),
+('67', 'DOCENTE II 3er 33,33h', '0', '''''', 0, 0),
+('68', 'DOCENTE II Comp. 33,33h', '0', '''''', 0, 0),
+('69', 'DOCENTE III 4to 33,33h', '0', '''''', 0, 0),
+('7', 'ARCHIVISTA I', '1', '''''', 0, 0),
+('70', 'DOCENTE III AulaEsp  33.33h', '0', '''''', 0, 0),
+('71', 'DOCENTE III Club Abuelo 24h', '0', '''''', 0, 0),
+('72', 'DOCENTE IV  1er 33.33h', '0', '''''', 0, 0),
+('73', 'DOCENTE IV (33,33 HRS)', '0', '''''', 0, 0),
+('74', 'DOCENTE IV 2do 33.33h', '0', '''''', 0, 0),
+('75', 'DOCENTE NG Ingles 18h', '0', '''''', 0, 0),
+('76', 'DOCENTE V Coordinador 36h', '0', '''''', 0, 0),
+('77', 'DOCENTE V Director 36h TAP', '0', '''''', 0, 0),
+('78', 'DOCENTE VI 6to 33,33h', '0', '''''', 0, 0),
+('79', 'ENFERMERA AUXILIAR', '', '''''', 0, 0),
+('8', 'ARCHIVISTA III', '5', '''''', 0, 0),
+('80', 'ENFERMERA AUXILIAR (Gua-Noct)', '', '''''', 0, 0),
+('81', 'ENFERMERA GRAD. (Gua-Noct)', '0', '''''', 0, 0),
+('82', 'ENFERMERA GRADUADA', '', '''''', 0, 0),
+('83', 'ENFERMERO AUXILIAR (Gua-Noct)', '0', '''''', 0, 0),
+('84', 'ENFERMERO GRAD. (Gua-Noct)', '0', '''''', 0, 0),
+('85', 'ENTRENADOR DEPORTIVO I', '1', '''''', 0, 0),
+('86', 'ENTRENADOR DEPORTIVO II', '2', '''''', 0, 0),
+('87', 'ENTRENADOR DEPORTIVO III', '15', '''''', 0, 0),
+('88', 'FISCAL AUDITOR', '99', '''''', 0, 0),
+('89', 'FISCAL DE RENTAS', '99', '''''', 0, 0),
+('9', 'ARQUITECTO  I', '18', '''''', 0, 0),
+('90', 'HIGIENISTA DENTAL II', '4', '''''', 0, 0),
+('91', 'INSP. AUX. DE OBRAS ING.', '2', '''''', 0, 0),
+('92', 'INSP. DE OBRAS ING. I', '15', '''''', 0, 0),
+('93', 'INSPECTOR DE SERV.PUBLICOS', '0', '''''', 0, 0),
+('94', 'JEFE DE DIVISION', '99', '''''', 0, 0),
+('95', 'JEFE DE OFICINA', '99', '''''', 0, 0),
+('96', 'JEFE TRANSP. AUTO. III', '17', '''''', 0, 0),
+('97', 'JUBILADA', '0', '''''', 0, 0),
+('98', 'JUBILADO', '0', '''''', 0, 0),
+('99', 'LIQUIDADOR I', '15', '''''', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomcategorias`
+-- Table structure for table `nomcargos_vacantes`
+--
+
+CREATE TABLE IF NOT EXISTS `nomcargos_vacantes` (
+  `id` int(11) NOT NULL auto_increment,
+  `codcargo` varchar(6) collate utf8_spanish_ci NOT NULL,
+  `sueldo` float(13,2) NOT NULL,
+  `nivel` varchar(8) collate utf8_spanish_ci NOT NULL,
+  `cantidad` int(3) default NULL,
+  `tipnom` int(2) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `nomcargos_vacantes`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nomcategorias`
 --
 
 CREATE TABLE IF NOT EXISTS `nomcategorias` (
@@ -492,7 +2343,7 @@ CREATE TABLE IF NOT EXISTS `nomcategorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomcategorias`
+-- Dumping data for table `nomcategorias`
 --
 
 INSERT INTO `nomcategorias` (`codorg`, `descrip`, `gr`, `ee`, `ocupacion`) VALUES
@@ -502,12 +2353,15 @@ INSERT INTO `nomcategorias` (`codorg`, `descrip`, `gr`, `ee`, `ocupacion`) VALUE
 (4, 'PROFESIONALES', '', 0, ''),
 (5, 'NO CLASIFICADOS', '', 0, ''),
 (6, 'TECNICOS / PROFESIONALES', '', 0, ''),
-(7, 'DIRECTIVO', '', 0, '');
+(7, 'DIRECTIVO', '', 0, ''),
+(8, 'DOCENTES', '', 0, ''),
+(9, 'MEDICOS', '', 0, ''),
+(10, 'PERSONAL GENERAL', '', 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomconceptos`
+-- Table structure for table `nomconceptos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomconceptos` (
@@ -557,14 +2411,262 @@ CREATE TABLE IF NOT EXISTS `nomconceptos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomconceptos`
+-- Dumping data for table `nomconceptos`
 --
 
+INSERT INTO `nomconceptos` (`codcon`, `descrip`, `tipcon`, `unidad`, `ctacon`, `contractual`, `impdet`, `proratea`, `usaalter`, `descalter`, `formula`, `modifdef`, `markar`, `tercero`, `ccosto`, `codccosto`, `debcre`, `bonificable`, `htiempo`, `valdefecto`, `con_cu_cc`, `con_mcun_cc`, `con_mcuc_cc`, `con_cu_mccn`, `con_cu_mccc`, `con_mcun_mccn`, `con_mcuc_mccc`, `con_mcun_mccc`, `con_mcuc_mccn`, `nivelescuenta`, `nivelesccosto`, `semodifica`, `verref`, `vermonto`, `particular`, `montocero`, `ee`, `fmodif`, `aplicaexcel`, `descripexcel`, `ctacon1`) VALUES
+(499, '********** ASIGNACIONES EMPLEADOS FIJOS **********', 'A', '', '1.', '', 'N', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(500, 'SUELDO QUINCENAL EMPLEADOS FIJOS', 'A', 'D', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(501, 'PRIMA POR ANTIGUEDAD', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=$REF;\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.09.00'),
+(502, 'PRIMA POR JERARQUIA EMPLEADOS FIJOS', 'A', 'M', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.03.10.00'),
+(503, 'PRIMA POR PROFESIONALIZACION EMPLEADOS FIJOS', 'A', 'M', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.08.00'),
+(504, 'PRIMA POR TRANSPORTE EMPLEADOS FIJOS', 'A', 'D', '101.', '1', 'S', 1, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=((CAMPOADICIONALPER(10)/30)*$REF);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.02.00'),
+(505, 'PRIMA POR HIJOS EMPLEADOS FIJOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(9);\r\n$T01=CAMPOADICIONALPER(34);\r\n$MONTO=((((53.21)/30)*$T01)*$REF);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.04.00'),
+(506, 'PRIMA POR EVALUACION EMPLEADOS FIJOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=((CAMPOADICIONALPER(16)/30)*$REF);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.03.01.00'),
+(507, 'COMPENSACION DE SUELDO ', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(7)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.02.01.00'),
+(508, 'HORAS EXTRAS DIURNAS EMPLEADOS FIJOS', 'A', 'H', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14);\r\n$T02=$T01/30/8;\r\n$MONTO=$T02*$REF*1.55;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.01.00'),
+(509, 'HORAS EXTRAS NOCTURNAS EMPLEADOS FIJOS', 'A', 'H', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14);\r\n$T02=$T01/30/7;\r\n$MONTO=$T02*$REF*1.80;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.02.00'),
+(510, 'PRIMA POR ADIESTRAMIENTO EMPLEADOS FIJOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=((CAMPOADICIONALPER(17)/30)*$REF);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.01.00'),
+(511, 'PRIMA POR NIVELACION EMPLEADOS FIJOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=(((CAMPOADICIONALPER(20)+CAMPOADICIONALPER(21))/30)*$REF);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.97.00'),
+(512, 'DOMINGO ADICIONAL EMPLEADOS', 'A', 'D', '1.', '', 'S', 0, '0', '', '$T01=($SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14))/30;\r\n$MONTO=$T01*$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.01.00'),
+(513, 'REINTEGRO DE SALARIO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(514, 'COMPLEMENTOS EMPLEADOS', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(515, 'GUARDIAS SABADO 7AM-7PM (12HRS) EMPLEADOS FIJOS', 'A', 'D', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.02.00'),
+(516, 'GUARDIAS DOMINGO Y FERIADO 7AM-7PM (12HRS) EMPLEADOS FIJOS', 'A', 'D', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;\r\n\r\n\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.02.00'),
+(517, 'GUARD LUNES-VIERNES 7 PM-7AM(12HRS) EMPLEADOS FIJOS', 'A', 'D', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;\r\n\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.02.00'),
+(518, 'GUARDIAS FERIADO NOCTURNAS EMPLEADOS FIJOS', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;\r\n\r\n\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.02.00'),
+(519, 'AJUSTE DE SALARIO', 'A', 'D', '101.', '', 'S', 0, '0', '', '$T01=($SUELDO+CAMPOADICIONALPER(7))/30;\r\n$MONTO=$T01*$REF;', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.96.01.00'),
+(520, 'GUARDIAS SABADO 7AM-7AM (24HRS) EMPLEADOS FIJOS', 'A', 'D', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;\r\n\r\n', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.02.00'),
+(521, 'GUARDIAS DOMINGO Y FERIADO 7AM-7AM (24HRS) EMPLEADOS FIJOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.02.00'),
+(522, 'REPARO', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.04.07.00'),
+(523, 'Bono Escolar contratados', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.07.09.00'),
+(524, 'PRIMA POR ANTIGUEDAD VACACIONES', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$T01=QUINQUENIO_VACACIONES($FICHA,$FECHAINGRESO,$FECHAFINNOM);\r\n$T02=SI("$T01==1",5,0); \r\n$T02=SI("$T01==2",10,$T02);\r\n$T02=SI("$T01==3",15,$T02);\r\n$T02=SI("$T01==4",20,$T02); \r\n$T02=($SALARIOMIN*($T02/100))/2;\r\n$MONTO=SI("$CODCARGO==2",0,$T02);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(525, 'BONO DE PROFESIONALIZACION EMPLEADOS FIJOS (DIAS)', 'A', '', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.03.08.00'),
+(526, 'PRIMA POR ANTIGUEDAD (ESPECIAL)', 'A', 'M', '101.', '', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(527, 'CESTA TICKET EMP. FIJOS', 'A', 'H', '101.', '1', 'S', 0, '0', '', '$T01=$CODCATEGORIA;\r\n$REF=CAMPOADICIONALPER(39);\r\n$T02=SI("($T01==8)&&($REF<''133.32'')",(($REF*600)/133.32),600);\r\n$T02=SI("($T01==9)&&($REF<''120'')",(($REF*600)/120),600);\r\n$T02=SI("($T01==10)&&($REF<''140'')",(($REF*600)/140),600);\r\n$MONTO=$T02;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(999, '********** ASIGNACIONES EMPLEADOS CONTRATADOS **********', 'A', 'M', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(1000, 'SUELDO QUINCENAL CONTRATADOS', 'A', 'M', '101.', '1', 'S', 1, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=(($SUELDO/30)*$REF);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1001, 'PRIMA PROFESIONAL CONTRATADOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(15)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1003, 'PRIMA POR JERARQUIA CONTRATADOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(8)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1004, 'PRIMA POR RAZONES DE SERVICIOS CONTRATADOS', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(13)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1005, 'TRANSPORTE FIJO POR CARGO CONTRATADOS', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(25)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1006, 'HORAS EXTRAS DIURNAS CONTRATADOS', 'A', 'H', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO;\r\n$T02=$T01/30/8;\r\n$MONTO=$T02*$REF*1.5;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.24.00'),
+(1007, 'HORAS EXTRAS NOCTURNAS CONTRATADOS', 'A', 'H', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO;\r\n$T02=$T01/30/7;\r\n$MONTO=$T02*$REF*1.80;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.24.00'),
+(1008, 'BONO NOCTURNO CONTRATADOS', 'A', 'D', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO;\r\n$T02=$T01/30/8;\r\n$MONTO=$T02*$REF*0.30;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.24.00'),
+(1009, 'FERIADO CONTRATADOS', 'A', 'D', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO;\r\n$T02=$T01/30;\r\n$MONTO=$T02*$REF*1.50;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.24.00'),
+(1010, 'DIA ADICIONAL CONTRATADOS', 'A', 'D', '1.', '', 'S', 0, '0', '', '$T01=($SUELDO+CONCEPTO(503)+CONCEPTO(507))/30;\r\n$MONTO=$T01*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.04.24.00'),
+(1011, 'COMPENSACION DE SUELDO CONTRATADOS', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(7)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.02.01.00'),
+(1012, 'REINTEGRO DE SALARIO CONTRATADOS			', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=(($SUELDO)/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1013, 'AJUSTE DE SALARIO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$T01=($SUELDO)/30;\r\n$MONTO=$T01*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1014, 'GUARDIAS SABADOS 7AM-7PM (12HRS) EMPLEADOS CONTRATADOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$MONTO=((($SUELDO/30)/6)*12)*$REF;\r\n\r\n\r\n//$MONTO=CAMPOADICIONALPER(23)*$REF;\r\n\r\n\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1015, 'GUARDIAS DOMIN-FERIAD 7AM-7PM (12HRS) EMPLEADOS CONTRATADOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$MONTO=(((($SUELDO/30)/6)*12)*2)*$REF;\r\n\r\n//$MONTO=CAMPOADICIONALPER(24)*$REF;\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1016, 'GUARDIAS LUNES-VIERNES 7PM-7AM (12HRS) EMPLEADOS CONTRATADOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$MONTO=((((($SUELDO/30)/6)*12)*(35/100))+((($SUELDO/30)/6)*12))*$REF;\r\n\r\n\r\n\r\n//$MONTO=((((($SUELDO/30)/6)*12)*(35/100))+((($SUELDO/30)/6)*12))*$REF;\r\n\r\n\r\n//$MONTO=CAMPOADICIONALPER(25)*$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1017, 'GUARDIAS DOMING-FERIAD 7PM-7AM (12HRS) EMPLEA CONTRATADOS', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=(((((($SUELDO/30)/6)*12)*(35/100))+((($SUELDO/30)/6)*12))*2)*$REF;\r\n\r\n\r\n//$MONTO=CAMPOADICIONALPER(26)*$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1018, 'GUARDIAS SABADO 7AM-7AM (24HRS) EMPLEADOS CONTRATADOS', 'A', 'D', '101.', '', 'S', 0, '0', '', '$MONTO=(((($SUELDO/30)/6)*12)+(((($SUELDO/30)/6)*12)*(35/100))+((($SUELDO/30)/6)*12))*$REF;\r\n\r\n\r\n//$MONTO=CAMPOADICIONALPER(27)*$REF;', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1019, 'GUARDIAS DOMINGOS 7AM-7AM (24HRS) EMPLEADOS CONTRATADOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=((((($SUELDO/30)/6)*12)+(((($SUELDO/30)/6)*12)*(35/100))+((($SUELDO/30)/6)*12))*2)*$REF;\r\n\r\n//$MONTO=CAMPOADICIONALPER(28)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1020, 'SALARIO SUPLENCIAS', 'A', 'M', '101.', '', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, '', '4.01.01.03.00'),
+(1021, 'CESTA TICKET EMP. CONTRATADOS', 'A', 'H', '101.', '1', 'S', 0, '0', '', '$T01=$CODCATEGORIA;\r\n$REF=CAMPOADICIONALPER(39);\r\n$T02=SI("($T01==8)&&($REF<''133.32'')",(($REF*600)/133.32),600);\r\n$T02=SI("($T01==9)&&($REF<''120'')",(($REF*600)/120),600);\r\n$T02=SI("($T01==10)&&($REF<''140'')",(($REF*600)/140),600);\r\n$MONTO=$T02;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1099, '********** ASIGNACIONES JUBILADOS **********', 'A', '', '1.', '', 'N', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(1100, 'JUBILACION QUINCENAL ', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=(($SUELDO/30)*$REF);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.07.01.01.02'),
+(1199, '**********ASIGNACIONES PENSIONADOS***********', 'A', '', '101.', '', 'N', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(1200, 'PENSION QUINCENAL', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=(($SUELDO/30)*$REF);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.07.01.01.01'),
+(1299, '*********** ASIGNACIONES JUNTA PARROQUIAL***********', 'A', '', '101.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(1300, 'SESIONES', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(32)/2;\r\n$MONTO=($REF*2541.43);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.29.00'),
+(1301, 'COMISIONES', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(33)/2;\r\n$MONTO=($REF*317.68);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.29.00'),
+(1302, 'SESIONES PARA DIF SUELDO', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.29.00'),
+(1303, 'COMISIONES PARA DIF SUELDO', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.29.00'),
+(1400, '*********** VACACIONES *********************', 'A', '', '1.', '', 'N', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(1401, 'BONO VACACIONAL EJECUTIVOS', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.05.03.00'),
+(1402, 'BONO VACACIONAL EMPLEADOS FIJOS', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$REF=BONOVACDIAS($CEDULA,$FECHANOMINA);\r\n$T01=VACVENC($CEDULA,$FECHANOMINA,$FECHAFINNOM);\r\n$MONTO=SI("$T01==''SI''",BONOVAC($CEDULA,$FECHANOMINA)+CAMPOADICIONALPER(35),0);', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.05.03.00'),
+(1403, 'BONO VACACIONAL OBREROS FIJOS', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF ;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.05.06.00'),
+(1404, 'BONO VACACIONAL CONTRATADOS', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;\r\n//$T01=VACVENC($CEDULA,$FECHANOMINA,$FECHAFINNOM);\r\n//$MONTO=SI("$T01==''SI''",BONOVAC($CEDULA,$FECHANOMINA),0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.05.08.00'),
+(1430, 'MONTO POR VACACIONES EJECUTIVOS', 'A', 'D', '1.', '1', 'S', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1431, 'MONTO POR VACACIONES EMPLEADOS FIJOS', 'A', 'D', '1.', '1', 'S', 0, '0', '', '$T01=SI("CAMPOADICIONALPER(35)==''1''",$SUELDO,0);\r\n$T02=SI("CAMPOADICIONALPER(35)==''2''",($SUELDO*2),$T01);\r\n$MONTO=SI("CAMPOADICIONALPER(35)==''0''",0,$T02);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1432, 'MONTO POR VACACIONES OBREROS FIJOS', 'A', 'D', '1.', '1', 'S', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(35)==''SI''",($SUELDO*4),0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.10.00'),
+(1433, 'MONTO POR VACACIONES CONTRATADOS', 'A', 'D', '1.', '1', 'S', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1450, 'PRS VACACIONES EJECUTIVOS ', 'A', 'M', '1.', '1', 'S', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.03.01.00'),
+(1451, 'PRS VACACIONES EMPLEADOS FIJOS', 'A', 'M', '1.', '', 'S', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.03.01.00'),
+(1452, 'PRS VACACIONES OBREROS FIJOS', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.03.16.00'),
+(1460, 'DIFERENCIA BONO VAC. AÃ‘OS ANT. OBREROS', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1461, 'BONO POST VACACIONAL ', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(10)==''SI''",150,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.05.03.00'),
+(1462, 'BONO VACACIONAL VENCIDO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.05.03.00'),
+(1463, 'DIAS HABILES EMP FIJOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$REF=DIASHABILESVAC($CEDULA,$FECHANOMINA);\r\n$T01=CAMPOADICIONALPER(6);\r\n$T02=CAMPOADICIONALPER(7);\r\n$T03=(($SUELDO+$T01+$T02)/30)*$REF;\r\n$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",$T03,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1464, 'SABADOS DOMINGOS Y FERIADOS EMP FIJOS', 'A', 'D', '101.', '1', 'S', 0, '0', '', '$REF=DIASNOHABILES($CEDULA,$FECHANOMINA);\r\n$T01=(($SUELDO+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(7))/30)*$REF;\r\n$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1465, 'DIAS HABILES CONTRATADOS', 'A', 'D', '1.', '1', 'S', 0, '0', '', '$REF=DIASHABILESVAC($CEDULA,$FECHANOMINA);\r\n$T01=CAMPOADICIONALPER(6);\r\n$T02=CAMPOADICIONALPER(7);\r\n$T03=(($SUELDO+$T01+$T02)/30)*$REF;\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1466, 'SABADOS DOMINGOS Y FERIADOS CONTRATADOS', 'A', 'D', '1.', '1', 'S', 0, '0', '', '$REF=DIASNOHABILES($CEDULA,$FECHANOMINA);\r\n$T01=(($SUELDO+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(7))/30)*$REF;\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1469, 'DIFERENCIA DE SUELDO PERSN CONTRATADO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(1470, 'DIFERENCIA DE SUELDO PERSN FIJO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(1519, 'AJUSTE POR COMPENSACION', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.02.01.00'),
+(2000, '**************DEDUCCIONES**************', 'D', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(2001, 'SEGURO SOCIAL OBLIGATORIO EMPLEADOS', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$T01=$SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(8)+CAMPOADICIONALPER(10)+CAMPOADICIONALPER(15)+CAMPOADICIONALPER(16)+CAMPOADICIONALPER(17)+CAMPOADICIONALPER(20)+CAMPOADICIONALPER(21)+CAMPOADICIONALPER(22)+((CONCEPTO(505)+CONCEPTO(501)+CONCEPTO(526))*2);\r\n$T02=SI("$T01>=($SALARIOMIN*5)",($SALARIOMIN*5),$T01);\r\n$T03=$LUNES;\r\nMENSAJECON($T03);\r\n$T04=(($T02*12)/52)*(4/100)*$T03;\r\n$T05=SI("CAMPOADICIONALPER(34)==15",$T04,$REF);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==''SI''",$T05/2+CAMPOADICIONALPER(37),0);\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.01.00'),
+(2002, 'REGIMEN PRESTACIONAL DE EMPLEO', 'D', 'P', '101.', '1', 'S', 1, '0', '', '$T01=$SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(8)+CAMPOADICIONALPER(10)+CAMPOADICIONALPER(15)+CAMPOADICIONALPER(16)+CAMPOADICIONALPER(17)+CAMPOADICIONALPER(20)+CAMPOADICIONALPER(21)+CAMPOADICIONALPER(22)+((CONCEPTO(505)+CONCEPTO(501)+CONCEPTO(526))*2);\r\n$T02=SI("$T01>=($SALARIOMIN*5)",($SALARIOMIN*5),$T01);\r\n$T03=$LUNES;\r\n$T04=(($T02*12)/52)*(0.50/100)*$T03;\r\n$T05=SI("CAMPOADICIONALPER(34)==15",$T04,$REF);\r\n$MONTO=SI("CAMPOADICIONALPER(2)==''SI''",$T05/2+CAMPOADICIONALPER(38),0);\r\n', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.06.04.00'),
+(2003, 'REG. PREST. DE VIV. Y HAB. EMPLEADOS', 'D', 'P', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(2004, 'FONDO DE PENSION Y JUBILACION EMPLEADOS', 'D', 'P', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.03.00'),
+(2005, 'CAJA DE AHORRO', 'D', 'P', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.07.00'),
+(2007, 'PRESTAMO CAJA DE AHORRO', 'D', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.07.00'),
+(2008, 'INASISTENCIA (DIA)', 'D', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=(($SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6))/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2009, 'DESCUENTO DE VIVIENDA', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(22)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2010, 'SEGURO HOSPITALIZACION EMPLEADOS', 'D', 'M', '', '1', 'S', 0, '0', '', '$T01=CAMPOADICIONALPER(9)/2;\r\n$T02=SI("CAMPOADICIONALPER(35)==''1''",($T01*3),$T01);\r\n$T02=SI("CAMPOADICIONALPER(35)==''2''",($T01*5),$T02);\r\n$MONTO=SI("CAMPOADICIONALPER(35)==''0''",$T01,$T02);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2011, 'PERMISO NO REMUNERADO EMPLEADOS ', 'D', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=(($SUELDO+CAMPOADICIONALPER(14)+CAMPOADICIONALPER(13))/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2012, 'I.N.A.V.I.', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(11)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2013, 'RETARDO MINUTOS EMPLEADOS', 'D', 'P', '1.', '', 'S', 0, '0', '', '$T01=($SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14))/30;\r\n$T03=$T01/8/60;\r\n$MONTO=$T03*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2014, 'DEDUCCION DE ANTICIPO EMPLEADOS', 'D', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2015, 'DEDUCCION ISRL', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(5);\r\n$MONTO=(($SUELDO+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(7))/2)*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2016, 'S.S.O VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=4;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",$T03,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2017, 'R.P.E. VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=0.50;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",$T03,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2018, 'R.P.V.H. VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=1;\r\n$T01=CONCEPTO(1463)+CONCEPTO(1464);\r\n$T02=$T01*($REF/100);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",$T02,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2019, 'F.P.J. VACACIONES', 'D', 'P', '', '1', 'S', 1, '0', '', '$REF=3;\r\n$T01=($SUELDO/2+(CAMPOADICIONALPER(6)/2)+(CAMPOADICIONALPER(5)/2)+(CAMPOADICIONALPER(13)/2)+(CAMPOADICIONALPER(25)/2)+(CAMPOADICIONALPER(14)/2)+CONCEPTO(543))*($REF/100);\r\n$T02=SI("CAMPOADICIONALPER(35)==1",($T01*3),$T01);\r\n$T02=SI("CAMPOADICIONALPER(35)==2",($T01*5),$T02);\r\n$T02=SI("CAMPOADICIONALPER(35)==0",$T01,$T02);\r\n$MONTO=SI("CAMPOADICIONALPER(4)==SI",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2020, 'DESCUENTO POR TELEFONO', 'D', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2021, 'DESCUENTO POR VACACIONES', 'D', 'M', '', '', 'S', 0, '0', '', '$MONTO=(($SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6))/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2022, 'CAJA DE AHORRO VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=10;\r\n$T01=CONCEPTO(1463)+CONCEPTO(1464);\r\n$T02=SI("CAMPOADICIONALPER(14)==''SI''",($T01*($REF/100)),0);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2023, 'PRESTAMO CAJA DE AHORRO VACACIONES', 'D', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(15)==''SI''",CAMPOADICIONALPER(16),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2024, 'DIFERENCIA EN DEDUCCION S.S.O. EMPLEADOS', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$T01=SI("$SUELDO>=($SALARIOMIN*10)",($SALARIOMIN*10),$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(7);\r\n$T03=SI("CAMPOADICIONALPER(15)==''SI''",LUNESPERVAC($FECHANOMINA,$FECHAVAC),$LUNESPER);\r\n$T04=(($T02*12)/52)*($4/100)*$T03;\r\n$T05=$T04/30;\r\n$MONTO=$T01*$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2025, 'S.S.O VACACIONES (RETORNO)', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=4;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAREIVAC,$FECHAFINNOM);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==''SI''",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==''SI''",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2026, 'R.P.E. VACACIONES (RETORNO)', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=0.50;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAREIVAC,$FECHAFINNOM);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==''SI''",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(2)==''SI''",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2027, 'R.P.V.H. VACACIONES (RETORNO)', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=1;\r\n$T01=CONCEPTO(515)+CONCEPTO(516);\r\n$T02=$T01*($REF/100);\r\n$T03=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T04=SI("$T03==''SI''",$T02,0);\r\n$MONTO=SI("CAMPOADICIONALPER(3)==''SI''",$T04,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2028, 'CAJA DE AHORRO VACACIONES (RETORNO)', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=10;\r\n$T01=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T02=SI("$T01==''SI''",((CONCEPTO(515)+CONCEPTO(516))*($REF/100)),0);\r\n$MONTO=SI("CAMPOADICIONALPER(14)==''SI''",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2029, 'DEDUCCION ISRL VACACIONES (RETORNO)', 'D', 'P', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2031, 'SEGURO SOCIAL OBLIGATORIO POR AJUSTE DE SALARIO', 'D', 'D', '101.', '', 'S', 0, '0', '', '$T01=(($SUELDO+CAMPOADICIONALPER(7))*12)+CONCEPTO(1519);\r\n$T02=$T01/52;\r\n$T03=$T02*0.04;\r\n$MONTO=$T03*$REF;\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2032, 'REGIMEN PRESTACIONAL DE EMPLEO POR AJUSTE DE SALARIO ', 'D', 'D', '101.', '', 'S', 0, '0', '', '$T01=(($SUELDO+CAMPOADICIONALPER(7))*12);\r\n$T02=$T01/52;\r\n$T03=$T02*0.005;\r\n$MONTO=$T03*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2033, 'REG. PREST. DE VIV. Y HAB. EMPLEADOS POR AJUSTE DE SALARIO ', 'D', 'D', '101.', '', 'S', 0, '0', '', '$T01=CONCEPTO(519)+CONCEPTO(1519);\r\n$MONTO=$T01*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2041, 'SEGURO SOCIAL OBLIGATORIO POR COMPLEM. COMISION DE SERV.', 'D', '', '1.', '', 'S', 0, '0', '', '$REF=4;\r\n$T01=SI("$SUELDO>=($SALARIOMIN*5)",($SALARIOMIN*5),$SUELDO);\r\n$T02=CAMPOADICIONALPER(21);\r\n$T03=$LUNES/2;\r\n$T04=((($T02*12)/52)*($REF/100)*$T03);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==''SI''",$T04,0);;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2042, 'REGIMEN PRESTACIONAL DE EMPLEO COMPLEM COMISION SERV.', 'D', 'P', '101.', '', 'S', 0, '0', '', '$REF=0.50;\r\n$T01=SI("$SUELDO>=($SALARIOMIN*20)",($SALARIOMIN*20),$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(21)+CAMPOADICIONALPER(7);\r\n$T03=$LUNES/2;\r\n$T04=(($T02*12)/52)*($REF/100)*$T03;\r\n$MONTO=SI("CAMPOADICIONALPER(1)==''SI''",$T04,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2043, 'REG. PREST. DE VIV. Y HAB. EMPLEADOS  COMPLEM COMISION SERV.', 'D', 'P', '101.', '', 'S', 0, '0', '', '$REF=1;\r\n$T01=CONCEPTO(521);\r\n$T02=$T01*($REF/100);\r\n$MONTO=SI("CAMPOADICIONALPER(3)==''SI''",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2051, 'SEGURO SOCIAL OBLIGATORIO POR AJUSTE COMPLE SERV.', 'D', 'D', '1.', '1', 'S', 0, '0', '', '$T01=CAMPOADICIONALPER(21);\r\n$T02=$T01*12;\r\n$T03=$T02/52;\r\n$T04=$T03*0.04;\r\n$MONTO=$T04*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2052, 'REGIMEN PRESTACIONAL DE EMPLEO POR AJUSTE  COMPLEM. SERV.', 'D', 'D', '101.', '1', 'S', 0, '0', '', '$T01=CAMPOADICIONALPER(21)*12;\r\n$T02=$T01/52;\r\n$T03=$T02*0.005;\r\n$MONTO=$T03*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2053, 'REG. PREST. DE VIV. Y HAB. EMPLEADOS AJUSTE COMPLEM. SERV.', 'D', 'D', '101.', '1', 'S', 0, '0', '', '$T01=CONCEPTO(520);\r\n$MONTO=$T01*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2100, 'DESCUENTO POR NOMBRAMIENTO', 'D', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2101, 'TRIBUNAL', 'D', 'M', '101.', '1', 'S', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(31)==SI",100,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2102, 'MUTUO AUXILIO', 'D', 'M', '101.', '', 'S', 0, '0', '', '$REF=65;\r\n$MONTO=SI("CAMPOADICIONALPER(14)==''SI''",($REF)*(0.1),0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2103, 'REG. PREST. DE VIV. Y HAB. EMPLEADOS (DIAS)', 'D', '', '101.', '1', 'S', 1, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 1, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(2200, ' 	 ****************DEDUCCIONES JUBILADOS**************** ', 'D', '', '1.', '', 'N', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(2400, ' 	 ****************DEDUCCIONES CONTRATADOS**************** ', 'D', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(2401, 'SEGURO SOCIAL OBLIGATORIO CONTRATADOS', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$T01=$SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(8)+CAMPOADICIONALPER(10)+CAMPOADICIONALPER(15);\r\n$T02=SI("$T01>=($SALARIOMIN*5)",($SALARIOMIN*5),$T01);\r\n$T03=2;\r\n$T04=(($T02*12)/52)*(4/100)*$T03;\r\n$T05=SI("CAMPOADICIONALPER(34)==15",$T04,$REF);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==''SI''",$T05+CAMPOADICIONALPER(37),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2402, 'REGIMEN PRESTACIONAL DE EMP. CONT.', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$T01=$SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(8)+CAMPOADICIONALPER(10)+CAMPOADICIONALPER(15);\r\n$T02=SI("$T01>=($SALARIOMIN*5)",($SALARIOMIN*5),$T01);\r\n$T03=$LUNES/2;\r\n$T04=(($T02*12)/52)*(0.50/100)*$T03;\r\n$T05=SI("CAMPOADICIONALPER(34)==15",$T04,$REF);\r\n$MONTO=SI("CAMPOADICIONALPER(2)==''SI''",$T05+CAMPOADICIONALPER(38),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2403, 'REG. PREST. DE VIVIENDA Y HAB. CONT.', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=1;\r\n$T02=(($SUELDO+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(7))*($REF/100))/2;\r\n$MONTO=SI("CAMPOADICIONALPER(3)==''SI''",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2404, 'INASISTENCIA (DIA)', 'D', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=(($SUELDO/30)+(CAMPOADICIONALPER(7)/30)+(CAMPOADICIONALPER(6)/30))*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2405, 'RETARDO MINUTOS CONTRATADOS', 'D', 'P', '1.', '', 'S', 0, '0', '', '$T01=($SUELDO/30);\r\n$T03=$T01/8/60;\r\n$MONTO=$T03*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2406, 'PENSION ALIMENTARIA CONTRADOS', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CAMPOADICIONALPER(12)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2407, 'DESCUENTO ANTICIPO DE SALARIO', 'D', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2408, 'CAJA DE AHORRO', 'D', 'P', '1.', '1', 'S', 1, '0', '', '$REF=10;\r\n$T01=CONCEPTO(1000);\r\n$MONTO=SI("CAMPOADICIONALPER(14)==SI",($T01*($REF/100)),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2409, 'PRESTAMO CAJA DE AHORRO', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=CUOTAPRE($FICHA,$FECHANOMINA,$FECHAFINNOM);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2410, 'S.S.O VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=4;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2411, 'R.P.E. VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=0.50;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2412, 'R.P.V.H. VACACIONES', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=1;\r\n$T01=$SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T02=$T01*($REF/100);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T02,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2413, 'CAJA DE AHORRO VACACIONES', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=10;\r\n$T01=$SUELDO+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(7);\r\n$T02=SI("CAMPOADICIONALPER(14)==SI",($T01*($REF/100)),0);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2414, 'PRESTAMO CAJA DE AHORRO VACACIONES', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(15)==SI",CAMPOADICIONALPER(16),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2415, 'S.S.O VACACIONES (RETORNO)', 'D', 'P', '101.', '1', 'S', 0, '0', '', '$REF=4;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHANOMINA,$FECHAREIVAC);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==SI",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==SI",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2416, 'R.P.E. VACACIONES (RETORNO)', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=0.50;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHANOMINA,$FECHAREIVAC);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==SI",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(2)==SI",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2417, 'R.P.V.H. VACACIONES (RETORNO)', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=1;\r\n$T01=CONCEPTO(1014)+CONCEPTO(1015);\r\n$T02=$T01*($REF/100);\r\n$T03=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T04=SI("$T03==SI",$T02,0);\r\n$MONTO=SI("CAMPOADICIONALPER(3)==SI",$T04,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2418, 'CAJA DE AHORRO VACACIONES (RETORNO)', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=10;\r\n$T01=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T02=SI("$T01==SI",((CONCEPTO(1014)+CONCEPTO(1015))*($REF/100)),0);\r\n$MONTO=SI("CAMPOADICIONALPER(14)==SI",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2431, 'SEGURO SOCIAL OBLIGATORIO CONTRATADOS AJUSTE SALARIO', 'D', 'P', '1.', '', 'S', 0, '0', '', '$T01=$SUELDO*12;\r\n$T02=$T01/52;\r\n$T03=$T02*0.04;\r\n$MONTO=$T03*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2432, 'REGIMEN PRESTACIONAL DE EMP. CONT. AJUSTE SALARIO', 'D', 'P', '101.', '', 'S', 0, '0', '', '$T01=$SUELDO*12;\r\n$T02=$T01/52;\r\n$T03=$T02*0.005;\r\n$MONTO=$T03*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2433, 'REG. PREST. DE VIV. Y HAB. EMPLEADOS POR AJUSTE DE SALARIO ', 'D', 'D', '101.', '', 'S', 0, '0', '', '$T01=CONCEPTO(1013);\r\n$MONTO=$T01*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2500, '******************LIQUIDACIONES DEDUCCIONES****************', 'D', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(2501, 'PREAVISO DEDUCCION', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$T01=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"M");\r\n$T02=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"A");\r\n$T03=SI("($T01>=1)&&($MOTIVOLIQ==''Renuncia'')",7,0);\r\n$T03=SI("($T01>=6)&&($MOTIVOLIQ==''Renuncia'')",15,$T03);\r\n$T03=SI("($T02>=1)&&($MOTIVOLIQ==''Renuncia'')",30,$T03);\r\n$T03=SI("($T01>=1)&&($MOTIVOLIQ==''Despido'')",7,$T03);\r\n$T03=SI("($T01>=6)&&($MOTIVOLIQ==''Despido'')",15,$T03);\r\n$T03=SI("($T02>=1)&&($MOTIVOLIQ==''Despido'')",30,$T03);\r\n$T03=SI("($T02>=5)&&($MOTIVOLIQ==''Despido'')",60,$T03);\r\n$T03=SI("($T02>=10)&&($MOTIVOLIQ==''Despido'')",90,$T03);\r\n$REF=SI("($T03<=30)&&($TIPONOMINA!=1)&&($MOTIVOLIQ==''Despido'')",$T03*2,$T03);\r\n$T04=SI("CAMPOADICIONALPER(16)==''GPC''",((CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008)+CONCEPTO(4009)+CONCEPTO(4010))/30)*$REF,((CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007))/30)*$REF);\r\n$MONTO=SI("($MOTIVOLIQ==''Renuncia'')&&($PREAVISO==''No'')",$T04,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2502, 'DESCUENTO I.N.C.E.', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=0.50;\r\n$MONTO=CONCEPTO(4017)*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2503, 'TARJETA ALIMENTARIA', 'D', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=(BAREMO(''4'',''3'')/2)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2504, 'SUELDO PAGADO DE MAS', 'D', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=$REF;', 1, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(2505, 'PRIMA PROFESIONAL PAGADO DE MAS', 'D', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=(CONCEPTO(4004)/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2506, 'OTRAS PRIMAS', 'D', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=((CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007))/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2507, 'DIAS PAGADO DE MAS', 'D', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=(($SUELDO/30)+(CAMPOADICIONALPER(7)/30)+(CAMPOADICIONALPER(6)/30))*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.18.00'),
+(2508, 'ANTICIPOS DE PRESTACIONES SOCIALES', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=ANTICIPOS($CEDULA);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(2600, '*********PRESTACIONES DEDUCCION*********', 'D', 'M', '1.', '', 'N', 0, '0', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(2601, 'ANTICIPOS DE PRESTACIONES SOCIALES', 'D', 'M', '1.', '', 'N', 0, '0', '', '$MONTO=ANTICIPOS($CEDULA);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3500, '****************APORTES PATRONALES****************', 'P', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(3501, 'APORTE PATRONAL S.S.O. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=9;\r\n$MONTO=((CONCEPTO(2001))*$REF)/4;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.08.00'),
+(3502, 'APORTE PATRONAL R.P.E EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=(CONCEPTO(2002)*$REF)/0.5;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.04.00'),
+(3503, 'APORTE PATRONAL R.P.V.H. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$T01=CONCEPTO(2003)*2;\r\n$MONTO=SI("CAMPOADICIONALPER(3)==''SI''",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(3504, 'APORTE PATRONAL CAJA DE AHORROS', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=15;\r\n$T01=CONCEPTO(500)+CONCEPTO(507);\r\n$MONTO=SI("CAMPOADICIONALPER(14)==''SI''",($T01*($REF/100)),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.07.00'),
+(3505, 'APORTE PATRONAL F.P.J. EMP FIJO ', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=3;\r\n$T01=(CONCEPTO(500))*($REF/100);\r\n$MONTO=SI("CAMPOADICIONALPER(4)==SI",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.03.00'),
+(3550, 'APORTE S.S.O PATRONAL CONTRATADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=9;\r\n$MONTO=(CONCEPTO(2401)*$REF)/4;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.33.00'),
+(3551, 'APORTE PATRONAL R.P.E. CONTRATADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=(CONCEPTO(2402)*$REF)/0.5;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.33.00'),
+(3552, 'APORTE PATRONAL L.P.H. CONTRATADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$T01=CONCEPTO(2403)*2;\r\n$MONTO=SI("CAMPOADICIONALPER(3)==''SI''",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.33.00'),
+(3580, 'APORTE PATRONAL H.C.M. JUBILADOS', 'P', 'P', '1.', '1', 'N', 0, '0', '', '$MONTO=CAMPOADICIONALPER(10)/2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3581, 'S.S.O VACACIONES (RETORNO) EMP FIJO', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=11;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAREIVAC,$FECHAFINNOM);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==SI",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==SI",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00');
+INSERT INTO `nomconceptos` (`codcon`, `descrip`, `tipcon`, `unidad`, `ctacon`, `contractual`, `impdet`, `proratea`, `usaalter`, `descalter`, `formula`, `modifdef`, `markar`, `tercero`, `ccosto`, `codccosto`, `debcre`, `bonificable`, `htiempo`, `valdefecto`, `con_cu_cc`, `con_mcun_cc`, `con_mcuc_cc`, `con_cu_mccn`, `con_cu_mccc`, `con_mcun_mccn`, `con_mcuc_mccc`, `con_mcun_mccc`, `con_mcuc_mccn`, `nivelescuenta`, `nivelesccosto`, `semodifica`, `verref`, `vermonto`, `particular`, `montocero`, `ee`, `fmodif`, `aplicaexcel`, `descripexcel`, `ctacon1`) VALUES
+(3582, 'R.P.E. VACACIONES (RETORNO) EMP FIJO ', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAREIVAC,$FECHAFINNOM);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==SI",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(2)==SI",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3583, 'R.P.V.H. VACACIONES (RETORNO) EMP FIJO ', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=CONCEPTO(515)+CONCEPTO(516);\r\n$T02=$T01*($REF/100);\r\n$T03=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T04=SI("$T03==SI",$T02,0);\r\n$MONTO=SI("CAMPOADICIONALPER(3)==SI",$T04,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3584, 'CAJA DE AHORRO VACACIONES (RETORNO) EMP FIJO ', 'P', 'P', '1.', '1', 'N', 0, '0', '', '$REF=10;\r\n$T01=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T02=SI("$T01==''SI''",((CONCEPTO(515)+CONCEPTO(516))*($REF/100)),0);\r\n$MONTO=SI("CAMPOADICIONALPER(14)==''SI''",$T02,0);\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3585, 'S.S.O VACACIONES EMP FIJO ', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=11;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3586, 'R.P.E. VACACIONES EMP FIJO ', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+(CONCEPTO(501)*2);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3587, 'R.P.V.H. VACACIONES EMP FIJO ', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=CONCEPTO(2018)*$REF;\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T01,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3588, 'F.P.J. VACACIONES EMP FIJO ', 'P', 'P', '1.', '1', 'S', 1, '0', '', '$REF=3;\r\n$T01=($SUELDO/2+(CAMPOADICIONALPER(6)/2)+(CAMPOADICIONALPER(5)/2)+(CAMPOADICIONALPER(13)/2)+(CAMPOADICIONALPER(25)/2)+(CAMPOADICIONALPER(14)/2)+CONCEPTO(543))*($REF/100);\r\n$T02=SI("CAMPOADICIONALPER(35)==1",($T01*3),$T01);\r\n$T02=SI("CAMPOADICIONALPER(35)==2",($T01*5),$T02);\r\n$T02=SI("CAMPOADICIONALPER(35)==0",$T01,$T02);\r\n$MONTO=SI("CAMPOADICIONALPER(4)==SI",$T02,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3589, 'CAJA DE AHORRO VACACIONES EMP FIJO ', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=10;\r\n$T01=CONCEPTO(2022);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3590, 'APORTE PATRONAL CAJA DE AHORROS CONTRATADOS', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=10;\r\n$MONTO=CONCEPTO(2005);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3591, 'S.S.O VACACIONES CONT.', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=11;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3592, 'R.P.E. VACACIONES CONT.', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHAVAC,$FECHAREIVAC);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T03,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3593, 'R.P.V.H. VACACIONES CONT.', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=CONCEPTO(2412)*$REF;\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T01,0);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3594, 'CAJA DE AHORRO VACACIONES CONT.', 'P', 'P', '1.', '1', 'N', 0, '0', '', '$REF=10;\r\n$T01=CONCEPTO(2413);\r\n$MONTO=SI("CAMPOADICIONALPER(15)==SI",$T01,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3595, 'S.S.O VACACIONES (RETORNO) CONT.', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=11;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHANOMINA,$FECHAREIVAC);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==SI",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(1)==SI",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3596, 'R.P.E. VACACIONES (RETORNO) CONT.', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$T01=SI("$SUELDO>=8789",8789,$SUELDO);\r\n$T02=$T01+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6);\r\n$T03=(($T02*12)/52)*($REF/100)*LUNES_PER($FECHANOMINA,$FECHAREIVAC);\r\n$T04=REINTVAC($FECHAREIVAC,$FECHANOMINA,$FECHAFINNOM);\r\n$T05=SI("$T04==SI",$T03,0);\r\n$MONTO=SI("CAMPOADICIONALPER(2)==SI",$T05,0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3597, 'R.P.V.H. VACACIONES (RETORNO) CONT.', 'P', 'P', '101.', '1', 'N', 0, '0', '', '$REF=2;\r\n$MONTO=CONCEPTO(2417)*2;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3598, 'CAJA DE AHORRO VACACIONES (RETORNO) CONT.', 'P', 'P', '1.', '1', 'N', 0, '0', '', '$REF=10;\r\n$MONTO=CONCEPTO(2418);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(3599, 'APORTE PATRONAL S.S.O. AJUSTE SAL. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=11;\r\n$MONTO=(11*CONCEPTO(2031))/4;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.01.00'),
+(3600, 'APORTE PATRONAL R.P.E AJUSTE SAL. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=(2*CONCEPTO(2032))/0.5;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.04.00'),
+(3601, 'APORTE PATRONAL R.P.V.H. AJUSTE SAL. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=CONCEPTO(2033)*2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(3602, 'APORTE PATRONAL S.S.O. AJUSTE COM. SERV. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=11;\r\n$MONTO=(11*CONCEPTO(2051))/4;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.01.00'),
+(3603, 'APORTE PATRONAL R.P.E AJUSTE COM. SERV. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=(2*CONCEPTO(2052))/0.5;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.04.00'),
+(3604, 'APORTE PATRONAL R.P.V.H. AJUSTE COM. SERV. EMPLEADOS', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=CONCEPTO(2053)*2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(3605, 'APORTE PATRONAL S.S.O. COM. SERV. EMPLEADOS', 'P', 'P', '101.', '', 'N', 1, '0', '', '$REF=11;\r\n$MONTO=(11*CONCEPTO(2041))/4;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.01.00'),
+(3606, 'APORTE PATRONAL R.P.E. COM. SERV. EMPLEADOS', 'P', 'P', '101.', '', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=(2*CONCEPTO(2042))/0.5;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.04.00'),
+(3607, 'APORTE PATRONAL R.P.V.H. COM. SERV. EMPLEADOS', 'P', 'P', '101.', '', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=CONCEPTO(2043)*2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(3608, 'APORTE PATRONAL S.S.O. AJUSTE SAL. CONTR.', 'P', 'P', '101.', '1', 'N', 1, '0', '', '$REF=11;\r\n$MONTO=(11*CONCEPTO(2431))/4;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.01.00'),
+(3609, 'APORTE PATRONAL R.P.E AJUSTE SAL. CONTR.', 'P', 'P', '1.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=(2*CONCEPTO(2432))/0.5;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.04.00'),
+(3610, 'APORTE PATRONAL R.P.V.H. AJUSTE SAL. CONTR.', 'P', 'P', '1.', '1', 'N', 1, '0', '', '$REF=2;\r\n$MONTO=CONCEPTO(2433)*2;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.06.05.00'),
+(3614, 'APORTE PATRONAL CAJA DE AHORROS', 'P', 'P', '1.', '1', 'N', 0, '0', '', '$REF=10;\r\n$MONTO=CONCEPTO(2408);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.07.07.00'),
+(4000, '******************LIQUIDACIONES****************', 'A', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(4001, 'SUELDO BASICO', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=$SUELDO;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4002, 'PRIMA POR RAZONES DE SERVICIO', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=CAMPOADICIONALPER(13);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4003, 'COMPENSACION SALARIAL', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=CAMPOADICIONALPER(7);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4004, 'PRIMA PROFESIONAL', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=CAMPOADICIONALPER(6);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4005, 'PRIMA POR JERARQUIA', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(16)==''GPC''",CAMPOADICIONALPER(5),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4006, 'TRANSPORTE FIJO POR CARGO', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(16)==''GPC''",CAMPOADICIONALPER(25),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4007, 'PRIMA ESPECIAL', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=SI("CAMPOADICIONALPER(16)==''GPC''",CAMPOADICIONALPER(23),0);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4008, 'APORTE PLAN DE PREVISION', 'A', 'P', '1.', '1', 'N', 0, '0', '', '$REF=15;\r\n$MONTO=($SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14))*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4009, 'DOZAVO DE VACACIONES', 'A', 'P', '1.', '1', 'N', 0, '0', '', '$T01=($SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6));\r\n$MONTO=($T01)*0.111;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4010, 'DOZAVO DE UTILIDADES', 'A', 'P', '1.', '1', 'N', 0, '0', '', '$T01=($SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(6));\r\n$MONTO=$T01*0.250;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4011, 'PREAVISO', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$T01=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"M");\r\n$T02=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"A");\r\n$T03=SI("($T01>=1)&&($MOTIVOLIQ==''Renuncia'')",7,0);\r\n$T03=SI("($T01>=6)&&($MOTIVOLIQ==''Renuncia'')",15,$T03);\r\n$T03=SI("($T02>=1)&&($MOTIVOLIQ==''Renuncia'')",30,$T03);\r\n$T03=SI("($T01>=1)&&($MOTIVOLIQ==''Despido'')",7,$T03);\r\n$T03=SI("($T01>=6)&&($MOTIVOLIQ==''Despido'')",15,$T03);\r\n$T03=SI("($T02>=1)&&($MOTIVOLIQ==''Despido'')",30,$T03);\r\n$T03=SI("($T02>=5)&&($MOTIVOLIQ==''Despido'')",60,$T03);\r\n$T03=SI("($T02>=10)&&($MOTIVOLIQ==''Despido'')",90,$T03);\r\n$REF=SI("($T03<=30)&&($TIPONOMINA!=1)&&($MOTIVOLIQ==''Despido'')",$T03*2,$T03);\r\n$T04=((CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008))/30)*$REF;\r\n$T05=((CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008)+CONCEPTO(4009)+CONCEPTO(4010))/30)*$REF;\r\n$T06=SI("$MOTIVOLIQ==''Renuncia''",$T04,$T05);\r\n$MONTO=SI("($MOTIVOLIQ==''Renuncia'')&&($PREAVISO==''No'')",0,$T06);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4012, 'ANTIGUEDAD ART 108/ CLA. 24 CCV', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$T01=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"A");\r\n$T02=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"M");\r\n$T03=SI("$T02>=6",($T01+1),$T01);\r\n$REF=SI("($REF>=10)||($MOTIVOLIQ==''Despido'')",($T03*60),($T03*30));\r\n$T04=(CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008)+CONCEPTO(4009)+CONCEPTO(4010))/30;\r\n$MONTO=$T04*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4013, 'VACACIONES FRACCIONADAS', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$T01=(15)+ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"A");\r\n$T02=(CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008));\r\n$REF=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"M");\r\n$T03=($T02-CONCEPTO(4008))/30;\r\n$MONTO=(($T01*$T03)/12)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4014, 'BONO VACACIONAL FRACCIONADO', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$T01=ANTIGUEDADLIQ($FECHAINGRESO,$FECHANOMINA,1,$PREAVISO,$CODNOM,$FICHA);\r\n$T02=(CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008))/30;\r\n$T03=SI("CAMPOADICIONALPER(16)==''GPC''",($T02/30),CONCEPTO(4009));\r\n$T04=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"M");\r\n$REF=3.33*$T04;\r\n$MONTO=CONCEPTO(4009)*$T04;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4015, 'VACACIONES VENCIDAS', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$REF=VACBONOPENDIENTE($CEDULA,$FECHANOMINA,1);\r\n$T02=(CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008))/30;\r\n$MONTO=$T02*$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4016, 'BONO VACACIONAL VENCIDO', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=VACBONOPENDIENTE($CEDULA,$FECHANOMINA,2);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4017, 'BONIF. DE FIN DE AÃ‘O', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$REF=(120/12)*MESESLABORADOS($CODNOM,''4011'',$FICHA,$FECHANOMINA,$FECHAINGRESO);\r\n$T01=(CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4008)+CONCEPTO(4009))/30;\r\n$MONTO=$T01*($REF);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4018, 'SUSTITUTIVA DE UTILIDADES', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$T01=((CONCEPTO(4001)+CONCEPTO(4002)+CONCEPTO(4003)+CONCEPTO(4004)+CONCEPTO(4005)+CONCEPTO(4006)+CONCEPTO(4007)+CONCEPTO(4009))*2)/12;\r\n$REF=MESESLABORADOS($CODNOM,''4011'',$FICHA,$FECHANOMINA);\r\n$MONTO=$T01*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4019, 'SUELDO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=($SUELDO/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4020, 'APORTE PLAN DE PREVISION', 'A', 'P', '1.', '', 'S', 0, '0', '', '$T01=15;\r\n$T02=($SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14))*($T01/100);\r\n$MONTO=($T02/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4021, 'COMPENSACION SALARIAL', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=(CAMPOADICIONALPER(14)/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4022, 'PRIMA PROFESIONAL', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=(CAMPOADICIONALPER(6)/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4023, 'PRIMA POR JERARQUIA', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=(CAMPOADICIONALPER(5)/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4024, 'TRANSPORTE FIJO POR CARGO', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=(CAMPOADICIONALPER(25)/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4025, 'DIAS LABORADOS NO PAGADOS', 'A', 'M', '1.', '', 'S', 0, '0', '', '$MONTO=(($SUELDO+CAMPOADICIONALPER(7))/30)*$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4026, 'INTERESES PREST. SOCIALES', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$MONTO=PRESTCONTRATADOS($CEDULA,$FICHA,5004);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4027, 'DIAS ADICIONALES ART. 108', 'A', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=($REF)*(CONCEPTO(4001)+CONCEPTO(4003)+CONCEPTO(4009)+CONCEPTO(4010))/30;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4028, 'PARAGRAFO I ART. 108', 'A', 'D', '1.', '', 'S', 0, '0', '', '$MONTO=($REF)*(CONCEPTO(4001)+CONCEPTO(4003)+CONCEPTO(4009)+CONCEPTO(4010))/30;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4029, 'ANTIGUEDAD ART 108', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$REF=CAMPOADICIONALPER(17);\r\n$MONTO=PRESTCONTRATADOS($CEDULA,$FICHA,5000);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(4999, '****************PRESTACIONES SOCIALES***********************', 'A', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '1.'),
+(5000, 'PRESTACIONES SOCIALES ', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$T01=ASIGMESACTUAL($FECHAFINNOM,$FICHA);\r\n$T02=ANTIGUEDADLIQ($FECHAINGRESO,$FECHAFINNOM,2,0,0,0);\r\n$T03=(($T01/30)*40)/12;\r\n$T04=(($T01/30)*90)/12;\r\n$T05=($T01+$T03+$T04)/30;\r\n$T06=ANTIGUEDAD($FECHAINGRESO,$FECHAFINNOM,"A");\r\n$T07=ANTIGUEDAD($FECHAINGRESO,$FECHAFINNOM,"M");\r\n$T08=SI("($T07==0)&&($T06>=2)",(($T05)*(($T06-1)*2)),0);\r\n$REF=SI("$T07==0",((($T06-1)*2)+5),5);\r\n$T09=SI("($T07>=4)||($T06<>0)",$T05*5,0);\r\n$MONTO=$T08+$T09;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5001, 'ANTICIPOS DE PRESTACIONES SOCIALES', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$MONTO=ANTICIPOS($CEDULA);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5002, 'PRESTACIONES SOCIALES XX', 'A', 'M', '1.', '1', 'N', 0, '0', '', '$T01=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"A");\r\n$T02=ANTIGUEDAD($FECHAINGRESO,$FECHANOMINA,"M");\r\n$T03=SI("$T02>=6",($T01+1),$T01);\r\n$REF=$T03*30;\r\n$T04=$SUELDO+CAMPOADICIONALPER(13)+CAMPOADICIONALPER(14);\r\n$T05=SI("CAMPOADICIONALPER(16)==''GPC''",(CAMPOADICIONALPER(5)+CAMPOADICIONALPER(6)+CAMPOADICIONALPER(23)+CAMPOADICIONALPER(25)),0);\r\n$T06=((($T04+$T05)/30)*90)/12;\r\n$T07=ANTIGUEDADLIQ($FECHAINGRESO,$FECHANOMINA,1,$PREAVISO,$CODNOM,$FICHA);\r\n$T08=((($T04+$T05)/30)*$T07)/12;\r\n$MONTO=(($T04+$T05+$T06+$T08)/30)*$REF;\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5003, 'INTERESES SOBRE PRESTACIONES EMP FIJO', 'A', 'P', '1.', '1', 'S', 0, '0', '', '$REF=TASAINTERES($FECHANOMINA);\r\n$MONTO=(CONCEPTO(5002)-CONCEPTO(2601))*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5004, 'INTERESES SOBRE PRESTACIONES SOCIALES', 'A', 'P', '1.', '1', 'S', 0, '0', '', '$REF=TASAINTERES($FECHANOMINA);\r\n$MONTO=(((CONCEPTO(5000)+PRESTCONTRATADOS($CEDULA,$FICHA,5000))-CONCEPTO(5001))*($REF)*DIA($FECHAFINNOM))/365/100;\r\nMENSAJECON(CONCEPTO(5001));', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5500, '***************BONIFICACIONES**************', 'A', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(5501, 'BONIFICACION  DE FIN DE AÃ‘O', 'A', 'M', '1.', '1', 'S', 0, '0', '', '$T01=ANTIGUEDAD(''2009-01-01'',$FECHAINGRESO,"D");\r\n$REF=SI("$T01>=0",365-$T01,365);\r\n$T02=($SUELDO+CAMPOADICIONALPER(21)+CAMPOADICIONALPER(7))*1.11;\r\n$MONTO=(($REF*60)/365)*($T02/30);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5502, 'BONIFICACION UNICA ESPECIAL', 'A', 'M', '101.', '', 'S', 0, '0', '', '$T01=ANTIGUEDAD(''2009-01-01'',$FECHAINGRESO,"D");\r\n$REF=SI("$T01>=0",365-$T01,365);\r\n$T02=($SUELDO+CAMPOADICIONALPER(7)+CAMPOADICIONALPER(21))*1.11;\r\n$MONTO=(($REF*30)/365)*($T02/30);\r\n\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5503, 'BONO ESPECIAL', 'A', 'M', '101.', '1', 'S', 0, '0', '', '$T01=ANTIGUEDAD($FECHAINGRESO,''2009-12-31'',"M");\r\n$T02=ANTIGUEDAD($FECHAINGRESO,''2009-12-31'',"A");\r\n$T03=SI("$T01>=3",1000,0);\r\n$MONTO=SI("$T02>=1",1000,$T03);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5504, 'BONO ESPECIAL DIRECTORES', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=5000;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5505, 'BONO ESPECIAL RESPON Y PERSEV', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(5506, 'Diferencia Salario minimo Alcade y Alto nivel', 'A', 'M', '101.', '', 'S', 0, '0', '', '$MONTO=$REF;', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(6500, '********UTILIDADES DEDUCCIONES********', 'D', '', '1.', '', '', 0, '', '', '', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.01.01.00'),
+(6503, 'I.N.C.E. UTILIDADES', 'D', 'M', '1.', '1', 'S', 0, '0', '', '$REF=0.50;\r\n$MONTO=CONCEPTO(5501)*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(6504, 'CUOTA EXTRA-SINDICAL', 'D', 'P', '1.', '1', 'S', 0, '0', '', '$REF=0.25;\r\n$MONTO=CONCEPTO(5501)*($REF/100);', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, '', '4.01.01.01.00'),
+(10000, 'BONO VAC', 'A', 'M', '101.', '', 'N', 0, '0', '', '$REF=CAMPOADICIONALPER(34);\r\n$MONTO=(($SUELDO/30)*$REF);\r\n', 0, 0, 0, 0, 0, '', 0, 0, '0.00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '4.01.05.03.00');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomconceptos_acumulados`
+-- Table structure for table `nomconceptos_acumulados`
 --
 
 CREATE TABLE IF NOT EXISTS `nomconceptos_acumulados` (
@@ -578,14 +2680,14 @@ CREATE TABLE IF NOT EXISTS `nomconceptos_acumulados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomconceptos_acumulados`
+-- Dumping data for table `nomconceptos_acumulados`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomconceptos_ctager`
+-- Table structure for table `nomconceptos_ctager`
 --
 
 CREATE TABLE IF NOT EXISTS `nomconceptos_ctager` (
@@ -597,14 +2699,14 @@ CREATE TABLE IF NOT EXISTS `nomconceptos_ctager` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `nomconceptos_ctager`
+-- Dumping data for table `nomconceptos_ctager`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomconceptos_frecuencias`
+-- Table structure for table `nomconceptos_frecuencias`
 --
 
 CREATE TABLE IF NOT EXISTS `nomconceptos_frecuencias` (
@@ -617,14 +2719,14 @@ CREATE TABLE IF NOT EXISTS `nomconceptos_frecuencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomconceptos_frecuencias`
+-- Dumping data for table `nomconceptos_frecuencias`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomconceptos_situaciones`
+-- Table structure for table `nomconceptos_situaciones`
 --
 
 CREATE TABLE IF NOT EXISTS `nomconceptos_situaciones` (
@@ -637,14 +2739,14 @@ CREATE TABLE IF NOT EXISTS `nomconceptos_situaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomconceptos_situaciones`
+-- Dumping data for table `nomconceptos_situaciones`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomconceptos_tiponomina`
+-- Table structure for table `nomconceptos_tiponomina`
 --
 
 CREATE TABLE IF NOT EXISTS `nomconceptos_tiponomina` (
@@ -657,14 +2759,14 @@ CREATE TABLE IF NOT EXISTS `nomconceptos_tiponomina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Volcar la base de datos para la tabla `nomconceptos_tiponomina`
+-- Dumping data for table `nomconceptos_tiponomina`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomdesempeno`
+-- Table structure for table `nomdesempeno`
 --
 
 CREATE TABLE IF NOT EXISTS `nomdesempeno` (
@@ -674,7 +2776,7 @@ CREATE TABLE IF NOT EXISTS `nomdesempeno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomdesempeno`
+-- Dumping data for table `nomdesempeno`
 --
 
 INSERT INTO `nomdesempeno` (`codigo`, `descripcion`) VALUES
@@ -689,7 +2791,7 @@ INSERT INTO `nomdesempeno` (`codigo`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomelegibles`
+-- Table structure for table `nomelegibles`
 --
 
 CREATE TABLE IF NOT EXISTS `nomelegibles` (
@@ -713,14 +2815,14 @@ CREATE TABLE IF NOT EXISTS `nomelegibles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomelegibles`
+-- Dumping data for table `nomelegibles`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomempresa`
+-- Table structure for table `nomempresa`
 --
 
 CREATE TABLE IF NOT EXISTS `nomempresa` (
@@ -776,7 +2878,7 @@ CREATE TABLE IF NOT EXISTS `nomempresa` (
   `nomniv5` varchar(20) collate utf8_spanish_ci default NULL,
   `recibovac` text collate utf8_spanish_ci,
   `reciboliq` text collate utf8_spanish_ci,
-  `ee` tinyint(4) default NULL,
+  `ee` varchar(60) collate utf8_spanish_ci default NULL,
   `fax_emp` varchar(20) collate utf8_spanish_ci default NULL,
   `num_emp` int(11) default NULL,
   `num_est` int(11) default NULL,
@@ -804,9 +2906,9 @@ CREATE TABLE IF NOT EXISTS `nomempresa` (
   `conprestamos` int(11) default NULL,
   `confamiliares` int(11) default NULL,
   `conficha` int(11) default NULL,
-  `nomcampo1` varchar(20) collate utf8_spanish_ci default NULL,
-  `nomcampo2` varchar(20) collate utf8_spanish_ci default NULL,
-  `nomcampo3` varchar(20) collate utf8_spanish_ci default NULL,
+  `nomcampo1` varchar(60) collate utf8_spanish_ci default NULL,
+  `nomcampo2` varchar(60) collate utf8_spanish_ci default NULL,
+  `nomcampo3` varchar(60) collate utf8_spanish_ci default NULL,
   `recibonom` varchar(120) collate utf8_spanish_ci default NULL,
   `tipcontab` tinyint(4) NOT NULL,
   `contadorbanesco` int(11) NOT NULL,
@@ -822,18 +2924,21 @@ CREATE TABLE IF NOT EXISTS `nomempresa` (
   `unidad` varchar(6) collate utf8_spanish_ci default NULL,
   `ccosto` varchar(6) collate utf8_spanish_ci default NULL,
   `proveedor` varchar(6) collate utf8_spanish_ci default NULL,
+  `contratado` tinyint(1) NOT NULL,
   PRIMARY KEY  (`cod_emp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomempresa`
+-- Dumping data for table `nomempresa`
 --
 
-INSERT INTO `nomempresa` (`cod_emp`, `nom_emp`, `dir_emp`, `ciu_emp`, `edo_emp`, `zon_emp`, `tel_emp`, `rif`, `nit`, `pre_sid`, `ger_rrhh`, `edadmax`, `amonemax`, `redontip`, `unidadtrib`, `tipopres`, `munidadtrib`, `diasbonvac`, `diasutilidad`, `nivel1`, `nivel2`, `nivel3`, `nivel4`, `nivel5`, `entfederal`, `distrito`, `municipio`, `codacteco`, `nomacteco`, `fecfunda`, `capital`, `degravunico`, `mescambiari`, `utcargafam`, `monsalmin`, `codcon`, `codcons`, `demo`, `rutacontab`, `rutadatoscontab`, `serial`, `ctacheque`, `ctaefectivo`, `nrocompro`, `contratos`, `nomniv1`, `nomniv2`, `nomniv3`, `nomniv4`, `nomniv5`, `recibovac`, `reciboliq`, `ee`, `fax_emp`, `num_emp`, `num_est`, `num_sso`, `estado`, `parroquia`, `localidad`, `e_mail`, `cod_entfed`, `cod_distri`, `cod_munici`, `cod_sector`, `cod_acteco`, `cod_orden`, `utilidad`, `reportdiff`, `porcdiff`, `netoneg`, `impresora`, `selector`, `nosueldocero`, `mediajornada`, `nuevassituaciones`, `tipoficha`, `conprestamos`, `confamiliares`, `conficha`, `nomcampo1`, `nomcampo2`, `nomcampo3`, `recibonom`, `tipcontab`, `contadorbanesco`, `ctapatronales`, `recibopago`, `nivel6`, `nivel7`, `nomniv6`, `nomniv7`, `imagen_izq`, `imagen_der`, `cod_material`, `unidad`, `ccosto`, `proveedor`) VALUES ('1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, '', '', '', '', '', '', '', NULL, NULL, NULL, NULL);
+INSERT INTO `nomempresa` (`cod_emp`, `nom_emp`, `dir_emp`, `ciu_emp`, `edo_emp`, `zon_emp`, `tel_emp`, `rif`, `nit`, `pre_sid`, `ger_rrhh`, `edadmax`, `amonemax`, `redontip`, `unidadtrib`, `tipopres`, `munidadtrib`, `diasbonvac`, `diasutilidad`, `nivel1`, `nivel2`, `nivel3`, `nivel4`, `nivel5`, `entfederal`, `distrito`, `municipio`, `codacteco`, `nomacteco`, `fecfunda`, `capital`, `degravunico`, `mescambiari`, `utcargafam`, `monsalmin`, `codcon`, `codcons`, `demo`, `rutacontab`, `rutadatoscontab`, `serial`, `ctacheque`, `ctaefectivo`, `nrocompro`, `contratos`, `nomniv1`, `nomniv2`, `nomniv3`, `nomniv4`, `nomniv5`, `recibovac`, `reciboliq`, `ee`, `fax_emp`, `num_emp`, `num_est`, `num_sso`, `estado`, `parroquia`, `localidad`, `e_mail`, `cod_entfed`, `cod_distri`, `cod_munici`, `cod_sector`, `cod_acteco`, `cod_orden`, `utilidad`, `reportdiff`, `porcdiff`, `netoneg`, `impresora`, `selector`, `nosueldocero`, `mediajornada`, `nuevassituaciones`, `tipoficha`, `conprestamos`, `confamiliares`, `conficha`, `nomcampo1`, `nomcampo2`, `nomcampo3`, `recibonom`, `tipcontab`, `contadorbanesco`, `ctapatronales`, `recibopago`, `nivel6`, `nivel7`, `nomniv6`, `nomniv7`, `imagen_izq`, `imagen_der`, `cod_material`, `unidad`, `ccosto`, `proveedor`, `contratado`) VALUES
+(1, 'ONUVA', 'ALTAMIRA CENTRO PLAZA', 'CARACAS', 'Miranda', '2001', '0212-2867806', 'G-20000000-9', '', 'G-20000000-9', '', 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1064.25', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'SECTOR', 'PROGRAMA', 'ACTIVIDAD', '', '', NULL, NULL, 'Eduardo Santaella', '0212-2867806', NULL, NULL, NULL, NULL, NULL, NULL, 'soporte@onuva.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '0.00', 1, 'www.onuva.com\r\n', NULL, 1, 0, 1, 0, NULL, NULL, NULL, 'Estado Bolivariano de Miranda', 'Alcaldia Onuva', 'Recursos Humanos', '', 0, 0, NULL, '', 0, 0, '', '', 'onuva.jpg', 'onuva.jpg', '941017051', '10', '10.1', '2', 1);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomexpediente`
+-- Table structure for table `nomexpediente`
 --
 
 CREATE TABLE IF NOT EXISTS `nomexpediente` (
@@ -873,17 +2978,24 @@ CREATE TABLE IF NOT EXISTS `nomexpediente` (
   `tmono` varchar(4) collate utf8_spanish_ci default NULL,
   `tzapato` varchar(4) collate utf8_spanish_ci default NULL,
   PRIMARY KEY  (`cod_expediente_det`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='contiene todos los datos de expediente del personal ' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='contiene todos los datos de expediente del personal ' AUTO_INCREMENT=7 ;
 
 --
--- Volcar la base de datos para la tabla `nomexpediente`
+-- Dumping data for table `nomexpediente`
 --
 
+INSERT INTO `nomexpediente` (`cod_expediente_det`, `cedula`, `tipo_registro`, `tipo_tiporegistro`, `descripcion`, `monto`, `monto_nuevo`, `dias`, `fecha_retorno`, `fecha_salida`, `cod_cargo`, `cod_cargo_nuevo`, `fecha`, `usuario`, `pagado_por_emp`, `institucion`, `tipo_estudio`, `nivel_actual`, `costo_persona`, `num_participantes`, `nombre_especialista`, `gerencia_anterior`, `gerencia_nueva`, `nomina_anterior`, `nomina_nueva`, `puntaje`, `calificacion`, `labor`, `institucion_publica`, `tcamisa`, `tchaqueta`, `tbata`, `tpantalon`, `tmono`, `tzapato`) VALUES
+(1, '14058603', 'Movimiento de Personal', 'Traslado de cargo', 'Paso a personal fijo', '0.00', '0.00', 0, '0000-00-00', '2010-01-25', '123', '123', '2010-04-15', 'Lolmary R', '', '', '', '', '0.00', 0, '', 0, 0, '4', '2', '0.00', '', '', 0, '', '', '', '', '', ''),
+(2, '17926876', 'Movimiento de Personal', 'Traslado de nomina', 'Paso de contratado a fijo', '0.00', '0.00', 0, '0000-00-00', '2010-01-05', '13', '13', '2010-04-15', 'Lolmary R', '', '', '', '', '0.00', 0, '', 0, 0, '4', '2', '0.00', '', '', 0, '', '', '', '', '', ''),
+(3, '6967013', 'Movimiento de Personal', 'Traslado de nomina', 'Paso de contratado a fijo', '0.00', '0.00', 0, '0000-00-00', '2010-04-01', '13', '13', '2010-04-15', 'Lolmary R', '', '', '', '', '0.00', 0, '', 0, 0, '4', '2', '0.00', '', '', 0, '', '', '', '', '', ''),
+(4, '13801380', 'Movimiento de Personal', 'Traslado de nomina', 'Paso de contratado a fijo', '0.00', '0.00', 0, '0000-00-00', '2010-03-03', '61', '61', '2010-04-15', 'Lolmary R', '', '', '', '', '0.00', 0, '', 0, 0, '4', '2', '0.00', '', '', 0, '', '', '', '', '', ''),
+(5, '6495439', 'Movimiento de Personal', 'Traslado de nomina', '', '0.00', '0.00', 0, '0000-00-00', '0000-00-00', '142', '', '2010-04-15', 'GILBERTO', '', '', '', '', '0.00', 0, '', 0, 0, '4', '2', '0.00', '', '', 0, '', '', '', '', '', ''),
+(6, '20410926', 'Movimiento de Personal', 'Traslado de nomina', '', '0.00', '0.00', 0, '0000-00-00', '0000-00-00', '31', '', '2010-04-15', 'GILBERTO', '', '', '', '', '0.00', 0, '', 0, 0, '4', '2', '0.00', '', '', 0, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomfamiliares`
+-- Table structure for table `nomfamiliares`
 --
 
 CREATE TABLE IF NOT EXISTS `nomfamiliares` (
@@ -914,14 +3026,14 @@ CREATE TABLE IF NOT EXISTS `nomfamiliares` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `nomfamiliares`
+-- Dumping data for table `nomfamiliares`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomfrecuencias`
+-- Table structure for table `nomfrecuencias`
 --
 
 CREATE TABLE IF NOT EXISTS `nomfrecuencias` (
@@ -940,7 +3052,7 @@ CREATE TABLE IF NOT EXISTS `nomfrecuencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomfrecuencias`
+-- Dumping data for table `nomfrecuencias`
 --
 
 INSERT INTO `nomfrecuencias` (`codfre`, `descrip`, `diasperiodo`, `markar`, `ee`, `fecha_ini`, `fecha_fin`, `periodos`, `dfecha_ini`, `dfecha_fin`) VALUES
@@ -955,14 +3067,14 @@ INSERT INTO `nomfrecuencias` (`codfre`, `descrip`, `diasperiodo`, `markar`, `ee`
 (9, 'Aguinaldos', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
 (10, 'Liquidaciones', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
 (11, 'Bonificacion', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
-(12, 'Comp. Aguinaldos', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
-(13, 'Aguinaldos Decreto', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
-(14, 'Bono Unico', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+(12, 'GUARDIAS', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
+(13, 'REPAROS', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL),
+(14, 'Cesta Ticket', 0, NULL, NULL, NULL, NULL, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomgradospasos`
+-- Table structure for table `nomgradospasos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomgradospasos` (
@@ -986,41 +3098,14 @@ CREATE TABLE IF NOT EXISTS `nomgradospasos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomgradospasos`
+-- Dumping data for table `nomgradospasos`
 --
 
-INSERT INTO `nomgradospasos` (`grado`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`) VALUES
-('1', '1160.00', '5.00', '9.00', '14.00', '19.00', '24.00', '29.00', '34.00', '40.00', '46.00', '52.00', '58.00', '64.00', '70.00', '77.00'),
-('10', '1160.00', '9.00', '19.00', '29.00', '39.00', '49.00', '60.00', '71.00', '82.00', '94.00', '106.00', '118.00', '131.00', '144.00', '158.00'),
-('11', '1160.00', '11.00', '22.00', '33.00', '45.00', '57.00', '69.00', '82.00', '95.00', '109.00', '122.00', '137.00', '152.00', '167.00', '183.00'),
-('12', '1160.00', '12.00', '25.00', '38.00', '52.00', '66.00', '80.00', '95.00', '110.00', '125.00', '141.00', '158.00', '175.00', '193.00', '211.00'),
-('13', '1160.00', '14.00', '29.00', '44.00', '60.00', '76.00', '92.00', '109.00', '127.00', '145.00', '163.00', '183.00', '202.00', '223.00', '244.00'),
-('14', '1160.00', '16.00', '33.00', '51.00', '69.00', '87.00', '106.00', '126.00', '146.00', '167.00', '182.00', '196.00', '210.00', '224.00', '245.00'),
-('15', '1160.00', '18.00', '35.00', '53.00', '71.00', '89.00', '108.00', '128.00', '148.00', '169.00', '184.00', '198.00', '212.00', '226.00', '247.00'),
-('16', '1182.00', '20.00', '37.00', '55.00', '73.00', '91.00', '110.00', '130.00', '150.00', '171.00', '186.00', '200.00', '214.00', '228.00', '249.00'),
-('17', '1221.00', '22.00', '39.00', '57.00', '75.00', '93.00', '112.00', '132.00', '152.00', '173.00', '188.00', '202.00', '216.00', '230.00', '251.00'),
-('18', '1265.00', '24.00', '41.00', '59.00', '77.00', '95.00', '114.00', '134.00', '154.00', '175.00', '190.00', '204.00', '218.00', '232.00', '253.00'),
-('19', '1314.00', '26.00', '43.00', '61.00', '79.00', '97.00', '116.00', '136.00', '156.00', '177.00', '192.00', '206.00', '220.00', '237.00', '258.00'),
-('2', '1160.00', '5.00', '9.00', '14.00', '19.00', '24.00', '29.00', '34.00', '40.00', '46.00', '52.00', '58.00', '64.00', '70.00', '77.00'),
-('20', '1366.00', '28.00', '45.00', '63.00', '81.00', '99.00', '118.00', '138.00', '158.00', '179.00', '193.00', '215.00', '237.00', '260.00', '284.00'),
-('21', '1424.00', '30.00', '47.00', '65.00', '83.00', '101.00', '121.00', '143.00', '165.00', '188.00', '212.00', '236.00', '261.00', '287.00', '313.00'),
-('22', '1488.00', '32.00', '49.00', '67.00', '86.00', '109.00', '133.00', '157.00', '182.00', '207.00', '233.00', '260.00', '287.00', '315.00', '344.00'),
-('23', '1559.00', '34.00', '51.00', '70.00', '95.00', '120.00', '146.00', '173.00', '200.00', '228.00', '257.00', '286.00', '316.00', '347.00', '378.00'),
-('24', '1636.00', '36.00', '53.00', '77.00', '105.00', '132.00', '161.00', '190.00', '220.00', '251.00', '282.00', '314.00', '348.00', '381.00', '416.00'),
-('25', '1722.00', '38.00', '56.00', '85.00', '115.00', '146.00', '177.00', '209.00', '242.00', '276.00', '310.00', '346.00', '382.00', '420.00', '458.00'),
-('26', '1814.00', '40.00', '62.00', '94.00', '127.00', '160.00', '195.00', '230.00', '266.00', '303.00', '341.00', '381.00', '420.00', '461.00', '504.00'),
-('3', '1160.00', '5.00', '9.00', '14.00', '19.00', '24.00', '29.00', '34.00', '40.00', '46.00', '52.00', '58.00', '64.00', '70.00', '77.00'),
-('4', '1160.00', '5.00', '9.00', '14.00', '19.00', '24.00', '29.00', '34.00', '40.00', '46.00', '52.00', '58.00', '64.00', '70.00', '77.00'),
-('5', '1160.00', '5.00', '11.00', '16.00', '22.00', '28.00', '34.00', '40.00', '46.00', '53.00', '60.00', '67.00', '74.00', '81.00', '89.00'),
-('6', '1160.00', '5.00', '11.00', '16.00', '22.00', '28.00', '34.00', '40.00', '46.00', '53.00', '60.00', '67.00', '74.00', '81.00', '89.00'),
-('7', '1160.00', '6.00', '12.00', '19.00', '25.00', '32.00', '39.00', '46.00', '53.00', '61.00', '69.00', '77.00', '85.00', '94.00', '103.00'),
-('8', '1160.00', '7.00', '14.00', '21.00', '29.00', '37.00', '45.00', '53.00', '62.00', '70.00', '79.00', '89.00', '98.00', '108.00', '118.00'),
-('9', '1160.00', '8.00', '16.00', '25.00', '34.00', '43.00', '52.00', '61.00', '71.00', '81.00', '92.00', '103.00', '114.00', '125.00', '137.00');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomgrupos_categorias`
+-- Table structure for table `nomgrupos_categorias`
 --
 
 CREATE TABLE IF NOT EXISTS `nomgrupos_categorias` (
@@ -1033,14 +3118,14 @@ CREATE TABLE IF NOT EXISTS `nomgrupos_categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomgrupos_categorias`
+-- Dumping data for table `nomgrupos_categorias`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomgrupo_bancos`
+-- Table structure for table `nomgrupo_bancos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomgrupo_bancos` (
@@ -1060,7 +3145,7 @@ CREATE TABLE IF NOT EXISTS `nomgrupo_bancos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomgrupo_bancos`
+-- Dumping data for table `nomgrupo_bancos`
 --
 
 INSERT INTO `nomgrupo_bancos` (`cod_gban`, `des_ban`, `suc_ban`, `direccion`, `gerente`, `cuentacob`, `tipocuenta`, `markar`, `ee`, `textoinicial`, `textofinal`) VALUES
@@ -1069,7 +3154,7 @@ INSERT INTO `nomgrupo_bancos` (`cod_gban`, `des_ban`, `suc_ban`, `direccion`, `g
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomguarderias`
+-- Table structure for table `nomguarderias`
 --
 
 CREATE TABLE IF NOT EXISTS `nomguarderias` (
@@ -1089,14 +3174,14 @@ CREATE TABLE IF NOT EXISTS `nomguarderias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomguarderias`
+-- Dumping data for table `nomguarderias`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nominstruccion`
+-- Table structure for table `nominstruccion`
 --
 
 CREATE TABLE IF NOT EXISTS `nominstruccion` (
@@ -1106,7 +3191,7 @@ CREATE TABLE IF NOT EXISTS `nominstruccion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nominstruccion`
+-- Dumping data for table `nominstruccion`
 --
 
 INSERT INTO `nominstruccion` (`codigo`, `descripcion`) VALUES
@@ -1124,7 +3209,7 @@ INSERT INTO `nominstruccion` (`codigo`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomliquidaciones`
+-- Table structure for table `nomliquidaciones`
 --
 
 CREATE TABLE IF NOT EXISTS `nomliquidaciones` (
@@ -1136,7 +3221,7 @@ CREATE TABLE IF NOT EXISTS `nomliquidaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomliquidaciones`
+-- Dumping data for table `nomliquidaciones`
 --
 
 INSERT INTO `nomliquidaciones` (`cod_tli`, `des_tli`, `markar`, `ee`) VALUES
@@ -1147,11 +3232,11 @@ INSERT INTO `nomliquidaciones` (`cod_tli`, `des_tli`, `markar`, `ee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel1`
+-- Table structure for table `nomnivel1`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel1` (
-  `codorg` int(8) NOT NULL,
+  `codorg` varchar(8) collate utf8_spanish_ci NOT NULL,
   `descrip` varchar(60) collate utf8_spanish_ci NOT NULL,
   `gerencia` int(6) default NULL,
   `markar` tinyint(4) default NULL,
@@ -1162,19 +3247,19 @@ CREATE TABLE IF NOT EXISTS `nomnivel1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel1`
+-- Dumping data for table `nomnivel1`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel2`
+-- Table structure for table `nomnivel2`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel2` (
-  `codorg` int(8) NOT NULL,
-  `descrip` varchar(60) collate utf8_spanish_ci NOT NULL,
+  `codorg` varchar(8) collate utf8_spanish_ci NOT NULL,
+  `descrip` varchar(100) collate utf8_spanish_ci NOT NULL,
   `gerencia` int(6) default NULL,
   `markar` tinyint(4) default NULL,
   `ee` tinyint(4) default NULL,
@@ -1184,19 +3269,19 @@ CREATE TABLE IF NOT EXISTS `nomnivel2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel2`
+-- Dumping data for table `nomnivel2`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel3`
+-- Table structure for table `nomnivel3`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel3` (
-  `codorg` int(8) NOT NULL,
-  `descrip` varchar(60) collate utf8_spanish_ci NOT NULL,
+  `codorg` varchar(8) collate utf8_spanish_ci NOT NULL,
+  `descrip` varchar(100) collate utf8_spanish_ci NOT NULL,
   `gerencia` int(6) default NULL,
   `markar` tinyint(4) default NULL,
   `ee` tinyint(4) default NULL,
@@ -1206,14 +3291,14 @@ CREATE TABLE IF NOT EXISTS `nomnivel3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel3`
+-- Dumping data for table `nomnivel3`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel4`
+-- Table structure for table `nomnivel4`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel4` (
@@ -1228,14 +3313,14 @@ CREATE TABLE IF NOT EXISTS `nomnivel4` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel4`
+-- Dumping data for table `nomnivel4`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel5`
+-- Table structure for table `nomnivel5`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel5` (
@@ -1250,14 +3335,14 @@ CREATE TABLE IF NOT EXISTS `nomnivel5` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel5`
+-- Dumping data for table `nomnivel5`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel6`
+-- Table structure for table `nomnivel6`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel6` (
@@ -1272,14 +3357,14 @@ CREATE TABLE IF NOT EXISTS `nomnivel6` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel6`
+-- Dumping data for table `nomnivel6`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomnivel7`
+-- Table structure for table `nomnivel7`
 --
 
 CREATE TABLE IF NOT EXISTS `nomnivel7` (
@@ -1294,14 +3379,14 @@ CREATE TABLE IF NOT EXISTS `nomnivel7` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomnivel7`
+-- Dumping data for table `nomnivel7`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomparentescos`
+-- Table structure for table `nomparentescos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomparentescos` (
@@ -1313,7 +3398,7 @@ CREATE TABLE IF NOT EXISTS `nomparentescos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomparentescos`
+-- Dumping data for table `nomparentescos`
 --
 
 INSERT INTO `nomparentescos` (`codorg`, `descrip`, `ee`) VALUES
@@ -1328,7 +3413,7 @@ INSERT INTO `nomparentescos` (`codorg`, `descrip`, `ee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomperiodos`
+-- Table structure for table `nomperiodos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomperiodos` (
@@ -1343,14 +3428,14 @@ CREATE TABLE IF NOT EXISTS `nomperiodos` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `nomperiodos`
+-- Dumping data for table `nomperiodos`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nompersonal`
+-- Table structure for table `nompersonal`
 --
 
 CREATE TABLE IF NOT EXISTS `nompersonal` (
@@ -1372,7 +3457,7 @@ CREATE TABLE IF NOT EXISTS `nompersonal` (
   `codnivel3` varchar(8) collate utf8_spanish_ci default NULL,
   `codnivel4` varchar(8) collate utf8_spanish_ci default NULL,
   `codnivel5` varchar(8) collate utf8_spanish_ci default NULL,
-  `ficha` int(10) NOT NULL,
+  `ficha` int(10) NOT NULL auto_increment,
   `fecing` date default NULL,
   `codcat` varchar(6) collate utf8_spanish_ci default NULL,
   `codcargo` varchar(12) collate utf8_spanish_ci default NULL,
@@ -1435,22 +3520,50 @@ CREATE TABLE IF NOT EXISTS `nompersonal` (
   `fin_periodo` date NOT NULL,
   `fechajubipensi` date default NULL,
   `porjubipensi` varchar(10) collate utf8_spanish_ci default NULL,
-  `antiguedadap` varchar(2) collate utf8_spanish_ci default NULL,
+  `antiguedadap` varchar(10) collate utf8_spanish_ci default NULL,
   `paso` int(2) default NULL,
   PRIMARY KEY  (`tipnom`,`ficha`),
   UNIQUE KEY `ficha` (`ficha`,`cedula`),
   KEY `codcargo` (`codcargo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `nompersonal`
+-- Dumping data for table `nompersonal`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomprestamos`
+-- Table structure for table `nompersonal_tmp`
+--
+
+CREATE TABLE IF NOT EXISTS `nompersonal_tmp` (
+  `ci` int(10) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `tipnom` varchar(2) NOT NULL,
+  `situacion` varchar(2) NOT NULL,
+  `sec` int(3) NOT NULL,
+  `pro` int(3) NOT NULL,
+  `act` int(3) NOT NULL,
+  `suel` decimal(13,2) NOT NULL,
+  `fecing` date NOT NULL,
+  `fecnac` date NOT NULL,
+  `fecret` date default NULL,
+  `cuenta` varchar(20) NOT NULL,
+  `sexo` varchar(1) NOT NULL,
+  `nacionalidad` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nompersonal_tmp`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nomprestamos`
 --
 
 CREATE TABLE IF NOT EXISTS `nomprestamos` (
@@ -1463,7 +3576,7 @@ CREATE TABLE IF NOT EXISTS `nomprestamos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomprestamos`
+-- Dumping data for table `nomprestamos`
 --
 
 INSERT INTO `nomprestamos` (`codigopr`, `descrip`, `formula`, `markar`, `ee`) VALUES
@@ -1474,7 +3587,7 @@ INSERT INTO `nomprestamos` (`codigopr`, `descrip`, `formula`, `markar`, `ee`) VA
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomprestamos_cabecera`
+-- Table structure for table `nomprestamos_cabecera`
 --
 
 CREATE TABLE IF NOT EXISTS `nomprestamos_cabecera` (
@@ -1500,75 +3613,14 @@ CREATE TABLE IF NOT EXISTS `nomprestamos_cabecera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomprestamos_cabecera`
+-- Dumping data for table `nomprestamos_cabecera`
 --
 
-INSERT INTO `nomprestamos_cabecera` (`numpre`, `ficha`, `meses`, `fechaapro`, `fecpricup`, `tipint`, `monto`, `tasa`, `estadopre`, `detalle`, `codigopr`, `markar`, `codnom`, `totpres`, `sfechaapro`, `sfecpricup`, `ee`, `cuotas`, `mtocuota`) VALUES
-(1, '10298', 0, '2009-10-09', '2009-10-15', 0, 1249.23, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1249.23, '0000-00-00', '0000-00-00', 0, 15, '87.37'),
-(2, '10276', 0, '2009-10-09', '2009-10-15', 0, 16342.52, 0.00, 'Pendiente', 'Adquisicion de Linea Blanca', '3', 0, 2, 16342.52, '0000-00-00', '0000-00-00', 0, 30, '555.56'),
-(3, '10276', 0, '2009-10-09', '2009-10-15', 0, 537.35, 0.00, 'Pendiente', 'Adquisicion de Lentes', '1', 0, 2, 537.35, '0000-00-00', '0000-00-00', 0, 11, '53.52'),
-(4, '10180', 0, '2009-10-09', '2009-10-15', 0, 1932.12, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 1932.12, '0000-00-00', '0000-00-00', 0, 25, '80.03'),
-(5, '10180', 0, '2009-10-09', '2009-10-15', 0, 573.89, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 573.89, '0000-00-00', '0000-00-00', 0, 12, '48.23'),
-(6, '10180', 0, '2009-10-09', '2009-10-15', 0, 577.52, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 577.52, '0000-00-00', '0000-00-00', 0, 8, '77.11'),
-(7, '10125', 0, '2009-10-09', '2009-10-15', 0, 3701.16, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 3701.16, '0000-00-00', '0000-00-00', 0, 44, '85.91'),
-(8, '10125', 0, '2009-10-09', '2009-10-15', 0, 2589.92, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2589.92, '0000-00-00', '0000-00-00', 0, 28, '93.06'),
-(9, '10125', 0, '2009-10-09', '2009-10-15', 0, 1772.00, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 1772.00, '0000-00-00', '0000-00-00', 0, 29, '62.50'),
-(10, '10131', 0, '2009-10-09', '2009-10-15', 0, 4893.85, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 4893.85, '0000-00-00', '0000-00-00', 0, 26, '191.52'),
-(11, '10131', 0, '2009-10-09', '2009-10-15', 0, 1627.70, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1627.70, '0000-00-00', '0000-00-00', 0, 24, '69.59'),
-(12, '10131', 0, '2009-10-09', '2009-10-15', 0, 150.00, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 150.00, '0000-00-00', '0000-00-00', 0, 3, '50.00'),
-(13, '10131', 0, '2009-10-09', '2009-10-15', 0, 720.94, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 720.94, '0000-00-00', '0000-00-00', 0, 12, '60.39'),
-(14, '10178', 0, '2009-10-09', '2009-10-15', 0, 286.92, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 286.92, '0000-00-00', '0000-00-00', 0, 22, '13.51'),
-(15, '10109', 0, '2009-10-09', '2009-10-15', 0, 1199.95, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 1199.95, '0000-00-00', '0000-00-00', 0, 27, '44.45'),
-(16, '10109', 0, '2009-10-09', '2009-10-15', 0, 1390.39, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 1390.39, '0000-00-00', '0000-00-00', 0, 44, '31.78'),
-(17, '10238', 0, '2009-10-09', '2009-10-15', 0, 640.98, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 640.98, '0000-00-00', '0000-00-00', 0, 12, '54.36'),
-(18, '10238', 0, '2009-10-09', '2009-10-15', 0, 2883.52, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2883.52, '0000-00-00', '0000-00-00', 0, 33, '89.59'),
-(19, '10238', 0, '2009-10-09', '2009-10-15', 0, 73.24, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 73.24, '0000-00-00', '0000-00-00', 0, 9, '8.38'),
-(20, '10127', 0, '2009-10-09', '2009-10-15', 0, 10800.00, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 10800.00, '0000-00-00', '0000-00-00', 0, 24, '450.00'),
-(21, '10127', 0, '2009-10-09', '2009-10-15', 0, 838.40, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 838.40, '0000-00-00', '0000-00-00', 0, 14, '60.49'),
-(22, '10072', 0, '2009-10-09', '2009-10-15', 0, 2506.44, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2506.44, '0000-00-00', '0000-00-00', 0, 20, '129.17'),
-(23, '10072', 0, '2009-10-09', '2009-10-15', 0, 587.33, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 587.33, '0000-00-00', '0000-00-00', 0, 24, '25.28'),
-(24, '10126', 0, '2009-10-09', '2009-10-15', 0, 9428.21, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 9428.21, '0000-00-00', '0000-00-00', 0, 23, '410.00'),
-(25, '10114', 0, '2009-10-09', '2009-10-15', 0, 18829.95, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 18829.95, '0000-00-00', '0000-00-00', 0, 170, '110.98'),
-(26, '10114', 0, '2009-10-09', '2009-10-15', 0, 161.67, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 161.67, '0000-00-00', '0000-00-00', 0, 9, '18.17'),
-(27, '10114', 0, '2009-10-09', '2009-10-15', 0, 91.85, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 91.85, '0000-00-00', '0000-00-00', 0, 1, '91.85'),
-(28, '10138', 0, '2009-10-09', '2009-10-15', 0, 1200.00, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1200.00, '0000-00-00', '0000-00-00', 0, 24, '50.00'),
-(29, '10138', 0, '2009-10-09', '2009-10-15', 0, 468.08, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 468.08, '0000-00-00', '0000-00-00', 0, 4, '133.64'),
-(30, '10112', 0, '2009-10-09', '2009-10-15', 0, 962.48, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 962.48, '0000-00-00', '0000-00-00', 0, 21, '45.84'),
-(31, '10072', 0, '2009-10-09', '2009-10-15', 0, 1184.55, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1184.55, '0000-00-00', '0000-00-00', 0, 16, '74.03'),
-(32, '10267', 0, '2009-10-09', '2009-10-15', 0, 1561.81, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1561.81, '0000-00-00', '0000-00-00', 0, 21, '75.52'),
-(33, '10039', 0, '2009-10-13', '2009-10-15', 0, 1184.55, 0.00, 'Pendiente', 'CAJA DE AHORRO', '2', 0, 2, 1184.55, '0000-00-00', '0000-00-00', 0, 16, '74.03'),
-(34, '10143', 0, '2009-11-10', '2009-11-15', 0, 2555.87, 0.00, 'Pendiente', '', '2', 0, 2, 2555.87, '0000-00-00', '0000-00-00', 0, 23, '113.28'),
-(35, '10130', 0, '2009-11-10', '2009-11-15', 0, 2675.14, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2675.14, '0000-00-00', '0000-00-00', 0, 23, '118.57'),
-(36, '10206', 0, '2009-11-10', '2009-11-15', 0, 490.13, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 490.13, '0000-00-00', '0000-00-00', 0, 12, '42.19'),
-(37, '10135', 0, '2009-11-10', '2009-11-15', 0, 1237.82, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 1237.82, '0000-00-00', '0000-00-00', 0, 45, '27.81'),
-(38, '10161', 0, '2009-11-10', '2009-11-15', 0, 108.40, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 108.40, '0000-00-00', '0000-00-00', 0, 8, '13.64'),
-(39, '10157', 0, '2009-11-10', '2009-11-15', 0, 1975.74, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 1975.74, '0000-00-00', '0000-00-00', 0, 43, '46.39'),
-(40, '10140', 0, '2009-11-10', '2009-11-15', 0, 178.44, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 178.44, '0000-00-00', '0000-00-00', 0, 12, '15.10'),
-(41, '10140', 0, '2009-11-10', '2009-11-15', 0, 2589.12, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 2589.12, '0000-00-00', '0000-00-00', 0, 43, '60.21'),
-(42, '10199', 0, '2009-11-10', '2009-11-15', 0, 2770.27, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2770.27, '0000-00-00', '0000-00-00', 0, 23, '121.23'),
-(43, '10144', 0, '2009-11-10', '2009-11-15', 0, 756.90, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 756.90, '0000-00-00', '0000-00-00', 0, 24, '32.62'),
-(44, '10125', 0, '2009-11-10', '2009-11-15', 0, 17522.13, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 17522.13, '0000-00-00', '0000-00-00', 0, 48, '365.05'),
-(45, '10204', 0, '2009-11-11', '2009-11-15', 0, 1123.87, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1123.87, '0000-00-00', '0000-00-00', 0, 44, '25.89'),
-(46, '10204', 0, '2009-11-11', '2009-11-15', 0, 65.05, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 65.05, '0000-00-00', '0000-00-00', 0, 2, '32.52'),
-(47, '10204', 0, '2009-11-11', '2009-11-15', 0, 181.93, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 181.93, '0000-00-00', '0000-00-00', 0, 26, '7.25'),
-(48, '10169', 0, '2009-11-11', '2009-11-15', 0, 1378.85, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1378.85, '0000-00-00', '0000-00-00', 0, 23, '59.98'),
-(49, '10178', 0, '2009-11-11', '2009-11-15', 0, 1592.25, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 1592.25, '0000-00-00', '0000-00-00', 0, 68, '23.55'),
-(50, '10178', 0, '2009-11-11', '2009-11-15', 0, 654.25, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 654.25, '0000-00-00', '0000-00-00', 0, 19, '34.65'),
-(51, '10217', 0, '2009-11-11', '2009-11-15', 0, 2028.93, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2028.93, '0000-00-00', '0000-00-00', 0, 22, '94.15'),
-(52, '10221', 0, '2009-11-11', '2009-11-15', 0, 1095.62, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1095.62, '0000-00-00', '0000-00-00', 0, 23, '47.98'),
-(53, '10219', 0, '2009-11-11', '2009-11-15', 0, 2302.84, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2302.84, '0000-00-00', '0000-00-00', 0, 44, '53.43'),
-(54, '10153', 0, '2009-11-11', '2009-11-15', 0, 1369.53, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 1369.53, '0000-00-00', '0000-00-00', 0, 44, '31.76'),
-(55, '10182', 0, '2009-11-11', '2009-11-15', 0, 2854.31, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '2', 0, 2, 2854.31, '0000-00-00', '0000-00-00', 0, 25, '116.66'),
-(56, '10161', 0, '2009-11-11', '2009-11-15', 0, 766.27, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 766.27, '0000-00-00', '0000-00-00', 0, 24, '33.12'),
-(57, '10161', 0, '2009-11-11', '2009-11-15', 0, 699.83, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 699.83, '0000-00-00', '0000-00-00', 0, 24, '30.01'),
-(58, '10039', 0, '2009-11-11', '2009-11-15', 0, 5745.18, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 2, 5745.18, '0000-00-00', '0000-00-00', 0, 36, '159.59'),
-(59, '10173', 0, '2009-11-11', '2009-11-15', 0, 1301.46, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '1', 0, 2, 1301.46, '0000-00-00', '0000-00-00', 0, 44, '30.12'),
-(60, '20001', 0, '2009-11-11', '2009-11-15', 0, 4500.00, 0.00, 'Pendiente', 'PRESTAMO CAJA DE AHORRO', '3', 0, 4, 4500.00, '0000-00-00', '0000-00-00', 0, 48, '93.75');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomprestamos_detalles`
+-- Table structure for table `nomprestamos_detalles`
 --
 
 CREATE TABLE IF NOT EXISTS `nomprestamos_detalles` (
@@ -1596,1640 +3648,14 @@ CREATE TABLE IF NOT EXISTS `nomprestamos_detalles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomprestamos_detalles`
+-- Dumping data for table `nomprestamos_detalles`
 --
 
-INSERT INTO `nomprestamos_detalles` (`numpre`, `ficha`, `tipocuo`, `numcuo`, `fechaven`, `anioven`, `mesven`, `dias`, `salinicial`, `montocuo`, `montoint`, `montocap`, `salfinal`, `fechacan`, `estadopre`, `detalle`, `dedespecial`, `codnom`, `sfechaven`, `sfechacan`, `ee`) VALUES
-(1, '10298', '', 1, '2009-10-15', 2009, 10, 0, 1249.23, 87.37, 0.00, 0.00, 1161.86, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(1, '10298', '', 2, '2009-10-31', 2009, 10, 0, 1161.86, 87.37, 0.00, 0.00, 1074.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(1, '10298', '', 3, '2009-11-15', 2009, 11, 0, 1074.49, 87.37, 0.00, 0.00, 987.12, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(1, '10298', '', 4, '2009-11-30', 2009, 11, 0, 987.12, 87.37, 0.00, 0.00, 899.75, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(1, '10298', '', 5, '2009-12-15', 2009, 12, 0, 899.75, 87.37, 0.00, 0.00, 812.38, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(1, '10298', '', 6, '2009-12-31', 2009, 12, 0, 812.38, 87.37, 0.00, 0.00, 725.01, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(1, '10298', '', 7, '2010-01-15', 2010, 1, 0, 725.01, 87.37, 0.00, 0.00, 637.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 8, '2010-01-31', 2010, 1, 0, 637.64, 87.37, 0.00, 0.00, 550.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 9, '2010-02-15', 2010, 2, 0, 550.27, 87.37, 0.00, 0.00, 462.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 10, '2010-02-28', 2010, 2, 0, 462.90, 87.37, 0.00, 0.00, 375.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 11, '2010-03-15', 2010, 3, 0, 375.53, 87.37, 0.00, 0.00, 288.16, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 12, '2010-03-31', 2010, 3, 0, 288.16, 87.37, 0.00, 0.00, 200.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 13, '2010-04-15', 2010, 4, 0, 200.79, 87.37, 0.00, 0.00, 113.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 14, '2010-04-30', 2010, 4, 0, 113.42, 87.37, 0.00, 0.00, 26.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(1, '10298', '', 15, '2010-05-15', 2010, 5, 0, 26.05, 26.05, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 1, '2009-10-15', 2009, 10, 0, 16342.52, 555.56, 0.00, 0.00, 15786.96, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 2, '2009-10-31', 2009, 10, 0, 15786.96, 555.56, 0.00, 0.00, 15231.40, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(2, '10276', '', 3, '2009-11-15', 2009, 11, 0, 15231.40, 555.56, 0.00, 0.00, 14675.84, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 4, '2009-11-30', 2009, 11, 0, 14675.84, 555.56, 0.00, 0.00, 14120.28, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 5, '2009-12-15', 2009, 12, 0, 14120.28, 555.56, 0.00, 0.00, 13564.72, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 6, '2009-12-31', 2009, 12, 0, 13564.72, 555.56, 0.00, 0.00, 13009.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 7, '2010-01-15', 2010, 1, 0, 13009.16, 555.56, 0.00, 0.00, 12453.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 8, '2010-01-31', 2010, 1, 0, 12453.60, 555.56, 0.00, 0.00, 11898.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 9, '2010-02-15', 2010, 2, 0, 11898.04, 555.56, 0.00, 0.00, 11342.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 10, '2010-02-28', 2010, 2, 0, 11342.48, 555.56, 0.00, 0.00, 10786.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 11, '2010-03-15', 2010, 3, 0, 10786.92, 555.56, 0.00, 0.00, 10231.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 12, '2010-03-31', 2010, 3, 0, 10231.36, 555.56, 0.00, 0.00, 9675.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 13, '2010-04-15', 2010, 4, 0, 9675.80, 555.56, 0.00, 0.00, 9120.24, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 14, '2010-04-30', 2010, 4, 0, 9120.24, 555.56, 0.00, 0.00, 8564.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 15, '2010-05-15', 2010, 5, 0, 8564.68, 555.56, 0.00, 0.00, 8009.12, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 16, '2010-05-31', 2010, 5, 0, 8009.12, 555.56, 0.00, 0.00, 7453.56, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 17, '2010-06-15', 2010, 6, 0, 7453.56, 555.56, 0.00, 0.00, 6898.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 18, '2010-06-30', 2010, 6, 0, 6898.00, 555.56, 0.00, 0.00, 6342.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 19, '2010-07-15', 2010, 7, 0, 6342.44, 555.56, 0.00, 0.00, 5786.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 20, '2010-07-31', 2010, 7, 0, 5786.88, 555.56, 0.00, 0.00, 5231.32, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 21, '2010-08-15', 2010, 8, 0, 5231.32, 555.56, 0.00, 0.00, 4675.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 22, '2010-08-31', 2010, 8, 0, 4675.76, 555.56, 0.00, 0.00, 4120.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 23, '2010-09-15', 2010, 9, 0, 4120.20, 555.56, 0.00, 0.00, 3564.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 24, '2010-09-30', 2010, 9, 0, 3564.64, 555.56, 0.00, 0.00, 3009.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 25, '2010-10-15', 2010, 10, 0, 3009.08, 555.56, 0.00, 0.00, 2453.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 26, '2010-10-31', 2010, 10, 0, 2453.52, 555.56, 0.00, 0.00, 1897.96, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 27, '2010-11-15', 2010, 11, 0, 1897.96, 555.56, 0.00, 0.00, 1342.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 28, '2010-11-30', 2010, 11, 0, 1342.40, 555.56, 0.00, 0.00, 786.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 29, '2010-12-15', 2010, 12, 0, 786.84, 555.56, 0.00, 0.00, 231.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(2, '10276', '', 30, '2010-12-31', 2010, 12, 0, 231.28, 231.28, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 1, '2009-10-15', 2009, 10, 0, 537.35, 53.52, 0.00, 0.00, 483.83, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 2, '2009-10-31', 2009, 10, 0, 483.83, 53.52, 0.00, 0.00, 430.31, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(3, '10276', '', 3, '2009-11-15', 2009, 11, 0, 430.31, 53.52, 0.00, 0.00, 376.79, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 4, '2009-11-30', 2009, 11, 0, 376.79, 53.52, 0.00, 0.00, 323.27, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 5, '2009-12-15', 2009, 12, 0, 323.27, 53.52, 0.00, 0.00, 269.75, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 6, '2009-12-31', 2009, 12, 0, 269.75, 53.52, 0.00, 0.00, 216.23, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 7, '2010-01-15', 2010, 1, 0, 216.23, 53.52, 0.00, 0.00, 162.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 8, '2010-01-31', 2010, 1, 0, 162.71, 53.52, 0.00, 0.00, 109.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 9, '2010-02-15', 2010, 2, 0, 109.19, 53.52, 0.00, 0.00, 55.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 10, '2010-02-28', 2010, 2, 0, 55.67, 53.52, 0.00, 0.00, 2.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(3, '10276', '', 11, '2010-03-15', 2010, 3, 0, 2.15, 2.15, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 1, '2009-10-15', 2009, 10, 0, 1932.12, 80.03, 0.00, 0.00, 1852.09, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 2, '2009-10-31', 2009, 10, 0, 1852.09, 80.03, 0.00, 0.00, 1772.06, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(4, '10180', '', 3, '2009-11-15', 2009, 11, 0, 1772.06, 80.03, 0.00, 0.00, 1692.03, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 4, '2009-11-30', 2009, 11, 0, 1692.03, 80.03, 0.00, 0.00, 1612.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 5, '2009-12-15', 2009, 12, 0, 1612.00, 80.03, 0.00, 0.00, 1531.97, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 6, '2009-12-31', 2009, 12, 0, 1531.97, 80.03, 0.00, 0.00, 1451.94, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 7, '2010-01-15', 2010, 1, 0, 1451.94, 80.03, 0.00, 0.00, 1371.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 8, '2010-01-31', 2010, 1, 0, 1371.91, 80.03, 0.00, 0.00, 1291.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 9, '2010-02-15', 2010, 2, 0, 1291.88, 80.03, 0.00, 0.00, 1211.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 10, '2010-02-28', 2010, 2, 0, 1211.85, 80.03, 0.00, 0.00, 1131.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 11, '2010-03-15', 2010, 3, 0, 1131.82, 80.03, 0.00, 0.00, 1051.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 12, '2010-03-31', 2010, 3, 0, 1051.79, 80.03, 0.00, 0.00, 971.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 13, '2010-04-15', 2010, 4, 0, 971.76, 80.03, 0.00, 0.00, 891.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 14, '2010-04-30', 2010, 4, 0, 891.73, 80.03, 0.00, 0.00, 811.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 15, '2010-05-15', 2010, 5, 0, 811.70, 80.03, 0.00, 0.00, 731.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 16, '2010-05-31', 2010, 5, 0, 731.67, 80.03, 0.00, 0.00, 651.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 17, '2010-06-15', 2010, 6, 0, 651.64, 80.03, 0.00, 0.00, 571.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 18, '2010-06-30', 2010, 6, 0, 571.61, 80.03, 0.00, 0.00, 491.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 19, '2010-07-15', 2010, 7, 0, 491.58, 80.03, 0.00, 0.00, 411.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 20, '2010-07-31', 2010, 7, 0, 411.55, 80.03, 0.00, 0.00, 331.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 21, '2010-08-15', 2010, 8, 0, 331.52, 80.03, 0.00, 0.00, 251.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 22, '2010-08-31', 2010, 8, 0, 251.49, 80.03, 0.00, 0.00, 171.46, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 23, '2010-09-15', 2010, 9, 0, 171.46, 80.03, 0.00, 0.00, 91.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 24, '2010-09-30', 2010, 9, 0, 91.43, 80.03, 0.00, 0.00, 11.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(4, '10180', '', 25, '2010-10-15', 2010, 10, 0, 11.40, 11.40, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 1, '2009-10-15', 2009, 10, 0, 573.89, 48.23, 0.00, 0.00, 525.66, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 2, '2009-10-31', 2009, 10, 0, 525.66, 48.23, 0.00, 0.00, 477.43, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(5, '10180', '', 3, '2009-11-15', 2009, 11, 0, 477.43, 48.23, 0.00, 0.00, 429.20, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 4, '2009-11-30', 2009, 11, 0, 429.20, 48.23, 0.00, 0.00, 380.97, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 5, '2009-12-15', 2009, 12, 0, 380.97, 48.23, 0.00, 0.00, 332.74, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 6, '2009-12-31', 2009, 12, 0, 332.74, 48.23, 0.00, 0.00, 284.51, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 7, '2010-01-15', 2010, 1, 0, 284.51, 48.23, 0.00, 0.00, 236.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 8, '2010-01-31', 2010, 1, 0, 236.28, 48.23, 0.00, 0.00, 188.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 9, '2010-02-15', 2010, 2, 0, 188.05, 48.23, 0.00, 0.00, 139.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 10, '2010-02-28', 2010, 2, 0, 139.82, 48.23, 0.00, 0.00, 91.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 11, '2010-03-15', 2010, 3, 0, 91.59, 48.23, 0.00, 0.00, 43.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(5, '10180', '', 12, '2010-03-31', 2010, 3, 0, 43.36, 43.36, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 1, '2009-10-15', 2009, 10, 0, 577.52, 77.11, 0.00, 0.00, 500.41, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 2, '2009-10-31', 2009, 10, 0, 500.41, 77.11, 0.00, 0.00, 423.30, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(6, '10180', '', 3, '2009-11-15', 2009, 11, 0, 423.30, 77.11, 0.00, 0.00, 346.19, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 4, '2009-11-30', 2009, 11, 0, 346.19, 77.11, 0.00, 0.00, 269.08, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 5, '2009-12-15', 2009, 12, 0, 269.08, 77.11, 0.00, 0.00, 191.97, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 6, '2009-12-31', 2009, 12, 0, 191.97, 77.11, 0.00, 0.00, 114.86, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 7, '2010-01-15', 2010, 1, 0, 114.86, 77.11, 0.00, 0.00, 37.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(6, '10180', '', 8, '2010-01-31', 2010, 1, 0, 37.75, 37.75, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 1, '2009-10-15', 2009, 10, 0, 3701.16, 85.91, 0.00, 0.00, 3615.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 2, '2009-10-31', 2009, 10, 0, 3615.25, 85.91, 0.00, 0.00, 3529.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(7, '10125', '', 3, '2009-11-15', 2009, 11, 0, 3529.34, 85.91, 0.00, 0.00, 3443.43, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 4, '2009-11-30', 2009, 11, 0, 3443.43, 85.91, 0.00, 0.00, 3357.52, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 5, '2009-12-15', 2009, 12, 0, 3357.52, 85.91, 0.00, 0.00, 3271.61, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 6, '2009-12-31', 2009, 12, 0, 3271.61, 85.91, 0.00, 0.00, 3185.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 7, '2010-01-15', 2010, 1, 0, 3185.70, 85.91, 0.00, 0.00, 3099.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 8, '2010-01-31', 2010, 1, 0, 3099.79, 85.91, 0.00, 0.00, 3013.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 9, '2010-02-15', 2010, 2, 0, 3013.88, 85.91, 0.00, 0.00, 2927.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 10, '2010-02-28', 2010, 2, 0, 2927.97, 85.91, 0.00, 0.00, 2842.06, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 11, '2010-03-15', 2010, 3, 0, 2842.06, 85.91, 0.00, 0.00, 2756.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 12, '2010-03-31', 2010, 3, 0, 2756.15, 85.91, 0.00, 0.00, 2670.24, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 13, '2010-04-15', 2010, 4, 0, 2670.24, 85.91, 0.00, 0.00, 2584.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 14, '2010-04-30', 2010, 4, 0, 2584.33, 85.91, 0.00, 0.00, 2498.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 15, '2010-05-15', 2010, 5, 0, 2498.42, 85.91, 0.00, 0.00, 2412.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 16, '2010-05-31', 2010, 5, 0, 2412.51, 85.91, 0.00, 0.00, 2326.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 17, '2010-06-15', 2010, 6, 0, 2326.60, 85.91, 0.00, 0.00, 2240.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 18, '2010-06-30', 2010, 6, 0, 2240.69, 85.91, 0.00, 0.00, 2154.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 19, '2010-07-15', 2010, 7, 0, 2154.78, 85.91, 0.00, 0.00, 2068.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 20, '2010-07-31', 2010, 7, 0, 2068.87, 85.91, 0.00, 0.00, 1982.96, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 21, '2010-08-15', 2010, 8, 0, 1982.96, 85.91, 0.00, 0.00, 1897.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 22, '2010-08-31', 2010, 8, 0, 1897.05, 85.91, 0.00, 0.00, 1811.14, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 23, '2010-09-15', 2010, 9, 0, 1811.14, 85.91, 0.00, 0.00, 1725.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 24, '2010-09-30', 2010, 9, 0, 1725.23, 85.91, 0.00, 0.00, 1639.32, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 25, '2010-10-15', 2010, 10, 0, 1639.32, 85.91, 0.00, 0.00, 1553.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 26, '2010-10-31', 2010, 10, 0, 1553.41, 85.91, 0.00, 0.00, 1467.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 27, '2010-11-15', 2010, 11, 0, 1467.50, 85.91, 0.00, 0.00, 1381.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 28, '2010-11-30', 2010, 11, 0, 1381.59, 85.91, 0.00, 0.00, 1295.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 29, '2010-12-15', 2010, 12, 0, 1295.68, 85.91, 0.00, 0.00, 1209.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 30, '2010-12-31', 2010, 12, 0, 1209.77, 85.91, 0.00, 0.00, 1123.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 31, '2011-01-15', 2011, 1, 0, 1123.86, 85.91, 0.00, 0.00, 1037.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 32, '2011-01-31', 2011, 1, 0, 1037.95, 85.91, 0.00, 0.00, 952.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 33, '2011-02-15', 2011, 2, 0, 952.04, 85.91, 0.00, 0.00, 866.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 34, '2011-02-28', 2011, 2, 0, 866.13, 85.91, 0.00, 0.00, 780.22, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 35, '2011-03-15', 2011, 3, 0, 780.22, 85.91, 0.00, 0.00, 694.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 36, '2011-03-31', 2011, 3, 0, 694.31, 85.91, 0.00, 0.00, 608.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 37, '2011-04-15', 2011, 4, 0, 608.40, 85.91, 0.00, 0.00, 522.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 38, '2011-04-30', 2011, 4, 0, 522.49, 85.91, 0.00, 0.00, 436.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 39, '2011-05-15', 2011, 5, 0, 436.58, 85.91, 0.00, 0.00, 350.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 40, '2011-05-31', 2011, 5, 0, 350.67, 85.91, 0.00, 0.00, 264.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 41, '2011-06-15', 2011, 6, 0, 264.76, 85.91, 0.00, 0.00, 178.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 42, '2011-06-30', 2011, 6, 0, 178.85, 85.91, 0.00, 0.00, 92.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 43, '2011-07-15', 2011, 7, 0, 92.94, 85.91, 0.00, 0.00, 7.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(7, '10125', '', 44, '2011-07-31', 2011, 7, 0, 7.03, 7.03, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(8, '10125', '', 1, '2009-10-15', 2009, 10, 0, 2589.92, 93.06, 0.00, 0.00, 2496.86, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(8, '10125', '', 2, '2009-10-31', 2009, 10, 0, 2496.86, 93.06, 0.00, 0.00, 2403.80, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 3, '2009-11-15', 2009, 11, 0, 2403.80, 93.06, 0.00, 0.00, 2310.74, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 4, '2009-11-30', 2009, 11, 0, 2310.74, 93.06, 0.00, 0.00, 2217.68, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 5, '2009-12-15', 2009, 12, 0, 2217.68, 93.06, 0.00, 0.00, 2124.62, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 6, '2009-12-31', 2009, 12, 0, 2124.62, 93.06, 0.00, 0.00, 2031.56, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 7, '2010-01-15', 2010, 1, 0, 2031.56, 93.06, 0.00, 0.00, 1938.50, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 8, '2010-01-31', 2010, 1, 0, 1938.50, 93.06, 0.00, 0.00, 1845.44, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 9, '2010-02-15', 2010, 2, 0, 1845.44, 93.06, 0.00, 0.00, 1752.38, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 10, '2010-02-28', 2010, 2, 0, 1752.38, 93.06, 0.00, 0.00, 1659.32, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 11, '2010-03-15', 2010, 3, 0, 1659.32, 93.06, 0.00, 0.00, 1566.26, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 12, '2010-03-31', 2010, 3, 0, 1566.26, 93.06, 0.00, 0.00, 1473.20, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 13, '2010-04-15', 2010, 4, 0, 1473.20, 93.06, 0.00, 0.00, 1380.14, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 14, '2010-04-30', 2010, 4, 0, 1380.14, 93.06, 0.00, 0.00, 1287.08, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 15, '2010-05-15', 2010, 5, 0, 1287.08, 93.06, 0.00, 0.00, 1194.02, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 16, '2010-05-31', 2010, 5, 0, 1194.02, 93.06, 0.00, 0.00, 1100.96, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 17, '2010-06-15', 2010, 6, 0, 1100.96, 93.06, 0.00, 0.00, 1007.90, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 18, '2010-06-30', 2010, 6, 0, 1007.90, 93.06, 0.00, 0.00, 914.84, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 19, '2010-07-15', 2010, 7, 0, 914.84, 93.06, 0.00, 0.00, 821.78, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 20, '2010-07-31', 2010, 7, 0, 821.78, 93.06, 0.00, 0.00, 728.72, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 21, '2010-08-15', 2010, 8, 0, 728.72, 93.06, 0.00, 0.00, 635.66, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 22, '2010-08-31', 2010, 8, 0, 635.66, 93.06, 0.00, 0.00, 542.60, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 23, '2010-09-15', 2010, 9, 0, 542.60, 93.06, 0.00, 0.00, 449.54, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 24, '2010-09-30', 2010, 9, 0, 449.54, 93.06, 0.00, 0.00, 356.48, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 25, '2010-10-15', 2010, 10, 0, 356.48, 93.06, 0.00, 0.00, 263.42, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 26, '2010-10-31', 2010, 10, 0, 263.42, 93.06, 0.00, 0.00, 170.36, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 27, '2010-11-15', 2010, 11, 0, 170.36, 93.06, 0.00, 0.00, 77.30, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(8, '10125', '', 28, '2010-11-30', 2010, 11, 0, 77.30, 77.30, 0.00, 0.00, 0.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(9, '10125', '', 1, '2009-10-15', 2009, 10, 0, 1772.00, 62.50, 0.00, 0.00, 1709.50, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 2, '2009-10-31', 2009, 10, 0, 1709.50, 62.50, 0.00, 0.00, 1647.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(9, '10125', '', 3, '2009-11-15', 2009, 11, 0, 1647.00, 62.50, 0.00, 0.00, 1584.50, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 4, '2009-11-30', 2009, 11, 0, 1584.50, 62.50, 0.00, 0.00, 1522.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 5, '2009-12-15', 2009, 12, 0, 1522.00, 62.50, 0.00, 0.00, 1459.50, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 6, '2009-12-31', 2009, 12, 0, 1459.50, 62.50, 0.00, 0.00, 1397.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 7, '2010-01-15', 2010, 1, 0, 1397.00, 62.50, 0.00, 0.00, 1334.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 8, '2010-01-31', 2010, 1, 0, 1334.50, 62.50, 0.00, 0.00, 1272.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 9, '2010-02-15', 2010, 2, 0, 1272.00, 62.50, 0.00, 0.00, 1209.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 10, '2010-02-28', 2010, 2, 0, 1209.50, 62.50, 0.00, 0.00, 1147.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 11, '2010-03-15', 2010, 3, 0, 1147.00, 62.50, 0.00, 0.00, 1084.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 12, '2010-03-31', 2010, 3, 0, 1084.50, 62.50, 0.00, 0.00, 1022.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 13, '2010-04-15', 2010, 4, 0, 1022.00, 62.50, 0.00, 0.00, 959.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 14, '2010-04-30', 2010, 4, 0, 959.50, 62.50, 0.00, 0.00, 897.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 15, '2010-05-15', 2010, 5, 0, 897.00, 62.50, 0.00, 0.00, 834.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 16, '2010-05-31', 2010, 5, 0, 834.50, 62.50, 0.00, 0.00, 772.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 17, '2010-06-15', 2010, 6, 0, 772.00, 62.50, 0.00, 0.00, 709.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 18, '2010-06-30', 2010, 6, 0, 709.50, 62.50, 0.00, 0.00, 647.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 19, '2010-07-15', 2010, 7, 0, 647.00, 62.50, 0.00, 0.00, 584.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 20, '2010-07-31', 2010, 7, 0, 584.50, 62.50, 0.00, 0.00, 522.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 21, '2010-08-15', 2010, 8, 0, 522.00, 62.50, 0.00, 0.00, 459.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 22, '2010-08-31', 2010, 8, 0, 459.50, 62.50, 0.00, 0.00, 397.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 23, '2010-09-15', 2010, 9, 0, 397.00, 62.50, 0.00, 0.00, 334.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 24, '2010-09-30', 2010, 9, 0, 334.50, 62.50, 0.00, 0.00, 272.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 25, '2010-10-15', 2010, 10, 0, 272.00, 62.50, 0.00, 0.00, 209.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 26, '2010-10-31', 2010, 10, 0, 209.50, 62.50, 0.00, 0.00, 147.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 27, '2010-11-15', 2010, 11, 0, 147.00, 62.50, 0.00, 0.00, 84.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 28, '2010-11-30', 2010, 11, 0, 84.50, 62.50, 0.00, 0.00, 22.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(9, '10125', '', 29, '2010-12-15', 2010, 12, 0, 22.00, 22.00, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 1, '2009-10-15', 2009, 10, 0, 4893.85, 191.52, 0.00, 0.00, 4702.33, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 2, '2009-10-31', 2009, 10, 0, 4702.33, 191.52, 0.00, 0.00, 4510.81, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(10, '10131', '', 3, '2009-11-15', 2009, 11, 0, 4510.81, 191.52, 0.00, 0.00, 4319.29, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 4, '2009-11-30', 2009, 11, 0, 4319.29, 191.52, 0.00, 0.00, 4127.77, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 5, '2009-12-15', 2009, 12, 0, 4127.77, 191.52, 0.00, 0.00, 3936.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 6, '2009-12-31', 2009, 12, 0, 3936.25, 191.52, 0.00, 0.00, 3744.73, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 7, '2010-01-15', 2010, 1, 0, 3744.73, 191.52, 0.00, 0.00, 3553.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 8, '2010-01-31', 2010, 1, 0, 3553.21, 191.52, 0.00, 0.00, 3361.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 9, '2010-02-15', 2010, 2, 0, 3361.69, 191.52, 0.00, 0.00, 3170.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 10, '2010-02-28', 2010, 2, 0, 3170.17, 191.52, 0.00, 0.00, 2978.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 11, '2010-03-15', 2010, 3, 0, 2978.65, 191.52, 0.00, 0.00, 2787.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 12, '2010-03-31', 2010, 3, 0, 2787.13, 191.52, 0.00, 0.00, 2595.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 13, '2010-04-15', 2010, 4, 0, 2595.61, 191.52, 0.00, 0.00, 2404.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 14, '2010-04-30', 2010, 4, 0, 2404.09, 191.52, 0.00, 0.00, 2212.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 15, '2010-05-15', 2010, 5, 0, 2212.57, 191.52, 0.00, 0.00, 2021.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 16, '2010-05-31', 2010, 5, 0, 2021.05, 191.52, 0.00, 0.00, 1829.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 17, '2010-06-15', 2010, 6, 0, 1829.53, 191.52, 0.00, 0.00, 1638.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 18, '2010-06-30', 2010, 6, 0, 1638.01, 191.52, 0.00, 0.00, 1446.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 19, '2010-07-15', 2010, 7, 0, 1446.49, 191.52, 0.00, 0.00, 1254.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 20, '2010-07-31', 2010, 7, 0, 1254.97, 191.52, 0.00, 0.00, 1063.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 21, '2010-08-15', 2010, 8, 0, 1063.45, 191.52, 0.00, 0.00, 871.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 22, '2010-08-31', 2010, 8, 0, 871.93, 191.52, 0.00, 0.00, 680.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 23, '2010-09-15', 2010, 9, 0, 680.41, 191.52, 0.00, 0.00, 488.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 24, '2010-09-30', 2010, 9, 0, 488.89, 191.52, 0.00, 0.00, 297.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 25, '2010-10-15', 2010, 10, 0, 297.37, 191.52, 0.00, 0.00, 105.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(10, '10131', '', 26, '2010-10-31', 2010, 10, 0, 105.85, 105.85, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 1, '2009-10-15', 2009, 10, 0, 1627.70, 69.59, 0.00, 0.00, 1558.11, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 2, '2009-10-31', 2009, 10, 0, 1558.11, 69.59, 0.00, 0.00, 1488.52, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(11, '10131', '', 3, '2009-11-15', 2009, 11, 0, 1488.52, 69.59, 0.00, 0.00, 1418.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 4, '2009-11-30', 2009, 11, 0, 1418.93, 69.59, 0.00, 0.00, 1349.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 5, '2009-12-15', 2009, 12, 0, 1349.34, 69.59, 0.00, 0.00, 1279.75, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 6, '2009-12-31', 2009, 12, 0, 1279.75, 69.59, 0.00, 0.00, 1210.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 7, '2010-01-15', 2010, 1, 0, 1210.16, 69.59, 0.00, 0.00, 1140.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 8, '2010-01-31', 2010, 1, 0, 1140.57, 69.59, 0.00, 0.00, 1070.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 9, '2010-02-15', 2010, 2, 0, 1070.98, 69.59, 0.00, 0.00, 1001.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 10, '2010-02-28', 2010, 2, 0, 1001.39, 69.59, 0.00, 0.00, 931.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 11, '2010-03-15', 2010, 3, 0, 931.80, 69.59, 0.00, 0.00, 862.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 12, '2010-03-31', 2010, 3, 0, 862.21, 69.59, 0.00, 0.00, 792.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 13, '2010-04-15', 2010, 4, 0, 792.62, 69.59, 0.00, 0.00, 723.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 14, '2010-04-30', 2010, 4, 0, 723.03, 69.59, 0.00, 0.00, 653.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 15, '2010-05-15', 2010, 5, 0, 653.44, 69.59, 0.00, 0.00, 583.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 16, '2010-05-31', 2010, 5, 0, 583.85, 69.59, 0.00, 0.00, 514.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 17, '2010-06-15', 2010, 6, 0, 514.26, 69.59, 0.00, 0.00, 444.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 18, '2010-06-30', 2010, 6, 0, 444.67, 69.59, 0.00, 0.00, 375.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 19, '2010-07-15', 2010, 7, 0, 375.08, 69.59, 0.00, 0.00, 305.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 20, '2010-07-31', 2010, 7, 0, 305.49, 69.59, 0.00, 0.00, 235.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 21, '2010-08-15', 2010, 8, 0, 235.90, 69.59, 0.00, 0.00, 166.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 22, '2010-08-31', 2010, 8, 0, 166.31, 69.59, 0.00, 0.00, 96.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 23, '2010-09-15', 2010, 9, 0, 96.72, 69.59, 0.00, 0.00, 27.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(11, '10131', '', 24, '2010-09-30', 2010, 9, 0, 27.13, 27.13, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(12, '10131', '', 1, '2009-10-15', 2009, 10, 0, 150.00, 50.00, 0.00, 0.00, 100.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(12, '10131', '', 2, '2009-10-31', 2009, 10, 0, 100.00, 50.00, 0.00, 0.00, 50.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(12, '10131', '', 3, '2009-11-15', 2009, 11, 0, 50.00, 50.00, 0.00, 0.00, 0.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(13, '10131', '', 1, '2009-10-15', 2009, 10, 0, 720.94, 60.39, 0.00, 0.00, 660.55, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 2, '2009-10-31', 2009, 10, 0, 660.55, 60.39, 0.00, 0.00, 600.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(13, '10131', '', 3, '2009-11-15', 2009, 11, 0, 600.16, 60.39, 0.00, 0.00, 539.77, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 4, '2009-11-30', 2009, 11, 0, 539.77, 60.39, 0.00, 0.00, 479.38, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 5, '2009-12-15', 2009, 12, 0, 479.38, 60.39, 0.00, 0.00, 418.99, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 6, '2009-12-31', 2009, 12, 0, 418.99, 60.39, 0.00, 0.00, 358.60, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 7, '2010-01-15', 2010, 1, 0, 358.60, 60.39, 0.00, 0.00, 298.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 8, '2010-01-31', 2010, 1, 0, 298.21, 60.39, 0.00, 0.00, 237.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 9, '2010-02-15', 2010, 2, 0, 237.82, 60.39, 0.00, 0.00, 177.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 10, '2010-02-28', 2010, 2, 0, 177.43, 60.39, 0.00, 0.00, 117.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 11, '2010-03-15', 2010, 3, 0, 117.04, 60.39, 0.00, 0.00, 56.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(13, '10131', '', 12, '2010-03-31', 2010, 3, 0, 56.65, 56.65, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 1, '2009-10-15', 2009, 10, 0, 286.92, 13.51, 0.00, 0.00, 273.41, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 2, '2009-10-31', 2009, 10, 0, 273.41, 13.51, 0.00, 0.00, 259.90, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(14, '10178', '', 3, '2009-11-15', 2009, 11, 0, 259.90, 13.51, 0.00, 0.00, 246.39, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 4, '2009-11-30', 2009, 11, 0, 246.39, 13.51, 0.00, 0.00, 232.88, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 5, '2009-12-15', 2009, 12, 0, 232.88, 13.51, 0.00, 0.00, 219.37, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 6, '2009-12-31', 2009, 12, 0, 219.37, 13.51, 0.00, 0.00, 205.86, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 7, '2010-01-15', 2010, 1, 0, 205.86, 13.51, 0.00, 0.00, 192.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 8, '2010-01-31', 2010, 1, 0, 192.35, 13.51, 0.00, 0.00, 178.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 9, '2010-02-15', 2010, 2, 0, 178.84, 13.51, 0.00, 0.00, 165.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 10, '2010-02-28', 2010, 2, 0, 165.33, 13.51, 0.00, 0.00, 151.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 11, '2010-03-15', 2010, 3, 0, 151.82, 13.51, 0.00, 0.00, 138.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 12, '2010-03-31', 2010, 3, 0, 138.31, 13.51, 0.00, 0.00, 124.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 13, '2010-04-15', 2010, 4, 0, 124.80, 13.51, 0.00, 0.00, 111.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 14, '2010-04-30', 2010, 4, 0, 111.29, 13.51, 0.00, 0.00, 97.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 15, '2010-05-15', 2010, 5, 0, 97.78, 13.51, 0.00, 0.00, 84.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 16, '2010-05-31', 2010, 5, 0, 84.27, 13.51, 0.00, 0.00, 70.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 17, '2010-06-15', 2010, 6, 0, 70.76, 13.51, 0.00, 0.00, 57.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 18, '2010-06-30', 2010, 6, 0, 57.25, 13.51, 0.00, 0.00, 43.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 19, '2010-07-15', 2010, 7, 0, 43.74, 13.51, 0.00, 0.00, 30.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 20, '2010-07-31', 2010, 7, 0, 30.23, 13.51, 0.00, 0.00, 16.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 21, '2010-08-15', 2010, 8, 0, 16.72, 13.51, 0.00, 0.00, 3.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(14, '10178', '', 22, '2010-08-31', 2010, 8, 0, 3.21, 3.21, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 1, '2009-10-15', 2009, 10, 0, 1199.95, 44.45, 0.00, 0.00, 1155.50, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 2, '2009-10-31', 2009, 10, 0, 1155.50, 44.45, 0.00, 0.00, 1111.05, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(15, '10109', '', 3, '2009-11-15', 2009, 11, 0, 1111.05, 44.45, 0.00, 0.00, 1066.60, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 4, '2009-11-30', 2009, 11, 0, 1066.60, 44.45, 0.00, 0.00, 1022.15, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 5, '2009-12-15', 2009, 12, 0, 1022.15, 44.45, 0.00, 0.00, 977.70, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 6, '2009-12-31', 2009, 12, 0, 977.70, 44.45, 0.00, 0.00, 933.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 7, '2010-01-15', 2010, 1, 0, 933.25, 44.45, 0.00, 0.00, 888.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 8, '2010-01-31', 2010, 1, 0, 888.80, 44.45, 0.00, 0.00, 844.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 9, '2010-02-15', 2010, 2, 0, 844.35, 44.45, 0.00, 0.00, 799.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 10, '2010-02-28', 2010, 2, 0, 799.90, 44.45, 0.00, 0.00, 755.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 11, '2010-03-15', 2010, 3, 0, 755.45, 44.45, 0.00, 0.00, 711.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 12, '2010-03-31', 2010, 3, 0, 711.00, 44.45, 0.00, 0.00, 666.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 13, '2010-04-15', 2010, 4, 0, 666.55, 44.45, 0.00, 0.00, 622.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 14, '2010-04-30', 2010, 4, 0, 622.10, 44.45, 0.00, 0.00, 577.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 15, '2010-05-15', 2010, 5, 0, 577.65, 44.45, 0.00, 0.00, 533.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 16, '2010-05-31', 2010, 5, 0, 533.20, 44.45, 0.00, 0.00, 488.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 17, '2010-06-15', 2010, 6, 0, 488.75, 44.45, 0.00, 0.00, 444.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 18, '2010-06-30', 2010, 6, 0, 444.30, 44.45, 0.00, 0.00, 399.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 19, '2010-07-15', 2010, 7, 0, 399.85, 44.45, 0.00, 0.00, 355.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 20, '2010-07-31', 2010, 7, 0, 355.40, 44.45, 0.00, 0.00, 310.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 21, '2010-08-15', 2010, 8, 0, 310.95, 44.45, 0.00, 0.00, 266.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 22, '2010-08-31', 2010, 8, 0, 266.50, 44.45, 0.00, 0.00, 222.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 23, '2010-09-15', 2010, 9, 0, 222.05, 44.45, 0.00, 0.00, 177.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 24, '2010-09-30', 2010, 9, 0, 177.60, 44.45, 0.00, 0.00, 133.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 25, '2010-10-15', 2010, 10, 0, 133.15, 44.45, 0.00, 0.00, 88.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 26, '2010-10-31', 2010, 10, 0, 88.70, 44.45, 0.00, 0.00, 44.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(15, '10109', '', 27, '2010-11-15', 2010, 11, 0, 44.25, 44.25, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 1, '2009-10-15', 2009, 10, 0, 1390.39, 31.78, 0.00, 0.00, 1358.61, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 2, '2009-10-31', 2009, 10, 0, 1358.61, 31.78, 0.00, 0.00, 1326.83, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(16, '10109', '', 3, '2009-11-15', 2009, 11, 0, 1326.83, 31.78, 0.00, 0.00, 1295.05, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 4, '2009-11-30', 2009, 11, 0, 1295.05, 31.78, 0.00, 0.00, 1263.27, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 5, '2009-12-15', 2009, 12, 0, 1263.27, 31.78, 0.00, 0.00, 1231.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 6, '2009-12-31', 2009, 12, 0, 1231.49, 31.78, 0.00, 0.00, 1199.71, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 7, '2010-01-15', 2010, 1, 0, 1199.71, 31.78, 0.00, 0.00, 1167.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 8, '2010-01-31', 2010, 1, 0, 1167.93, 31.78, 0.00, 0.00, 1136.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 9, '2010-02-15', 2010, 2, 0, 1136.15, 31.78, 0.00, 0.00, 1104.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 10, '2010-02-28', 2010, 2, 0, 1104.37, 31.78, 0.00, 0.00, 1072.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 11, '2010-03-15', 2010, 3, 0, 1072.59, 31.78, 0.00, 0.00, 1040.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 12, '2010-03-31', 2010, 3, 0, 1040.81, 31.78, 0.00, 0.00, 1009.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 13, '2010-04-15', 2010, 4, 0, 1009.03, 31.78, 0.00, 0.00, 977.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 14, '2010-04-30', 2010, 4, 0, 977.25, 31.78, 0.00, 0.00, 945.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 15, '2010-05-15', 2010, 5, 0, 945.47, 31.78, 0.00, 0.00, 913.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0);
-INSERT INTO `nomprestamos_detalles` (`numpre`, `ficha`, `tipocuo`, `numcuo`, `fechaven`, `anioven`, `mesven`, `dias`, `salinicial`, `montocuo`, `montoint`, `montocap`, `salfinal`, `fechacan`, `estadopre`, `detalle`, `dedespecial`, `codnom`, `sfechaven`, `sfechacan`, `ee`) VALUES
-(16, '10109', '', 16, '2010-05-31', 2010, 5, 0, 913.69, 31.78, 0.00, 0.00, 881.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 17, '2010-06-15', 2010, 6, 0, 881.91, 31.78, 0.00, 0.00, 850.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 18, '2010-06-30', 2010, 6, 0, 850.13, 31.78, 0.00, 0.00, 818.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 19, '2010-07-15', 2010, 7, 0, 818.35, 31.78, 0.00, 0.00, 786.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 20, '2010-07-31', 2010, 7, 0, 786.57, 31.78, 0.00, 0.00, 754.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 21, '2010-08-15', 2010, 8, 0, 754.79, 31.78, 0.00, 0.00, 723.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 22, '2010-08-31', 2010, 8, 0, 723.01, 31.78, 0.00, 0.00, 691.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 23, '2010-09-15', 2010, 9, 0, 691.23, 31.78, 0.00, 0.00, 659.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 24, '2010-09-30', 2010, 9, 0, 659.45, 31.78, 0.00, 0.00, 627.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 25, '2010-10-15', 2010, 10, 0, 627.67, 31.78, 0.00, 0.00, 595.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 26, '2010-10-31', 2010, 10, 0, 595.89, 31.78, 0.00, 0.00, 564.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 27, '2010-11-15', 2010, 11, 0, 564.11, 31.78, 0.00, 0.00, 532.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 28, '2010-11-30', 2010, 11, 0, 532.33, 31.78, 0.00, 0.00, 500.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 29, '2010-12-15', 2010, 12, 0, 500.55, 31.78, 0.00, 0.00, 468.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 30, '2010-12-31', 2010, 12, 0, 468.77, 31.78, 0.00, 0.00, 436.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 31, '2011-01-15', 2011, 1, 0, 436.99, 31.78, 0.00, 0.00, 405.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 32, '2011-01-31', 2011, 1, 0, 405.21, 31.78, 0.00, 0.00, 373.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 33, '2011-02-15', 2011, 2, 0, 373.43, 31.78, 0.00, 0.00, 341.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 34, '2011-02-28', 2011, 2, 0, 341.65, 31.78, 0.00, 0.00, 309.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 35, '2011-03-15', 2011, 3, 0, 309.87, 31.78, 0.00, 0.00, 278.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 36, '2011-03-31', 2011, 3, 0, 278.09, 31.78, 0.00, 0.00, 246.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 37, '2011-04-15', 2011, 4, 0, 246.31, 31.78, 0.00, 0.00, 214.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 38, '2011-04-30', 2011, 4, 0, 214.53, 31.78, 0.00, 0.00, 182.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 39, '2011-05-15', 2011, 5, 0, 182.75, 31.78, 0.00, 0.00, 150.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 40, '2011-05-31', 2011, 5, 0, 150.97, 31.78, 0.00, 0.00, 119.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 41, '2011-06-15', 2011, 6, 0, 119.19, 31.78, 0.00, 0.00, 87.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 42, '2011-06-30', 2011, 6, 0, 87.41, 31.78, 0.00, 0.00, 55.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 43, '2011-07-15', 2011, 7, 0, 55.63, 31.78, 0.00, 0.00, 23.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(16, '10109', '', 44, '2011-07-31', 2011, 7, 0, 23.85, 23.85, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 1, '2009-10-15', 2009, 10, 0, 640.98, 54.36, 0.00, 0.00, 586.62, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 2, '2009-10-31', 2009, 10, 0, 586.62, 54.36, 0.00, 0.00, 532.26, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(17, '10238', '', 3, '2009-11-15', 2009, 11, 0, 532.26, 54.36, 0.00, 0.00, 477.90, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 4, '2009-11-30', 2009, 11, 0, 477.90, 54.36, 0.00, 0.00, 423.54, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 5, '2009-12-15', 2009, 12, 0, 423.54, 54.36, 0.00, 0.00, 369.18, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 6, '2009-12-31', 2009, 12, 0, 369.18, 54.36, 0.00, 0.00, 314.82, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 7, '2010-01-15', 2010, 1, 0, 314.82, 54.36, 0.00, 0.00, 260.46, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 8, '2010-01-31', 2010, 1, 0, 260.46, 54.36, 0.00, 0.00, 206.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 9, '2010-02-15', 2010, 2, 0, 206.10, 54.36, 0.00, 0.00, 151.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 10, '2010-02-28', 2010, 2, 0, 151.74, 54.36, 0.00, 0.00, 97.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 11, '2010-03-15', 2010, 3, 0, 97.38, 54.36, 0.00, 0.00, 43.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(17, '10238', '', 12, '2010-03-31', 2010, 3, 0, 43.02, 43.02, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 1, '2009-10-15', 2009, 10, 0, 2883.52, 89.59, 0.00, 0.00, 2793.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 2, '2009-10-31', 2009, 10, 0, 2793.93, 89.59, 0.00, 0.00, 2704.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(18, '10238', '', 3, '2009-11-15', 2009, 11, 0, 2704.34, 89.59, 0.00, 0.00, 2614.75, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 4, '2009-11-30', 2009, 11, 0, 2614.75, 89.59, 0.00, 0.00, 2525.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 5, '2009-12-15', 2009, 12, 0, 2525.16, 89.59, 0.00, 0.00, 2435.57, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 6, '2009-12-31', 2009, 12, 0, 2435.57, 89.59, 0.00, 0.00, 2345.98, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 7, '2010-01-15', 2010, 1, 0, 2345.98, 89.59, 0.00, 0.00, 2256.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 8, '2010-01-31', 2010, 1, 0, 2256.39, 89.59, 0.00, 0.00, 2166.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 9, '2010-02-15', 2010, 2, 0, 2166.80, 89.59, 0.00, 0.00, 2077.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 10, '2010-02-28', 2010, 2, 0, 2077.21, 89.59, 0.00, 0.00, 1987.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 11, '2010-03-15', 2010, 3, 0, 1987.62, 89.59, 0.00, 0.00, 1898.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 12, '2010-03-31', 2010, 3, 0, 1898.03, 89.59, 0.00, 0.00, 1808.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 13, '2010-04-15', 2010, 4, 0, 1808.44, 89.59, 0.00, 0.00, 1718.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 14, '2010-04-30', 2010, 4, 0, 1718.85, 89.59, 0.00, 0.00, 1629.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 15, '2010-05-15', 2010, 5, 0, 1629.26, 89.59, 0.00, 0.00, 1539.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 16, '2010-05-31', 2010, 5, 0, 1539.67, 89.59, 0.00, 0.00, 1450.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 17, '2010-06-15', 2010, 6, 0, 1450.08, 89.59, 0.00, 0.00, 1360.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 18, '2010-06-30', 2010, 6, 0, 1360.49, 89.59, 0.00, 0.00, 1270.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 19, '2010-07-15', 2010, 7, 0, 1270.90, 89.59, 0.00, 0.00, 1181.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 20, '2010-07-31', 2010, 7, 0, 1181.31, 89.59, 0.00, 0.00, 1091.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 21, '2010-08-15', 2010, 8, 0, 1091.72, 89.59, 0.00, 0.00, 1002.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 22, '2010-08-31', 2010, 8, 0, 1002.13, 89.59, 0.00, 0.00, 912.54, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 23, '2010-09-15', 2010, 9, 0, 912.54, 89.59, 0.00, 0.00, 822.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 24, '2010-09-30', 2010, 9, 0, 822.95, 89.59, 0.00, 0.00, 733.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 25, '2010-10-15', 2010, 10, 0, 733.36, 89.59, 0.00, 0.00, 643.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 26, '2010-10-31', 2010, 10, 0, 643.77, 89.59, 0.00, 0.00, 554.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 27, '2010-11-15', 2010, 11, 0, 554.18, 89.59, 0.00, 0.00, 464.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 28, '2010-11-30', 2010, 11, 0, 464.59, 89.59, 0.00, 0.00, 375.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 29, '2010-12-15', 2010, 12, 0, 375.00, 89.59, 0.00, 0.00, 285.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 30, '2010-12-31', 2010, 12, 0, 285.41, 89.59, 0.00, 0.00, 195.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 31, '2011-01-15', 2011, 1, 0, 195.82, 89.59, 0.00, 0.00, 106.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 32, '2011-01-31', 2011, 1, 0, 106.23, 89.59, 0.00, 0.00, 16.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(18, '10238', '', 33, '2011-02-15', 2011, 2, 0, 16.64, 16.64, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 1, '2009-10-15', 2009, 10, 0, 73.24, 8.38, 0.00, 0.00, 64.86, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 2, '2009-10-31', 2009, 10, 0, 64.86, 8.38, 0.00, 0.00, 56.48, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(19, '10238', '', 3, '2009-11-15', 2009, 11, 0, 56.48, 8.38, 0.00, 0.00, 48.10, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 4, '2009-11-30', 2009, 11, 0, 48.10, 8.38, 0.00, 0.00, 39.72, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 5, '2009-12-15', 2009, 12, 0, 39.72, 8.38, 0.00, 0.00, 31.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 6, '2009-12-31', 2009, 12, 0, 31.34, 8.38, 0.00, 0.00, 22.96, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 7, '2010-01-15', 2010, 1, 0, 22.96, 8.38, 0.00, 0.00, 14.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 8, '2010-01-31', 2010, 1, 0, 14.58, 8.38, 0.00, 0.00, 6.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(19, '10238', '', 9, '2010-02-15', 2010, 2, 0, 6.20, 6.20, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 1, '2009-10-15', 2009, 10, 0, 10800.00, 450.00, 0.00, 0.00, 10350.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 2, '2009-10-31', 2009, 10, 0, 10350.00, 450.00, 0.00, 0.00, 9900.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(20, '10127', '', 3, '2009-11-15', 2009, 11, 0, 9900.00, 450.00, 0.00, 0.00, 9450.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 4, '2009-11-30', 2009, 11, 0, 9450.00, 450.00, 0.00, 0.00, 9000.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 5, '2009-12-15', 2009, 12, 0, 9000.00, 450.00, 0.00, 0.00, 8550.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 6, '2009-12-31', 2009, 12, 0, 8550.00, 450.00, 0.00, 0.00, 8100.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 7, '2010-01-15', 2010, 1, 0, 8100.00, 450.00, 0.00, 0.00, 7650.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 8, '2010-01-31', 2010, 1, 0, 7650.00, 450.00, 0.00, 0.00, 7200.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 9, '2010-02-15', 2010, 2, 0, 7200.00, 450.00, 0.00, 0.00, 6750.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 10, '2010-02-28', 2010, 2, 0, 6750.00, 450.00, 0.00, 0.00, 6300.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 11, '2010-03-15', 2010, 3, 0, 6300.00, 450.00, 0.00, 0.00, 5850.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 12, '2010-03-31', 2010, 3, 0, 5850.00, 450.00, 0.00, 0.00, 5400.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 13, '2010-04-15', 2010, 4, 0, 5400.00, 450.00, 0.00, 0.00, 4950.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 14, '2010-04-30', 2010, 4, 0, 4950.00, 450.00, 0.00, 0.00, 4500.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 15, '2010-05-15', 2010, 5, 0, 4500.00, 450.00, 0.00, 0.00, 4050.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 16, '2010-05-31', 2010, 5, 0, 4050.00, 450.00, 0.00, 0.00, 3600.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 17, '2010-06-15', 2010, 6, 0, 3600.00, 450.00, 0.00, 0.00, 3150.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 18, '2010-06-30', 2010, 6, 0, 3150.00, 450.00, 0.00, 0.00, 2700.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 19, '2010-07-15', 2010, 7, 0, 2700.00, 450.00, 0.00, 0.00, 2250.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 20, '2010-07-31', 2010, 7, 0, 2250.00, 450.00, 0.00, 0.00, 1800.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 21, '2010-08-15', 2010, 8, 0, 1800.00, 450.00, 0.00, 0.00, 1350.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 22, '2010-08-31', 2010, 8, 0, 1350.00, 450.00, 0.00, 0.00, 900.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 23, '2010-09-15', 2010, 9, 0, 900.00, 450.00, 0.00, 0.00, 450.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(20, '10127', '', 24, '2010-09-30', 2010, 9, 0, 450.00, 450.00, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 1, '2009-10-15', 2009, 10, 0, 838.40, 60.49, 0.00, 0.00, 777.91, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 2, '2009-10-31', 2009, 10, 0, 777.91, 60.49, 0.00, 0.00, 717.42, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(21, '10127', '', 3, '2009-11-15', 2009, 11, 0, 717.42, 60.49, 0.00, 0.00, 656.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 4, '2009-11-30', 2009, 11, 0, 656.93, 60.49, 0.00, 0.00, 596.44, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 5, '2009-12-15', 2009, 12, 0, 596.44, 60.49, 0.00, 0.00, 535.95, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 6, '2009-12-31', 2009, 12, 0, 535.95, 60.49, 0.00, 0.00, 475.46, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 7, '2010-01-15', 2010, 1, 0, 475.46, 60.49, 0.00, 0.00, 414.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 8, '2010-01-31', 2010, 1, 0, 414.97, 60.49, 0.00, 0.00, 354.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 9, '2010-02-15', 2010, 2, 0, 354.48, 60.49, 0.00, 0.00, 293.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 10, '2010-02-28', 2010, 2, 0, 293.99, 60.49, 0.00, 0.00, 233.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 11, '2010-03-15', 2010, 3, 0, 233.50, 60.49, 0.00, 0.00, 173.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 12, '2010-03-31', 2010, 3, 0, 173.01, 60.49, 0.00, 0.00, 112.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 13, '2010-04-15', 2010, 4, 0, 112.52, 60.49, 0.00, 0.00, 52.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(21, '10127', '', 14, '2010-04-30', 2010, 4, 0, 52.03, 52.03, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 1, '2009-10-15', 2009, 10, 0, 2506.44, 129.17, 0.00, 0.00, 2377.27, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 2, '2009-10-31', 2009, 10, 0, 2377.27, 129.17, 0.00, 0.00, 2248.10, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(22, '10072', '', 3, '2009-11-15', 2009, 11, 0, 2248.10, 129.17, 0.00, 0.00, 2118.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(22, '10072', '', 4, '2009-11-30', 2009, 11, 0, 2118.93, 129.17, 0.00, 0.00, 1989.76, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(22, '10072', '', 5, '2009-12-15', 2009, 12, 0, 1989.76, 129.17, 0.00, 0.00, 1860.59, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(22, '10072', '', 6, '2009-12-31', 2009, 12, 0, 1860.59, 129.17, 0.00, 0.00, 1731.42, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 7, '2010-01-15', 2010, 1, 0, 1731.42, 129.17, 0.00, 0.00, 1602.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 8, '2010-01-31', 2010, 1, 0, 1602.25, 129.17, 0.00, 0.00, 1473.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 9, '2010-02-15', 2010, 2, 0, 1473.08, 129.17, 0.00, 0.00, 1343.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 10, '2010-02-28', 2010, 2, 0, 1343.91, 129.17, 0.00, 0.00, 1214.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 11, '2010-03-15', 2010, 3, 0, 1214.74, 129.17, 0.00, 0.00, 1085.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 12, '2010-03-31', 2010, 3, 0, 1085.57, 129.17, 0.00, 0.00, 956.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 13, '2010-04-15', 2010, 4, 0, 956.40, 129.17, 0.00, 0.00, 827.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 14, '2010-04-30', 2010, 4, 0, 827.23, 129.17, 0.00, 0.00, 698.06, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 15, '2010-05-15', 2010, 5, 0, 698.06, 129.17, 0.00, 0.00, 568.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 16, '2010-05-31', 2010, 5, 0, 568.89, 129.17, 0.00, 0.00, 439.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 17, '2010-06-15', 2010, 6, 0, 439.72, 129.17, 0.00, 0.00, 310.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 18, '2010-06-30', 2010, 6, 0, 310.55, 129.17, 0.00, 0.00, 181.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 19, '2010-07-15', 2010, 7, 0, 181.38, 129.17, 0.00, 0.00, 52.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(22, '10072', '', 20, '2010-07-31', 2010, 7, 0, 52.21, 52.21, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 1, '2009-10-15', 2009, 10, 0, 587.33, 25.28, 0.00, 0.00, 562.05, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 2, '2009-10-31', 2009, 10, 0, 562.05, 25.28, 0.00, 0.00, 536.77, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(23, '10072', '', 3, '2009-11-15', 2009, 11, 0, 536.77, 25.28, 0.00, 0.00, 511.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(23, '10072', '', 4, '2009-11-30', 2009, 11, 0, 511.49, 25.28, 0.00, 0.00, 486.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(23, '10072', '', 5, '2009-12-15', 2009, 12, 0, 486.21, 25.28, 0.00, 0.00, 460.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(23, '10072', '', 6, '2009-12-31', 2009, 12, 0, 460.93, 25.28, 0.00, 0.00, 435.65, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 7, '2010-01-15', 2010, 1, 0, 435.65, 25.28, 0.00, 0.00, 410.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 8, '2010-01-31', 2010, 1, 0, 410.37, 25.28, 0.00, 0.00, 385.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 9, '2010-02-15', 2010, 2, 0, 385.09, 25.28, 0.00, 0.00, 359.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 10, '2010-02-28', 2010, 2, 0, 359.81, 25.28, 0.00, 0.00, 334.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 11, '2010-03-15', 2010, 3, 0, 334.53, 25.28, 0.00, 0.00, 309.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 12, '2010-03-31', 2010, 3, 0, 309.25, 25.28, 0.00, 0.00, 283.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 13, '2010-04-15', 2010, 4, 0, 283.97, 25.28, 0.00, 0.00, 258.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 14, '2010-04-30', 2010, 4, 0, 258.69, 25.28, 0.00, 0.00, 233.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 15, '2010-05-15', 2010, 5, 0, 233.41, 25.28, 0.00, 0.00, 208.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 16, '2010-05-31', 2010, 5, 0, 208.13, 25.28, 0.00, 0.00, 182.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 17, '2010-06-15', 2010, 6, 0, 182.85, 25.28, 0.00, 0.00, 157.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 18, '2010-06-30', 2010, 6, 0, 157.57, 25.28, 0.00, 0.00, 132.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 19, '2010-07-15', 2010, 7, 0, 132.29, 25.28, 0.00, 0.00, 107.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 20, '2010-07-31', 2010, 7, 0, 107.01, 25.28, 0.00, 0.00, 81.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 21, '2010-08-15', 2010, 8, 0, 81.73, 25.28, 0.00, 0.00, 56.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 22, '2010-08-31', 2010, 8, 0, 56.45, 25.28, 0.00, 0.00, 31.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 23, '2010-09-15', 2010, 9, 0, 31.17, 25.28, 0.00, 0.00, 5.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(23, '10072', '', 24, '2010-09-30', 2010, 9, 0, 5.89, 5.89, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 1, '2009-10-15', 2009, 10, 0, 9428.21, 410.00, 0.00, 0.00, 9018.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 2, '2009-10-31', 2009, 10, 0, 9018.21, 410.00, 0.00, 0.00, 8608.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(24, '10126', '', 3, '2009-11-15', 2009, 11, 0, 8608.21, 410.00, 0.00, 0.00, 8198.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 4, '2009-11-30', 2009, 11, 0, 8198.21, 410.00, 0.00, 0.00, 7788.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 5, '2009-12-15', 2009, 12, 0, 7788.21, 410.00, 0.00, 0.00, 7378.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 6, '2009-12-31', 2009, 12, 0, 7378.21, 410.00, 0.00, 0.00, 6968.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 7, '2010-01-15', 2010, 1, 0, 6968.21, 410.00, 0.00, 0.00, 6558.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 8, '2010-01-31', 2010, 1, 0, 6558.21, 410.00, 0.00, 0.00, 6148.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 9, '2010-02-15', 2010, 2, 0, 6148.21, 410.00, 0.00, 0.00, 5738.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 10, '2010-02-28', 2010, 2, 0, 5738.21, 410.00, 0.00, 0.00, 5328.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 11, '2010-03-15', 2010, 3, 0, 5328.21, 410.00, 0.00, 0.00, 4918.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 12, '2010-03-31', 2010, 3, 0, 4918.21, 410.00, 0.00, 0.00, 4508.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 13, '2010-04-15', 2010, 4, 0, 4508.21, 410.00, 0.00, 0.00, 4098.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 14, '2010-04-30', 2010, 4, 0, 4098.21, 410.00, 0.00, 0.00, 3688.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 15, '2010-05-15', 2010, 5, 0, 3688.21, 410.00, 0.00, 0.00, 3278.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 16, '2010-05-31', 2010, 5, 0, 3278.21, 410.00, 0.00, 0.00, 2868.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 17, '2010-06-15', 2010, 6, 0, 2868.21, 410.00, 0.00, 0.00, 2458.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 18, '2010-06-30', 2010, 6, 0, 2458.21, 410.00, 0.00, 0.00, 2048.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 19, '2010-07-15', 2010, 7, 0, 2048.21, 410.00, 0.00, 0.00, 1638.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 20, '2010-07-31', 2010, 7, 0, 1638.21, 410.00, 0.00, 0.00, 1228.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 21, '2010-08-15', 2010, 8, 0, 1228.21, 410.00, 0.00, 0.00, 818.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 22, '2010-08-31', 2010, 8, 0, 818.21, 410.00, 0.00, 0.00, 408.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(24, '10126', '', 23, '2010-09-15', 2010, 9, 0, 408.21, 408.21, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 1, '2009-10-15', 2009, 10, 0, 18829.95, 110.98, 0.00, 0.00, 18718.97, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 2, '2009-10-31', 2009, 10, 0, 18718.97, 110.98, 0.00, 0.00, 18607.99, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(25, '10114', '', 3, '2009-11-15', 2009, 11, 0, 18607.99, 110.98, 0.00, 0.00, 18497.01, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 4, '2009-11-30', 2009, 11, 0, 18497.01, 110.98, 0.00, 0.00, 18386.03, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 5, '2009-12-15', 2009, 12, 0, 18386.03, 110.98, 0.00, 0.00, 18275.05, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 6, '2009-12-31', 2009, 12, 0, 18275.05, 110.98, 0.00, 0.00, 18164.07, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 7, '2010-01-15', 2010, 1, 0, 18164.07, 110.98, 0.00, 0.00, 18053.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 8, '2010-01-31', 2010, 1, 0, 18053.09, 110.98, 0.00, 0.00, 17942.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 9, '2010-02-15', 2010, 2, 0, 17942.11, 110.98, 0.00, 0.00, 17831.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 10, '2010-02-28', 2010, 2, 0, 17831.13, 110.98, 0.00, 0.00, 17720.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 11, '2010-03-15', 2010, 3, 0, 17720.15, 110.98, 0.00, 0.00, 17609.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 12, '2010-03-31', 2010, 3, 0, 17609.17, 110.98, 0.00, 0.00, 17498.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 13, '2010-04-15', 2010, 4, 0, 17498.19, 110.98, 0.00, 0.00, 17387.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 14, '2010-04-30', 2010, 4, 0, 17387.21, 110.98, 0.00, 0.00, 17276.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 15, '2010-05-15', 2010, 5, 0, 17276.23, 110.98, 0.00, 0.00, 17165.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 16, '2010-05-31', 2010, 5, 0, 17165.25, 110.98, 0.00, 0.00, 17054.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 17, '2010-06-15', 2010, 6, 0, 17054.27, 110.98, 0.00, 0.00, 16943.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 18, '2010-06-30', 2010, 6, 0, 16943.29, 110.98, 0.00, 0.00, 16832.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 19, '2010-07-15', 2010, 7, 0, 16832.31, 110.98, 0.00, 0.00, 16721.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 20, '2010-07-31', 2010, 7, 0, 16721.33, 110.98, 0.00, 0.00, 16610.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 21, '2010-08-15', 2010, 8, 0, 16610.35, 110.98, 0.00, 0.00, 16499.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 22, '2010-08-31', 2010, 8, 0, 16499.37, 110.98, 0.00, 0.00, 16388.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 23, '2010-09-15', 2010, 9, 0, 16388.39, 110.98, 0.00, 0.00, 16277.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 24, '2010-09-30', 2010, 9, 0, 16277.41, 110.98, 0.00, 0.00, 16166.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 25, '2010-10-15', 2010, 10, 0, 16166.43, 110.98, 0.00, 0.00, 16055.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 26, '2010-10-31', 2010, 10, 0, 16055.45, 110.98, 0.00, 0.00, 15944.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 27, '2010-11-15', 2010, 11, 0, 15944.47, 110.98, 0.00, 0.00, 15833.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 28, '2010-11-30', 2010, 11, 0, 15833.49, 110.98, 0.00, 0.00, 15722.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 29, '2010-12-15', 2010, 12, 0, 15722.51, 110.98, 0.00, 0.00, 15611.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 30, '2010-12-31', 2010, 12, 0, 15611.53, 110.98, 0.00, 0.00, 15500.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 31, '2011-01-15', 2011, 1, 0, 15500.55, 110.98, 0.00, 0.00, 15389.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 32, '2011-01-31', 2011, 1, 0, 15389.57, 110.98, 0.00, 0.00, 15278.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 33, '2011-02-15', 2011, 2, 0, 15278.59, 110.98, 0.00, 0.00, 15167.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 34, '2011-02-28', 2011, 2, 0, 15167.61, 110.98, 0.00, 0.00, 15056.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 35, '2011-03-15', 2011, 3, 0, 15056.63, 110.98, 0.00, 0.00, 14945.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 36, '2011-03-31', 2011, 3, 0, 14945.65, 110.98, 0.00, 0.00, 14834.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 37, '2011-04-15', 2011, 4, 0, 14834.67, 110.98, 0.00, 0.00, 14723.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 38, '2011-04-30', 2011, 4, 0, 14723.69, 110.98, 0.00, 0.00, 14612.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 39, '2011-05-15', 2011, 5, 0, 14612.71, 110.98, 0.00, 0.00, 14501.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 40, '2011-05-31', 2011, 5, 0, 14501.73, 110.98, 0.00, 0.00, 14390.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 41, '2011-06-15', 2011, 6, 0, 14390.75, 110.98, 0.00, 0.00, 14279.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 42, '2011-06-30', 2011, 6, 0, 14279.77, 110.98, 0.00, 0.00, 14168.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 43, '2011-07-15', 2011, 7, 0, 14168.79, 110.98, 0.00, 0.00, 14057.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 44, '2011-07-31', 2011, 7, 0, 14057.81, 110.98, 0.00, 0.00, 13946.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 45, '2011-08-15', 2011, 8, 0, 13946.83, 110.98, 0.00, 0.00, 13835.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 46, '2011-08-31', 2011, 8, 0, 13835.85, 110.98, 0.00, 0.00, 13724.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 47, '2011-09-15', 2011, 9, 0, 13724.87, 110.98, 0.00, 0.00, 13613.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 48, '2011-09-30', 2011, 9, 0, 13613.89, 110.98, 0.00, 0.00, 13502.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 49, '2011-10-15', 2011, 10, 0, 13502.91, 110.98, 0.00, 0.00, 13391.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 50, '2011-10-31', 2011, 10, 0, 13391.93, 110.98, 0.00, 0.00, 13280.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 51, '2011-11-15', 2011, 11, 0, 13280.95, 110.98, 0.00, 0.00, 13169.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 52, '2011-11-30', 2011, 11, 0, 13169.97, 110.98, 0.00, 0.00, 13058.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 53, '2011-12-15', 2011, 12, 0, 13058.99, 110.98, 0.00, 0.00, 12948.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 54, '2011-12-31', 2011, 12, 0, 12948.01, 110.98, 0.00, 0.00, 12837.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 55, '0012-01-15', 2012, 1, 0, 12837.03, 110.98, 0.00, 0.00, 12726.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 56, '0012-01-31', 2012, 1, 0, 12726.05, 110.98, 0.00, 0.00, 12615.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 57, '0012-02-15', 2012, 2, 0, 12615.07, 110.98, 0.00, 0.00, 12504.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 58, '0012-02-29', 2012, 2, 0, 12504.09, 110.98, 0.00, 0.00, 12393.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 59, '0012-03-15', 2012, 3, 0, 12393.11, 110.98, 0.00, 0.00, 12282.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 60, '0012-03-31', 2012, 3, 0, 12282.13, 110.98, 0.00, 0.00, 12171.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 61, '0012-04-15', 2012, 4, 0, 12171.15, 110.98, 0.00, 0.00, 12060.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 62, '0012-04-30', 2012, 4, 0, 12060.17, 110.98, 0.00, 0.00, 11949.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 63, '0012-05-15', 2012, 5, 0, 11949.19, 110.98, 0.00, 0.00, 11838.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 64, '0012-05-31', 2012, 5, 0, 11838.21, 110.98, 0.00, 0.00, 11727.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 65, '0012-06-15', 2012, 6, 0, 11727.23, 110.98, 0.00, 0.00, 11616.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 66, '0012-06-30', 2012, 6, 0, 11616.25, 110.98, 0.00, 0.00, 11505.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 67, '0012-07-15', 2012, 7, 0, 11505.27, 110.98, 0.00, 0.00, 11394.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 68, '0012-07-31', 2012, 7, 0, 11394.29, 110.98, 0.00, 0.00, 11283.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 69, '0012-08-15', 2012, 8, 0, 11283.31, 110.98, 0.00, 0.00, 11172.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 70, '0012-08-31', 2012, 8, 0, 11172.33, 110.98, 0.00, 0.00, 11061.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 71, '0012-09-15', 2012, 9, 0, 11061.35, 110.98, 0.00, 0.00, 10950.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 72, '0012-09-30', 2012, 9, 0, 10950.37, 110.98, 0.00, 0.00, 10839.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 73, '2012-10-15', 2012, 10, 0, 10839.39, 110.98, 0.00, 0.00, 10728.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 74, '2012-10-31', 2012, 10, 0, 10728.41, 110.98, 0.00, 0.00, 10617.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 75, '2012-11-15', 2012, 11, 0, 10617.43, 110.98, 0.00, 0.00, 10506.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 76, '2012-11-30', 2012, 11, 0, 10506.45, 110.98, 0.00, 0.00, 10395.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 77, '2012-12-15', 2012, 12, 0, 10395.47, 110.98, 0.00, 0.00, 10284.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 78, '2012-12-31', 2012, 12, 0, 10284.49, 110.98, 0.00, 0.00, 10173.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 79, '0013-01-15', 2013, 1, 0, 10173.51, 110.98, 0.00, 0.00, 10062.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 80, '0013-01-31', 2013, 1, 0, 10062.53, 110.98, 0.00, 0.00, 9951.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 81, '0013-02-15', 2013, 2, 0, 9951.55, 110.98, 0.00, 0.00, 9840.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 82, '0013-02-28', 2013, 2, 0, 9840.57, 110.98, 0.00, 0.00, 9729.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 83, '0013-03-15', 2013, 3, 0, 9729.59, 110.98, 0.00, 0.00, 9618.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 84, '0013-03-31', 2013, 3, 0, 9618.61, 110.98, 0.00, 0.00, 9507.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 85, '0013-04-15', 2013, 4, 0, 9507.63, 110.98, 0.00, 0.00, 9396.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 86, '0013-04-30', 2013, 4, 0, 9396.65, 110.98, 0.00, 0.00, 9285.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 87, '0013-05-15', 2013, 5, 0, 9285.67, 110.98, 0.00, 0.00, 9174.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 88, '0013-05-31', 2013, 5, 0, 9174.69, 110.98, 0.00, 0.00, 9063.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 89, '0013-06-15', 2013, 6, 0, 9063.71, 110.98, 0.00, 0.00, 8952.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 90, '0013-06-30', 2013, 6, 0, 8952.73, 110.98, 0.00, 0.00, 8841.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 91, '0013-07-15', 2013, 7, 0, 8841.75, 110.98, 0.00, 0.00, 8730.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 92, '0013-07-31', 2013, 7, 0, 8730.77, 110.98, 0.00, 0.00, 8619.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 93, '0013-08-15', 2013, 8, 0, 8619.79, 110.98, 0.00, 0.00, 8508.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 94, '0013-08-31', 2013, 8, 0, 8508.81, 110.98, 0.00, 0.00, 8397.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 95, '0013-09-15', 2013, 9, 0, 8397.83, 110.98, 0.00, 0.00, 8286.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 96, '0013-09-30', 2013, 9, 0, 8286.85, 110.98, 0.00, 0.00, 8175.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 97, '2013-10-15', 2013, 10, 0, 8175.87, 110.98, 0.00, 0.00, 8064.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 98, '2013-10-31', 2013, 10, 0, 8064.89, 110.98, 0.00, 0.00, 7953.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 99, '2013-11-15', 2013, 11, 0, 7953.91, 110.98, 0.00, 0.00, 7842.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 100, '2013-11-30', 2013, 11, 0, 7842.93, 110.98, 0.00, 0.00, 7731.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 101, '2013-12-15', 2013, 12, 0, 7731.95, 110.98, 0.00, 0.00, 7620.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 102, '2013-12-31', 2013, 12, 0, 7620.97, 110.98, 0.00, 0.00, 7509.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 103, '0014-01-15', 2014, 1, 0, 7509.99, 110.98, 0.00, 0.00, 7399.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 104, '0014-01-31', 2014, 1, 0, 7399.01, 110.98, 0.00, 0.00, 7288.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 105, '0014-02-15', 2014, 2, 0, 7288.03, 110.98, 0.00, 0.00, 7177.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 106, '0014-02-28', 2014, 2, 0, 7177.05, 110.98, 0.00, 0.00, 7066.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 107, '0014-03-15', 2014, 3, 0, 7066.07, 110.98, 0.00, 0.00, 6955.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 108, '0014-03-31', 2014, 3, 0, 6955.09, 110.98, 0.00, 0.00, 6844.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 109, '0014-04-15', 2014, 4, 0, 6844.11, 110.98, 0.00, 0.00, 6733.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 110, '0014-04-30', 2014, 4, 0, 6733.13, 110.98, 0.00, 0.00, 6622.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 111, '0014-05-15', 2014, 5, 0, 6622.15, 110.98, 0.00, 0.00, 6511.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 112, '0014-05-31', 2014, 5, 0, 6511.17, 110.98, 0.00, 0.00, 6400.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 113, '0014-06-15', 2014, 6, 0, 6400.19, 110.98, 0.00, 0.00, 6289.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 114, '0014-06-30', 2014, 6, 0, 6289.21, 110.98, 0.00, 0.00, 6178.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 115, '0014-07-15', 2014, 7, 0, 6178.23, 110.98, 0.00, 0.00, 6067.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 116, '0014-07-31', 2014, 7, 0, 6067.25, 110.98, 0.00, 0.00, 5956.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 117, '0014-08-15', 2014, 8, 0, 5956.27, 110.98, 0.00, 0.00, 5845.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 118, '0014-08-31', 2014, 8, 0, 5845.29, 110.98, 0.00, 0.00, 5734.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 119, '0014-09-15', 2014, 9, 0, 5734.31, 110.98, 0.00, 0.00, 5623.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 120, '0014-09-30', 2014, 9, 0, 5623.33, 110.98, 0.00, 0.00, 5512.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 121, '2014-10-15', 2014, 10, 0, 5512.35, 110.98, 0.00, 0.00, 5401.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 122, '2014-10-31', 2014, 10, 0, 5401.37, 110.98, 0.00, 0.00, 5290.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 123, '2014-11-15', 2014, 11, 0, 5290.39, 110.98, 0.00, 0.00, 5179.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 124, '2014-11-30', 2014, 11, 0, 5179.41, 110.98, 0.00, 0.00, 5068.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 125, '2014-12-15', 2014, 12, 0, 5068.43, 110.98, 0.00, 0.00, 4957.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 126, '2014-12-31', 2014, 12, 0, 4957.45, 110.98, 0.00, 0.00, 4846.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 127, '0015-01-15', 2015, 1, 0, 4846.47, 110.98, 0.00, 0.00, 4735.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 128, '0015-01-31', 2015, 1, 0, 4735.49, 110.98, 0.00, 0.00, 4624.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 129, '0015-02-15', 2015, 2, 0, 4624.51, 110.98, 0.00, 0.00, 4513.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 130, '0015-02-28', 2015, 2, 0, 4513.53, 110.98, 0.00, 0.00, 4402.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 131, '0015-03-15', 2015, 3, 0, 4402.55, 110.98, 0.00, 0.00, 4291.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 132, '0015-03-31', 2015, 3, 0, 4291.57, 110.98, 0.00, 0.00, 4180.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 133, '0015-04-15', 2015, 4, 0, 4180.59, 110.98, 0.00, 0.00, 4069.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 134, '0015-04-30', 2015, 4, 0, 4069.61, 110.98, 0.00, 0.00, 3958.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 135, '0015-05-15', 2015, 5, 0, 3958.63, 110.98, 0.00, 0.00, 3847.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 136, '0015-05-31', 2015, 5, 0, 3847.65, 110.98, 0.00, 0.00, 3736.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 137, '0015-06-15', 2015, 6, 0, 3736.67, 110.98, 0.00, 0.00, 3625.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 138, '0015-06-30', 2015, 6, 0, 3625.69, 110.98, 0.00, 0.00, 3514.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0);
-INSERT INTO `nomprestamos_detalles` (`numpre`, `ficha`, `tipocuo`, `numcuo`, `fechaven`, `anioven`, `mesven`, `dias`, `salinicial`, `montocuo`, `montoint`, `montocap`, `salfinal`, `fechacan`, `estadopre`, `detalle`, `dedespecial`, `codnom`, `sfechaven`, `sfechacan`, `ee`) VALUES
-(25, '10114', '', 139, '0015-07-15', 2015, 7, 0, 3514.71, 110.98, 0.00, 0.00, 3403.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 140, '0015-07-31', 2015, 7, 0, 3403.73, 110.98, 0.00, 0.00, 3292.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 141, '0015-08-15', 2015, 8, 0, 3292.75, 110.98, 0.00, 0.00, 3181.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 142, '0015-08-31', 2015, 8, 0, 3181.77, 110.98, 0.00, 0.00, 3070.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 143, '0015-09-15', 2015, 9, 0, 3070.79, 110.98, 0.00, 0.00, 2959.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 144, '0015-09-30', 2015, 9, 0, 2959.81, 110.98, 0.00, 0.00, 2848.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 145, '2015-10-15', 2015, 10, 0, 2848.83, 110.98, 0.00, 0.00, 2737.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 146, '2015-10-31', 2015, 10, 0, 2737.85, 110.98, 0.00, 0.00, 2626.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 147, '2015-11-15', 2015, 11, 0, 2626.87, 110.98, 0.00, 0.00, 2515.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 148, '2015-11-30', 2015, 11, 0, 2515.89, 110.98, 0.00, 0.00, 2404.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 149, '2015-12-15', 2015, 12, 0, 2404.91, 110.98, 0.00, 0.00, 2293.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 150, '2015-12-31', 2015, 12, 0, 2293.93, 110.98, 0.00, 0.00, 2182.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 151, '0016-01-15', 2016, 1, 0, 2182.95, 110.98, 0.00, 0.00, 2071.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 152, '0016-01-31', 2016, 1, 0, 2071.97, 110.98, 0.00, 0.00, 1960.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 153, '0016-02-15', 2016, 2, 0, 1960.99, 110.98, 0.00, 0.00, 1850.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 154, '0016-02-29', 2016, 2, 0, 1850.01, 110.98, 0.00, 0.00, 1739.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 155, '0016-03-15', 2016, 3, 0, 1739.03, 110.98, 0.00, 0.00, 1628.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 156, '0016-03-31', 2016, 3, 0, 1628.05, 110.98, 0.00, 0.00, 1517.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 157, '0016-04-15', 2016, 4, 0, 1517.07, 110.98, 0.00, 0.00, 1406.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 158, '0016-04-30', 2016, 4, 0, 1406.09, 110.98, 0.00, 0.00, 1295.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 159, '0016-05-15', 2016, 5, 0, 1295.11, 110.98, 0.00, 0.00, 1184.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 160, '0016-05-31', 2016, 5, 0, 1184.13, 110.98, 0.00, 0.00, 1073.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 161, '0016-06-15', 2016, 6, 0, 1073.15, 110.98, 0.00, 0.00, 962.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 162, '0016-06-30', 2016, 6, 0, 962.17, 110.98, 0.00, 0.00, 851.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 163, '0016-07-15', 2016, 7, 0, 851.19, 110.98, 0.00, 0.00, 740.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 164, '0016-07-31', 2016, 7, 0, 740.21, 110.98, 0.00, 0.00, 629.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 165, '0016-08-15', 2016, 8, 0, 629.23, 110.98, 0.00, 0.00, 518.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 166, '0016-08-31', 2016, 8, 0, 518.25, 110.98, 0.00, 0.00, 407.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 167, '0016-09-15', 2016, 9, 0, 407.27, 110.98, 0.00, 0.00, 296.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 168, '0016-09-30', 2016, 9, 0, 296.29, 110.98, 0.00, 0.00, 185.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 169, '2016-10-15', 2016, 10, 0, 185.31, 110.98, 0.00, 0.00, 74.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(25, '10114', '', 170, '2016-10-31', 2016, 10, 0, 74.33, 74.33, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 1, '2009-10-15', 2009, 10, 0, 161.67, 18.17, 0.00, 0.00, 143.50, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 2, '2009-10-31', 2009, 10, 0, 143.50, 18.17, 0.00, 0.00, 125.33, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(26, '10114', '', 3, '2009-11-15', 2009, 11, 0, 125.33, 18.17, 0.00, 0.00, 107.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 4, '2009-11-30', 2009, 11, 0, 107.16, 18.17, 0.00, 0.00, 88.99, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 5, '2009-12-15', 2009, 12, 0, 88.99, 18.17, 0.00, 0.00, 70.82, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 6, '2009-12-31', 2009, 12, 0, 70.82, 18.17, 0.00, 0.00, 52.65, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 7, '2010-01-15', 2010, 1, 0, 52.65, 18.17, 0.00, 0.00, 34.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 8, '2010-01-31', 2010, 1, 0, 34.48, 18.17, 0.00, 0.00, 16.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(26, '10114', '', 9, '2010-02-15', 2010, 2, 0, 16.31, 16.31, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(27, '10114', '', 1, '2009-10-15', 2009, 10, 0, 91.85, 91.85, 0.00, 0.00, 0.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 1, '2009-10-15', 2009, 10, 0, 1200.00, 50.00, 0.00, 0.00, 1150.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 2, '2009-10-31', 2009, 10, 0, 1150.00, 50.00, 0.00, 0.00, 1100.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(28, '10138', '', 3, '2009-11-15', 2009, 11, 0, 1100.00, 50.00, 0.00, 0.00, 1050.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 4, '2009-11-30', 2009, 11, 0, 1050.00, 50.00, 0.00, 0.00, 1000.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 5, '2009-12-15', 2009, 12, 0, 1000.00, 50.00, 0.00, 0.00, 950.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 6, '2009-12-31', 2009, 12, 0, 950.00, 50.00, 0.00, 0.00, 900.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 7, '2010-01-15', 2010, 1, 0, 900.00, 50.00, 0.00, 0.00, 850.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 8, '2010-01-31', 2010, 1, 0, 850.00, 50.00, 0.00, 0.00, 800.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 9, '2010-02-15', 2010, 2, 0, 800.00, 50.00, 0.00, 0.00, 750.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 10, '2010-02-28', 2010, 2, 0, 750.00, 50.00, 0.00, 0.00, 700.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 11, '2010-03-15', 2010, 3, 0, 700.00, 50.00, 0.00, 0.00, 650.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 12, '2010-03-31', 2010, 3, 0, 650.00, 50.00, 0.00, 0.00, 600.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 13, '2010-04-15', 2010, 4, 0, 600.00, 50.00, 0.00, 0.00, 550.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 14, '2010-04-30', 2010, 4, 0, 550.00, 50.00, 0.00, 0.00, 500.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 15, '2010-05-15', 2010, 5, 0, 500.00, 50.00, 0.00, 0.00, 450.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 16, '2010-05-31', 2010, 5, 0, 450.00, 50.00, 0.00, 0.00, 400.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 17, '2010-06-15', 2010, 6, 0, 400.00, 50.00, 0.00, 0.00, 350.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 18, '2010-06-30', 2010, 6, 0, 350.00, 50.00, 0.00, 0.00, 300.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 19, '2010-07-15', 2010, 7, 0, 300.00, 50.00, 0.00, 0.00, 250.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 20, '2010-07-31', 2010, 7, 0, 250.00, 50.00, 0.00, 0.00, 200.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 21, '2010-08-15', 2010, 8, 0, 200.00, 50.00, 0.00, 0.00, 150.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 22, '2010-08-31', 2010, 8, 0, 150.00, 50.00, 0.00, 0.00, 100.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 23, '2010-09-15', 2010, 9, 0, 100.00, 50.00, 0.00, 0.00, 50.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(28, '10138', '', 24, '2010-09-30', 2010, 9, 0, 50.00, 50.00, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(29, '10138', '', 1, '2009-10-15', 2009, 10, 0, 468.08, 133.64, 0.00, 0.00, 334.44, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(29, '10138', '', 2, '2009-10-31', 2009, 10, 0, 334.44, 133.64, 0.00, 0.00, 200.80, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(29, '10138', '', 3, '2009-11-15', 2009, 11, 0, 200.80, 133.64, 0.00, 0.00, 67.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(29, '10138', '', 4, '2009-11-30', 2009, 11, 0, 67.16, 67.16, 0.00, 0.00, 0.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 1, '2009-10-15', 2009, 10, 0, 962.48, 45.84, 0.00, 0.00, 916.64, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 2, '2009-10-31', 2009, 10, 0, 916.64, 45.84, 0.00, 0.00, 870.80, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(30, '10112', '', 3, '2009-11-15', 2009, 11, 0, 870.80, 45.84, 0.00, 0.00, 824.96, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 4, '2009-11-30', 2009, 11, 0, 824.96, 45.84, 0.00, 0.00, 779.12, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 5, '2009-12-15', 2009, 12, 0, 779.12, 45.84, 0.00, 0.00, 733.28, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 6, '2009-12-31', 2009, 12, 0, 733.28, 45.84, 0.00, 0.00, 687.44, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 7, '2010-01-15', 2010, 1, 0, 687.44, 45.84, 0.00, 0.00, 641.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 8, '2010-01-31', 2010, 1, 0, 641.60, 45.84, 0.00, 0.00, 595.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 9, '2010-02-15', 2010, 2, 0, 595.76, 45.84, 0.00, 0.00, 549.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 10, '2010-02-28', 2010, 2, 0, 549.92, 45.84, 0.00, 0.00, 504.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 11, '2010-03-15', 2010, 3, 0, 504.08, 45.84, 0.00, 0.00, 458.24, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 12, '2010-03-31', 2010, 3, 0, 458.24, 45.84, 0.00, 0.00, 412.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 13, '2010-04-15', 2010, 4, 0, 412.40, 45.84, 0.00, 0.00, 366.56, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 14, '2010-04-30', 2010, 4, 0, 366.56, 45.84, 0.00, 0.00, 320.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 15, '2010-05-15', 2010, 5, 0, 320.72, 45.84, 0.00, 0.00, 274.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 16, '2010-05-31', 2010, 5, 0, 274.88, 45.84, 0.00, 0.00, 229.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 17, '2010-06-15', 2010, 6, 0, 229.04, 45.84, 0.00, 0.00, 183.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 18, '2010-06-30', 2010, 6, 0, 183.20, 45.84, 0.00, 0.00, 137.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 19, '2010-07-15', 2010, 7, 0, 137.36, 45.84, 0.00, 0.00, 91.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 20, '2010-07-31', 2010, 7, 0, 91.52, 45.84, 0.00, 0.00, 45.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(30, '10112', '', 21, '2010-08-15', 2010, 8, 0, 45.68, 45.68, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(31, '10072', '', 1, '2009-10-15', 2009, 10, 0, 1184.55, 74.03, 0.00, 0.00, 1110.52, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(31, '10072', '', 2, '2009-10-31', 2009, 10, 0, 1110.52, 74.03, 0.00, 0.00, 1036.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 3, '2009-11-15', 2009, 11, 0, 1036.49, 74.03, 0.00, 0.00, 962.46, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 4, '2009-11-30', 2009, 11, 0, 962.46, 74.03, 0.00, 0.00, 888.43, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 5, '2009-12-15', 2009, 12, 0, 888.43, 74.03, 0.00, 0.00, 814.40, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 6, '2009-12-31', 2009, 12, 0, 814.40, 74.03, 0.00, 0.00, 740.37, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(31, '10072', '', 7, '2010-01-15', 2010, 1, 0, 740.37, 74.03, 0.00, 0.00, 666.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 8, '2010-01-31', 2010, 1, 0, 666.34, 74.03, 0.00, 0.00, 592.31, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 9, '2010-02-15', 2010, 2, 0, 592.31, 74.03, 0.00, 0.00, 518.28, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 10, '2010-02-28', 2010, 2, 0, 518.28, 74.03, 0.00, 0.00, 444.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 11, '2010-03-15', 2010, 3, 0, 444.25, 74.03, 0.00, 0.00, 370.22, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 12, '2010-03-31', 2010, 3, 0, 370.22, 74.03, 0.00, 0.00, 296.19, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 13, '2010-04-15', 2010, 4, 0, 296.19, 74.03, 0.00, 0.00, 222.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 14, '2010-04-30', 2010, 4, 0, 222.16, 74.03, 0.00, 0.00, 148.13, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 15, '2010-05-15', 2010, 5, 0, 148.13, 74.03, 0.00, 0.00, 74.10, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(31, '10072', '', 16, '2010-05-31', 2010, 5, 0, 74.10, 74.03, 0.00, 0.00, 0.07, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(32, '10267', '', 1, '2009-10-15', 2009, 10, 0, 1561.81, 75.52, 0.00, 0.00, 1486.29, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 2, '2009-10-31', 2009, 10, 0, 1486.29, 75.52, 0.00, 0.00, 1410.77, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(32, '10267', '', 3, '2009-11-15', 2009, 11, 0, 1410.77, 75.52, 0.00, 0.00, 1335.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 4, '2009-11-30', 2009, 11, 0, 1335.25, 75.52, 0.00, 0.00, 1259.73, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 5, '2009-12-15', 2009, 12, 0, 1259.73, 75.52, 0.00, 0.00, 1184.21, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 6, '2009-12-31', 2009, 12, 0, 1184.21, 75.52, 0.00, 0.00, 1108.69, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 7, '2010-01-15', 2010, 1, 0, 1108.69, 75.52, 0.00, 0.00, 1033.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 8, '2010-01-31', 2010, 1, 0, 1033.17, 75.52, 0.00, 0.00, 957.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 9, '2010-02-15', 2010, 2, 0, 957.65, 75.52, 0.00, 0.00, 882.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 10, '2010-02-28', 2010, 2, 0, 882.13, 75.52, 0.00, 0.00, 806.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 11, '2010-03-15', 2010, 3, 0, 806.61, 75.52, 0.00, 0.00, 731.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 12, '2010-03-31', 2010, 3, 0, 731.09, 75.52, 0.00, 0.00, 655.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 13, '2010-04-15', 2010, 4, 0, 655.57, 75.52, 0.00, 0.00, 580.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 14, '2010-04-30', 2010, 4, 0, 580.05, 75.52, 0.00, 0.00, 504.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 15, '2010-05-15', 2010, 5, 0, 504.53, 75.52, 0.00, 0.00, 429.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 16, '2010-05-31', 2010, 5, 0, 429.01, 75.52, 0.00, 0.00, 353.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 17, '2010-06-15', 2010, 6, 0, 353.49, 75.52, 0.00, 0.00, 277.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 18, '2010-06-30', 2010, 6, 0, 277.97, 75.52, 0.00, 0.00, 202.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 19, '2010-07-15', 2010, 7, 0, 202.45, 75.52, 0.00, 0.00, 126.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 20, '2010-07-31', 2010, 7, 0, 126.93, 75.52, 0.00, 0.00, 51.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(32, '10267', '', 21, '2010-08-15', 2010, 8, 0, 51.41, 51.41, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(33, '10039', '', 1, '2009-10-15', 2009, 10, 0, 1184.55, 74.03, 0.00, 0.00, 1110.52, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(33, '10039', '', 2, '2009-10-31', 2009, 10, 0, 1110.52, 74.03, 0.00, 0.00, 1036.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 3, '2009-11-15', 2009, 11, 0, 1036.49, 74.03, 0.00, 0.00, 962.46, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 4, '2009-11-30', 2009, 11, 0, 962.46, 74.03, 0.00, 0.00, 888.43, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 5, '2009-12-15', 2009, 12, 0, 888.43, 74.03, 0.00, 0.00, 814.40, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 6, '2009-12-31', 2009, 12, 0, 814.40, 74.03, 0.00, 0.00, 740.37, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 7, '2010-01-15', 2010, 1, 0, 740.37, 74.03, 0.00, 0.00, 666.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 8, '2010-01-31', 2010, 1, 0, 666.34, 74.03, 0.00, 0.00, 592.31, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 9, '2010-02-15', 2010, 2, 0, 592.31, 74.03, 0.00, 0.00, 518.28, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 10, '2010-02-28', 2010, 2, 0, 518.28, 74.03, 0.00, 0.00, 444.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 11, '2010-03-15', 2010, 3, 0, 444.25, 74.03, 0.00, 0.00, 370.22, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 12, '2010-03-31', 2010, 3, 0, 370.22, 74.03, 0.00, 0.00, 296.19, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 13, '2010-04-15', 2010, 4, 0, 296.19, 74.03, 0.00, 0.00, 222.16, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 14, '2010-04-30', 2010, 4, 0, 222.16, 74.03, 0.00, 0.00, 148.13, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 15, '2010-05-15', 2010, 5, 0, 148.13, 74.03, 0.00, 0.00, 74.10, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(33, '10039', '', 16, '2010-05-31', 2010, 5, 0, 74.10, 74.03, 0.00, 0.00, 0.07, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 1),
-(34, '10143', '', 1, '2009-11-15', 2009, 11, 0, 2555.87, 113.28, 0.00, 0.00, 2442.59, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 2, '2009-11-30', 2009, 11, 0, 2442.59, 113.28, 0.00, 0.00, 2329.31, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 3, '2009-12-15', 2009, 12, 0, 2329.31, 113.28, 0.00, 0.00, 2216.03, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 4, '2009-12-31', 2009, 12, 0, 2216.03, 113.28, 0.00, 0.00, 2102.75, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 5, '2010-01-15', 2010, 1, 0, 2102.75, 113.28, 0.00, 0.00, 1989.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 6, '2010-01-31', 2010, 1, 0, 1989.47, 113.28, 0.00, 0.00, 1876.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 7, '2010-02-15', 2010, 2, 0, 1876.19, 113.28, 0.00, 0.00, 1762.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 8, '2010-02-28', 2010, 2, 0, 1762.91, 113.28, 0.00, 0.00, 1649.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 9, '2010-03-15', 2010, 3, 0, 1649.63, 113.28, 0.00, 0.00, 1536.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 10, '2010-03-31', 2010, 3, 0, 1536.35, 113.28, 0.00, 0.00, 1423.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 11, '2010-04-15', 2010, 4, 0, 1423.07, 113.28, 0.00, 0.00, 1309.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 12, '2010-04-30', 2010, 4, 0, 1309.79, 113.28, 0.00, 0.00, 1196.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 13, '2010-05-15', 2010, 5, 0, 1196.51, 113.28, 0.00, 0.00, 1083.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 14, '2010-05-31', 2010, 5, 0, 1083.23, 113.28, 0.00, 0.00, 969.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 15, '2010-06-15', 2010, 6, 0, 969.95, 113.28, 0.00, 0.00, 856.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 16, '2010-06-30', 2010, 6, 0, 856.67, 113.28, 0.00, 0.00, 743.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 17, '2010-07-15', 2010, 7, 0, 743.39, 113.28, 0.00, 0.00, 630.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 18, '2010-07-31', 2010, 7, 0, 630.11, 113.28, 0.00, 0.00, 516.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 19, '2010-08-15', 2010, 8, 0, 516.83, 113.28, 0.00, 0.00, 403.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 20, '2010-08-31', 2010, 8, 0, 403.55, 113.28, 0.00, 0.00, 290.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 21, '2010-09-15', 2010, 9, 0, 290.27, 113.28, 0.00, 0.00, 176.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 22, '2010-09-30', 2010, 9, 0, 176.99, 113.28, 0.00, 0.00, 63.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(34, '10143', '', 23, '2010-10-15', 2010, 10, 0, 63.71, 63.71, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 1, '2009-11-15', 2009, 11, 0, 2675.14, 118.57, 0.00, 0.00, 2556.57, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 2, '2009-11-30', 2009, 11, 0, 2556.57, 118.57, 0.00, 0.00, 2438.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 3, '2009-12-15', 2009, 12, 0, 2438.00, 118.57, 0.00, 0.00, 2319.43, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 4, '2009-12-31', 2009, 12, 0, 2319.43, 118.57, 0.00, 0.00, 2200.86, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 5, '2010-01-15', 2010, 1, 0, 2200.86, 118.57, 0.00, 0.00, 2082.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 6, '2010-01-31', 2010, 1, 0, 2082.29, 118.57, 0.00, 0.00, 1963.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 7, '2010-02-15', 2010, 2, 0, 1963.72, 118.57, 0.00, 0.00, 1845.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 8, '2010-02-28', 2010, 2, 0, 1845.15, 118.57, 0.00, 0.00, 1726.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 9, '2010-03-15', 2010, 3, 0, 1726.58, 118.57, 0.00, 0.00, 1608.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 10, '2010-03-31', 2010, 3, 0, 1608.01, 118.57, 0.00, 0.00, 1489.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 11, '2010-04-15', 2010, 4, 0, 1489.44, 118.57, 0.00, 0.00, 1370.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 12, '2010-04-30', 2010, 4, 0, 1370.87, 118.57, 0.00, 0.00, 1252.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 13, '2010-05-15', 2010, 5, 0, 1252.30, 118.57, 0.00, 0.00, 1133.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 14, '2010-05-31', 2010, 5, 0, 1133.73, 118.57, 0.00, 0.00, 1015.16, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 15, '2010-06-15', 2010, 6, 0, 1015.16, 118.57, 0.00, 0.00, 896.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 16, '2010-06-30', 2010, 6, 0, 896.59, 118.57, 0.00, 0.00, 778.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 17, '2010-07-15', 2010, 7, 0, 778.02, 118.57, 0.00, 0.00, 659.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 18, '2010-07-31', 2010, 7, 0, 659.45, 118.57, 0.00, 0.00, 540.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 19, '2010-08-15', 2010, 8, 0, 540.88, 118.57, 0.00, 0.00, 422.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 20, '2010-08-31', 2010, 8, 0, 422.31, 118.57, 0.00, 0.00, 303.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 21, '2010-09-15', 2010, 9, 0, 303.74, 118.57, 0.00, 0.00, 185.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 22, '2010-09-30', 2010, 9, 0, 185.17, 118.57, 0.00, 0.00, 66.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(35, '10130', '', 23, '2010-10-15', 2010, 10, 0, 66.60, 66.60, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 1, '2009-11-15', 2009, 11, 0, 490.13, 42.19, 0.00, 0.00, 447.94, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 2, '2009-11-30', 2009, 11, 0, 447.94, 42.19, 0.00, 0.00, 405.75, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 3, '2009-12-15', 2009, 12, 0, 405.75, 42.19, 0.00, 0.00, 363.56, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 4, '2009-12-31', 2009, 12, 0, 363.56, 42.19, 0.00, 0.00, 321.37, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 5, '2010-01-15', 2010, 1, 0, 321.37, 42.19, 0.00, 0.00, 279.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 6, '2010-01-31', 2010, 1, 0, 279.18, 42.19, 0.00, 0.00, 236.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 7, '2010-02-15', 2010, 2, 0, 236.99, 42.19, 0.00, 0.00, 194.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 8, '2010-02-28', 2010, 2, 0, 194.80, 42.19, 0.00, 0.00, 152.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 9, '2010-03-15', 2010, 3, 0, 152.61, 42.19, 0.00, 0.00, 110.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 10, '2010-03-31', 2010, 3, 0, 110.42, 42.19, 0.00, 0.00, 68.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 11, '2010-04-15', 2010, 4, 0, 68.23, 42.19, 0.00, 0.00, 26.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(36, '10206', '', 12, '2010-04-30', 2010, 4, 0, 26.04, 26.04, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 1, '2009-11-15', 2009, 11, 0, 1237.82, 27.81, 0.00, 0.00, 1210.01, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 2, '2009-11-30', 2009, 11, 0, 1210.01, 27.81, 0.00, 0.00, 1182.20, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 3, '2009-12-15', 2009, 12, 0, 1182.20, 27.81, 0.00, 0.00, 1154.39, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 4, '2009-12-31', 2009, 12, 0, 1154.39, 27.81, 0.00, 0.00, 1126.58, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 5, '2010-01-15', 2010, 1, 0, 1126.58, 27.81, 0.00, 0.00, 1098.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 6, '2010-01-31', 2010, 1, 0, 1098.77, 27.81, 0.00, 0.00, 1070.96, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 7, '2010-02-15', 2010, 2, 0, 1070.96, 27.81, 0.00, 0.00, 1043.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 8, '2010-02-28', 2010, 2, 0, 1043.15, 27.81, 0.00, 0.00, 1015.34, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 9, '2010-03-15', 2010, 3, 0, 1015.34, 27.81, 0.00, 0.00, 987.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 10, '2010-03-31', 2010, 3, 0, 987.53, 27.81, 0.00, 0.00, 959.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 11, '2010-04-15', 2010, 4, 0, 959.72, 27.81, 0.00, 0.00, 931.91, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 12, '2010-04-30', 2010, 4, 0, 931.91, 27.81, 0.00, 0.00, 904.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 13, '2010-05-15', 2010, 5, 0, 904.10, 27.81, 0.00, 0.00, 876.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 14, '2010-05-31', 2010, 5, 0, 876.29, 27.81, 0.00, 0.00, 848.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 15, '2010-06-15', 2010, 6, 0, 848.48, 27.81, 0.00, 0.00, 820.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 16, '2010-06-30', 2010, 6, 0, 820.67, 27.81, 0.00, 0.00, 792.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 17, '2010-07-15', 2010, 7, 0, 792.86, 27.81, 0.00, 0.00, 765.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 18, '2010-07-31', 2010, 7, 0, 765.05, 27.81, 0.00, 0.00, 737.24, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 19, '2010-08-15', 2010, 8, 0, 737.24, 27.81, 0.00, 0.00, 709.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 20, '2010-08-31', 2010, 8, 0, 709.43, 27.81, 0.00, 0.00, 681.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 21, '2010-09-15', 2010, 9, 0, 681.62, 27.81, 0.00, 0.00, 653.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 22, '2010-09-30', 2010, 9, 0, 653.81, 27.81, 0.00, 0.00, 626.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 23, '2010-10-15', 2010, 10, 0, 626.00, 27.81, 0.00, 0.00, 598.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 24, '2010-10-31', 2010, 10, 0, 598.19, 27.81, 0.00, 0.00, 570.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 25, '2010-11-15', 2010, 11, 0, 570.38, 27.81, 0.00, 0.00, 542.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 26, '2010-11-30', 2010, 11, 0, 542.57, 27.81, 0.00, 0.00, 514.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 27, '2010-12-15', 2010, 12, 0, 514.76, 27.81, 0.00, 0.00, 486.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 28, '2010-12-31', 2010, 12, 0, 486.95, 27.81, 0.00, 0.00, 459.14, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 29, '2011-01-15', 2011, 1, 0, 459.14, 27.81, 0.00, 0.00, 431.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 30, '2011-01-31', 2011, 1, 0, 431.33, 27.81, 0.00, 0.00, 403.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 31, '2011-02-15', 2011, 2, 0, 403.52, 27.81, 0.00, 0.00, 375.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 32, '2011-02-28', 2011, 2, 0, 375.71, 27.81, 0.00, 0.00, 347.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 33, '2011-03-15', 2011, 3, 0, 347.90, 27.81, 0.00, 0.00, 320.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 34, '2011-03-31', 2011, 3, 0, 320.09, 27.81, 0.00, 0.00, 292.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 35, '2011-04-15', 2011, 4, 0, 292.28, 27.81, 0.00, 0.00, 264.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 36, '2011-04-30', 2011, 4, 0, 264.47, 27.81, 0.00, 0.00, 236.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 37, '2011-05-15', 2011, 5, 0, 236.66, 27.81, 0.00, 0.00, 208.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 38, '2011-05-31', 2011, 5, 0, 208.85, 27.81, 0.00, 0.00, 181.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 39, '2011-06-15', 2011, 6, 0, 181.04, 27.81, 0.00, 0.00, 153.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 40, '2011-06-30', 2011, 6, 0, 153.23, 27.81, 0.00, 0.00, 125.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 41, '2011-07-15', 2011, 7, 0, 125.42, 27.81, 0.00, 0.00, 97.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 42, '2011-07-31', 2011, 7, 0, 97.61, 27.81, 0.00, 0.00, 69.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 43, '2011-08-15', 2011, 8, 0, 69.80, 27.81, 0.00, 0.00, 41.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 44, '2011-08-31', 2011, 8, 0, 41.99, 27.81, 0.00, 0.00, 14.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(37, '10135', '', 45, '2011-09-15', 2011, 9, 0, 14.18, 14.18, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 1, '2009-11-15', 2009, 11, 0, 108.40, 13.64, 0.00, 0.00, 94.76, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 2, '2009-11-30', 2009, 11, 0, 94.76, 13.64, 0.00, 0.00, 81.12, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 3, '2009-12-15', 2009, 12, 0, 81.12, 13.64, 0.00, 0.00, 67.48, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 4, '2009-12-31', 2009, 12, 0, 67.48, 13.64, 0.00, 0.00, 53.84, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 5, '2010-01-15', 2010, 1, 0, 53.84, 13.64, 0.00, 0.00, 40.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 6, '2010-01-31', 2010, 1, 0, 40.20, 13.64, 0.00, 0.00, 26.56, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 7, '2010-02-15', 2010, 2, 0, 26.56, 13.64, 0.00, 0.00, 12.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(38, '10161', '', 8, '2010-02-28', 2010, 2, 0, 12.92, 12.92, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 1, '2009-11-15', 2009, 11, 0, 1975.74, 46.39, 0.00, 0.00, 1929.35, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 2, '2009-11-30', 2009, 11, 0, 1929.35, 46.39, 0.00, 0.00, 1882.96, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 3, '2009-12-15', 2009, 12, 0, 1882.96, 46.39, 0.00, 0.00, 1836.57, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 4, '2009-12-31', 2009, 12, 0, 1836.57, 46.39, 0.00, 0.00, 1790.18, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 5, '2010-01-15', 2010, 1, 0, 1790.18, 46.39, 0.00, 0.00, 1743.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 6, '2010-01-31', 2010, 1, 0, 1743.79, 46.39, 0.00, 0.00, 1697.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 7, '2010-02-15', 2010, 2, 0, 1697.40, 46.39, 0.00, 0.00, 1651.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 8, '2010-02-28', 2010, 2, 0, 1651.01, 46.39, 0.00, 0.00, 1604.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 9, '2010-03-15', 2010, 3, 0, 1604.62, 46.39, 0.00, 0.00, 1558.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 10, '2010-03-31', 2010, 3, 0, 1558.23, 46.39, 0.00, 0.00, 1511.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 11, '2010-04-15', 2010, 4, 0, 1511.84, 46.39, 0.00, 0.00, 1465.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 12, '2010-04-30', 2010, 4, 0, 1465.45, 46.39, 0.00, 0.00, 1419.06, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 13, '2010-05-15', 2010, 5, 0, 1419.06, 46.39, 0.00, 0.00, 1372.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 14, '2010-05-31', 2010, 5, 0, 1372.67, 46.39, 0.00, 0.00, 1326.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 15, '2010-06-15', 2010, 6, 0, 1326.28, 46.39, 0.00, 0.00, 1279.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 16, '2010-06-30', 2010, 6, 0, 1279.89, 46.39, 0.00, 0.00, 1233.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 17, '2010-07-15', 2010, 7, 0, 1233.50, 46.39, 0.00, 0.00, 1187.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 18, '2010-07-31', 2010, 7, 0, 1187.11, 46.39, 0.00, 0.00, 1140.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 19, '2010-08-15', 2010, 8, 0, 1140.72, 46.39, 0.00, 0.00, 1094.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 20, '2010-08-31', 2010, 8, 0, 1094.33, 46.39, 0.00, 0.00, 1047.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 21, '2010-09-15', 2010, 9, 0, 1047.94, 46.39, 0.00, 0.00, 1001.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 22, '2010-09-30', 2010, 9, 0, 1001.55, 46.39, 0.00, 0.00, 955.16, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 23, '2010-10-15', 2010, 10, 0, 955.16, 46.39, 0.00, 0.00, 908.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 24, '2010-10-31', 2010, 10, 0, 908.77, 46.39, 0.00, 0.00, 862.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 25, '2010-11-15', 2010, 11, 0, 862.38, 46.39, 0.00, 0.00, 815.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 26, '2010-11-30', 2010, 11, 0, 815.99, 46.39, 0.00, 0.00, 769.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 27, '2010-12-15', 2010, 12, 0, 769.60, 46.39, 0.00, 0.00, 723.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 28, '2010-12-31', 2010, 12, 0, 723.21, 46.39, 0.00, 0.00, 676.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 29, '2011-01-15', 2011, 1, 0, 676.82, 46.39, 0.00, 0.00, 630.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 30, '2011-01-31', 2011, 1, 0, 630.43, 46.39, 0.00, 0.00, 584.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 31, '2011-02-15', 2011, 2, 0, 584.04, 46.39, 0.00, 0.00, 537.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 32, '2011-02-28', 2011, 2, 0, 537.65, 46.39, 0.00, 0.00, 491.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 33, '2011-03-15', 2011, 3, 0, 491.26, 46.39, 0.00, 0.00, 444.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 34, '2011-03-31', 2011, 3, 0, 444.87, 46.39, 0.00, 0.00, 398.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 35, '2011-04-15', 2011, 4, 0, 398.48, 46.39, 0.00, 0.00, 352.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 36, '2011-04-30', 2011, 4, 0, 352.09, 46.39, 0.00, 0.00, 305.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 37, '2011-05-15', 2011, 5, 0, 305.70, 46.39, 0.00, 0.00, 259.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 38, '2011-05-31', 2011, 5, 0, 259.31, 46.39, 0.00, 0.00, 212.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 39, '2011-06-15', 2011, 6, 0, 212.92, 46.39, 0.00, 0.00, 166.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 40, '2011-06-30', 2011, 6, 0, 166.53, 46.39, 0.00, 0.00, 120.14, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 41, '2011-07-15', 2011, 7, 0, 120.14, 46.39, 0.00, 0.00, 73.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 42, '2011-07-31', 2011, 7, 0, 73.75, 46.39, 0.00, 0.00, 27.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(39, '10157', '', 43, '2011-08-15', 2011, 8, 0, 27.36, 27.36, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 1, '2009-11-15', 2009, 11, 0, 178.44, 15.10, 0.00, 0.00, 163.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 2, '2009-11-30', 2009, 11, 0, 163.34, 15.10, 0.00, 0.00, 148.24, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 3, '2009-12-15', 2009, 12, 0, 148.24, 15.10, 0.00, 0.00, 133.14, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 4, '2009-12-31', 2009, 12, 0, 133.14, 15.10, 0.00, 0.00, 118.04, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 5, '2010-01-15', 2010, 1, 0, 118.04, 15.10, 0.00, 0.00, 102.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 6, '2010-01-31', 2010, 1, 0, 102.94, 15.10, 0.00, 0.00, 87.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 7, '2010-02-15', 2010, 2, 0, 87.84, 15.10, 0.00, 0.00, 72.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 8, '2010-02-28', 2010, 2, 0, 72.74, 15.10, 0.00, 0.00, 57.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 9, '2010-03-15', 2010, 3, 0, 57.64, 15.10, 0.00, 0.00, 42.54, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 10, '2010-03-31', 2010, 3, 0, 42.54, 15.10, 0.00, 0.00, 27.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 11, '2010-04-15', 2010, 4, 0, 27.44, 15.10, 0.00, 0.00, 12.34, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(40, '10140', '', 12, '2010-04-30', 2010, 4, 0, 12.34, 12.34, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 1, '2009-11-15', 2009, 11, 0, 2589.12, 60.21, 0.00, 0.00, 2528.91, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 2, '2009-11-30', 2009, 11, 0, 2528.91, 60.21, 0.00, 0.00, 2468.70, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 3, '2009-12-15', 2009, 12, 0, 2468.70, 60.21, 0.00, 0.00, 2408.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 4, '2009-12-31', 2009, 12, 0, 2408.49, 60.21, 0.00, 0.00, 2348.28, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 5, '2010-01-15', 2010, 1, 0, 2348.28, 60.21, 0.00, 0.00, 2288.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 6, '2010-01-31', 2010, 1, 0, 2288.07, 60.21, 0.00, 0.00, 2227.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 7, '2010-02-15', 2010, 2, 0, 2227.86, 60.21, 0.00, 0.00, 2167.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 8, '2010-02-28', 2010, 2, 0, 2167.65, 60.21, 0.00, 0.00, 2107.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 9, '2010-03-15', 2010, 3, 0, 2107.44, 60.21, 0.00, 0.00, 2047.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 10, '2010-03-31', 2010, 3, 0, 2047.23, 60.21, 0.00, 0.00, 1987.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 11, '2010-04-15', 2010, 4, 0, 1987.02, 60.21, 0.00, 0.00, 1926.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 12, '2010-04-30', 2010, 4, 0, 1926.81, 60.21, 0.00, 0.00, 1866.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 13, '2010-05-15', 2010, 5, 0, 1866.60, 60.21, 0.00, 0.00, 1806.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 14, '2010-05-31', 2010, 5, 0, 1806.39, 60.21, 0.00, 0.00, 1746.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 15, '2010-06-15', 2010, 6, 0, 1746.18, 60.21, 0.00, 0.00, 1685.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 16, '2010-06-30', 2010, 6, 0, 1685.97, 60.21, 0.00, 0.00, 1625.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 17, '2010-07-15', 2010, 7, 0, 1625.76, 60.21, 0.00, 0.00, 1565.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 18, '2010-07-31', 2010, 7, 0, 1565.55, 60.21, 0.00, 0.00, 1505.34, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 19, '2010-08-15', 2010, 8, 0, 1505.34, 60.21, 0.00, 0.00, 1445.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 20, '2010-08-31', 2010, 8, 0, 1445.13, 60.21, 0.00, 0.00, 1384.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0);
-INSERT INTO `nomprestamos_detalles` (`numpre`, `ficha`, `tipocuo`, `numcuo`, `fechaven`, `anioven`, `mesven`, `dias`, `salinicial`, `montocuo`, `montoint`, `montocap`, `salfinal`, `fechacan`, `estadopre`, `detalle`, `dedespecial`, `codnom`, `sfechaven`, `sfechacan`, `ee`) VALUES
-(41, '10140', '', 21, '2010-09-15', 2010, 9, 0, 1384.92, 60.21, 0.00, 0.00, 1324.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 22, '2010-09-30', 2010, 9, 0, 1324.71, 60.21, 0.00, 0.00, 1264.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 23, '2010-10-15', 2010, 10, 0, 1264.50, 60.21, 0.00, 0.00, 1204.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 24, '2010-10-31', 2010, 10, 0, 1204.29, 60.21, 0.00, 0.00, 1144.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 25, '2010-11-15', 2010, 11, 0, 1144.08, 60.21, 0.00, 0.00, 1083.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 26, '2010-11-30', 2010, 11, 0, 1083.87, 60.21, 0.00, 0.00, 1023.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 27, '2010-12-15', 2010, 12, 0, 1023.66, 60.21, 0.00, 0.00, 963.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 28, '2010-12-31', 2010, 12, 0, 963.45, 60.21, 0.00, 0.00, 903.24, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 29, '2011-01-15', 2011, 1, 0, 903.24, 60.21, 0.00, 0.00, 843.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 30, '2011-01-31', 2011, 1, 0, 843.03, 60.21, 0.00, 0.00, 782.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 31, '2011-02-15', 2011, 2, 0, 782.82, 60.21, 0.00, 0.00, 722.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 32, '2011-02-28', 2011, 2, 0, 722.61, 60.21, 0.00, 0.00, 662.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 33, '2011-03-15', 2011, 3, 0, 662.40, 60.21, 0.00, 0.00, 602.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 34, '2011-03-31', 2011, 3, 0, 602.19, 60.21, 0.00, 0.00, 541.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 35, '2011-04-15', 2011, 4, 0, 541.98, 60.21, 0.00, 0.00, 481.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 36, '2011-04-30', 2011, 4, 0, 481.77, 60.21, 0.00, 0.00, 421.56, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 37, '2011-05-15', 2011, 5, 0, 421.56, 60.21, 0.00, 0.00, 361.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 38, '2011-05-31', 2011, 5, 0, 361.35, 60.21, 0.00, 0.00, 301.14, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 39, '2011-06-15', 2011, 6, 0, 301.14, 60.21, 0.00, 0.00, 240.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 40, '2011-06-30', 2011, 6, 0, 240.93, 60.21, 0.00, 0.00, 180.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 41, '2011-07-15', 2011, 7, 0, 180.72, 60.21, 0.00, 0.00, 120.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 42, '2011-07-31', 2011, 7, 0, 120.51, 60.21, 0.00, 0.00, 60.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(41, '10140', '', 43, '2011-08-15', 2011, 8, 0, 60.30, 60.21, 0.00, 0.00, 0.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 1, '2009-11-15', 2009, 11, 0, 2770.27, 121.23, 0.00, 0.00, 2649.04, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 2, '2009-11-30', 2009, 11, 0, 2649.04, 121.23, 0.00, 0.00, 2527.81, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 3, '2009-12-15', 2009, 12, 0, 2527.81, 121.23, 0.00, 0.00, 2406.58, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 4, '2009-12-31', 2009, 12, 0, 2406.58, 121.23, 0.00, 0.00, 2285.35, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 5, '2010-01-15', 2010, 1, 0, 2285.35, 121.23, 0.00, 0.00, 2164.12, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 6, '2010-01-31', 2010, 1, 0, 2164.12, 121.23, 0.00, 0.00, 2042.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 7, '2010-02-15', 2010, 2, 0, 2042.89, 121.23, 0.00, 0.00, 1921.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 8, '2010-02-28', 2010, 2, 0, 1921.66, 121.23, 0.00, 0.00, 1800.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 9, '2010-03-15', 2010, 3, 0, 1800.43, 121.23, 0.00, 0.00, 1679.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 10, '2010-03-31', 2010, 3, 0, 1679.20, 121.23, 0.00, 0.00, 1557.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 11, '2010-04-15', 2010, 4, 0, 1557.97, 121.23, 0.00, 0.00, 1436.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 12, '2010-04-30', 2010, 4, 0, 1436.74, 121.23, 0.00, 0.00, 1315.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 13, '2010-05-15', 2010, 5, 0, 1315.51, 121.23, 0.00, 0.00, 1194.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 14, '2010-05-31', 2010, 5, 0, 1194.28, 121.23, 0.00, 0.00, 1073.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 15, '2010-06-15', 2010, 6, 0, 1073.05, 121.23, 0.00, 0.00, 951.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 16, '2010-06-30', 2010, 6, 0, 951.82, 121.23, 0.00, 0.00, 830.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 17, '2010-07-15', 2010, 7, 0, 830.59, 121.23, 0.00, 0.00, 709.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 18, '2010-07-31', 2010, 7, 0, 709.36, 121.23, 0.00, 0.00, 588.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 19, '2010-08-15', 2010, 8, 0, 588.13, 121.23, 0.00, 0.00, 466.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 20, '2010-08-31', 2010, 8, 0, 466.90, 121.23, 0.00, 0.00, 345.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 21, '2010-09-15', 2010, 9, 0, 345.67, 121.23, 0.00, 0.00, 224.44, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 22, '2010-09-30', 2010, 9, 0, 224.44, 121.23, 0.00, 0.00, 103.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(42, '10199', '', 23, '2010-10-15', 2010, 10, 0, 103.21, 103.21, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 1, '2009-11-15', 2009, 11, 0, 756.90, 32.62, 0.00, 0.00, 724.28, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 2, '2009-11-30', 2009, 11, 0, 724.28, 32.62, 0.00, 0.00, 691.66, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 3, '2009-12-15', 2009, 12, 0, 691.66, 32.62, 0.00, 0.00, 659.04, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 4, '2009-12-31', 2009, 12, 0, 659.04, 32.62, 0.00, 0.00, 626.42, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 5, '2010-01-15', 2010, 1, 0, 626.42, 32.62, 0.00, 0.00, 593.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 6, '2010-01-31', 2010, 1, 0, 593.80, 32.62, 0.00, 0.00, 561.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 7, '2010-02-15', 2010, 2, 0, 561.18, 32.62, 0.00, 0.00, 528.56, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 8, '2010-02-28', 2010, 2, 0, 528.56, 32.62, 0.00, 0.00, 495.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 9, '2010-03-15', 2010, 3, 0, 495.94, 32.62, 0.00, 0.00, 463.32, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 10, '2010-03-31', 2010, 3, 0, 463.32, 32.62, 0.00, 0.00, 430.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 11, '2010-04-15', 2010, 4, 0, 430.70, 32.62, 0.00, 0.00, 398.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 12, '2010-04-30', 2010, 4, 0, 398.08, 32.62, 0.00, 0.00, 365.46, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 13, '2010-05-15', 2010, 5, 0, 365.46, 32.62, 0.00, 0.00, 332.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 14, '2010-05-31', 2010, 5, 0, 332.84, 32.62, 0.00, 0.00, 300.22, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 15, '2010-06-15', 2010, 6, 0, 300.22, 32.62, 0.00, 0.00, 267.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 16, '2010-06-30', 2010, 6, 0, 267.60, 32.62, 0.00, 0.00, 234.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 17, '2010-07-15', 2010, 7, 0, 234.98, 32.62, 0.00, 0.00, 202.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 18, '2010-07-31', 2010, 7, 0, 202.36, 32.62, 0.00, 0.00, 169.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 19, '2010-08-15', 2010, 8, 0, 169.74, 32.62, 0.00, 0.00, 137.12, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 20, '2010-08-31', 2010, 8, 0, 137.12, 32.62, 0.00, 0.00, 104.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 21, '2010-09-15', 2010, 9, 0, 104.50, 32.62, 0.00, 0.00, 71.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 22, '2010-09-30', 2010, 9, 0, 71.88, 32.62, 0.00, 0.00, 39.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 23, '2010-10-15', 2010, 10, 0, 39.26, 32.62, 0.00, 0.00, 6.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(43, '10144', '', 24, '2010-10-31', 2010, 10, 0, 6.64, 6.64, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 1, '2009-11-15', 2009, 11, 0, 17522.13, 365.05, 0.00, 0.00, 17157.08, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 2, '2009-11-30', 2009, 11, 0, 17157.08, 365.05, 0.00, 0.00, 16792.03, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 3, '2009-12-15', 2009, 12, 0, 16792.03, 365.05, 0.00, 0.00, 16426.98, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 4, '2009-12-31', 2009, 12, 0, 16426.98, 365.05, 0.00, 0.00, 16061.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 5, '2010-01-15', 2010, 1, 0, 16061.93, 365.05, 0.00, 0.00, 15696.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 6, '2010-01-31', 2010, 1, 0, 15696.88, 365.05, 0.00, 0.00, 15331.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 7, '2010-02-15', 2010, 2, 0, 15331.83, 365.05, 0.00, 0.00, 14966.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 8, '2010-02-28', 2010, 2, 0, 14966.78, 365.05, 0.00, 0.00, 14601.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 9, '2010-03-15', 2010, 3, 0, 14601.73, 365.05, 0.00, 0.00, 14236.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 10, '2010-03-31', 2010, 3, 0, 14236.68, 365.05, 0.00, 0.00, 13871.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 11, '2010-04-15', 2010, 4, 0, 13871.63, 365.05, 0.00, 0.00, 13506.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 12, '2010-04-30', 2010, 4, 0, 13506.58, 365.05, 0.00, 0.00, 13141.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 13, '2010-05-15', 2010, 5, 0, 13141.53, 365.05, 0.00, 0.00, 12776.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 14, '2010-05-31', 2010, 5, 0, 12776.48, 365.05, 0.00, 0.00, 12411.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 15, '2010-06-15', 2010, 6, 0, 12411.43, 365.05, 0.00, 0.00, 12046.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 16, '2010-06-30', 2010, 6, 0, 12046.38, 365.05, 0.00, 0.00, 11681.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 17, '2010-07-15', 2010, 7, 0, 11681.33, 365.05, 0.00, 0.00, 11316.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 18, '2010-07-31', 2010, 7, 0, 11316.28, 365.05, 0.00, 0.00, 10951.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 19, '2010-08-15', 2010, 8, 0, 10951.23, 365.05, 0.00, 0.00, 10586.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 20, '2010-08-31', 2010, 8, 0, 10586.18, 365.05, 0.00, 0.00, 10221.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 21, '2010-09-15', 2010, 9, 0, 10221.13, 365.05, 0.00, 0.00, 9856.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 22, '2010-09-30', 2010, 9, 0, 9856.08, 365.05, 0.00, 0.00, 9491.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 23, '2010-10-15', 2010, 10, 0, 9491.03, 365.05, 0.00, 0.00, 9125.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 24, '2010-10-31', 2010, 10, 0, 9125.98, 365.05, 0.00, 0.00, 8760.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 25, '2010-11-15', 2010, 11, 0, 8760.93, 365.05, 0.00, 0.00, 8395.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 26, '2010-11-30', 2010, 11, 0, 8395.88, 365.05, 0.00, 0.00, 8030.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 27, '2010-12-15', 2010, 12, 0, 8030.83, 365.05, 0.00, 0.00, 7665.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 28, '2010-12-31', 2010, 12, 0, 7665.78, 365.05, 0.00, 0.00, 7300.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 29, '2011-01-15', 2011, 1, 0, 7300.73, 365.05, 0.00, 0.00, 6935.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 30, '2011-01-31', 2011, 1, 0, 6935.68, 365.05, 0.00, 0.00, 6570.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 31, '2011-02-15', 2011, 2, 0, 6570.63, 365.05, 0.00, 0.00, 6205.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 32, '2011-02-28', 2011, 2, 0, 6205.58, 365.05, 0.00, 0.00, 5840.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 33, '2011-03-15', 2011, 3, 0, 5840.53, 365.05, 0.00, 0.00, 5475.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 34, '2011-03-31', 2011, 3, 0, 5475.48, 365.05, 0.00, 0.00, 5110.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 35, '2011-04-15', 2011, 4, 0, 5110.43, 365.05, 0.00, 0.00, 4745.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 36, '2011-04-30', 2011, 4, 0, 4745.38, 365.05, 0.00, 0.00, 4380.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 37, '2011-05-15', 2011, 5, 0, 4380.33, 365.05, 0.00, 0.00, 4015.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 38, '2011-05-31', 2011, 5, 0, 4015.28, 365.05, 0.00, 0.00, 3650.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 39, '2011-06-15', 2011, 6, 0, 3650.23, 365.05, 0.00, 0.00, 3285.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 40, '2011-06-30', 2011, 6, 0, 3285.18, 365.05, 0.00, 0.00, 2920.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 41, '2011-07-15', 2011, 7, 0, 2920.13, 365.05, 0.00, 0.00, 2555.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 42, '2011-07-31', 2011, 7, 0, 2555.08, 365.05, 0.00, 0.00, 2190.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 43, '2011-08-15', 2011, 8, 0, 2190.03, 365.05, 0.00, 0.00, 1824.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 44, '2011-08-31', 2011, 8, 0, 1824.98, 365.05, 0.00, 0.00, 1459.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 45, '2011-09-15', 2011, 9, 0, 1459.93, 365.05, 0.00, 0.00, 1094.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 46, '2011-09-30', 2011, 9, 0, 1094.88, 365.05, 0.00, 0.00, 729.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 47, '2011-10-15', 2011, 10, 0, 729.83, 365.05, 0.00, 0.00, 364.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(44, '10125', '', 48, '2011-10-31', 2011, 10, 0, 364.78, 364.78, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 1, '2009-11-15', 2009, 11, 0, 1123.87, 25.89, 0.00, 0.00, 1097.98, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 2, '2009-11-30', 2009, 11, 0, 1097.98, 25.89, 0.00, 0.00, 1072.09, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 3, '2009-12-15', 2009, 12, 0, 1072.09, 25.89, 0.00, 0.00, 1046.20, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 4, '2009-12-31', 2009, 12, 0, 1046.20, 25.89, 0.00, 0.00, 1020.31, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 5, '2010-01-15', 2010, 1, 0, 1020.31, 25.89, 0.00, 0.00, 994.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 6, '2010-01-31', 2010, 1, 0, 994.42, 25.89, 0.00, 0.00, 968.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 7, '2010-02-15', 2010, 2, 0, 968.53, 25.89, 0.00, 0.00, 942.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 8, '2010-02-28', 2010, 2, 0, 942.64, 25.89, 0.00, 0.00, 916.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 9, '2010-03-15', 2010, 3, 0, 916.75, 25.89, 0.00, 0.00, 890.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 10, '2010-03-31', 2010, 3, 0, 890.86, 25.89, 0.00, 0.00, 864.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 11, '2010-04-15', 2010, 4, 0, 864.97, 25.89, 0.00, 0.00, 839.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 12, '2010-04-30', 2010, 4, 0, 839.08, 25.89, 0.00, 0.00, 813.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 13, '2010-05-15', 2010, 5, 0, 813.19, 25.89, 0.00, 0.00, 787.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 14, '2010-05-31', 2010, 5, 0, 787.30, 25.89, 0.00, 0.00, 761.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 15, '2010-06-15', 2010, 6, 0, 761.41, 25.89, 0.00, 0.00, 735.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 16, '2010-06-30', 2010, 6, 0, 735.52, 25.89, 0.00, 0.00, 709.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 17, '2010-07-15', 2010, 7, 0, 709.63, 25.89, 0.00, 0.00, 683.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 18, '2010-07-31', 2010, 7, 0, 683.74, 25.89, 0.00, 0.00, 657.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 19, '2010-08-15', 2010, 8, 0, 657.85, 25.89, 0.00, 0.00, 631.96, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 20, '2010-08-31', 2010, 8, 0, 631.96, 25.89, 0.00, 0.00, 606.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 21, '2010-09-15', 2010, 9, 0, 606.07, 25.89, 0.00, 0.00, 580.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 22, '2010-09-30', 2010, 9, 0, 580.18, 25.89, 0.00, 0.00, 554.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 23, '2010-10-15', 2010, 10, 0, 554.29, 25.89, 0.00, 0.00, 528.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 24, '2010-10-31', 2010, 10, 0, 528.40, 25.89, 0.00, 0.00, 502.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 25, '2010-11-15', 2010, 11, 0, 502.51, 25.89, 0.00, 0.00, 476.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 26, '2010-11-30', 2010, 11, 0, 476.62, 25.89, 0.00, 0.00, 450.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 27, '2010-12-15', 2010, 12, 0, 450.73, 25.89, 0.00, 0.00, 424.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 28, '2010-12-31', 2010, 12, 0, 424.84, 25.89, 0.00, 0.00, 398.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 29, '2011-01-15', 2011, 1, 0, 398.95, 25.89, 0.00, 0.00, 373.06, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 30, '2011-01-31', 2011, 1, 0, 373.06, 25.89, 0.00, 0.00, 347.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 31, '2011-02-15', 2011, 2, 0, 347.17, 25.89, 0.00, 0.00, 321.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 32, '2011-02-28', 2011, 2, 0, 321.28, 25.89, 0.00, 0.00, 295.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 33, '2011-03-15', 2011, 3, 0, 295.39, 25.89, 0.00, 0.00, 269.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 34, '2011-03-31', 2011, 3, 0, 269.50, 25.89, 0.00, 0.00, 243.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 35, '2011-04-15', 2011, 4, 0, 243.61, 25.89, 0.00, 0.00, 217.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 36, '2011-04-30', 2011, 4, 0, 217.72, 25.89, 0.00, 0.00, 191.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 37, '2011-05-15', 2011, 5, 0, 191.83, 25.89, 0.00, 0.00, 165.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 38, '2011-05-31', 2011, 5, 0, 165.94, 25.89, 0.00, 0.00, 140.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 39, '2011-06-15', 2011, 6, 0, 140.05, 25.89, 0.00, 0.00, 114.16, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 40, '2011-06-30', 2011, 6, 0, 114.16, 25.89, 0.00, 0.00, 88.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 41, '2011-07-15', 2011, 7, 0, 88.27, 25.89, 0.00, 0.00, 62.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 42, '2011-07-31', 2011, 7, 0, 62.38, 25.89, 0.00, 0.00, 36.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 43, '2011-08-15', 2011, 8, 0, 36.49, 25.89, 0.00, 0.00, 10.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(45, '10204', '', 44, '2011-08-31', 2011, 8, 0, 10.60, 10.60, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(46, '10204', '', 1, '2009-11-15', 2009, 11, 0, 65.05, 32.52, 0.00, 0.00, 32.53, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(46, '10204', '', 2, '2009-11-30', 2009, 11, 0, 32.53, 32.52, 0.00, 0.00, 0.01, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 1, '2009-11-15', 2009, 11, 0, 181.93, 7.25, 0.00, 0.00, 174.68, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 2, '2009-11-30', 2009, 11, 0, 174.68, 7.25, 0.00, 0.00, 167.43, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 3, '2009-12-15', 2009, 12, 0, 167.43, 7.25, 0.00, 0.00, 160.18, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 4, '2009-12-31', 2009, 12, 0, 160.18, 7.25, 0.00, 0.00, 152.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 5, '2010-01-15', 2010, 1, 0, 152.93, 7.25, 0.00, 0.00, 145.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 6, '2010-01-31', 2010, 1, 0, 145.68, 7.25, 0.00, 0.00, 138.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 7, '2010-02-15', 2010, 2, 0, 138.43, 7.25, 0.00, 0.00, 131.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 8, '2010-02-28', 2010, 2, 0, 131.18, 7.25, 0.00, 0.00, 123.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 9, '2010-03-15', 2010, 3, 0, 123.93, 7.25, 0.00, 0.00, 116.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 10, '2010-03-31', 2010, 3, 0, 116.68, 7.25, 0.00, 0.00, 109.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 11, '2010-04-15', 2010, 4, 0, 109.43, 7.25, 0.00, 0.00, 102.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 12, '2010-04-30', 2010, 4, 0, 102.18, 7.25, 0.00, 0.00, 94.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 13, '2010-05-15', 2010, 5, 0, 94.93, 7.25, 0.00, 0.00, 87.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 14, '2010-05-31', 2010, 5, 0, 87.68, 7.25, 0.00, 0.00, 80.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 15, '2010-06-15', 2010, 6, 0, 80.43, 7.25, 0.00, 0.00, 73.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 16, '2010-06-30', 2010, 6, 0, 73.18, 7.25, 0.00, 0.00, 65.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 17, '2010-07-15', 2010, 7, 0, 65.93, 7.25, 0.00, 0.00, 58.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 18, '2010-07-31', 2010, 7, 0, 58.68, 7.25, 0.00, 0.00, 51.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 19, '2010-08-15', 2010, 8, 0, 51.43, 7.25, 0.00, 0.00, 44.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 20, '2010-08-31', 2010, 8, 0, 44.18, 7.25, 0.00, 0.00, 36.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 21, '2010-09-15', 2010, 9, 0, 36.93, 7.25, 0.00, 0.00, 29.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 22, '2010-09-30', 2010, 9, 0, 29.68, 7.25, 0.00, 0.00, 22.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 23, '2010-10-15', 2010, 10, 0, 22.43, 7.25, 0.00, 0.00, 15.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 24, '2010-10-31', 2010, 10, 0, 15.18, 7.25, 0.00, 0.00, 7.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 25, '2010-11-15', 2010, 11, 0, 7.93, 7.25, 0.00, 0.00, 0.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(47, '10204', '', 26, '2010-11-30', 2010, 11, 0, 0.68, 0.68, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 1, '2009-11-15', 2009, 11, 0, 1378.85, 59.98, 0.00, 0.00, 1318.87, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 2, '2009-11-30', 2009, 11, 0, 1318.87, 59.98, 0.00, 0.00, 1258.89, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 3, '2009-12-15', 2009, 12, 0, 1258.89, 59.98, 0.00, 0.00, 1198.91, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 4, '2009-12-31', 2009, 12, 0, 1198.91, 59.98, 0.00, 0.00, 1138.93, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 5, '2010-01-15', 2010, 1, 0, 1138.93, 59.98, 0.00, 0.00, 1078.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 6, '2010-01-31', 2010, 1, 0, 1078.95, 59.98, 0.00, 0.00, 1018.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 7, '2010-02-15', 2010, 2, 0, 1018.97, 59.98, 0.00, 0.00, 958.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 8, '2010-02-28', 2010, 2, 0, 958.99, 59.98, 0.00, 0.00, 899.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 9, '2010-03-15', 2010, 3, 0, 899.01, 59.98, 0.00, 0.00, 839.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 10, '2010-03-31', 2010, 3, 0, 839.03, 59.98, 0.00, 0.00, 779.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 11, '2010-04-15', 2010, 4, 0, 779.05, 59.98, 0.00, 0.00, 719.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 12, '2010-04-30', 2010, 4, 0, 719.07, 59.98, 0.00, 0.00, 659.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 13, '2010-05-15', 2010, 5, 0, 659.09, 59.98, 0.00, 0.00, 599.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 14, '2010-05-31', 2010, 5, 0, 599.11, 59.98, 0.00, 0.00, 539.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 15, '2010-06-15', 2010, 6, 0, 539.13, 59.98, 0.00, 0.00, 479.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 16, '2010-06-30', 2010, 6, 0, 479.15, 59.98, 0.00, 0.00, 419.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 17, '2010-07-15', 2010, 7, 0, 419.17, 59.98, 0.00, 0.00, 359.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 18, '2010-07-31', 2010, 7, 0, 359.19, 59.98, 0.00, 0.00, 299.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 19, '2010-08-15', 2010, 8, 0, 299.21, 59.98, 0.00, 0.00, 239.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 20, '2010-08-31', 2010, 8, 0, 239.23, 59.98, 0.00, 0.00, 179.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 21, '2010-09-15', 2010, 9, 0, 179.25, 59.98, 0.00, 0.00, 119.27, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 22, '2010-09-30', 2010, 9, 0, 119.27, 59.98, 0.00, 0.00, 59.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(48, '10169', '', 23, '2010-10-15', 2010, 10, 0, 59.29, 59.29, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 1, '2009-11-15', 2009, 11, 0, 1592.25, 23.55, 0.00, 0.00, 1568.70, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 2, '2009-11-30', 2009, 11, 0, 1568.70, 23.55, 0.00, 0.00, 1545.15, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 3, '2009-12-15', 2009, 12, 0, 1545.15, 23.55, 0.00, 0.00, 1521.60, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 4, '2009-12-31', 2009, 12, 0, 1521.60, 23.55, 0.00, 0.00, 1498.05, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 5, '2010-01-15', 2010, 1, 0, 1498.05, 23.55, 0.00, 0.00, 1474.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 6, '2010-01-31', 2010, 1, 0, 1474.50, 23.55, 0.00, 0.00, 1450.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 7, '2010-02-15', 2010, 2, 0, 1450.95, 23.55, 0.00, 0.00, 1427.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 8, '2010-02-28', 2010, 2, 0, 1427.40, 23.55, 0.00, 0.00, 1403.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 9, '2010-03-15', 2010, 3, 0, 1403.85, 23.55, 0.00, 0.00, 1380.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 10, '2010-03-31', 2010, 3, 0, 1380.30, 23.55, 0.00, 0.00, 1356.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 11, '2010-04-15', 2010, 4, 0, 1356.75, 23.55, 0.00, 0.00, 1333.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 12, '2010-04-30', 2010, 4, 0, 1333.20, 23.55, 0.00, 0.00, 1309.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 13, '2010-05-15', 2010, 5, 0, 1309.65, 23.55, 0.00, 0.00, 1286.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 14, '2010-05-31', 2010, 5, 0, 1286.10, 23.55, 0.00, 0.00, 1262.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 15, '2010-06-15', 2010, 6, 0, 1262.55, 23.55, 0.00, 0.00, 1239.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 16, '2010-06-30', 2010, 6, 0, 1239.00, 23.55, 0.00, 0.00, 1215.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 17, '2010-07-15', 2010, 7, 0, 1215.45, 23.55, 0.00, 0.00, 1191.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 18, '2010-07-31', 2010, 7, 0, 1191.90, 23.55, 0.00, 0.00, 1168.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 19, '2010-08-15', 2010, 8, 0, 1168.35, 23.55, 0.00, 0.00, 1144.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 20, '2010-08-31', 2010, 8, 0, 1144.80, 23.55, 0.00, 0.00, 1121.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 21, '2010-09-15', 2010, 9, 0, 1121.25, 23.55, 0.00, 0.00, 1097.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 22, '2010-09-30', 2010, 9, 0, 1097.70, 23.55, 0.00, 0.00, 1074.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 23, '2010-10-15', 2010, 10, 0, 1074.15, 23.55, 0.00, 0.00, 1050.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 24, '2010-10-31', 2010, 10, 0, 1050.60, 23.55, 0.00, 0.00, 1027.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 25, '2010-11-15', 2010, 11, 0, 1027.05, 23.55, 0.00, 0.00, 1003.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 26, '2010-11-30', 2010, 11, 0, 1003.50, 23.55, 0.00, 0.00, 979.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 27, '2010-12-15', 2010, 12, 0, 979.95, 23.55, 0.00, 0.00, 956.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 28, '2010-12-31', 2010, 12, 0, 956.40, 23.55, 0.00, 0.00, 932.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 29, '2011-01-15', 2011, 1, 0, 932.85, 23.55, 0.00, 0.00, 909.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 30, '2011-01-31', 2011, 1, 0, 909.30, 23.55, 0.00, 0.00, 885.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 31, '2011-02-15', 2011, 2, 0, 885.75, 23.55, 0.00, 0.00, 862.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 32, '2011-02-28', 2011, 2, 0, 862.20, 23.55, 0.00, 0.00, 838.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 33, '2011-03-15', 2011, 3, 0, 838.65, 23.55, 0.00, 0.00, 815.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 34, '2011-03-31', 2011, 3, 0, 815.10, 23.55, 0.00, 0.00, 791.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 35, '2011-04-15', 2011, 4, 0, 791.55, 23.55, 0.00, 0.00, 768.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 36, '2011-04-30', 2011, 4, 0, 768.00, 23.55, 0.00, 0.00, 744.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 37, '2011-05-15', 2011, 5, 0, 744.45, 23.55, 0.00, 0.00, 720.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 38, '2011-05-31', 2011, 5, 0, 720.90, 23.55, 0.00, 0.00, 697.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 39, '2011-06-15', 2011, 6, 0, 697.35, 23.55, 0.00, 0.00, 673.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 40, '2011-06-30', 2011, 6, 0, 673.80, 23.55, 0.00, 0.00, 650.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 41, '2011-07-15', 2011, 7, 0, 650.25, 23.55, 0.00, 0.00, 626.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 42, '2011-07-31', 2011, 7, 0, 626.70, 23.55, 0.00, 0.00, 603.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 43, '2011-08-15', 2011, 8, 0, 603.15, 23.55, 0.00, 0.00, 579.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 44, '2011-08-31', 2011, 8, 0, 579.60, 23.55, 0.00, 0.00, 556.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 45, '2011-09-15', 2011, 9, 0, 556.05, 23.55, 0.00, 0.00, 532.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 46, '2011-09-30', 2011, 9, 0, 532.50, 23.55, 0.00, 0.00, 508.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 47, '2011-10-15', 2011, 10, 0, 508.95, 23.55, 0.00, 0.00, 485.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 48, '2011-10-31', 2011, 10, 0, 485.40, 23.55, 0.00, 0.00, 461.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 49, '2011-11-15', 2011, 11, 0, 461.85, 23.55, 0.00, 0.00, 438.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 50, '2011-11-30', 2011, 11, 0, 438.30, 23.55, 0.00, 0.00, 414.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 51, '2011-12-15', 2011, 12, 0, 414.75, 23.55, 0.00, 0.00, 391.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 52, '2011-12-31', 2011, 12, 0, 391.20, 23.55, 0.00, 0.00, 367.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 53, '0012-01-15', 2012, 1, 0, 367.65, 23.55, 0.00, 0.00, 344.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 54, '0012-01-31', 2012, 1, 0, 344.10, 23.55, 0.00, 0.00, 320.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 55, '0012-02-15', 2012, 2, 0, 320.55, 23.55, 0.00, 0.00, 297.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 56, '0012-02-29', 2012, 2, 0, 297.00, 23.55, 0.00, 0.00, 273.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 57, '0012-03-15', 2012, 3, 0, 273.45, 23.55, 0.00, 0.00, 249.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 58, '0012-03-31', 2012, 3, 0, 249.90, 23.55, 0.00, 0.00, 226.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 59, '0012-04-15', 2012, 4, 0, 226.35, 23.55, 0.00, 0.00, 202.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 60, '0012-04-30', 2012, 4, 0, 202.80, 23.55, 0.00, 0.00, 179.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 61, '0012-05-15', 2012, 5, 0, 179.25, 23.55, 0.00, 0.00, 155.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 62, '0012-05-31', 2012, 5, 0, 155.70, 23.55, 0.00, 0.00, 132.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 63, '0012-06-15', 2012, 6, 0, 132.15, 23.55, 0.00, 0.00, 108.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 64, '0012-06-30', 2012, 6, 0, 108.60, 23.55, 0.00, 0.00, 85.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 65, '0012-07-15', 2012, 7, 0, 85.05, 23.55, 0.00, 0.00, 61.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 66, '0012-07-31', 2012, 7, 0, 61.50, 23.55, 0.00, 0.00, 37.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 67, '0012-08-15', 2012, 8, 0, 37.95, 23.55, 0.00, 0.00, 14.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(49, '10178', '', 68, '0012-08-31', 2012, 8, 0, 14.40, 14.40, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 1, '2009-11-15', 2009, 11, 0, 654.25, 34.65, 0.00, 0.00, 619.60, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 2, '2009-11-30', 2009, 11, 0, 619.60, 34.65, 0.00, 0.00, 584.95, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 3, '2009-12-15', 2009, 12, 0, 584.95, 34.65, 0.00, 0.00, 550.30, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 4, '2009-12-31', 2009, 12, 0, 550.30, 34.65, 0.00, 0.00, 515.65, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 5, '2010-01-15', 2010, 1, 0, 515.65, 34.65, 0.00, 0.00, 481.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 6, '2010-01-31', 2010, 1, 0, 481.00, 34.65, 0.00, 0.00, 446.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 7, '2010-02-15', 2010, 2, 0, 446.35, 34.65, 0.00, 0.00, 411.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 8, '2010-02-28', 2010, 2, 0, 411.70, 34.65, 0.00, 0.00, 377.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 9, '2010-03-15', 2010, 3, 0, 377.05, 34.65, 0.00, 0.00, 342.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 10, '2010-03-31', 2010, 3, 0, 342.40, 34.65, 0.00, 0.00, 307.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 11, '2010-04-15', 2010, 4, 0, 307.75, 34.65, 0.00, 0.00, 273.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 12, '2010-04-30', 2010, 4, 0, 273.10, 34.65, 0.00, 0.00, 238.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 13, '2010-05-15', 2010, 5, 0, 238.45, 34.65, 0.00, 0.00, 203.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 14, '2010-05-31', 2010, 5, 0, 203.80, 34.65, 0.00, 0.00, 169.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 15, '2010-06-15', 2010, 6, 0, 169.15, 34.65, 0.00, 0.00, 134.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 16, '2010-06-30', 2010, 6, 0, 134.50, 34.65, 0.00, 0.00, 99.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 17, '2010-07-15', 2010, 7, 0, 99.85, 34.65, 0.00, 0.00, 65.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 18, '2010-07-31', 2010, 7, 0, 65.20, 34.65, 0.00, 0.00, 30.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(50, '10178', '', 19, '2010-08-15', 2010, 8, 0, 30.55, 30.55, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 1, '2009-11-15', 2009, 11, 0, 2028.93, 94.15, 0.00, 0.00, 1934.78, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 2, '2009-11-30', 2009, 11, 0, 1934.78, 94.15, 0.00, 0.00, 1840.63, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 3, '2009-12-15', 2009, 12, 0, 1840.63, 94.15, 0.00, 0.00, 1746.48, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 4, '2009-12-31', 2009, 12, 0, 1746.48, 94.15, 0.00, 0.00, 1652.33, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 5, '2010-01-15', 2010, 1, 0, 1652.33, 94.15, 0.00, 0.00, 1558.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 6, '2010-01-31', 2010, 1, 0, 1558.18, 94.15, 0.00, 0.00, 1464.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 7, '2010-02-15', 2010, 2, 0, 1464.03, 94.15, 0.00, 0.00, 1369.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 8, '2010-02-28', 2010, 2, 0, 1369.88, 94.15, 0.00, 0.00, 1275.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 9, '2010-03-15', 2010, 3, 0, 1275.73, 94.15, 0.00, 0.00, 1181.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 10, '2010-03-31', 2010, 3, 0, 1181.58, 94.15, 0.00, 0.00, 1087.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 11, '2010-04-15', 2010, 4, 0, 1087.43, 94.15, 0.00, 0.00, 993.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 12, '2010-04-30', 2010, 4, 0, 993.28, 94.15, 0.00, 0.00, 899.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 13, '2010-05-15', 2010, 5, 0, 899.13, 94.15, 0.00, 0.00, 804.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 14, '2010-05-31', 2010, 5, 0, 804.98, 94.15, 0.00, 0.00, 710.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 15, '2010-06-15', 2010, 6, 0, 710.83, 94.15, 0.00, 0.00, 616.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 16, '2010-06-30', 2010, 6, 0, 616.68, 94.15, 0.00, 0.00, 522.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 17, '2010-07-15', 2010, 7, 0, 522.53, 94.15, 0.00, 0.00, 428.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 18, '2010-07-31', 2010, 7, 0, 428.38, 94.15, 0.00, 0.00, 334.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 19, '2010-08-15', 2010, 8, 0, 334.23, 94.15, 0.00, 0.00, 240.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 20, '2010-08-31', 2010, 8, 0, 240.08, 94.15, 0.00, 0.00, 145.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 21, '2010-09-15', 2010, 9, 0, 145.93, 94.15, 0.00, 0.00, 51.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(51, '10217', '', 22, '2010-09-30', 2010, 9, 0, 51.78, 51.78, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 1, '2009-11-15', 2009, 11, 0, 1095.62, 47.98, 0.00, 0.00, 1047.64, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 2, '2009-11-30', 2009, 11, 0, 1047.64, 47.98, 0.00, 0.00, 999.66, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 3, '2009-12-15', 2009, 12, 0, 999.66, 47.98, 0.00, 0.00, 951.68, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 4, '2009-12-31', 2009, 12, 0, 951.68, 47.98, 0.00, 0.00, 903.70, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 5, '2010-01-15', 2010, 1, 0, 903.70, 47.98, 0.00, 0.00, 855.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 6, '2010-01-31', 2010, 1, 0, 855.72, 47.98, 0.00, 0.00, 807.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 7, '2010-02-15', 2010, 2, 0, 807.74, 47.98, 0.00, 0.00, 759.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 8, '2010-02-28', 2010, 2, 0, 759.76, 47.98, 0.00, 0.00, 711.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0);
-INSERT INTO `nomprestamos_detalles` (`numpre`, `ficha`, `tipocuo`, `numcuo`, `fechaven`, `anioven`, `mesven`, `dias`, `salinicial`, `montocuo`, `montoint`, `montocap`, `salfinal`, `fechacan`, `estadopre`, `detalle`, `dedespecial`, `codnom`, `sfechaven`, `sfechacan`, `ee`) VALUES
-(52, '10221', '', 9, '2010-03-15', 2010, 3, 0, 711.78, 47.98, 0.00, 0.00, 663.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 10, '2010-03-31', 2010, 3, 0, 663.80, 47.98, 0.00, 0.00, 615.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 11, '2010-04-15', 2010, 4, 0, 615.82, 47.98, 0.00, 0.00, 567.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 12, '2010-04-30', 2010, 4, 0, 567.84, 47.98, 0.00, 0.00, 519.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 13, '2010-05-15', 2010, 5, 0, 519.86, 47.98, 0.00, 0.00, 471.88, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 14, '2010-05-31', 2010, 5, 0, 471.88, 47.98, 0.00, 0.00, 423.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 15, '2010-06-15', 2010, 6, 0, 423.90, 47.98, 0.00, 0.00, 375.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 16, '2010-06-30', 2010, 6, 0, 375.92, 47.98, 0.00, 0.00, 327.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 17, '2010-07-15', 2010, 7, 0, 327.94, 47.98, 0.00, 0.00, 279.96, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 18, '2010-07-31', 2010, 7, 0, 279.96, 47.98, 0.00, 0.00, 231.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 19, '2010-08-15', 2010, 8, 0, 231.98, 47.98, 0.00, 0.00, 184.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 20, '2010-08-31', 2010, 8, 0, 184.00, 47.98, 0.00, 0.00, 136.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 21, '2010-09-15', 2010, 9, 0, 136.02, 47.98, 0.00, 0.00, 88.04, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 22, '2010-09-30', 2010, 9, 0, 88.04, 47.98, 0.00, 0.00, 40.06, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(52, '10221', '', 23, '2010-10-15', 2010, 10, 0, 40.06, 40.06, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 1, '2009-11-15', 2009, 11, 0, 2302.84, 53.43, 0.00, 0.00, 2249.41, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 2, '2009-11-30', 2009, 11, 0, 2249.41, 53.43, 0.00, 0.00, 2195.98, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 3, '2009-12-15', 2009, 12, 0, 2195.98, 53.43, 0.00, 0.00, 2142.55, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 4, '2009-12-31', 2009, 12, 0, 2142.55, 53.43, 0.00, 0.00, 2089.12, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 5, '2010-01-15', 2010, 1, 0, 2089.12, 53.43, 0.00, 0.00, 2035.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 6, '2010-01-31', 2010, 1, 0, 2035.69, 53.43, 0.00, 0.00, 1982.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 7, '2010-02-15', 2010, 2, 0, 1982.26, 53.43, 0.00, 0.00, 1928.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 8, '2010-02-28', 2010, 2, 0, 1928.83, 53.43, 0.00, 0.00, 1875.40, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 9, '2010-03-15', 2010, 3, 0, 1875.40, 53.43, 0.00, 0.00, 1821.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 10, '2010-03-31', 2010, 3, 0, 1821.97, 53.43, 0.00, 0.00, 1768.54, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 11, '2010-04-15', 2010, 4, 0, 1768.54, 53.43, 0.00, 0.00, 1715.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 12, '2010-04-30', 2010, 4, 0, 1715.11, 53.43, 0.00, 0.00, 1661.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 13, '2010-05-15', 2010, 5, 0, 1661.68, 53.43, 0.00, 0.00, 1608.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 14, '2010-05-31', 2010, 5, 0, 1608.25, 53.43, 0.00, 0.00, 1554.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 15, '2010-06-15', 2010, 6, 0, 1554.82, 53.43, 0.00, 0.00, 1501.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 16, '2010-06-30', 2010, 6, 0, 1501.39, 53.43, 0.00, 0.00, 1447.96, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 17, '2010-07-15', 2010, 7, 0, 1447.96, 53.43, 0.00, 0.00, 1394.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 18, '2010-07-31', 2010, 7, 0, 1394.53, 53.43, 0.00, 0.00, 1341.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 19, '2010-08-15', 2010, 8, 0, 1341.10, 53.43, 0.00, 0.00, 1287.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 20, '2010-08-31', 2010, 8, 0, 1287.67, 53.43, 0.00, 0.00, 1234.24, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 21, '2010-09-15', 2010, 9, 0, 1234.24, 53.43, 0.00, 0.00, 1180.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 22, '2010-09-30', 2010, 9, 0, 1180.81, 53.43, 0.00, 0.00, 1127.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 23, '2010-10-15', 2010, 10, 0, 1127.38, 53.43, 0.00, 0.00, 1073.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 24, '2010-10-31', 2010, 10, 0, 1073.95, 53.43, 0.00, 0.00, 1020.52, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 25, '2010-11-15', 2010, 11, 0, 1020.52, 53.43, 0.00, 0.00, 967.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 26, '2010-11-30', 2010, 11, 0, 967.09, 53.43, 0.00, 0.00, 913.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 27, '2010-12-15', 2010, 12, 0, 913.66, 53.43, 0.00, 0.00, 860.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 28, '2010-12-31', 2010, 12, 0, 860.23, 53.43, 0.00, 0.00, 806.80, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 29, '2011-01-15', 2011, 1, 0, 806.80, 53.43, 0.00, 0.00, 753.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 30, '2011-01-31', 2011, 1, 0, 753.37, 53.43, 0.00, 0.00, 699.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 31, '2011-02-15', 2011, 2, 0, 699.94, 53.43, 0.00, 0.00, 646.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 32, '2011-02-28', 2011, 2, 0, 646.51, 53.43, 0.00, 0.00, 593.08, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 33, '2011-03-15', 2011, 3, 0, 593.08, 53.43, 0.00, 0.00, 539.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 34, '2011-03-31', 2011, 3, 0, 539.65, 53.43, 0.00, 0.00, 486.22, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 35, '2011-04-15', 2011, 4, 0, 486.22, 53.43, 0.00, 0.00, 432.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 36, '2011-04-30', 2011, 4, 0, 432.79, 53.43, 0.00, 0.00, 379.36, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 37, '2011-05-15', 2011, 5, 0, 379.36, 53.43, 0.00, 0.00, 325.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 38, '2011-05-31', 2011, 5, 0, 325.93, 53.43, 0.00, 0.00, 272.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 39, '2011-06-15', 2011, 6, 0, 272.50, 53.43, 0.00, 0.00, 219.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 40, '2011-06-30', 2011, 6, 0, 219.07, 53.43, 0.00, 0.00, 165.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 41, '2011-07-15', 2011, 7, 0, 165.64, 53.43, 0.00, 0.00, 112.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 42, '2011-07-31', 2011, 7, 0, 112.21, 53.43, 0.00, 0.00, 58.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 43, '2011-08-15', 2011, 8, 0, 58.78, 53.43, 0.00, 0.00, 5.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(53, '10219', '', 44, '2011-08-31', 2011, 8, 0, 5.35, 5.35, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 1, '2009-11-15', 2009, 11, 0, 1369.53, 31.76, 0.00, 0.00, 1337.77, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 2, '2009-11-30', 2009, 11, 0, 1337.77, 31.76, 0.00, 0.00, 1306.01, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 3, '2009-12-15', 2009, 12, 0, 1306.01, 31.76, 0.00, 0.00, 1274.25, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 4, '2009-12-31', 2009, 12, 0, 1274.25, 31.76, 0.00, 0.00, 1242.49, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 5, '2010-01-15', 2010, 1, 0, 1242.49, 31.76, 0.00, 0.00, 1210.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 6, '2010-01-31', 2010, 1, 0, 1210.73, 31.76, 0.00, 0.00, 1178.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 7, '2010-02-15', 2010, 2, 0, 1178.97, 31.76, 0.00, 0.00, 1147.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 8, '2010-02-28', 2010, 2, 0, 1147.21, 31.76, 0.00, 0.00, 1115.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 9, '2010-03-15', 2010, 3, 0, 1115.45, 31.76, 0.00, 0.00, 1083.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 10, '2010-03-31', 2010, 3, 0, 1083.69, 31.76, 0.00, 0.00, 1051.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 11, '2010-04-15', 2010, 4, 0, 1051.93, 31.76, 0.00, 0.00, 1020.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 12, '2010-04-30', 2010, 4, 0, 1020.17, 31.76, 0.00, 0.00, 988.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 13, '2010-05-15', 2010, 5, 0, 988.41, 31.76, 0.00, 0.00, 956.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 14, '2010-05-31', 2010, 5, 0, 956.65, 31.76, 0.00, 0.00, 924.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 15, '2010-06-15', 2010, 6, 0, 924.89, 31.76, 0.00, 0.00, 893.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 16, '2010-06-30', 2010, 6, 0, 893.13, 31.76, 0.00, 0.00, 861.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 17, '2010-07-15', 2010, 7, 0, 861.37, 31.76, 0.00, 0.00, 829.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 18, '2010-07-31', 2010, 7, 0, 829.61, 31.76, 0.00, 0.00, 797.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 19, '2010-08-15', 2010, 8, 0, 797.85, 31.76, 0.00, 0.00, 766.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 20, '2010-08-31', 2010, 8, 0, 766.09, 31.76, 0.00, 0.00, 734.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 21, '2010-09-15', 2010, 9, 0, 734.33, 31.76, 0.00, 0.00, 702.57, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 22, '2010-09-30', 2010, 9, 0, 702.57, 31.76, 0.00, 0.00, 670.81, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 23, '2010-10-15', 2010, 10, 0, 670.81, 31.76, 0.00, 0.00, 639.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 24, '2010-10-31', 2010, 10, 0, 639.05, 31.76, 0.00, 0.00, 607.29, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 25, '2010-11-15', 2010, 11, 0, 607.29, 31.76, 0.00, 0.00, 575.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 26, '2010-11-30', 2010, 11, 0, 575.53, 31.76, 0.00, 0.00, 543.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 27, '2010-12-15', 2010, 12, 0, 543.77, 31.76, 0.00, 0.00, 512.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 28, '2010-12-31', 2010, 12, 0, 512.01, 31.76, 0.00, 0.00, 480.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 29, '2011-01-15', 2011, 1, 0, 480.25, 31.76, 0.00, 0.00, 448.49, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 30, '2011-01-31', 2011, 1, 0, 448.49, 31.76, 0.00, 0.00, 416.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 31, '2011-02-15', 2011, 2, 0, 416.73, 31.76, 0.00, 0.00, 384.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 32, '2011-02-28', 2011, 2, 0, 384.97, 31.76, 0.00, 0.00, 353.21, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 33, '2011-03-15', 2011, 3, 0, 353.21, 31.76, 0.00, 0.00, 321.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 34, '2011-03-31', 2011, 3, 0, 321.45, 31.76, 0.00, 0.00, 289.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 35, '2011-04-15', 2011, 4, 0, 289.69, 31.76, 0.00, 0.00, 257.93, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 36, '2011-04-30', 2011, 4, 0, 257.93, 31.76, 0.00, 0.00, 226.17, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 37, '2011-05-15', 2011, 5, 0, 226.17, 31.76, 0.00, 0.00, 194.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 38, '2011-05-31', 2011, 5, 0, 194.41, 31.76, 0.00, 0.00, 162.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 39, '2011-06-15', 2011, 6, 0, 162.65, 31.76, 0.00, 0.00, 130.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 40, '2011-06-30', 2011, 6, 0, 130.89, 31.76, 0.00, 0.00, 99.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 41, '2011-07-15', 2011, 7, 0, 99.13, 31.76, 0.00, 0.00, 67.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 42, '2011-07-31', 2011, 7, 0, 67.37, 31.76, 0.00, 0.00, 35.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 43, '2011-08-15', 2011, 8, 0, 35.61, 31.76, 0.00, 0.00, 3.85, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(54, '10153', '', 44, '2011-08-31', 2011, 8, 0, 3.85, 3.85, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 1, '2009-11-15', 2009, 11, 0, 2854.31, 116.66, 0.00, 0.00, 2737.65, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 2, '2009-11-30', 2009, 11, 0, 2737.65, 116.66, 0.00, 0.00, 2620.99, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 3, '2009-12-15', 2009, 12, 0, 2620.99, 116.66, 0.00, 0.00, 2504.33, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 4, '2009-12-31', 2009, 12, 0, 2504.33, 116.66, 0.00, 0.00, 2387.67, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 5, '2010-01-15', 2010, 1, 0, 2387.67, 116.66, 0.00, 0.00, 2271.01, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 6, '2010-01-31', 2010, 1, 0, 2271.01, 116.66, 0.00, 0.00, 2154.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 7, '2010-02-15', 2010, 2, 0, 2154.35, 116.66, 0.00, 0.00, 2037.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 8, '2010-02-28', 2010, 2, 0, 2037.69, 116.66, 0.00, 0.00, 1921.03, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 9, '2010-03-15', 2010, 3, 0, 1921.03, 116.66, 0.00, 0.00, 1804.37, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 10, '2010-03-31', 2010, 3, 0, 1804.37, 116.66, 0.00, 0.00, 1687.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 11, '2010-04-15', 2010, 4, 0, 1687.71, 116.66, 0.00, 0.00, 1571.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 12, '2010-04-30', 2010, 4, 0, 1571.05, 116.66, 0.00, 0.00, 1454.39, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 13, '2010-05-15', 2010, 5, 0, 1454.39, 116.66, 0.00, 0.00, 1337.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 14, '2010-05-31', 2010, 5, 0, 1337.73, 116.66, 0.00, 0.00, 1221.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 15, '2010-06-15', 2010, 6, 0, 1221.07, 116.66, 0.00, 0.00, 1104.41, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 16, '2010-06-30', 2010, 6, 0, 1104.41, 116.66, 0.00, 0.00, 987.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 17, '2010-07-15', 2010, 7, 0, 987.75, 116.66, 0.00, 0.00, 871.09, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 18, '2010-07-31', 2010, 7, 0, 871.09, 116.66, 0.00, 0.00, 754.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 19, '2010-08-15', 2010, 8, 0, 754.43, 116.66, 0.00, 0.00, 637.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 20, '2010-08-31', 2010, 8, 0, 637.77, 116.66, 0.00, 0.00, 521.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 21, '2010-09-15', 2010, 9, 0, 521.11, 116.66, 0.00, 0.00, 404.45, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 22, '2010-09-30', 2010, 9, 0, 404.45, 116.66, 0.00, 0.00, 287.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 23, '2010-10-15', 2010, 10, 0, 287.79, 116.66, 0.00, 0.00, 171.13, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 24, '2010-10-31', 2010, 10, 0, 171.13, 116.66, 0.00, 0.00, 54.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(55, '10182', '', 25, '2010-11-15', 2010, 11, 0, 54.47, 54.47, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 1, '2009-11-15', 2009, 11, 0, 766.27, 33.12, 0.00, 0.00, 733.15, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 2, '2009-11-30', 2009, 11, 0, 733.15, 33.12, 0.00, 0.00, 700.03, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 3, '2009-12-15', 2009, 12, 0, 700.03, 33.12, 0.00, 0.00, 666.91, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 4, '2009-12-31', 2009, 12, 0, 666.91, 33.12, 0.00, 0.00, 633.79, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 5, '2010-01-15', 2010, 1, 0, 633.79, 33.12, 0.00, 0.00, 600.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 6, '2010-01-31', 2010, 1, 0, 600.67, 33.12, 0.00, 0.00, 567.55, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 7, '2010-02-15', 2010, 2, 0, 567.55, 33.12, 0.00, 0.00, 534.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 8, '2010-02-28', 2010, 2, 0, 534.43, 33.12, 0.00, 0.00, 501.31, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 9, '2010-03-15', 2010, 3, 0, 501.31, 33.12, 0.00, 0.00, 468.19, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 10, '2010-03-31', 2010, 3, 0, 468.19, 33.12, 0.00, 0.00, 435.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 11, '2010-04-15', 2010, 4, 0, 435.07, 33.12, 0.00, 0.00, 401.95, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 12, '2010-04-30', 2010, 4, 0, 401.95, 33.12, 0.00, 0.00, 368.83, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 13, '2010-05-15', 2010, 5, 0, 368.83, 33.12, 0.00, 0.00, 335.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 14, '2010-05-31', 2010, 5, 0, 335.71, 33.12, 0.00, 0.00, 302.59, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 15, '2010-06-15', 2010, 6, 0, 302.59, 33.12, 0.00, 0.00, 269.47, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 16, '2010-06-30', 2010, 6, 0, 269.47, 33.12, 0.00, 0.00, 236.35, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 17, '2010-07-15', 2010, 7, 0, 236.35, 33.12, 0.00, 0.00, 203.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 18, '2010-07-31', 2010, 7, 0, 203.23, 33.12, 0.00, 0.00, 170.11, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 19, '2010-08-15', 2010, 8, 0, 170.11, 33.12, 0.00, 0.00, 136.99, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 20, '2010-08-31', 2010, 8, 0, 136.99, 33.12, 0.00, 0.00, 103.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 21, '2010-09-15', 2010, 9, 0, 103.87, 33.12, 0.00, 0.00, 70.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 22, '2010-09-30', 2010, 9, 0, 70.75, 33.12, 0.00, 0.00, 37.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 23, '2010-10-15', 2010, 10, 0, 37.63, 33.12, 0.00, 0.00, 4.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(56, '10161', '', 24, '2010-10-31', 2010, 10, 0, 4.51, 4.51, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 1, '2009-11-15', 2009, 11, 0, 699.83, 30.01, 0.00, 0.00, 669.82, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 2, '2009-11-30', 2009, 11, 0, 669.82, 30.01, 0.00, 0.00, 639.81, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 3, '2009-12-15', 2009, 12, 0, 639.81, 30.01, 0.00, 0.00, 609.80, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 4, '2009-12-31', 2009, 12, 0, 609.80, 30.01, 0.00, 0.00, 579.79, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 5, '2010-01-15', 2010, 1, 0, 579.79, 30.01, 0.00, 0.00, 549.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 6, '2010-01-31', 2010, 1, 0, 549.78, 30.01, 0.00, 0.00, 519.77, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 7, '2010-02-15', 2010, 2, 0, 519.77, 30.01, 0.00, 0.00, 489.76, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 8, '2010-02-28', 2010, 2, 0, 489.76, 30.01, 0.00, 0.00, 459.75, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 9, '2010-03-15', 2010, 3, 0, 459.75, 30.01, 0.00, 0.00, 429.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 10, '2010-03-31', 2010, 3, 0, 429.74, 30.01, 0.00, 0.00, 399.73, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 11, '2010-04-15', 2010, 4, 0, 399.73, 30.01, 0.00, 0.00, 369.72, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 12, '2010-04-30', 2010, 4, 0, 369.72, 30.01, 0.00, 0.00, 339.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 13, '2010-05-15', 2010, 5, 0, 339.71, 30.01, 0.00, 0.00, 309.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 14, '2010-05-31', 2010, 5, 0, 309.70, 30.01, 0.00, 0.00, 279.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 15, '2010-06-15', 2010, 6, 0, 279.69, 30.01, 0.00, 0.00, 249.68, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 16, '2010-06-30', 2010, 6, 0, 249.68, 30.01, 0.00, 0.00, 219.67, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 17, '2010-07-15', 2010, 7, 0, 219.67, 30.01, 0.00, 0.00, 189.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 18, '2010-07-31', 2010, 7, 0, 189.66, 30.01, 0.00, 0.00, 159.65, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 19, '2010-08-15', 2010, 8, 0, 159.65, 30.01, 0.00, 0.00, 129.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 20, '2010-08-31', 2010, 8, 0, 129.64, 30.01, 0.00, 0.00, 99.63, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 21, '2010-09-15', 2010, 9, 0, 99.63, 30.01, 0.00, 0.00, 69.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 22, '2010-09-30', 2010, 9, 0, 69.62, 30.01, 0.00, 0.00, 39.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 23, '2010-10-15', 2010, 10, 0, 39.61, 30.01, 0.00, 0.00, 9.60, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(57, '10161', '', 24, '2010-10-31', 2010, 10, 0, 9.60, 9.60, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 1, '2009-11-15', 2009, 11, 0, 5745.18, 159.59, 0.00, 0.00, 5585.59, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 2, '2009-11-30', 2009, 11, 0, 5585.59, 159.59, 0.00, 0.00, 5426.00, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 3, '2009-12-15', 2009, 12, 0, 5426.00, 159.59, 0.00, 0.00, 5266.41, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 4, '2009-12-31', 2009, 12, 0, 5266.41, 159.59, 0.00, 0.00, 5106.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 5, '2010-01-15', 2010, 1, 0, 5106.82, 159.59, 0.00, 0.00, 4947.23, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 6, '2010-01-31', 2010, 1, 0, 4947.23, 159.59, 0.00, 0.00, 4787.64, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 7, '2010-02-15', 2010, 2, 0, 4787.64, 159.59, 0.00, 0.00, 4628.05, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 8, '2010-02-28', 2010, 2, 0, 4628.05, 159.59, 0.00, 0.00, 4468.46, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 9, '2010-03-15', 2010, 3, 0, 4468.46, 159.59, 0.00, 0.00, 4308.87, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 10, '2010-03-31', 2010, 3, 0, 4308.87, 159.59, 0.00, 0.00, 4149.28, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 11, '2010-04-15', 2010, 4, 0, 4149.28, 159.59, 0.00, 0.00, 3989.69, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 12, '2010-04-30', 2010, 4, 0, 3989.69, 159.59, 0.00, 0.00, 3830.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 13, '2010-05-15', 2010, 5, 0, 3830.10, 159.59, 0.00, 0.00, 3670.51, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 14, '2010-05-31', 2010, 5, 0, 3670.51, 159.59, 0.00, 0.00, 3510.92, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 15, '2010-06-15', 2010, 6, 0, 3510.92, 159.59, 0.00, 0.00, 3351.33, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 16, '2010-06-30', 2010, 6, 0, 3351.33, 159.59, 0.00, 0.00, 3191.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 17, '2010-07-15', 2010, 7, 0, 3191.74, 159.59, 0.00, 0.00, 3032.15, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 18, '2010-07-31', 2010, 7, 0, 3032.15, 159.59, 0.00, 0.00, 2872.56, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 19, '2010-08-15', 2010, 8, 0, 2872.56, 159.59, 0.00, 0.00, 2712.97, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 20, '2010-08-31', 2010, 8, 0, 2712.97, 159.59, 0.00, 0.00, 2553.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 21, '2010-09-15', 2010, 9, 0, 2553.38, 159.59, 0.00, 0.00, 2393.79, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 22, '2010-09-30', 2010, 9, 0, 2393.79, 159.59, 0.00, 0.00, 2234.20, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 23, '2010-10-15', 2010, 10, 0, 2234.20, 159.59, 0.00, 0.00, 2074.61, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 24, '2010-10-31', 2010, 10, 0, 2074.61, 159.59, 0.00, 0.00, 1915.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 25, '2010-11-15', 2010, 11, 0, 1915.02, 159.59, 0.00, 0.00, 1755.43, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 26, '2010-11-30', 2010, 11, 0, 1755.43, 159.59, 0.00, 0.00, 1595.84, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 27, '2010-12-15', 2010, 12, 0, 1595.84, 159.59, 0.00, 0.00, 1436.25, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 28, '2010-12-31', 2010, 12, 0, 1436.25, 159.59, 0.00, 0.00, 1276.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 29, '2011-01-15', 2011, 1, 0, 1276.66, 159.59, 0.00, 0.00, 1117.07, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 30, '2011-01-31', 2011, 1, 0, 1117.07, 159.59, 0.00, 0.00, 957.48, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 31, '2011-02-15', 2011, 2, 0, 957.48, 159.59, 0.00, 0.00, 797.89, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 32, '2011-02-28', 2011, 2, 0, 797.89, 159.59, 0.00, 0.00, 638.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 33, '2011-03-15', 2011, 3, 0, 638.30, 159.59, 0.00, 0.00, 478.71, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 34, '2011-03-31', 2011, 3, 0, 478.71, 159.59, 0.00, 0.00, 319.12, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 35, '2011-04-15', 2011, 4, 0, 319.12, 159.59, 0.00, 0.00, 159.53, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(58, '10039', '', 36, '2011-04-30', 2011, 4, 0, 159.53, 159.53, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 1, '2009-11-15', 2009, 11, 0, 1301.46, 30.12, 0.00, 0.00, 1271.34, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 2, '2009-11-30', 2009, 11, 0, 1271.34, 30.12, 0.00, 0.00, 1241.22, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 3, '2009-12-15', 2009, 12, 0, 1241.22, 30.12, 0.00, 0.00, 1211.10, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 4, '2009-12-31', 2009, 12, 0, 1211.10, 30.12, 0.00, 0.00, 1180.98, '0000-00-00', 'Cancelada', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 5, '2010-01-15', 2010, 1, 0, 1180.98, 30.12, 0.00, 0.00, 1150.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 6, '2010-01-31', 2010, 1, 0, 1150.86, 30.12, 0.00, 0.00, 1120.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 7, '2010-02-15', 2010, 2, 0, 1120.74, 30.12, 0.00, 0.00, 1090.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 8, '2010-02-28', 2010, 2, 0, 1090.62, 30.12, 0.00, 0.00, 1060.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 9, '2010-03-15', 2010, 3, 0, 1060.50, 30.12, 0.00, 0.00, 1030.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 10, '2010-03-31', 2010, 3, 0, 1030.38, 30.12, 0.00, 0.00, 1000.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 11, '2010-04-15', 2010, 4, 0, 1000.26, 30.12, 0.00, 0.00, 970.14, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 12, '2010-04-30', 2010, 4, 0, 970.14, 30.12, 0.00, 0.00, 940.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 13, '2010-05-15', 2010, 5, 0, 940.02, 30.12, 0.00, 0.00, 909.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 14, '2010-05-31', 2010, 5, 0, 909.90, 30.12, 0.00, 0.00, 879.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 15, '2010-06-15', 2010, 6, 0, 879.78, 30.12, 0.00, 0.00, 849.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 16, '2010-06-30', 2010, 6, 0, 849.66, 30.12, 0.00, 0.00, 819.54, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 17, '2010-07-15', 2010, 7, 0, 819.54, 30.12, 0.00, 0.00, 789.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 18, '2010-07-31', 2010, 7, 0, 789.42, 30.12, 0.00, 0.00, 759.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 19, '2010-08-15', 2010, 8, 0, 759.30, 30.12, 0.00, 0.00, 729.18, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 20, '2010-08-31', 2010, 8, 0, 729.18, 30.12, 0.00, 0.00, 699.06, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 21, '2010-09-15', 2010, 9, 0, 699.06, 30.12, 0.00, 0.00, 668.94, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 22, '2010-09-30', 2010, 9, 0, 668.94, 30.12, 0.00, 0.00, 638.82, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 23, '2010-10-15', 2010, 10, 0, 638.82, 30.12, 0.00, 0.00, 608.70, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 24, '2010-10-31', 2010, 10, 0, 608.70, 30.12, 0.00, 0.00, 578.58, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 25, '2010-11-15', 2010, 11, 0, 578.58, 30.12, 0.00, 0.00, 548.46, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 26, '2010-11-30', 2010, 11, 0, 548.46, 30.12, 0.00, 0.00, 518.34, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 27, '2010-12-15', 2010, 12, 0, 518.34, 30.12, 0.00, 0.00, 488.22, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 28, '2010-12-31', 2010, 12, 0, 488.22, 30.12, 0.00, 0.00, 458.10, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 29, '2011-01-15', 2011, 1, 0, 458.10, 30.12, 0.00, 0.00, 427.98, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 30, '2011-01-31', 2011, 1, 0, 427.98, 30.12, 0.00, 0.00, 397.86, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 31, '2011-02-15', 2011, 2, 0, 397.86, 30.12, 0.00, 0.00, 367.74, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 32, '2011-02-28', 2011, 2, 0, 367.74, 30.12, 0.00, 0.00, 337.62, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 33, '2011-03-15', 2011, 3, 0, 337.62, 30.12, 0.00, 0.00, 307.50, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 34, '2011-03-31', 2011, 3, 0, 307.50, 30.12, 0.00, 0.00, 277.38, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 35, '2011-04-15', 2011, 4, 0, 277.38, 30.12, 0.00, 0.00, 247.26, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 36, '2011-04-30', 2011, 4, 0, 247.26, 30.12, 0.00, 0.00, 217.14, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 37, '2011-05-15', 2011, 5, 0, 217.14, 30.12, 0.00, 0.00, 187.02, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 38, '2011-05-31', 2011, 5, 0, 187.02, 30.12, 0.00, 0.00, 156.90, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 39, '2011-06-15', 2011, 6, 0, 156.90, 30.12, 0.00, 0.00, 126.78, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 40, '2011-06-30', 2011, 6, 0, 126.78, 30.12, 0.00, 0.00, 96.66, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 41, '2011-07-15', 2011, 7, 0, 96.66, 30.12, 0.00, 0.00, 66.54, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 42, '2011-07-31', 2011, 7, 0, 66.54, 30.12, 0.00, 0.00, 36.42, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 43, '2011-08-15', 2011, 8, 0, 36.42, 30.12, 0.00, 0.00, 6.30, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(59, '10173', '', 44, '2011-08-31', 2011, 8, 0, 6.30, 6.30, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 2, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 1, '2009-11-15', 2009, 11, 0, 4500.00, 93.75, 0.00, 0.00, 4406.25, '0000-00-00', 'Cancelada', '', 0, 4, '0000-00-00', '0000-00-00', 1),
-(60, '20001', '', 2, '2009-11-30', 2009, 11, 0, 4406.25, 93.75, 0.00, 0.00, 4312.50, '0000-00-00', 'Cancelada', '', 0, 4, '0000-00-00', '0000-00-00', 1),
-(60, '20001', '', 3, '2009-12-15', 2009, 12, 0, 4312.50, 93.75, 0.00, 0.00, 4218.75, '0000-00-00', 'Cancelada', '', 0, 4, '0000-00-00', '0000-00-00', 1),
-(60, '20001', '', 4, '2009-12-31', 2009, 12, 0, 4218.75, 93.75, 0.00, 0.00, 4125.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 5, '2010-01-15', 2010, 1, 0, 4125.00, 93.75, 0.00, 0.00, 4031.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 6, '2010-01-31', 2010, 1, 0, 4031.25, 93.75, 0.00, 0.00, 3937.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 7, '2010-02-15', 2010, 2, 0, 3937.50, 93.75, 0.00, 0.00, 3843.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 8, '2010-02-28', 2010, 2, 0, 3843.75, 93.75, 0.00, 0.00, 3750.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 9, '2010-03-15', 2010, 3, 0, 3750.00, 93.75, 0.00, 0.00, 3656.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 10, '2010-03-31', 2010, 3, 0, 3656.25, 93.75, 0.00, 0.00, 3562.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 11, '2010-04-15', 2010, 4, 0, 3562.50, 93.75, 0.00, 0.00, 3468.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 12, '2010-04-30', 2010, 4, 0, 3468.75, 93.75, 0.00, 0.00, 3375.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 13, '2010-05-15', 2010, 5, 0, 3375.00, 93.75, 0.00, 0.00, 3281.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 14, '2010-05-31', 2010, 5, 0, 3281.25, 93.75, 0.00, 0.00, 3187.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 15, '2010-06-15', 2010, 6, 0, 3187.50, 93.75, 0.00, 0.00, 3093.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 16, '2010-06-30', 2010, 6, 0, 3093.75, 93.75, 0.00, 0.00, 3000.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 17, '2010-07-15', 2010, 7, 0, 3000.00, 93.75, 0.00, 0.00, 2906.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 18, '2010-07-31', 2010, 7, 0, 2906.25, 93.75, 0.00, 0.00, 2812.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 19, '2010-08-15', 2010, 8, 0, 2812.50, 93.75, 0.00, 0.00, 2718.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 20, '2010-08-31', 2010, 8, 0, 2718.75, 93.75, 0.00, 0.00, 2625.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 21, '2010-09-15', 2010, 9, 0, 2625.00, 93.75, 0.00, 0.00, 2531.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 22, '2010-09-30', 2010, 9, 0, 2531.25, 93.75, 0.00, 0.00, 2437.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 23, '2010-10-15', 2010, 10, 0, 2437.50, 93.75, 0.00, 0.00, 2343.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 24, '2010-10-31', 2010, 10, 0, 2343.75, 93.75, 0.00, 0.00, 2250.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 25, '2010-11-15', 2010, 11, 0, 2250.00, 93.75, 0.00, 0.00, 2156.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 26, '2010-11-30', 2010, 11, 0, 2156.25, 93.75, 0.00, 0.00, 2062.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 27, '2010-12-15', 2010, 12, 0, 2062.50, 93.75, 0.00, 0.00, 1968.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 28, '2010-12-31', 2010, 12, 0, 1968.75, 93.75, 0.00, 0.00, 1875.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 29, '2011-01-15', 2011, 1, 0, 1875.00, 93.75, 0.00, 0.00, 1781.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 30, '2011-01-31', 2011, 1, 0, 1781.25, 93.75, 0.00, 0.00, 1687.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 31, '2011-02-15', 2011, 2, 0, 1687.50, 93.75, 0.00, 0.00, 1593.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 32, '2011-02-28', 2011, 2, 0, 1593.75, 93.75, 0.00, 0.00, 1500.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 33, '2011-03-15', 2011, 3, 0, 1500.00, 93.75, 0.00, 0.00, 1406.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 34, '2011-03-31', 2011, 3, 0, 1406.25, 93.75, 0.00, 0.00, 1312.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 35, '2011-04-15', 2011, 4, 0, 1312.50, 93.75, 0.00, 0.00, 1218.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 36, '2011-04-30', 2011, 4, 0, 1218.75, 93.75, 0.00, 0.00, 1125.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 37, '2011-05-15', 2011, 5, 0, 1125.00, 93.75, 0.00, 0.00, 1031.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 38, '2011-05-31', 2011, 5, 0, 1031.25, 93.75, 0.00, 0.00, 937.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 39, '2011-06-15', 2011, 6, 0, 937.50, 93.75, 0.00, 0.00, 843.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 40, '2011-06-30', 2011, 6, 0, 843.75, 93.75, 0.00, 0.00, 750.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 41, '2011-07-15', 2011, 7, 0, 750.00, 93.75, 0.00, 0.00, 656.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 42, '2011-07-31', 2011, 7, 0, 656.25, 93.75, 0.00, 0.00, 562.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 43, '2011-08-15', 2011, 8, 0, 562.50, 93.75, 0.00, 0.00, 468.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 44, '2011-08-31', 2011, 8, 0, 468.75, 93.75, 0.00, 0.00, 375.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 45, '2011-09-15', 2011, 9, 0, 375.00, 93.75, 0.00, 0.00, 281.25, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 46, '2011-09-30', 2011, 9, 0, 281.25, 93.75, 0.00, 0.00, 187.50, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 47, '2011-10-15', 2011, 10, 0, 187.50, 93.75, 0.00, 0.00, 93.75, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0),
-(60, '20001', '', 48, '2011-10-31', 2011, 10, 0, 93.75, 93.75, 0.00, 0.00, 0.00, '0000-00-00', 'Pendiente', '', 0, 4, '0000-00-00', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomprofesiones`
+-- Table structure for table `nomprofesiones`
 --
 
 CREATE TABLE IF NOT EXISTS `nomprofesiones` (
@@ -3241,7 +3667,7 @@ CREATE TABLE IF NOT EXISTS `nomprofesiones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomprofesiones`
+-- Dumping data for table `nomprofesiones`
 --
 
 INSERT INTO `nomprofesiones` (`codorg`, `descrip`, `ee`) VALUES
@@ -3317,7 +3743,7 @@ INSERT INTO `nomprofesiones` (`codorg`, `descrip`, `ee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomsituaciones`
+-- Table structure for table `nomsituaciones`
 --
 
 CREATE TABLE IF NOT EXISTS `nomsituaciones` (
@@ -3325,10 +3751,10 @@ CREATE TABLE IF NOT EXISTS `nomsituaciones` (
   `situacion` varchar(30) collate utf8_spanish_ci default NULL,
   PRIMARY KEY  (`codigo`),
   KEY `situacion` (`situacion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=12 ;
 
 --
--- Volcar la base de datos para la tabla `nomsituaciones`
+-- Dumping data for table `nomsituaciones`
 --
 
 INSERT INTO `nomsituaciones` (`codigo`, `situacion`) VALUES
@@ -3340,12 +3766,14 @@ INSERT INTO `nomsituaciones` (`codigo`, `situacion`) VALUES
 (3, 'Jubilado'),
 (5, 'Nuevo'),
 (7, 'Pensionado'),
+(10, 'Permiso no Remunerado'),
+(11, 'Retirado'),
 (4, 'Vacaciones');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomsuspenciones`
+-- Table structure for table `nomsuspenciones`
 --
 
 CREATE TABLE IF NOT EXISTS `nomsuspenciones` (
@@ -3357,7 +3785,7 @@ CREATE TABLE IF NOT EXISTS `nomsuspenciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomsuspenciones`
+-- Dumping data for table `nomsuspenciones`
 --
 
 INSERT INTO `nomsuspenciones` (`codigo`, `descrip`, `ee`) VALUES
@@ -3370,7 +3798,7 @@ INSERT INTO `nomsuspenciones` (`codigo`, `descrip`, `ee`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomtarifas`
+-- Table structure for table `nomtarifas`
 --
 
 CREATE TABLE IF NOT EXISTS `nomtarifas` (
@@ -3383,7 +3811,7 @@ CREATE TABLE IF NOT EXISTS `nomtarifas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomtarifas`
+-- Dumping data for table `nomtarifas`
 --
 
 INSERT INTO `nomtarifas` (`limite_menor`, `limite_mayor`, `monto`, `codigo`) VALUES
@@ -3397,7 +3825,7 @@ INSERT INTO `nomtarifas` (`limite_menor`, `limite_mayor`, `monto`, `codigo`) VAL
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomtasas_interes`
+-- Table structure for table `nomtasas_interes`
 --
 
 CREATE TABLE IF NOT EXISTS `nomtasas_interes` (
@@ -3409,23 +3837,14 @@ CREATE TABLE IF NOT EXISTS `nomtasas_interes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomtasas_interes`
+-- Dumping data for table `nomtasas_interes`
 --
 
-INSERT INTO `nomtasas_interes` (`tasa`, `anio`, `mes`, `ee`) VALUES
-('17.56', 2009, 6, 0),
-('17.26', 2009, 7, 0),
-('17.04', 2009, 8, 0),
-('16.58', 2009, 9, 0),
-('17.62', 2009, 10, 0),
-('17.05', 2009, 11, 0),
-('19.00', 2009, 12, 0),
-('18.00', 2010, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomterceros`
+-- Table structure for table `nomterceros`
 --
 
 CREATE TABLE IF NOT EXISTS `nomterceros` (
@@ -3435,14 +3854,14 @@ CREATE TABLE IF NOT EXISTS `nomterceros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 --
--- Volcar la base de datos para la tabla `nomterceros`
+-- Dumping data for table `nomterceros`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomtipos_nomina`
+-- Table structure for table `nomtipos_nomina`
 --
 
 CREATE TABLE IF NOT EXISTS `nomtipos_nomina` (
@@ -3538,16 +3957,16 @@ CREATE TABLE IF NOT EXISTS `nomtipos_nomina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nomtipos_nomina`
+-- Dumping data for table `nomtipos_nomina`
 --
 
 INSERT INTO `nomtipos_nomina` (`codtip`, `descrip`, `prioridad`, `fecha_fin`, `fecha_ini`, `codnom`, `diasbonvac`, `diasutilidad`, `diasdisfrute`, `tipodisfrute`, `diasincrem`, `diasmaxinc`, `diasincremdis`, `diasmaxincdis`, `tiempoor`, `diasantiguedad`, `antigincremvac`, `markar`, `usatablas`, `baremo01`, `baremo02`, `baremo03`, `baremo04`, `fecha`, `ruta`, `basesuelsal`, `sfecha_fin`, `sfecha_ini`, `sfecha`, `base30`, `detdes`, `codnomant`, `fechabon`, `ee`, `owner`, `bdgenerada`, `codgrupo`, `conceptosglopar`, `tipocamposadic`, `dfecha_ini`, `dfecha_fin`, `dfecha`, `dfechabon`, `desglose_moneda`, `tipo_ingreso`, `codigo_banco`, `quinquenio`) VALUES
-(1, 'Inicio(eliminar)', NULL, NULL, NULL, 38, 40, NULL, 15, 'Ha', 0, 0, 1, 10, 0, 365, 1, NULL, 0, NULL, NULL, NULL, NULL, '1989-01-01', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'Q', '', '');
+(1, 'Inicio (Eliminar)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomusuarios`
+-- Table structure for table `nomusuarios`
 --
 
 CREATE TABLE IF NOT EXISTS `nomusuarios` (
@@ -3584,24 +4003,24 @@ CREATE TABLE IF NOT EXISTS `nomusuarios` (
   `borraper` tinyint(4) default NULL,
   `dfecha` datetime default NULL,
   `dfecclave` datetime default NULL,
-  `login_usuario` varchar(10) collate utf8_spanish_ci NOT NULL,
+  `login_usuario` varchar(60) collate utf8_spanish_ci NOT NULL,
   `acce_autorizar_nom` int(1) default NULL,
   `acce_enviar_nom` int(1) default NULL,
   `acce_generarordennomina` int(1) default NULL,
   PRIMARY KEY  (`coduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `nomusuarios`
+-- Dumping data for table `nomusuarios`
 --
 
 INSERT INTO `nomusuarios` (`coduser`, `descrip`, `nivel`, `fecha`, `clave`, `acce_usuarios`, `acce_configuracion`, `acce_elegibles`, `acce_personal`, `acce_prestamos`, `acce_consultas`, `acce_transacciones`, `acce_procesos`, `acce_reportes`, `acce_estuaca`, `acce_xestuaca`, `acce_permisos`, `acce_logros`, `acce_penalizacion`, `acce_movpe`, `acce_evalde`, `acce_experiencia`, `acce_antic`, `acce_uniforme`, `contadorvence`, `fecclave`, `encript`, `pregunta`, `respuesta`, `acctwind`, `borraper`, `dfecha`, `dfecclave`, `login_usuario`, `acce_autorizar_nom`, `acce_enviar_nom`, `acce_generarordennomina`) VALUES
-(1, 'onuva', NULL, 0, 'f63f47a5d94dad9fb559c8b3dd1185874b15352e7187820b596ceb42e5759f83', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'onuva', 1, 1, 0);
+(1, 'onuva', NULL, NULL, '2a97516c354b68848cdbd8f54a226a0a55b21ed138e207ad6c5cbb9c00aa5aea', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'onuva', 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nomvis_conceptos_acumulado`
+-- Stand-in structure for view `nomvis_conceptos_acumulado`
 --
 CREATE TABLE IF NOT EXISTS `nomvis_conceptos_acumulado` (
 `codcon` int(11)
@@ -3611,7 +4030,7 @@ CREATE TABLE IF NOT EXISTS `nomvis_conceptos_acumulado` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nomvis_conceptos_frecuencia`
+-- Stand-in structure for view `nomvis_conceptos_frecuencia`
 --
 CREATE TABLE IF NOT EXISTS `nomvis_conceptos_frecuencia` (
 `codcon` int(11)
@@ -3621,7 +4040,7 @@ CREATE TABLE IF NOT EXISTS `nomvis_conceptos_frecuencia` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nomvis_conceptos_situacion`
+-- Stand-in structure for view `nomvis_conceptos_situacion`
 --
 CREATE TABLE IF NOT EXISTS `nomvis_conceptos_situacion` (
 `codcon` int(11)
@@ -3631,7 +4050,7 @@ CREATE TABLE IF NOT EXISTS `nomvis_conceptos_situacion` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nomvis_conceptos_tiposnomina`
+-- Stand-in structure for view `nomvis_conceptos_tiposnomina`
 --
 CREATE TABLE IF NOT EXISTS `nomvis_conceptos_tiposnomina` (
 `codcon` int(11)
@@ -3641,7 +4060,7 @@ CREATE TABLE IF NOT EXISTS `nomvis_conceptos_tiposnomina` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nomvis_integrantes`
+-- Stand-in structure for view `nomvis_integrantes`
 --
 CREATE TABLE IF NOT EXISTS `nomvis_integrantes` (
 `cedula` int(11)
@@ -3654,7 +4073,7 @@ CREATE TABLE IF NOT EXISTS `nomvis_integrantes` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nomvis_per_movimiento`
+-- Stand-in structure for view `nomvis_per_movimiento`
 --
 CREATE TABLE IF NOT EXISTS `nomvis_per_movimiento` (
 `codnom` int(11)
@@ -3673,7 +4092,7 @@ CREATE TABLE IF NOT EXISTS `nomvis_per_movimiento` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_modulos`
+-- Table structure for table `nom_modulos`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_modulos` (
@@ -3684,10 +4103,10 @@ CREATE TABLE IF NOT EXISTS `nom_modulos` (
   `orden` int(11) default NULL,
   `tabla` varchar(200) collate utf8_spanish_ci default NULL,
   PRIMARY KEY  (`cod_modulo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=66 ;
 
 --
--- Volcar la base de datos para la tabla `nom_modulos`
+-- Dumping data for table `nom_modulos`
 --
 
 INSERT INTO `nom_modulos` (`cod_modulo`, `cod_modulo_padre`, `nom_menu`, `archivo`, `orden`, `tabla`) VALUES
@@ -3709,7 +4128,7 @@ INSERT INTO `nom_modulos` (`cod_modulo`, `cod_modulo_padre`, `nom_menu`, `archiv
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_motivos_retiros`
+-- Table structure for table `nom_motivos_retiros`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_motivos_retiros` (
@@ -3719,7 +4138,7 @@ CREATE TABLE IF NOT EXISTS `nom_motivos_retiros` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=4 ;
 
 --
--- Volcar la base de datos para la tabla `nom_motivos_retiros`
+-- Dumping data for table `nom_motivos_retiros`
 --
 
 INSERT INTO `nom_motivos_retiros` (`codigo`, `descripcion`) VALUES
@@ -3730,7 +4149,7 @@ INSERT INTO `nom_motivos_retiros` (`codigo`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_movimientos_nomina`
+-- Table structure for table `nom_movimientos_nomina`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_movimientos_nomina` (
@@ -3782,14 +4201,14 @@ CREATE TABLE IF NOT EXISTS `nom_movimientos_nomina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nom_movimientos_nomina`
+-- Dumping data for table `nom_movimientos_nomina`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_nominas_pago`
+-- Table structure for table `nom_nominas_pago`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_nominas_pago` (
@@ -3839,14 +4258,14 @@ CREATE TABLE IF NOT EXISTS `nom_nominas_pago` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nom_nominas_pago`
+-- Dumping data for table `nom_nominas_pago`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_nomina_netos`
+-- Table structure for table `nom_nomina_netos`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_nomina_netos` (
@@ -3856,18 +4275,21 @@ CREATE TABLE IF NOT EXISTS `nom_nomina_netos` (
   `cedula` int(11) NOT NULL,
   `cta_ban` varchar(21) collate utf8_spanish_ci NOT NULL,
   `neto` float(20,2) NOT NULL,
+  `mes` int(2) NOT NULL,
+  `anio` int(4) NOT NULL,
+  `frecuencia` int(2) NOT NULL,
   PRIMARY KEY  (`codnom`,`tipnom`,`ficha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nom_nomina_netos`
+-- Dumping data for table `nom_nomina_netos`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_progvacaciones`
+-- Table structure for table `nom_progvacaciones`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_progvacaciones` (
@@ -3902,14 +4324,14 @@ CREATE TABLE IF NOT EXISTS `nom_progvacaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nom_progvacaciones`
+-- Dumping data for table `nom_progvacaciones`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nom_variables_personal`
+-- Table structure for table `nom_variables_personal`
 --
 
 CREATE TABLE IF NOT EXISTS `nom_variables_personal` (
@@ -3921,7 +4343,7 @@ CREATE TABLE IF NOT EXISTS `nom_variables_personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `nom_variables_personal`
+-- Dumping data for table `nom_variables_personal`
 --
 
 INSERT INTO `nom_variables_personal` (`nombre`, `descripcion`, `parametros`, `indicador`) VALUES
@@ -3997,7 +4419,7 @@ INSERT INTO `nom_variables_personal` (`nombre`, `descripcion`, `parametros`, `in
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nomvis_conceptos_acumulado`
+-- Structure for view `nomvis_conceptos_acumulado`
 --
 DROP TABLE IF EXISTS `nomvis_conceptos_acumulado`;
 
@@ -4006,7 +4428,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nomvis_conceptos_frecuencia`
+-- Structure for view `nomvis_conceptos_frecuencia`
 --
 DROP TABLE IF EXISTS `nomvis_conceptos_frecuencia`;
 
@@ -4015,7 +4437,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nomvis_conceptos_situacion`
+-- Structure for view `nomvis_conceptos_situacion`
 --
 DROP TABLE IF EXISTS `nomvis_conceptos_situacion`;
 
@@ -4024,7 +4446,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nomvis_conceptos_tiposnomina`
+-- Structure for view `nomvis_conceptos_tiposnomina`
 --
 DROP TABLE IF EXISTS `nomvis_conceptos_tiposnomina`;
 
@@ -4033,7 +4455,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nomvis_integrantes`
+-- Structure for view `nomvis_integrantes`
 --
 DROP TABLE IF EXISTS `nomvis_integrantes`;
 
@@ -4042,7 +4464,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nomvis_per_movimiento`
+-- Structure for view `nomvis_per_movimiento`
 --
 DROP TABLE IF EXISTS `nomvis_per_movimiento`;
 
