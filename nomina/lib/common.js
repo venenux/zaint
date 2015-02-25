@@ -264,7 +264,7 @@ function cargar_tipo()
 
 function alerta(id,dia,anio)
 {
-	var celda=document.getElementById('id')	
+	var celda=document.getElementById(id)	
 	var laborable= document.getElementById('estado')
 	var contenido_celda=abrirAjax()
 	contenido_celda.open("GET", "modificar_calendarios.php?fecha="+id+"&estado="+laborable.value+"&dia="+dia, true)
