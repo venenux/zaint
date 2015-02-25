@@ -21,7 +21,7 @@ class PDF extends FPDF
 
 function header(){
 // 	$Conn=conexion();
-       $var_izquierda='../imagenes/LOGO_FUNDAVANZA_RECIBO.jpg';
+       $var_izquierda='../imagenes/onuva.jpg';
 // 	$date1=date('d/m/Y');
 // 	$date2=date('h:i a');
 // 
@@ -45,7 +45,7 @@ function header(){
 	$date2=date('h:i a');	
        $this->Ln(10);
        
-       $this->Cell(70,5,'Gobierno de Carabobo',0,0,'L');
+       $this->Cell(70,5,'Gobierno de Venezuela',0,0,'L');
 //	$this->Cell(70,5,utf8_decode($var_encabezado),0,0,'L');
 	$this->Cell(50,5,'RECIBO DE PAGO'.$ANIO,0,0,'C');
 	$this->Cell(70,5,'Fecha:  '.$date1,0,1,'R');

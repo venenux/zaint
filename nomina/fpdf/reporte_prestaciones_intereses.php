@@ -3,9 +3,13 @@ session_start();
 ob_start();
 $termino=$_SESSION['termino'];
 
+
+
+
 require('fpdf.php');
 include("../lib/common.php");
 include("../lib/pdf.php");
+
 
 function fecha($value) { // fecha de YYYY/MM/DD a DD/MM/YYYY
  if ( ! empty($value) ) return substr($value,8,2) ."/". substr($value,5,2) ."/". substr($value,0,4);

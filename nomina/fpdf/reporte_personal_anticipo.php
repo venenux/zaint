@@ -14,14 +14,14 @@ class PDF extends FPDF
 //Cabecera de página
 function Header()
 {
-        $var_izquierda='../imagenes/izquierda.jpg';
+      /*  $var_izquierda='../imagenes/izquierda.jpg';
 	$var_centro='../imagenes/centro.jpg';
 	$var_derecha='../imagenes/derecha.jpg';
 	
         $this->SetFont("Arial","B",12);
      	$this->Image($var_izquierda,25,12,80,15);
 	$this->Image($var_centro,160,12,45,15);
-	$this->Image($var_derecha,245,12,20,13);
+	$this->Image($var_derecha,245,12,20,13);*/
 	$this->SetFont('Arial','B',12);
      	$this->Ln(25);
 	

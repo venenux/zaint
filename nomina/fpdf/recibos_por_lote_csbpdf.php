@@ -5,7 +5,6 @@ $termino=$_SESSION['termino'];
 $tipo=$_GET['tipo'];
 $nomina_id=$_GET['nomina_id'];
 $codtp=$_GET['codt'];
-$departamento=$_GET['dep'];
 
 
 require('fpdf.php');
@@ -40,12 +39,12 @@ function header(){
 	$row_rs = fetch_array($rs);
 	$var_encabezado=$row_rs['nom_emp'];
 	$var_izquierda='../imagenes/'.$row_rs[imagen_izq];
-	$this->Image($var_izquierda,10,4,30,15);
+	$this->Image($var_izquierda,10,6,30,15);
 	
-	$this->SetFont('Arial','',9);
+	$this->SetFont('Sanserif','',9);
 	$date1=date('d/m/Y');
 	$date2=date('h:i a');	
-
+       $this->Ln(10);
        
        $this->Cell(70,5,'',0,0,'L');
 //	$this->Cell(70,5,utf8_decode($var_encabezado),0,0,'L');
@@ -170,11 +169,10 @@ function Row($data)
 }
 //fin
 
-function personas($nomina_id,$codtp,$departamento){
+function personas($nomina_id,$codtp){
 
 	$conexion=conexion();
 
-	
 	$consulta3 = "SELECT periodo_ini, periodo_fin, periodo FROM nom_nominas_pago WHERE codnom = '".$nomina_id."' AND codtip = '".$codtp."'";
 	$result5 = query($consulta3,$conexion);
 	$fetch5 = fetch_array($result5);
@@ -188,13 +186,10 @@ function personas($nomina_id,$codtp,$departamento){
 	$ciudad=$row[ciu_emp];
 	$gerente=$row[ger_rrhh];
 	
-	if($departamento=='Todos'){
-		$query="select * from nomvis_per_movimiento where codnom='".$nomina_id."' and tipnom='".$_SESSION['codigo_nomina']."' ";		
-	}else{
-		$query="select * from nomvis_per_movimiento where codnom='".$nomina_id."' and tipnom='".$_SESSION['codigo_nomina']."' and codnivel3= ".$departamento;
-
-	}
-	$result_lote=query($query,$conexion);
+	
+	$query="select * from nomvis_per_movimiento where codnom='".$nomina_id."' and tipnom='".$_SESSION['codigo_nomina']."' ";		
+	$result_lote=query($query,$conexion);	
+	
 	
 	$totalbd=num_rows($result);
 	
@@ -214,7 +209,7 @@ function personas($nomina_id,$codtp,$departamento){
 		$nompre_cargo=$row[des_car];
 		$sub_total_dedu=0;
 		
-		$this->SetFont('Arial','',9);
+		$this->SetFont('Sanserif','',9);
 		$this->SetWidths(array(30,100));
 		$this->SetAligns(array('L','L'));
 		$this->Setceldas(array(0,0));
@@ -258,7 +253,7 @@ function personas($nomina_id,$codtp,$departamento){
 		$this->Cell(31,7,utf8_decode('Asignación'),0,0,'R');
 		$this->Cell(30,7,utf8_decode('Deducción'),0,1,'R');
 		$this->Ln(2);
-		
+
 		$sub_total_asig=0;
 		$sub_total_dedu=0;
 		while ($row = mysql_fetch_array($result))
@@ -275,7 +270,7 @@ function personas($nomina_id,$codtp,$departamento){
 			$sub_total_dedu=$row[monto]+$sub_total_dedu;
 			}
 			
-			$this->SetFont('Arial','',8);
+			$this->SetFont('Sanserif','',9);
 			$this->SetWidths(array(105,25,31,30));
 			$this->SetAligns(array('L','C','R','R'));
 			$this->Setceldas(array(0,0,0,0));
@@ -286,7 +281,7 @@ function personas($nomina_id,$codtp,$departamento){
 			
 		}
 	
-			$this->SetFont('Arial','',8);
+		
 			$this->Cell(120,5,'Sub-Totales: ',0,0,'R');
 			$this->Cell(34,6,number_format($sub_total_asig,2,',','.'),'T',0,'R');
 			$this->Cell(34,6,number_format($sub_total_dedu,2,',','.'),'T',1,'R');
@@ -320,10 +315,11 @@ function Footer(){
 //Creación del objeto de la clase heredada
 // $pdf = new PDF('L', 'mm', array(215,139));
 $pdf=new PDF('P','mm','mcarta');
-
+$pdf->AddFont('Sanserif','','TEACPSS_.php');
+$pdf->AddFont('SanserifB','','TEACPSSB.php');
 $pdf->AliasNbPages();
 $pdf->AddPage('P','mcarta');
-$pdf->SetFont('Arial','',9);
-$pdf->personas($nomina_id,$codtp,$departamento);
+$pdf->SetFont('Sanserif','',9);
+$pdf->personas($nomina_id,$codtp);
 $pdf->Output();
 ?>

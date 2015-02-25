@@ -14,14 +14,14 @@ class PDF extends FPDF
 //Cabecera de página
 function Header()
 {
-    $var_izquierda='../imagenes/SiSalud.jpg';
-	$var_centro='../imagenes/dot.JPG';
-	$var_derecha='../imagenes/dot.JPG';
+    /*    $var_izquierda='../imagenes/izquierda.jpg';
+	$var_centro='../imagenes/centro.jpg';
+	$var_derecha='../imagenes/derecha.jpg';
 	
-    $this->SetFont("Arial","B",12);
-    $this->Image($var_izquierda,25,12,30,15);
+        $this->SetFont("Arial","B",12);
+     	$this->Image($var_izquierda,25,12,80,15);
 	$this->Image($var_centro,110,12,45,15);
-	$this->Image($var_derecha,155,12,20,13);
+	$this->Image($var_derecha,155,12,20,13);*/
 	$this->SetFont('Arial','B',12);
      	$this->Ln(25);
 	$this->Cell(188,5,'LISTADO DE TRABAJADORES ',0,0,'C');
@@ -151,7 +151,7 @@ function Row($data)
 }
 //fin
 
-function detalle($gerencia,$nomina,$inicio,$fin){
+function detalle($gerencia,$nomina){
 
 	$cadenaselect='';
 	
@@ -162,20 +162,14 @@ function detalle($gerencia,$nomina,$inicio,$fin){
 		$cadenaselect=$cadenaselect.' and tipnom='.$nomina;
 	}
 	
-	if($inicio!=0 && $fin!=0){
-		$cadenaselect=$cadenaselect.' and fecing>="'.fecha_sql($inicio).'" and fecing<="'.fecha_sql($fin).'"';
-	}
-
 	$conexion=conexion();
 	if($gerencia!='Todos' && $nomina=='Todos'){
 		$consulta="select * from nompersonal where codnivel4<>'' $cadenaselect  ORDER BY  codnivel4,tipnom,apenom ";
 	}else{
 		
-		$consulta="select * from nompersonal where codnivel4<>'' $cadenaselect  ORDER BY tipnom, codnivel4,apenom ";
+			$consulta="select * from nompersonal where codnivel4<>'' $cadenaselect  ORDER BY tipnom, codnivel4,apenom ";
 		
 	}
-
-	//echo $consulta;
 	$query=query($consulta,$conexion);
 	
 	
@@ -375,16 +369,7 @@ $pdf->SetFont('Times','',12);
 $gerencia=$_POST['gerencia'];
 $nomina=$_POST['nomina'];
 
-$inicio=$_GET['inicio'];
-$fin=$_GET['fin'];
-
-if(isset($_GET['inicio'])&&isset($_GET['fin'])){
-	$pdf->detalle($gerencia,$nomina,$inicio,$fin);
-}else{
-	$pdf->detalle($gerencia,$nomina,0,0);
-}
-
-
+$pdf->detalle($gerencia,$nomina);
 
 $pdf->Output();
 ?>

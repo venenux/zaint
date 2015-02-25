@@ -39,12 +39,12 @@ function header(){
 
 	$this->Cell(150,5,utf8_decode($var_encabezado),0,0,'L');
 	$this->Cell(38,5,'Fecha:  '.$date1,0,1,'R');
-	$this->Cell(150,5,'GERENCIA DE RECURSOS HUMANOS',0,0,'L');
+	$this->Cell(150,5,'OFICINA DE RECURSOS HUMANOS',0,0,'L');
 	$this->Cell(38,5,'Hora: '.$date2,0,1,'R');
 	if($this->nomina==4){
 		$this->Cell(188,8,'CUENTAS CORRIENTES Y AHORROS DE VENEZUELA',0,1,'C');
 	}else{
-     		$this->Cell(188,8,'CUENTAS CORRIENTES Y AHORROS DE MERCANTIL',0,1,'C');
+     		$this->Cell(188,8,'CUENTAS CORRIENTES Y AHORROS DE B.O.D',0,1,'C');
 	}
 	
 	$this->Cell(188,5,'LAPSO DEL '.$fecha_ini.' AL '.$fecha_fin,0,1,'C');
@@ -176,7 +176,7 @@ function Cuentas($nomina){
 	
 	$conexion=conexion();
 	$cod=$_SESSION['codigo_nomina'];
-	$consulta="select * from nom_nomina_netos where codnom=$nomina and tipnom=$cod and cta_ban<>''";
+	$consulta="select * from nom_nomina_netos where codnom=$nomina and tipnom=$cod";
 	$resultado_cuenta=query($consulta,$conexion);
 	cerrar_conexion($conexion);
 	// llamado para hacer multilinea sin que haga salto de linea
@@ -190,7 +190,7 @@ function Cuentas($nomina){
 	
 	// fin
 
-	$cantidad_registros=35;
+	$cantidad_registros=20;
 	$totalwhile=num_rows($resultado_cuenta);
 	$contar=1;
 	$conta=1;

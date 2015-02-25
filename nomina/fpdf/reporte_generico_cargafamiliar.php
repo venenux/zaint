@@ -16,14 +16,15 @@ var $edad2;
 //Cabecera de página
 function Header()
 {
-    $var_izquierda='../imagenes/SiSalud.jpg';
-	$var_centro='../imagenes/dot.JPG';
-	$var_derecha='../imagenes/dot.JPG';
+	/*
+        $var_izquierda='../imagenes/izquierda.jpg';
+	$var_centro='../imagenes/centro.jpg';
+	$var_derecha='../imagenes/derecha.jpg';
 	
-    $this->SetFont("Arial","B",12);
-    $this->Image($var_izquierda,25,12,30,15);
+        $this->SetFont("Arial","B",12);
+     	$this->Image($var_izquierda,25,12,80,15);
 	$this->Image($var_centro,110,12,45,15);
-	$this->Image($var_derecha,155,12,20,13);
+	$this->Image($var_derecha,155,12,20,13);*/
 	$this->SetFont('Arial','B',12);
      	$this->Ln(30);
 	
@@ -189,7 +190,6 @@ function detalle($edad1,$edad2,$sexo,$parentesco,$nomina){
 		$codper=$fila['ficha'];
 		$codnom=$fila['tipnom'];
 		$anos=antiguedad($fila['fecha_nac'],date('Y-m-d'),'A');
-		//echo $anos." - ".$codper."-";
 		if($anos>=$edad1 && $anos<=$edad2){
 			if($codnom!=$cod_nomina){
 				$conexion=conexion();
@@ -267,7 +267,7 @@ function detalle($edad1,$edad2,$sexo,$parentesco,$nomina){
 				$car="select * from nomcargos where cod_car='".$fila['codcargo']."'";
 				$querycarg=query($car,$conexion);
 				$rc=fetch_array($querycarg);
-				$ca='('.$fila['ficha'].')'.utf8_decode($fila['apenom']).' -  Cargo: '.$rc['des_car'];
+				$ca='('.$fila['ficha'].')'.utf8_encode($fila['apenom']).' -  Cargo: '.$rc['des_car'];
 				$TOTALTRABAJADOR+=1;
 				if(strlen($ca)>140){
 					$cantidad_registros-=1;

@@ -7,7 +7,7 @@ require('fpdf.php');
 require_once '../lib/config.php';
 require_once '../lib/common.php';
 include('numerosALetras.class.php');
-include ('../paginas/funciones_nomina.php');
+
 
 class PDF extends FPDF
 {
@@ -16,15 +16,15 @@ class PDF extends FPDF
 function Header()
 {
        
-	
-	$var_izquierda='../imagenes/SiSalud.jpg';
+/*	
+	$var_izquierda='../imagenes/logoIzq.jpg';
 	//$var_centro='../imagenes/centro.jpg';
-       //$var_derecha='../imagenes/SiSalud.jpg';
+       $var_derecha='../imagenes/logoDer.jpg';
 	
         $this->SetFont("Arial","B",12);
      	$this->Image($var_izquierda,25,12,35,23);
 	//$this->Image($var_centro,110,12,55,15);
-	//$this->Image($var_derecha,140,12,35,13);
+	$this->Image($var_derecha,140,12,35,13);*/
      	$this->Ln(30);	
 
 }
@@ -58,14 +58,10 @@ function detalle(){
 	$resOCS = query($conOCS,$conexion);
 	$filaOCS = fetch_array($resOCS);
 	$RRHH = $filaOCS['ger_rrhh'];
-	$cedula=$filaOCS['pre_sid']; 
-	$nombre=$filaOCS['nom_emp'];
 
 	$registro_id=$_GET[registro_id];
 	$tipo=$_GET[tipN];
 	$esta=$_GET[est];
-	$iden=$_GET[iden];
-	$opt=$_GET[opt];
 	$query="select * from nompersonal where ficha = '$registro_id' and tipnom='$tipo'";
 	$resultado = query($query,$conexion);
 	$personal = fetch_array($resultado);
@@ -104,7 +100,7 @@ function detalle(){
 		
 	$query="select * from nomcampos_adic_personal where ficha = '$ficha' and tiponom='$tipo'";
 	$resultado3 = query($query,$conexion);
-	/*		
+			
 	if ($tipo=='3'){
 		
 		$monto=($monto*52)/12;
@@ -125,24 +121,11 @@ function detalle(){
 				$monto=$monto+ $can;
 			}
 		}
-	}	*/
-	if($esta=='IN'){
-		$n = new numerosALetras();
-	//	CONCEPTONOMANT2ULTIMASF(11,$registro_id,2);
-		$salario= CONCEPTONOMANT2ULTIMASF(2,$registro_id,2)+((CONCEPTONOMANT2ULTIMASF(2,$registro_id,2)*2)/12)+CONCEPTONOMANT2ULTIMASF(3,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(12,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(11,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(5,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(8,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(9,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(10,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(18,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(6,$registro_id,2)+CONCEPTONOMANT2ULTIMASF(13,$registro_id,2);
-		$salario=round($salario,2);
-		$salarioletras=$n->convertir($salario);
-
-	}else{
-		
-		$n = new numerosALetras();
-		$salarioletras=$n->convertir($monto+ $compensacion);
+	}	
+	$n = new numerosALetras();
+	$salarioletras=$n->convertir($monto+ $compensacion);
 	
-		$salario=number_format($monto+ $compensacion,2,',','.');
-		
-	}
-	
-	
+	$salario=number_format($monto+ $compensacion,2,',','.');
 	$sex=$personal['sexo'];
 	if($sex=='Femenino'){
 		$ciu='la ciudadana ';
@@ -153,29 +136,11 @@ function detalle(){
 		$ad='adscrito ';
 	}
 	$this->Ln(20);
-	
-	if($iden!=''){
-		$this->SetFont('Arial','B',18);
-		$this->Cell(10,7,'',0,0);
-		$this->Cell(188,7,utf8_decode('Señores:'),0,1,'L');
-		$this->SetFont('Arial','B',12);
-		$this->Cell(10,7,'',0,0);
-		$this->Cell(188,7,utf8_decode($iden),0,1,'L');
-		$this->SetFont('Arial','',12);
-		$this->Cell(10,7,'',0,0);
-		$this->Cell(188,7,'Presente.-',0,1,'L');
-	}else{
-		if($opt==2){
-			$this->SetFont('Arial','B',18);
-			$this->Cell(188,7,'A QUIEN PUEDA INTERESAR',0,0,'C');
-		}else{
-			$this->SetFont('Arial','B',18);
-			$this->Cell(188,7,'CONSTANCIA',0,0,'C');
-		}
-	}
+	$this->SetFont('Arial','B',18);
+	$this->Cell(188,7,'CONSTANCIA',0,0,'C');
 	$this->Ln(20);
 	$this->SetFont('Arial','I',11);
-	$contenido='Quien suscribe, '.$RRHH.', en mi carácter de Directora de Recursos Humanos, hago constar que '.$ciu.': '.$persona.', titular de la Cédula de Identidad Nº '.number_format($cedula,0,',','.').', presta sus servicios en '.$nombre.' desde el '.$fecha.', desempeñando actualmente el cargo de '.$cargo.', devengando un salario mensual de '.$salarioletras.' (Bs. '.$salario.').';
+	$contenido='Quien suscribe, José Manuel García, titular de la cédula de identidad N� 10.736.726 en mi carácter de Director General del Despacho, hago constar que la (el) Ciudadana (o): '.$persona.', titular de la Cédula de Identidad Nº '.number_format($cedula,0,',','.').', presta sus servicios en la Fundación para el Avance Social (FUNDAVANZA), adscrita al Gobierno del Estado Carabobo desde el '.$fecha.', desempeñando actualmente el cargo de '.$cargo.', devengando un salario mensual de '.$salarioletras.' (Bs. '.$salario.').';
 
 	if ($esta=='SI'){
 	$contenido=$contenido.' Adicionalmente percibe bono de alimentación, de acuerdo a Gaceta Oficial Nº 38094 de fecha 27/12/04.';
@@ -184,9 +149,9 @@ function detalle(){
 	$dialetra=$n->convertirdia(date('d'));
 	$añoletra=$n->convertirdia(date('Y'));
 
-	$subcontenido='     Constancia que se expide a petición de la parte interesada, en Caracas a los '.$dialetra.' ('.date('d').') días del mes de '.mesaletras(date('m')).' del año '.$añoletra.' ('.date('Y').').';
-	$subcontenido2=$RRHH;
-       $subcontenido3='Director de Recursos Humanos';
+	$subcontenido='     Constancia que se expide a petición de la parte interesada, en Valencia a los '.$dialetra.' ('.date('d').') días del mes de '.mesaletras(date('m')).' del año '.$añoletra.' ('.date('Y').').';
+	$subcontenido2='José Manuel García';
+       $subcontenido3='Director General del Despacho';
        $subcontenido1='Atentamente,';
        $this->Cell(10,7,'',0,0);
 	$this->MultiCell(168,10,utf8_decode($contenido),0,'J');

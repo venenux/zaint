@@ -17,14 +17,14 @@ function Header()
 {
        
 	
-	$var_izquierda='../imagenes/SiSalud.jpg';
+	/*$var_izquierda='../imagenes/logoIzq.jpg';
 	//$var_centro='../imagenes/centro.jpg';
-       $var_derecha='../imagenes/SiSalud.jpg';
+       $var_derecha='../imagenes/logoDer.jpg';
 	
         $this->SetFont("Arial","B",12);
      	$this->Image($var_izquierda,25,12,35,23);
 	//$this->Image($var_centro,110,12,55,15);
-	$this->Image($var_derecha,140,12,35,13);
+	$this->Image($var_derecha,140,12,35,13);*/
      	$this->Ln(30);	
 
 }

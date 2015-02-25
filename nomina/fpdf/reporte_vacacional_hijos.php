@@ -16,14 +16,13 @@ var $edad2;
 //Cabecera de página
 function Header()
 {
-    $var_izquierda='../imagenes/SiSalud.jpg';
-	$var_centro='../imagenes/dot.JPG';
-	$var_derecha='../imagenes/dot.JPG';
-	
-    $this->SetFont("Arial","B",12);
-    $this->Image($var_izquierda,25,12,30,15);
+   /*     $var_izquierda='../imagenes/izquierda.jpg';
+	$var_centro='../imagenes/centro.jpg';
+	$var_derecha='../imagenes/derecha.jpg';
+        $this->SetFont("Arial","B",12);
+     	$this->Image($var_izquierda,25,12,80,15);
 	$this->Image($var_centro,110,12,45,15);
-	$this->Image($var_derecha,155,12,20,13);
+	$this->Image($var_derecha,155,12,20,13);*/
 	$this->SetFont('Arial','B',12);
      	$this->Ln(30);
 	$this->Cell(188,5,'PLAN VACACIONAL',0,1,'C');

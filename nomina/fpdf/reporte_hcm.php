@@ -16,14 +16,14 @@ var $edad2;
 //Cabecera de página
 function Header()
 {
-    $var_izquierda='../imagenes/SiSalud.jpg';
-	$var_centro='../imagenes/dot.JPG';
-	$var_derecha='../imagenes/dot.JPG';
+   /*    $var_izquierda='../imagenes/izquierda.jpg';
+	$var_centro='../imagenes/centro.jpg';
+	$var_derecha='../imagenes/derecha.jpg';
 	
-    $this->SetFont("Arial","B",12);
-    $this->Image($var_izquierda,25,12,30,15);
+        $this->SetFont("Arial","B",12);
+     	$this->Image($var_izquierda,25,12,80,15);
 	$this->Image($var_centro,110,12,45,15);
-	$this->Image($var_derecha,155,12,20,13);
+	$this->Image($var_derecha,155,12,20,13);*/
 	$this->SetFont('Arial','B',12);
      	$this->Ln(30);
 	$this->Cell(188,5,'HCM',0,1,'C');
@@ -170,14 +170,14 @@ function detalle($sexo,$parentesco,$afiliado,$nomina){
 	if($nomina!='Todos'){
 		$cadenaselect=$cadenaselect.' and np.tipnom='.$nomina;
 	}
-	if($afiliado=='Todos'){
+	if($afiliado='Todos'){
 		$consulta="select * from nompersonal as np INNER JOIN nomfamiliares as nf ON np.ficha=nf.ficha and nf.cedula=np.cedula and np.estado='Activo'  $cadenaselect ORDER BY np.tipnom,np.codnivel4,np.apenom";
 	}else{
 		$consulta="select * from nompersonal as np INNER JOIN nomfamiliares as nf ON np.ficha=nf.ficha and nf.cedula=np.cedula and np.estado='Activo' and nf.afiliado=$afiliado  $cadenaselect ORDER BY np.tipnom,np.codnivel4,np.apenom";
 	}
 	
 	$query=query($consulta,$conexion);
-	//echo $consulta;
+	
 	
 	$cantidad_registros=30;
 	$cod_gerencia='';
@@ -263,33 +263,31 @@ function detalle($sexo,$parentesco,$afiliado,$nomina){
 				$cantidad_registros-=2;
 				$cod_persona=$codper;
 				$this->SetFont("Arial","I",10);
-				$this->SetWidths(array(75,25,25,33,30));
-				$this->SetAligns(array('C','C','C','C','C'));
-				$this->Setceldas(array(1,1,1,1,1));
-				$this->Setancho(array(5,5,5,5,5));
-				$this->Row(array('Nombre y Apellido','Sexo','Edad','Parentesco','Descuento'));
+				$this->SetWidths(array(75,30,35,48));
+				$this->SetAligns(array('C','C','C','C'));
+				$this->Setceldas(array(1,1,1,1));
+				$this->Setancho(array(5,5,5,5));
+				$this->Row(array('Nombre y Apellido','Sexo','Edad','Parentesco'));
 			
 		}
 		
 		
 			$this->SetFont('Arial','I',8);
-			$this->SetWidths(array(75,25,25,33,30));
-			$this->SetAligns(array('L','C','C','C','R'));
-			$this->Setceldas(array(1,1,1,1,1));
-			$this->Setancho(array(5,5,5,5,5));
+			$this->SetWidths(array(75,30,35,48));
+			$this->SetAligns(array('L','C','C','C'));
+			$this->Setceldas(array(1,1,1,1));
+			$this->Setancho(array(5,5,5,5));
 			$cade=$fila['apellido'].', '.$fila['nombre'];
 			//$this->Cell(188,5,strlen($cade),0,1);
 			if(strlen($cade)>=43){
-				$this->Setancho(array(5,10,10,10,10));
+				$this->Setancho(array(5,10,10,10));
 				$cantidad_registros-=1;
 			}
 			$con="select * from nomparentescos where codorg=$fila[codpar]";
 			$que=query($con,$conexion);
 			$rp=fetch_array($que);
-			$hcm="select monto_seg from nomseguro where desde_seg<=$anos && hasta_seg>=$anos";
-			$hcm_c=query($hcm,$conexion);
-			$hrp=fetch_array($hcm_c);
-			$this->Row(array($fila['apellido'].', '.$fila['nombre'],$fila['sexo'],$anos,utf8_decode($rp['descrip']),$hrp['monto_seg']));
+			
+			$this->Row(array($fila['apellido'].', '.$fila['nombre'],$fila['sexo'],$anos,utf8_decode($rp['descrip'])));
 			$cantidad_registros-=1;
 			$TOTALCARGAFAMILIAR+=1;
 		

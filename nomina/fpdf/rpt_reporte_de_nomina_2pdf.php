@@ -24,19 +24,17 @@ function header(){
 	$rs = query($var_sql,$Conn);
 	$row_rs = fetch_array($rs);
 	$var_encabezado1=$row_rs['nom_emp'];
-	$var_izquierda='../imagenes/'.$row_rs[imagen_izq];
 	
 	$query="select * from nom_nominas_pago where codnom = '".$_GET['nomina_id']."' AND codtip= '".$_SESSION['codigo_nomina']."' ";		
 	$result2=query($query,$Conn);	
 	$fila2 = fetch_array($result2);
-	$this->Image($var_izquierda,10,6,30,15);
-	//$this->Image($var_derecha,170,6,30,15);
-	$this->SetFont("Arial","",14);
-	$this->Cell(180,6,$row_rs[nom_emp],0,0,'C');
-	$this->SetFont("Arial","",10);
-	$this->Ln(5);
-     	$this->Cell(180,6,$_SESSION['termino'].': '. $_GET['nomina_id'] .' - '. $_SESSION[nomina],0,0,'C');
-     	$this->Ln(5);
+
+        $this->SetFont("Arial","",10);
+     	
+        
+     	$this->Cell(100,5,$var_encabezado1,0,0,"L");
+     	$this->Cell(88,5,$_SESSION['termino'].': '. $_GET['nomina_id'] .' - '. $_SESSION[nomina],0,1,'C');
+//      	$this->Ln(5);
 	
      	
 }
@@ -209,10 +207,8 @@ function personas($nomina_id,$codt,$pdf){
 					$resultado_n4=query($consulta_n4,$conexion);
 					$fetchn4=fetch_array($resultado_n4);
 					$this->SetFont("Arial","",10);
-					if($gerencia!=0){
-						$this->Cell(100,5,$gerencia."  ".$fetchn4['descrip'],0,0);
-						$this->Ln();
-					}
+					$this->Cell(100,5,$gerencia."  ".$fetchn4['descrip'],0,0);
+					$this->Ln();
 					$this->Cell(188,5,'Desde: '.fecha($fila2['periodo_ini']).' Hasta: '.fecha($fila2['periodo_fin']).' Pago: '.fecha($fila2['fechapago']),0,1,'C');
 					
 					$cantidad_registros-=2;
@@ -250,10 +246,8 @@ function personas($nomina_id,$codt,$pdf){
 			$resultado_n4=query($consulta_n4,$conexion);
 			$fetchn4=fetch_array($resultado_n4);
 			 $this->SetFont("Arial","",10);
-			if($fila['ger4']!=0){
-				$this->Cell(100,5,$fila['ger4']."  ".$fetchn4['descrip'],0,1);
-				$this->Ln();
-			}
+			$this->Cell(100,5,$fila['ger4']."  ".$fetchn4['descrip'],0,1);
+			$this->Ln();
 			$this->Cell(188,5,'Desde: '.fecha($fila2['periodo_ini']).' Hasta: '.fecha($fila2['periodo_fin']).' Pago: '.fecha($fila2['fechapago']),0,1,'C');
 			$cantidad_registros-=2;
 			 $this->SetFont("Arial","I",8);
@@ -291,7 +285,7 @@ function personas($nomina_id,$codt,$pdf){
 // 			$this->Cell(188,5,num_rows($result1).'-',0,0);
 // 			$this->Cell(188,5,$cantidad_registros,0,1);
 			if(num_rows($result1)+5<=$cantidad_registros){
-				
+	
 	
 				//Datos personal
 				$this->SetFont('Arial','',8);
@@ -299,9 +293,9 @@ function personas($nomina_id,$codt,$pdf){
 				$this->SetAligns(array('L','L'));
 				$this->Setceldas(array('LT','TR'));
 				$this->Setancho(array(5,5));
-				$this->Row(array('Nombre: '.utf8_decode($fila['apellidos']).', '.utf8_decode($fila['nombres']),utf8_decode('Cargo: '.$fila['des_car'])));
+				$this->Row(array('Nombre: '.$fila['apellidos'].', '.$fila['nombres'],utf8_decode('Cargo: '.$fila['des_car'])));
 				$this->Setceldas(array('LB','BR'));
-				$this->Row(array(utf8_decode('Cédula: '.number_format($fila['cedula'],0,',','.')).'                Fecha Ing:'.fecha($fila['fecing']),'Ficha: '.$fila['ficha']."            Sueldo Basico:  ".$fila[suesal]));
+				$this->Row(array(utf8_decode('Cédula: '.number_format($fila['cedula'],0,',','.')),'Ficha: '.$fila['ficha']));
 				$this->Ln(2);
 				$this->SetFont('Arial','',8);
 				$this->Cell(90,5,'Concepto',1,0,'C');
@@ -313,7 +307,7 @@ function personas($nomina_id,$codt,$pdf){
 			}else{
 			
 			if(num_rows($result1)+5>$cantidad_registros){
-				
+	
 				$this->Ln(300);
 				$cantidad_registros=42;
 				$this->SetFont('Arial','I',8);
@@ -321,10 +315,8 @@ function personas($nomina_id,$codt,$pdf){
 				$resultado_n4=query($consulta_n4,$conexion);
 				$fetchn4=fetch_array($resultado_n4);
 				$this->SetFont("Arial","",10);
-				if($fila['ger4']!=0){
-					$this->Cell(100,5,$fila['ger4']."  ".$fetchn4['descrip']);
-					$this->Ln();
-				}
+				$this->Cell(100,5,$fila['ger4']."  ".$fetchn4['descrip']);
+				$this->Ln();
 				$this->Cell(188,5,'Desde: '.fecha($fila2['periodo_ini']).' Hasta: '.fecha($fila2['periodo_fin']).' Pago: '.fecha($fila2['fechapago']),0,1,'C');
 				$cantidad_registros-=2;
 				$this->SetFont("Arial","",8);
@@ -335,9 +327,9 @@ function personas($nomina_id,$codt,$pdf){
 				$this->SetAligns(array('L','L'));
 				$this->Setceldas(array('LT','TR'));
 				$this->Setancho(array(5,5));
-				$this->Row(array('Nombre: '.utf8_decode($fila['apellidos']).', '.utf8_decode($fila['nombres']),'Cargo: '.$fila['des_car']));
+				$this->Row(array('Nombre: '.$fila['apellidos'].', '.$fila['nombres'],'Cargo: '.$fila['des_car']));
 				$this->Setceldas(array('LB','BR'));
-				$this->Row(array(utf8_decode('Cédula: '.number_format($fila['cedula'],0,',','.')).'                Fecha Ing:'.fecha($fila['fecing']),'Ficha: '.$fila['ficha']."            Sueldo Basico:  ".$fila[suesal]));
+				$this->Row(array(utf8_decode('Cédula: '.number_format($fila['cedula'],0,',','.')),'Ficha: '.$fila['ficha']));
 				$this->Ln(2);
 				$this->SetFont('Arial','',8);
 				$this->Cell(90,5,'Concepto',1,0,'C');
@@ -355,13 +347,10 @@ function personas($nomina_id,$codt,$pdf){
 			$sub_total_asig=0;
 			$sub_total_dedu=0;
 			$sub_total_pat=0;
-
+			
 			while ($row = fetch_array($result1))
 			{
 				$contador++;
-				$valorRef=$row[valor];
-				
-
 				if ($row['tipcon']=='A')
 					{
 						$valor1= number_format($row['monto'],2,',','.');
@@ -385,17 +374,14 @@ function personas($nomina_id,$codt,$pdf){
 				$this->Setceldas(array(0,0,0,0));
 				$this->Setancho(array(5,5,5,5));
 				$valor333=$row[valor];
-				if($row[verref]==0){
-					$valorRef='';
-				}
-
-                            
-				$this->Row(array($row[codcon].'  '.$row[descrip],$valorRef,$valor1,$valor2));
+				if($row[valor]==0)
+					$valor333='';
+				$this->Row(array($row[codcon].'  '.$row[descrip],$valor333,$valor1,$valor2));
 				$cantidad_registros-=1;
 			
 			}
 
-			
+
 			$this->Cell(114,5,'Sub-Total: ',0,0,'R');
 			$this->Cell(37,5,number_format($sub_total_asig,2,',','.'),'T',0,'C');
 			$this->Cell(37,5,number_format($sub_total_dedu,2,',','.'),'T',1,'C');
@@ -421,10 +407,10 @@ function personas($nomina_id,$codt,$pdf){
 
 		
 	}
-	
+
 	if ($gerencia!=""){
 				$conexion=conexion();
-				$consulta="select c.descrip,sum(monto) from nom_movimientos_nomina as mn INNER JOIN nomconceptos as c on c.codcon = mn.codcon where mn.codnom = '".$nomina_id."' and mn.tipnom = '".$codt."' and mn.tipcon<>'P' and mn.codnivel4='$gerencia' group by mn.codcon";
+				$consulta="select c.descrip,sum(monto) from nom_movimientos_nomina as mn INNER JOIN nomconceptos as c on c.codcon = mn.codcon where mn.codnom = '".$nomina_id."' and mn.tipnom = '".$codt."' and mn.tipcon<>'P' and mn.codnivel4=$gerencia group by mn.codcon";
 				$query_con=query($consulta,$conexion);
 				if(num_rows($query_con)+5<=$cantidad_registros){
 
@@ -450,10 +436,8 @@ function personas($nomina_id,$codt,$pdf){
 					$resultado_n4=query($consulta_n4,$conexion);
 					$fetchn4=fetch_array($resultado_n4);
 					$this->SetFont("Arial","",10);
-					if($fila['codnivel4']!=0){
-						$this->Cell(100,5,$fila['codnivel4']."  ".$fetchn4['descrip'],0,1);
-						$this->Ln();
-					}
+					$this->Cell(100,5,$fila['codnivel4']."  ".$fetchn4['descrip'],0,1);
+					$this->Ln();
 					$this->Cell(188,5,'Desde: '.fecha($fila2['periodo_ini']).' Hasta: '.fecha($fila2['periodo_fin']).' Pago: '.fecha($fila2['fechapago']),0,1,'C');
 					$cantidad_registros-=2;
 					$this->Ln(1);
@@ -490,10 +474,8 @@ function personas($nomina_id,$codt,$pdf){
 	$resultado_n4=query($consulta_n4,$conexion);
 	$fetchn4=fetch_array($resultado_n4);
 	$this->SetFont("Arial","",10);
-	if($fila['codnivel4']!=0){
-		$this->Cell(100,5,$fila['codnivel4']."  ".$fetchn4['descrip']);
-		$this->Ln();
-	}
+	$this->Cell(100,5,$fila['codnivel4']."  ".$fetchn4['descrip']);
+	$this->Ln();
 	$this->Cell(188,5,'Desde: '.fecha($fila2['periodo_ini']).' Hasta: '.fecha($fila2['periodo_fin']).' Pago: '.fecha($fila2['fechapago']),0,1,'C');
 	$cantidad_registros-=2;
 	$this->SetFont("Arial","B",8);
@@ -501,7 +483,6 @@ function personas($nomina_id,$codt,$pdf){
 	$this->Cell(188,5,'TOTAL GENERAL',0,1,'C');
 	$cantidad_registros-=1;
 	$conexion=conexion();
-	
 	$consulta="select c.descrip,sum(monto) from nom_movimientos_nomina as mn INNER JOIN nomconceptos as c on c.codcon = mn.codcon where mn.codnom = '".$nomina_id."' and mn.tipnom = '".$codt."' and mn.tipcon<>'P' group by mn.codcon";
 	$query_con=query($consulta,$conexion);
 	$this->SetFont('Arial','B',12);
@@ -526,32 +507,32 @@ function Vacaciones(){
 	$conexion=conexion();
 	$consulta_vac="SELECT ficha, apenom FROM nompersonal WHERE tipnom =".$_SESSION['codigo_nomina']." and estado='Vacaciones' ORDER BY ficha";
 	$resultado_vac=query($consulta_vac,$conexion);
-	if(num_rows($resultado_vac)!=0){
-		$this->Ln(20);
-		$this->SetFont('Arial','I',12);
-		$this->Cell(188,8,'PERSONAL DE VACACIONES',0,0,'C');
-		$this->Ln(10);
-		$this->SetFont('Arial','',10);
-		$cantidad_registros=42;
-		$totalwhile=num_rows($resultado_vac);
-		$contar=1;
-		while($totalwhile>=$contar)
-		{
-			$fetchvac=fetch_array($resultado_vac);
-			$this->Cell(60,5,$fetchvac['ficha'],0,0,'R');
-			$this->Cell(100,5,'   '.utf8_encode($fetchvac['apenom']),0,0,'L');
-			$this->Ln();
-			if($contar==$cantidad_registros){
-				$this->Ln(300);
-				$this->SetFont('Arial','I',12);
-				$this->Cell(188,8,'PERSONAL DE VACACIONES',0,0,'C');
-				$this->SetFont('Arial','I',10);
-				$this->Ln(10);
-					
-			}
-			$contar++;
 
+	$this->Ln(20);
+	$this->SetFont('Arial','I',12);
+	$this->Cell(188,8,'PERSONAL DE VACACIONES',0,0,'C');
+	$this->Ln(10);
+	$this->SetFont('Arial','',10);
+	$cantidad_registros=42;
+	$totalwhile=num_rows($resultado_vac);
+	$contar=1;
+	while($totalwhile>=$contar)
+	{
+		$fetchvac=fetch_array($resultado_vac);
+		$this->Cell(60,5,$fetchvac['ficha'],0,0,'R');
+		$this->Cell(100,5,'   '.$fetchvac['apenom'],0,0,'L');
+		$this->Ln();
+		if($contar==$cantidad_registros){
+			$this->Ln(300);
+			$this->SetFont('Arial','I',12);
+			$this->Cell(188,8,'PERSONAL DE VACACIONES',0,0,'C');
+			$this->SetFont('Arial','I',10);
+			$this->Ln(10);
+			
 		}
+		$contar++;
+
+		
 	}
 }
 function Footer(){
@@ -593,7 +574,7 @@ function firmas($total_asig,$total_dedu,$cantidad_registros){
         $this->Ln(10);
 
 	$this->SetFont('Arial','I',8);
-/*
+
    	$this->Cell(47,5,'PREPARADO: ','LT',0);
    	$this->Cell(47,5,'REVISADO: ','LT',0);
     	$this->Cell(47,5,'CONFORMADO: ','LT',0);
@@ -610,26 +591,9 @@ function firmas($total_asig,$total_dedu,$cantidad_registros){
         $this->Setceldas(array('1','1','1','1'));
 	$this->Setancho(array(5,5,5,5));
         $this->Row(array('ESPECIALISTA DE RRHH','JEFE DE NOMINA','JEFE DE RRHH','DIR. GENERAL DE DESPACHO'));
-*/
-
-	$this->Cell(62,5,' ','LT',0);
-   	$this->Cell(62,5,' ','LT',0);
-    	$this->Cell(62,5,' ','LTR',1);
-	
-	$this->Cell(62,10,'','L',0);
-   	$this->Cell(62,10,'','L',0);
-    	$this->Cell(62,10,'','LR',1);
-    	
-    // llamado para hacer multilinea sin que haga salto de linea
-       $this->SetWidths(array(62,62,62));
-	$this->SetAligns(array('C','C','C'));
-       $this->Setceldas(array('1','1','1'));
-	$this->Setancho(array(5,5,5));
-       $this->Row(array('DIRECTOR RECURSOS HUMANOS','FIRMA AUTORIZADA','FIRMA AUTORIZADA'));
-
 
 	$this->Ln(5);
-/*
+
 	$this->Cell(47,5,'CONFORMADO: ','LT',0);
    	$this->Cell(47,5,'CONFORMADO: ','LT',0);
     	$this->Cell(47,5,'CONFORMADO: ','LT',0);
@@ -645,7 +609,6 @@ function firmas($total_asig,$total_dedu,$cantidad_registros){
         $this->Setceldas(array('1','1','1','1'));
 	$this->Setancho(array(10,10,5,10));
         $this->Row(array('ANALISTA DE AUDITORIA','DIR. DE AUDIORIA INTERNA','DIR. GENERAL. DE ADMINISTRACION','PRESIDENTE'));
-*/
 }
 }
 
