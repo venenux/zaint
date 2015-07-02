@@ -1,4 +1,4 @@
-# zaint : the saint erp from SelectraSuite hacked
+# zaint : (oscaint) a payroll + erp work-in-progress system
 
 Zaint: the selectra suite with pos, administration and nomina systems. 
 
@@ -9,7 +9,10 @@ try reorganize some code and made public for anyone..
 .. of course we offer more support and more cheat support rather than any.
 
 For more info please use the wiki for install instructions http://github.com/venenux/zaint/wiki/zaint_instalacion
-For use first unmodified commits, use the wiki http://github.com/venenux/zaint/wiki/Inicializado_de_fuentes_sucias
+
+This software are under active development, firts consult before implement!
+
+developers info: For use first unmodified commits, use the wiki http://github.com/venenux/zaint/wiki/Inicializado_de_fuentes_sucias
 
 ## what about hacked, license, limitations  and security
 
@@ -29,7 +32,4 @@ only will focused in bugfixeds and reorganizations.
 
 Any improvements must be made close to modular oriented, and *must use debian system libs*, 
 the debian version must be squeeze, not lasted!.
-
-
-
 
